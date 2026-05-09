@@ -19,6 +19,20 @@ PipeBoss AI is a SwiftUI plumbing training game MVP. It is offline-first, MVVM-o
 4. Attach the subscriptions and in-app purchases to the app version before review.
 5. Verify every safety statement against local regulations and qualified trade guidance.
 
+## Build and upload path
+
+The repo includes a shared Xcode scheme and a GitHub Actions workflow at `.github/workflows/ios-ci.yml` so GitHub can run a simulator build on a hosted macOS runner.
+
+For App Store/TestFlight upload, use Xcode Cloud after a one-time setup in Xcode:
+
+1. Open `PipeBossAI.xcodeproj` on a Mac with Xcode.
+2. Sign in with the Apple Developer account and select team `5ZP6GV85J6`.
+3. Confirm the bundle identifier is `com.pipebossai.app`.
+4. Create the first Xcode Cloud workflow for the `PipeBossAI` scheme on the `main` branch.
+5. Start the first archive build, then manage later builds from App Store Connect > Xcode Cloud.
+
+If no local Mac is available, use a temporary cloud Mac to do the first Xcode Cloud workflow setup. After that, App Store Connect can launch and monitor builds in the browser.
+
 ## App Store Connect product IDs
 
 - `com.pipebossai.pro.monthly`
