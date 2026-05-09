@@ -1,0 +1,114 @@
+{
+  "identifier" : "PipeBossAI",
+  "nonRenewingSubscriptions" : [],
+  "products" : [
+    {
+      "displayPrice" : "9.99",
+      "familyShareable" : false,
+      "localizations" : [
+        {
+          "description" : "Adds dense apartment, restaurant, and mixed-use jobs.",
+          "displayName" : "City Expansion Pack",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.pipebossai.pack.city",
+      "referenceName" : "City Expansion Pack",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "7.99",
+      "familyShareable" : false,
+      "localizations" : [
+        {
+          "description" : "Unlocks specialist tools for faster diagnosis.",
+          "displayName" : "Advanced Tool Pack",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.pipebossai.pack.advancedtools",
+      "referenceName" : "Advanced Tool Pack",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "5.99",
+      "familyShareable" : false,
+      "localizations" : [
+        {
+          "description" : "Adds burst pipes, urgent isolation, and emergency triage scenarios.",
+          "displayName" : "Emergency Jobs Pack",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.pipebossai.pack.emergency",
+      "referenceName" : "Emergency Jobs Pack",
+      "type" : "NonConsumable"
+    },
+    {
+      "displayPrice" : "11.99",
+      "familyShareable" : false,
+      "localizations" : [
+        {
+          "description" : "Adds quoting, scheduling, staffing, and business owner scenarios.",
+          "displayName" : "Business Owner Mode",
+          "locale" : "en_US"
+        }
+      ],
+      "productID" : "com.pipebossai.pack.businessowner",
+      "referenceName" : "Business Owner Mode",
+      "type" : "NonConsumable"
+    }
+  ],
+  "settings" : {
+    "_locale" : "en_US",
+    "_storefront" : "USA"
+  },
+  "subscriptionGroups" : [
+    {
+      "localizations" : [
+        {
+          "customAppName" : "PipeBoss AI",
+          "locale" : "en_US",
+          "name" : "PipeBoss Pro"
+        }
+      ],
+      "name" : "PipeBoss Pro",
+      "subscriptions" : [
+        {
+          "displayPrice" : "6.99",
+          "familyShareable" : false,
+          "localizations" : [
+            {
+              "description" : "Unlimited jobs, advanced scenarios, mentor hints, no ads, and analytics placeholders.",
+              "displayName" : "PipeBoss Pro Monthly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.pipebossai.pro.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "PipeBoss Pro Monthly",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "displayPrice" : "49.99",
+          "familyShareable" : false,
+          "localizations" : [
+            {
+              "description" : "Yearly PipeBoss Pro access for apprentices, schools, and companies.",
+              "displayName" : "PipeBoss Pro Yearly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "com.pipebossai.pro.yearly",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "PipeBoss Pro Yearly",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 4,
+    "minor" : 0
+  }
+}
