@@ -50,7 +50,8 @@ jobs:
           SDK_VERSION="$(xcrun --sdk iphoneos --show-sdk-version)"
           echo "Using iPhoneOS SDK $SDK_VERSION"
 
-          XCODE_MAJOR="$(xcodebuild -version | awk '/Xcode/ { split($2, version, \".\"); print version[1] }')"
+          XCODE_VERSION="$(xcodebuild -version | sed -n 's/^Xcode //p' | head -n 1)"
+          XCODE_MAJOR="${XCODE_VERSION%%.*}"
           if [ "$XCODE_MAJOR" -lt 26 ]; then
             echo "::error::App Store Connect requires Xcode 26 or later. Selected: $(xcodebuild -version | tr '\n' ' ')"
             exit 1
