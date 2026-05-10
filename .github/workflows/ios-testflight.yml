@@ -68,6 +68,7 @@ jobs:
           CERTIFICATE_PATH="$RUNNER_TEMP/apple-distribution.p12"
           PROFILE_PATH="$RUNNER_TEMP/pipeboss-appstore.mobileprovision"
           API_KEY_PATH="$RUNNER_TEMP/AuthKey_${APP_STORE_CONNECT_API_KEY_ID}.p8"
+          API_PRIVATE_KEYS_DIR_PATH="$RUNNER_TEMP/private_keys"
           KEYCHAIN_PATH="$RUNNER_TEMP/app-signing.keychain-db"
 
           printf '%s' "$APPLE_CERTIFICATE_BASE64" | base64 -D > "$CERTIFICATE_PATH"
@@ -98,10 +99,18 @@ jobs:
           mkdir -p "$HOME/Library/MobileDevice/Provisioning Profiles"
           cp "$PROFILE_PATH" "$HOME/Library/MobileDevice/Provisioning Profiles/$PROFILE_UUID.mobileprovision"
 
-          mkdir -p "$HOME/.appstoreconnect/private_keys"
+          mkdir -p \
+            "$API_PRIVATE_KEYS_DIR_PATH" \
+            "$HOME/private_keys" \
+            "$HOME/.private_keys" \
+            "$HOME/.appstoreconnect/private_keys"
+          cp "$API_KEY_PATH" "$API_PRIVATE_KEYS_DIR_PATH/AuthKey_${APP_STORE_CONNECT_API_KEY_ID}.p8"
+          cp "$API_KEY_PATH" "$HOME/private_keys/AuthKey_${APP_STORE_CONNECT_API_KEY_ID}.p8"
+          cp "$API_KEY_PATH" "$HOME/.private_keys/AuthKey_${APP_STORE_CONNECT_API_KEY_ID}.p8"
           cp "$API_KEY_PATH" "$HOME/.appstoreconnect/private_keys/AuthKey_${APP_STORE_CONNECT_API_KEY_ID}.p8"
 
           echo "PIPEBOSS_PROFILE_NAME=$PROFILE_NAME" >> "$GITHUB_ENV"
+          echo "API_PRIVATE_KEYS_DIR=$API_PRIVATE_KEYS_DIR_PATH" >> "$GITHUB_ENV"
 
       - name: Archive
         run: |
