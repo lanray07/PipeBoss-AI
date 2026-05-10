@@ -19,19 +19,34 @@ PipeBoss AI is a SwiftUI plumbing training game MVP. It is offline-first, MVVM-o
 4. Attach the subscriptions and in-app purchases to the app version before review.
 5. Verify every safety statement against local regulations and qualified trade guidance.
 
-## Build and upload path
+## Build and upload path from Windows
 
-The repo includes a shared Xcode scheme and a GitHub Actions workflow at `.github/workflows/ios-ci.yml` so GitHub can run a simulator build on a hosted macOS runner.
+The repo includes a shared Xcode scheme and GitHub Actions workflows that use hosted macOS runners:
 
-For App Store/TestFlight upload, use Xcode Cloud after a one-time setup in Xcode:
+- `.github/workflows/ios-ci.yml`: builds the app for the iOS Simulator on every push and pull request.
+- `.github/workflows/ios-testflight.yml`: manually archives, exports, and optionally uploads a signed IPA to App Store Connect/TestFlight.
 
-1. Open `PipeBossAI.xcodeproj` on a Mac with Xcode.
-2. Sign in with the Apple Developer account and select team `5ZP6GV85J6`.
-3. Confirm the bundle identifier is `com.pipebossai.app`.
-4. Create the first Xcode Cloud workflow for the `PipeBossAI` scheme on the `main` branch.
-5. Start the first archive build, then manage later builds from App Store Connect > Xcode Cloud.
+The CI workflow does not require Apple signing secrets. The TestFlight workflow requires these GitHub repository secrets:
 
-If no local Mac is available, use a temporary cloud Mac to do the first Xcode Cloud workflow setup. After that, App Store Connect can launch and monitor builds in the browser.
+- `APPLE_CERTIFICATE_BASE64`: base64 of an Apple Distribution `.p12` certificate.
+- `APPLE_CERTIFICATE_PASSWORD`: password for the `.p12` certificate.
+- `APPLE_PROVISIONING_PROFILE_BASE64`: base64 of the App Store provisioning profile for `com.pipebossai.app`.
+- `APP_STORE_CONNECT_API_KEY_ID`: App Store Connect API key ID.
+- `APP_STORE_CONNECT_API_ISSUER_ID`: App Store Connect issuer ID.
+- `APP_STORE_CONNECT_API_KEY_BASE64`: base64 of the App Store Connect `.p8` API key.
+- `KEYCHAIN_PASSWORD`: optional password for the temporary CI keychain. If omitted, the workflow uses the GitHub run ID.
+
+PowerShell helpers for copying secret values:
+
+```powershell
+[Convert]::ToBase64String([IO.File]::ReadAllBytes("AppleDistribution.p12")) | Set-Clipboard
+[Convert]::ToBase64String([IO.File]::ReadAllBytes("PipeBossAI_AppStore.mobileprovision")) | Set-Clipboard
+[Convert]::ToBase64String([IO.File]::ReadAllBytes("AuthKey_XXXXXXXXXX.p8")) | Set-Clipboard
+```
+
+After adding the secrets in GitHub, run **Actions > iOS TestFlight Upload > Run workflow**. Leave `build_number` blank to use the GitHub run number, or enter a higher number manually if App Store Connect already has a build for version `1.0`.
+
+Xcode Cloud is still an optional Apple-native path, but its first workflow must be created from Xcode on a Mac. The GitHub Actions path above is the Windows-friendly route for this project.
 
 ## App Store Connect product IDs
 
