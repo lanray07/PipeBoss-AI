@@ -18,7 +18,7 @@ on:
 jobs:
   archive:
     name: Archive and Export PipeBoss AI
-    runs-on: macos-15
+    runs-on: macos-26
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
       APP_BUNDLE_ID: com.pipebossai.app
@@ -34,6 +34,27 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Select Xcode 26
+        run: |
+          set -euo pipefail
+          XCODE_APP="$(ls -d /Applications/Xcode_26*.app /Applications/Xcode.app 2>/dev/null | head -n 1 || true)"
+          if [ -z "$XCODE_APP" ]; then
+            echo "::error::Xcode 26 is required for App Store Connect uploads."
+            ls -1 /Applications | grep '^Xcode' || true
+            exit 1
+          fi
+
+          sudo xcode-select -s "$XCODE_APP/Contents/Developer"
+          xcodebuild -version
+          SDK_VERSION="$(xcrun --sdk iphoneos --show-sdk-version)"
+          echo "Using iPhoneOS SDK $SDK_VERSION"
+
+          XCODE_MAJOR="$(xcodebuild -version | awk '/Xcode/ { split($2, version, \".\"); print version[1] }')"
+          if [ "$XCODE_MAJOR" -lt 26 ]; then
+            echo "::error::App Store Connect requires Xcode 26 or later. Selected: $(xcodebuild -version | tr '\n' ' ')"
+            exit 1
+          fi
 
       - name: Validate required secrets
         run: |
@@ -172,19 +193,19 @@ jobs:
         run: |
           set -euo pipefail
           IPA_PATH="$(find "$RUNNER_TEMP/export" -name '*.ipa' -print -quit)"
-          UPLOAD_LOG="$RUNNER_TEMP/transporter-upload.log"
+          UPLOAD_LOG="$RUNNER_TEMP/altool-upload.log"
           set +e
-          xcrun iTMSTransporter \
-            -m upload \
-            -assetFile "$IPA_PATH" \
-            -apiKey "$APP_STORE_CONNECT_API_KEY_ID" \
-            -apiIssuer "$APP_STORE_CONNECT_API_ISSUER_ID" \
-            -v informational 2>&1 | tee "$UPLOAD_LOG"
+          xcrun altool \
+            --upload-app \
+            --type ios \
+            --file "$IPA_PATH" \
+            --apiKey "$APP_STORE_CONNECT_API_KEY_ID" \
+            --apiIssuer "$APP_STORE_CONNECT_API_ISSUER_ID" 2>&1 | tee "$UPLOAD_LOG"
           upload_status=${PIPESTATUS[0]}
           set -e
           if [ "$upload_status" -ne 0 ]; then
             tail -n 80 "$UPLOAD_LOG"
-            echo "::error title=App Store Connect upload failed::Transporter upload failed. See PipeBossAI-upload-diagnostics artifact for the full log."
+            echo "::error title=App Store Connect upload failed::altool upload failed. See PipeBossAI-upload-diagnostics artifact for the full log."
             exit "$upload_status"
           fi
 

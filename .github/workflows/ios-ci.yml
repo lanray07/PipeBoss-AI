@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     name: Build PipeBoss AI
-    runs-on: macos-15
+    runs-on: macos-26
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -18,8 +18,26 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Show Xcode version
-        run: xcodebuild -version
+      - name: Select Xcode 26
+        run: |
+          set -euo pipefail
+          XCODE_APP="$(ls -d /Applications/Xcode_26*.app /Applications/Xcode.app 2>/dev/null | head -n 1 || true)"
+          if [ -z "$XCODE_APP" ]; then
+            echo "::error::Xcode 26 is required for App Store-ready builds."
+            ls -1 /Applications | grep '^Xcode' || true
+            exit 1
+          fi
+
+          sudo xcode-select -s "$XCODE_APP/Contents/Developer"
+          xcodebuild -version
+          SDK_VERSION="$(xcrun --sdk iphoneos --show-sdk-version)"
+          echo "Using iPhoneOS SDK $SDK_VERSION"
+
+          XCODE_MAJOR="$(xcodebuild -version | awk '/Xcode/ { split($2, version, \".\"); print version[1] }')"
+          if [ "$XCODE_MAJOR" -lt 26 ]; then
+            echo "::error::App Store Connect requires Xcode 26 or later. Selected: $(xcodebuild -version | tr '\n' ' ')"
+            exit 1
+          fi
 
       - name: List schemes
         run: xcodebuild -list -project PipeBossAI.xcodeproj
