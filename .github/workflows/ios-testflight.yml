@@ -57,6 +57,11 @@ jobs:
             exit 1
           fi
 
+      - name: Install iOS 26 platform
+        run: |
+          set -euo pipefail
+          xcodebuild -downloadPlatform iOS -architectureVariant arm64
+
       - name: Validate required secrets
         run: |
           set -euo pipefail
