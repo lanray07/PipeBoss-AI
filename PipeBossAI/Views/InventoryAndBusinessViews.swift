@@ -117,7 +117,12 @@ struct BusinessUpgradeView: View {
                     VStack(alignment: .leading, spacing: 12) {
                         SectionTitle(title: AppContent.copy.business.packs)
                         ForEach(oneTimeProducts) { product in
-                            ProductPackCard(product: product, purchaseManager: purchaseManager, game: game)
+                            ProductPackCard(
+                                product: product,
+                                storeProduct: purchaseManager.products.first { $0.id == product.productID },
+                                purchaseManager: purchaseManager,
+                                game: game
+                            )
                         }
                     }
                 }
@@ -215,6 +220,7 @@ private struct UpgradeCard: View {
 
 private struct ProductPackCard: View {
     let product: SubscriptionProduct
+    let storeProduct: Product?
     @ObservedObject var purchaseManager: PurchaseManager
     @ObservedObject var game: GameViewModel
 
@@ -245,14 +251,14 @@ private struct ProductPackCard: View {
             } else {
                 Button {
                     Task { @MainActor in
-                        if let storeProduct = purchaseManager.products.first(where: { $0.id == product.productID }) {
+                        if let storeProduct {
                             await purchaseManager.purchase(storeProduct)
                         } else {
                             game.alertMessage = AppContent.copy.paywall.storeUnavailableMessage
                         }
                     }
                 } label: {
-                    Label(product.pricePlaceholder, systemImage: "cart.fill")
+                    Label(storeProduct?.displayPrice ?? product.pricePlaceholder, systemImage: "cart.fill")
                 }
                 .buttonStyle(SecondaryActionButtonStyle())
             }
