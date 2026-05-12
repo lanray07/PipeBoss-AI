@@ -1,6 +1,6 @@
 # PipeBoss AI
 
-PipeBoss AI is a SwiftUI plumbing training game MVP. It is offline-first, MVVM-oriented, and ready to expand with production legal URLs, final screenshots, and analytics/cloud services.
+PipeBoss AI is a SwiftUI plumbing training game MVP. It is offline-first, MVVM-oriented, and ready to expand with final screenshots, analytics, and cloud services.
 
 ## Project map
 
@@ -13,11 +13,11 @@ PipeBoss AI is a SwiftUI plumbing training game MVP. It is offline-first, MVVM-o
 
 ## Before App Store submission
 
-1. Replace the placeholder terms and privacy URLs in `AppContent.swift`.
-2. Add production app icons to `Assets.xcassets/AppIcon.appiconset`.
-3. Add App Store screenshots and in-app purchase review screenshots.
-4. Attach the subscriptions and in-app purchases to the app version before review.
-5. Verify every safety statement against local regulations and qualified trade guidance.
+1. Add production app icons to `Assets.xcassets/AppIcon.appiconset`.
+2. Add App Store screenshots and in-app purchase review screenshots.
+3. Attach the subscriptions and in-app purchases to the app version before review.
+4. Verify every safety statement against local regulations and qualified trade guidance.
+5. Keep the public Terms and Privacy links available for App Review.
 
 ## Build and upload path from Windows
 

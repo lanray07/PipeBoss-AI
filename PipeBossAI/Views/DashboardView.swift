@@ -133,12 +133,16 @@ struct DashboardView: View {
             HStack(spacing: 12) {
                 IconBadge(icon: "crown.fill", tint: AppTheme.amber)
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(AppContent.copy.proName)
+                    Text(AppContent.copy.paywall.title)
                         .font(.headline)
                         .foregroundStyle(AppTheme.ink)
                     Text(AppContent.copy.dashboard.proPrompt)
                         .font(.subheadline)
                         .foregroundStyle(AppTheme.muted)
+                    Text(AppContent.copy.reviewProductList)
+                        .font(.caption)
+                        .foregroundStyle(AppTheme.muted)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
                 Spacer()
             }

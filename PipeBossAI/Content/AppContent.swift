@@ -409,10 +409,11 @@ enum AppContent {
 struct AppCopy {
     let appName = "PipeBoss AI"
     let proName = "PipeBoss Pro"
+    let reviewProductList = "PipeBoss Pro Monthly, PipeBoss Pro Yearly, Emergency Jobs Pack, Advanced Tool Pack, City Expansion Pack, and Business Owner Mode."
     let educationalDisclaimer = "PipeBoss AI is for educational training and simulation only. Always follow local regulations and consult a qualified professional for real-world plumbing work."
     let privacySummary = "PipeBoss AI stores MVP progress on this device and does not collect unnecessary personal data."
-    let termsURL = "https://example.com/pipeboss/terms"
-    let privacyURL = "https://example.com/pipeboss/privacy"
+    let termsURL = "https://github.com/lanray07/PipeBoss-AI/blob/main/TERMS.md"
+    let privacyURL = "https://github.com/lanray07/PipeBoss-AI/blob/main/PRIVACY.md"
     let ok = "OK"
 
     let tabs = TabCopy()
@@ -496,8 +497,8 @@ struct DashboardCopy {
     let careerProgress = "Career Progress"
     let nextJob = "Next recommended job"
     let startJob = "Open job board"
-    let proPrompt = "Train without daily limits"
-    let proButton = "View PipeBoss Pro"
+    let proPrompt = "Subscriptions and expansion packs"
+    let proButton = "Open PipeBoss Store"
     let leaderboard = "Leaderboard"
     let settings = "Settings and privacy"
 }
@@ -579,8 +580,8 @@ struct LeaderboardCopy {
 }
 
 struct PaywallCopy {
-    let title = "Unlock PipeBoss Pro"
-    let subtitle = "Unlimited training scenarios for apprentices, trade schools, and junior staff."
+    let title = "PipeBoss Store"
+    let subtitle = "Review PipeBoss Pro subscriptions and one-time expansion packs."
     let monthly = "Monthly"
     let yearly = "Yearly"
     let subscribe = "Subscribe"
@@ -589,10 +590,13 @@ struct PaywallCopy {
     let terms = "Terms of Use"
     let privacy = "Privacy Policy"
     let close = "Close"
+    let subscriptions = "PipeBoss Pro subscriptions"
+    let oneTimePacks = "One-time expansion packs"
+    let reviewHint = "App Review: all subscriptions and one-time purchases are available here from Home > Open PipeBoss Store. Packs are also listed on the Business tab."
     let termsSummary = "Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period. Pricing is shown by the App Store before purchase. Manage or cancel in your Apple ID subscription settings."
     let optionalAdsSummary = "Rewarded ads are optional for free users and never interrupt gameplay or learning."
     let proAdsSummary = "PipeBoss Pro removes ads and keeps jobs unlimited."
-    let storeUnavailableMessage = "StoreKit products are placeholders until real App Store Connect IDs are configured."
+    let storeUnavailableMessage = "App Store products are currently unavailable. Check the network or sandbox account and try again."
     let pendingPurchaseMessage = "Purchase is pending approval."
     let restoreFailedMessage = "Restore did not complete. Try again from the App Store account used to subscribe."
     let manageUnavailableMessage = "Subscription management is unavailable in this environment."
@@ -603,7 +607,7 @@ struct SettingsCopy {
     let subtitle = "Offline-first training with clear safety boundaries."
     let privacy = "Privacy-friendly MVP"
     let disclaimer = "Training disclaimer"
-    let legal = "Legal placeholders"
+    let legal = "Legal"
     let reset = "Reset progress"
     let resetConfirm = "Reset saved progress?"
     let resetConfirmMessage = "This clears local XP, coins, tools, completed jobs, and onboarding state on this device."

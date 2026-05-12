@@ -12,6 +12,10 @@ struct PaywallView: View {
         }
     }
 
+    private var oneTimeProducts: [SubscriptionProduct] {
+        AppContent.storeProducts.filter { $0.kind == .nonConsumable }
+    }
+
     var body: some View {
         NavigationStack {
             ZStack {
@@ -26,8 +30,21 @@ struct PaywallView: View {
                         )
 
                         VStack(alignment: .leading, spacing: 12) {
+                            SectionTitle(title: AppContent.copy.paywall.subscriptions)
                             ForEach(subscriptionProducts) { product in
                                 PaywallProductRow(
+                                    product: product,
+                                    storeProduct: purchaseManager.products.first { $0.id == product.productID },
+                                    owned: game.hasEntitlement(product.productID),
+                                    purchaseManager: purchaseManager
+                                )
+                            }
+                        }
+
+                        VStack(alignment: .leading, spacing: 12) {
+                            SectionTitle(title: AppContent.copy.paywall.oneTimePacks)
+                            ForEach(oneTimeProducts) { product in
+                                PaywallOneTimeProductRow(
                                     product: product,
                                     storeProduct: purchaseManager.products.first { $0.id == product.productID },
                                     owned: game.hasEntitlement(product.productID),
@@ -59,7 +76,7 @@ struct PaywallView: View {
                     .padding(.vertical, 20)
                 }
             }
-            .navigationTitle(AppContent.copy.proName)
+            .navigationTitle(AppContent.copy.paywall.title)
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
@@ -74,6 +91,11 @@ struct PaywallView: View {
                 }
             } message: {
                 Text(purchaseManager.errorMessage ?? "")
+            }
+            .task {
+                if purchaseManager.products.isEmpty {
+                    await purchaseManager.loadProducts()
+                }
             }
         }
     }
@@ -105,6 +127,11 @@ struct PaywallView: View {
             Text(AppContent.copy.paywall.termsSummary)
                 .font(.footnote)
                 .foregroundStyle(AppTheme.muted)
+                .fixedSize(horizontal: false, vertical: true)
+
+            Text(AppContent.copy.paywall.reviewHint)
+                .font(.footnote.weight(.semibold))
+                .foregroundStyle(AppTheme.blue)
                 .fixedSize(horizontal: false, vertical: true)
 
             Text(AppContent.copy.educationalDisclaimer)
@@ -159,6 +186,11 @@ private struct PaywallProductRow: View {
                     .foregroundStyle(AppTheme.muted)
             }
 
+            Text(subscriptionTermsText)
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(AppTheme.blue)
+                .fixedSize(horizontal: false, vertical: true)
+
             if owned {
                 LockRibbon(text: AppContent.copy.business.owned)
             } else {
@@ -174,6 +206,84 @@ private struct PaywallProductRow: View {
                     Label(storeProduct?.displayPrice ?? product.pricePlaceholder, systemImage: "crown.fill")
                 }
                 .buttonStyle(PrimaryActionButtonStyle())
+            }
+        }
+        .pipeCard()
+    }
+
+    private var subscriptionTermsText: String {
+        let length: String
+        let unit: String
+        switch product.kind {
+        case .monthlySubscription:
+            length = "1 month"
+            unit = "month"
+        case .yearlySubscription:
+            length = "1 year"
+            unit = "year"
+        case .nonConsumable:
+            length = "one time"
+            unit = "purchase"
+        }
+
+        if let storeProduct {
+            return "Length: \(length). Price: \(storeProduct.displayPrice) per \(unit)."
+        }
+
+        return "Length: \(length). Price: \(product.pricePlaceholder)."
+    }
+}
+
+private struct PaywallOneTimeProductRow: View {
+    let product: SubscriptionProduct
+    let storeProduct: Product?
+    let owned: Bool
+    @ObservedObject var purchaseManager: PurchaseManager
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(alignment: .top, spacing: 12) {
+                IconBadge(icon: "shippingbox.fill", tint: AppTheme.orange)
+
+                VStack(alignment: .leading, spacing: 5) {
+                    Text(product.displayName)
+                        .font(.headline)
+                        .foregroundStyle(AppTheme.ink)
+                    Text(product.subtitle)
+                        .font(.subheadline)
+                        .foregroundStyle(AppTheme.muted)
+                        .fixedSize(horizontal: false, vertical: true)
+                }
+
+                Spacer()
+            }
+
+            ForEach(product.benefits, id: \.self) { benefit in
+                Label(benefit, systemImage: "checkmark.circle.fill")
+                    .font(.caption)
+                    .foregroundStyle(AppTheme.muted)
+            }
+
+            Text("One-time purchase. Price: \(storeProduct?.displayPrice ?? product.pricePlaceholder).")
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(AppTheme.blue)
+                .fixedSize(horizontal: false, vertical: true)
+
+            if owned {
+                LockRibbon(text: AppContent.copy.business.owned)
+            } else {
+                Button {
+                    Task { @MainActor in
+                        if let storeProduct {
+                            await purchaseManager.purchase(storeProduct)
+                        } else {
+                            purchaseManager.errorMessage = AppContent.copy.paywall.storeUnavailableMessage
+                        }
+                    }
+                } label: {
+                    Label(storeProduct?.displayPrice ?? product.pricePlaceholder, systemImage: "cart.fill")
+                }
+                .buttonStyle(SecondaryActionButtonStyle())
             }
         }
         .pipeCard()
