@@ -29,12 +29,14 @@ struct PaywallView: View {
                             icon: "crown.fill"
                         )
 
+                        storeStatusCard
+
                         VStack(alignment: .leading, spacing: 12) {
                             SectionTitle(title: AppContent.copy.paywall.subscriptions)
                             ForEach(subscriptionProducts) { product in
                                 PaywallProductRow(
                                     product: product,
-                                    storeProduct: purchaseManager.products.first { $0.id == product.productID },
+                                    storeProduct: purchaseManager.product(for: product),
                                     owned: game.hasEntitlement(product.productID),
                                     purchaseManager: purchaseManager
                                 )
@@ -46,7 +48,7 @@ struct PaywallView: View {
                             ForEach(oneTimeProducts) { product in
                                 PaywallOneTimeProductRow(
                                     product: product,
-                                    storeProduct: purchaseManager.products.first { $0.id == product.productID },
+                                    storeProduct: purchaseManager.product(for: product),
                                     owned: game.hasEntitlement(product.productID),
                                     purchaseManager: purchaseManager
                                 )
@@ -122,6 +124,31 @@ struct PaywallView: View {
         .pipeCard()
     }
 
+    @ViewBuilder
+    private var storeStatusCard: some View {
+        if purchaseManager.isLoading || purchaseManager.productLoadMessage != nil {
+            VStack(alignment: .leading, spacing: 12) {
+                if purchaseManager.isLoading {
+                    Label(AppContent.copy.paywall.loadingProducts, systemImage: "hourglass")
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(AppTheme.blue)
+                } else if let message = purchaseManager.productLoadMessage {
+                    Label(message, systemImage: "exclamationmark.triangle.fill")
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(AppTheme.danger)
+
+                    Button {
+                        Task { @MainActor in await purchaseManager.loadProducts() }
+                    } label: {
+                        Label(AppContent.copy.paywall.retryStore, systemImage: "arrow.clockwise.circle.fill")
+                    }
+                    .buttonStyle(SecondaryActionButtonStyle())
+                }
+            }
+            .pipeCard()
+        }
+    }
+
     private var termsCard: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text(AppContent.copy.paywall.termsSummary)
@@ -193,19 +220,17 @@ private struct PaywallProductRow: View {
 
             if owned {
                 LockRibbon(text: AppContent.copy.business.owned)
-            } else {
+            } else if let storeProduct {
                 Button {
                     Task { @MainActor in
-                        if let storeProduct {
-                            await purchaseManager.purchase(storeProduct)
-                        } else {
-                            purchaseManager.errorMessage = AppContent.copy.paywall.storeUnavailableMessage
-                        }
+                        await purchaseManager.purchase(storeProduct)
                     }
                 } label: {
-                    Label(storeProduct?.displayPrice ?? product.pricePlaceholder, systemImage: "crown.fill")
+                    Label(storeProduct.displayPrice, systemImage: "crown.fill")
                 }
                 .buttonStyle(PrimaryActionButtonStyle())
+            } else {
+                unavailableProductState
             }
         }
         .pipeCard()
@@ -231,6 +256,23 @@ private struct PaywallProductRow: View {
         }
 
         return "Length: \(length). Price: \(product.pricePlaceholder)."
+    }
+
+    @ViewBuilder
+    private var unavailableProductState: some View {
+        if purchaseManager.isLoading {
+            LockRibbon(text: AppContent.copy.paywall.loadingProducts)
+        } else {
+            VStack(alignment: .leading, spacing: 8) {
+                LockRibbon(text: AppContent.copy.paywall.productUnavailable)
+                Button {
+                    Task { @MainActor in await purchaseManager.loadProducts() }
+                } label: {
+                    Label(AppContent.copy.paywall.retryStore, systemImage: "arrow.clockwise.circle.fill")
+                }
+                .buttonStyle(SecondaryActionButtonStyle())
+            }
+        }
     }
 }
 
@@ -271,22 +313,37 @@ private struct PaywallOneTimeProductRow: View {
 
             if owned {
                 LockRibbon(text: AppContent.copy.business.owned)
-            } else {
+            } else if let storeProduct {
                 Button {
                     Task { @MainActor in
-                        if let storeProduct {
-                            await purchaseManager.purchase(storeProduct)
-                        } else {
-                            purchaseManager.errorMessage = AppContent.copy.paywall.storeUnavailableMessage
-                        }
+                        await purchaseManager.purchase(storeProduct)
                     }
                 } label: {
-                    Label(storeProduct?.displayPrice ?? product.pricePlaceholder, systemImage: "cart.fill")
+                    Label(storeProduct.displayPrice, systemImage: "cart.fill")
+                }
+                .buttonStyle(SecondaryActionButtonStyle())
+            } else {
+                unavailableProductState
+            }
+        }
+        .pipeCard()
+    }
+
+    @ViewBuilder
+    private var unavailableProductState: some View {
+        if purchaseManager.isLoading {
+            LockRibbon(text: AppContent.copy.paywall.loadingProducts)
+        } else {
+            VStack(alignment: .leading, spacing: 8) {
+                LockRibbon(text: AppContent.copy.paywall.productUnavailable)
+                Button {
+                    Task { @MainActor in await purchaseManager.loadProducts() }
+                } label: {
+                    Label(AppContent.copy.paywall.retryStore, systemImage: "arrow.clockwise.circle.fill")
                 }
                 .buttonStyle(SecondaryActionButtonStyle())
             }
         }
-        .pipeCard()
     }
 }
 

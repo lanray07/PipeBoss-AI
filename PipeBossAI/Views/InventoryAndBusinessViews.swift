@@ -119,7 +119,7 @@ struct BusinessUpgradeView: View {
                         ForEach(oneTimeProducts) { product in
                             ProductPackCard(
                                 product: product,
-                                storeProduct: purchaseManager.products.first { $0.id == product.productID },
+                                storeProduct: purchaseManager.product(for: product),
                                 purchaseManager: purchaseManager,
                                 game: game
                             )
@@ -248,21 +248,36 @@ private struct ProductPackCard: View {
 
             if game.hasEntitlement(product.productID) {
                 LockRibbon(text: AppContent.copy.business.owned)
-            } else {
+            } else if let storeProduct {
                 Button {
                     Task { @MainActor in
-                        if let storeProduct {
-                            await purchaseManager.purchase(storeProduct)
-                        } else {
-                            game.alertMessage = AppContent.copy.paywall.storeUnavailableMessage
-                        }
+                        await purchaseManager.purchase(storeProduct)
                     }
                 } label: {
-                    Label(storeProduct?.displayPrice ?? product.pricePlaceholder, systemImage: "cart.fill")
+                    Label(storeProduct.displayPrice, systemImage: "cart.fill")
+                }
+                .buttonStyle(SecondaryActionButtonStyle())
+            } else {
+                unavailableProductState
+            }
+        }
+        .pipeCard()
+    }
+
+    @ViewBuilder
+    private var unavailableProductState: some View {
+        if purchaseManager.isLoading {
+            LockRibbon(text: AppContent.copy.paywall.loadingProducts)
+        } else {
+            VStack(alignment: .leading, spacing: 8) {
+                LockRibbon(text: AppContent.copy.paywall.productUnavailable)
+                Button {
+                    Task { @MainActor in await purchaseManager.loadProducts() }
+                } label: {
+                    Label(AppContent.copy.paywall.retryStore, systemImage: "arrow.clockwise.circle.fill")
                 }
                 .buttonStyle(SecondaryActionButtonStyle())
             }
         }
-        .pipeCard()
     }
 }

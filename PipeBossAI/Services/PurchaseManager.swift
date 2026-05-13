@@ -13,10 +13,20 @@ enum StoreError: Error {
 final class PurchaseManager: ObservableObject {
     @Published private(set) var products: [Product] = []
     @Published private(set) var purchasedProductIDs: Set<String> = []
+    @Published private(set) var hasAttemptedProductLoad = false
+    @Published private(set) var productLoadMessage: String?
     @Published var isLoading = false
     @Published var errorMessage: String?
 
     private var transactionUpdates: Task<Void, Never>?
+    private var expectedProductIDs: [String] {
+        AppContent.storeProducts.map(\.productID)
+    }
+
+    var missingProductCount: Int {
+        let loadedIDs = Set(products.map(\.id))
+        return expectedProductIDs.filter { !loadedIDs.contains($0) }.count
+    }
 
     init() {
         transactionUpdates = listenForTransactions()
@@ -27,18 +37,35 @@ final class PurchaseManager: ObservableObject {
     }
 
     func loadProducts() async {
+        guard !isLoading else { return }
+
         isLoading = true
+        hasAttemptedProductLoad = true
+        productLoadMessage = nil
         defer { isLoading = false }
 
         do {
-            products = try await Product.products(for: AppContent.storeProducts.map(\.productID))
+            let fetchedProducts = try await Product.products(for: expectedProductIDs)
+            let productOrder = Dictionary(uniqueKeysWithValues: expectedProductIDs.enumerated().map { ($0.element, $0.offset) })
+            products = fetchedProducts.sorted {
+                (productOrder[$0.id] ?? Int.max) < (productOrder[$1.id] ?? Int.max)
+            }
+            if missingProductCount > 0 {
+                productLoadMessage = AppContent.copy.paywall.storeUnavailableMessage
+            }
             await refreshPurchasedProducts()
         } catch {
-            errorMessage = AppContent.copy.paywall.storeUnavailableMessage
+            products = []
+            productLoadMessage = AppContent.copy.paywall.storeUnavailableMessage
         }
     }
 
+    func product(for product: SubscriptionProduct) -> Product? {
+        products.first { $0.id == product.productID }
+    }
+
     func purchase(_ product: Product) async {
+        errorMessage = nil
         do {
             let result = try await product.purchase()
             switch result {
