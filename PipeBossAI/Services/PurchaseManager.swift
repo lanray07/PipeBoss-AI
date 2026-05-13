@@ -19,6 +19,10 @@ final class PurchaseManager: ObservableObject {
     @Published var errorMessage: String?
 
     private var transactionUpdates: Task<Void, Never>?
+    private var productLoadTask: Task<Void, Never>?
+    private var productLoadTimeoutTask: Task<Void, Never>?
+    private var activeProductLoadID: UUID?
+    private let productLoadTimeoutNanoseconds: UInt64 = 12_000_000_000
     private var expectedProductIDs: [String] {
         AppContent.storeProducts.map(\.productID)
     }
@@ -34,30 +38,97 @@ final class PurchaseManager: ObservableObject {
 
     deinit {
         transactionUpdates?.cancel()
+        productLoadTask?.cancel()
+        productLoadTimeoutTask?.cancel()
     }
 
     func loadProducts() async {
         guard !isLoading else { return }
 
+        productLoadTask?.cancel()
+        productLoadTimeoutTask?.cancel()
+
+        let loadID = UUID()
+        activeProductLoadID = loadID
         isLoading = true
         hasAttemptedProductLoad = true
         productLoadMessage = nil
-        defer { isLoading = false }
+        errorMessage = nil
 
-        do {
-            let fetchedProducts = try await Product.products(for: expectedProductIDs)
-            let productOrder = Dictionary(uniqueKeysWithValues: expectedProductIDs.enumerated().map { ($0.element, $0.offset) })
-            products = fetchedProducts.sorted {
-                (productOrder[$0.id] ?? Int.max) < (productOrder[$1.id] ?? Int.max)
+        let requestedProductIDs = expectedProductIDs
+        let timeoutNanoseconds = productLoadTimeoutNanoseconds
+        productLoadTask = Task { [weak self, requestedProductIDs] in
+            do {
+                let fetchedProducts = try await Product.products(for: requestedProductIDs)
+                await self?.completeProductLoad(
+                    loadID: loadID,
+                    fetchedProducts: fetchedProducts,
+                    requestedProductIDs: requestedProductIDs
+                )
+            } catch is CancellationError {
+                await self?.cancelProductLoad(loadID: loadID)
+            } catch {
+                await self?.failProductLoad(loadID: loadID)
             }
-            if missingProductCount > 0 {
-                productLoadMessage = AppContent.copy.paywall.storeUnavailableMessage
+        }
+
+        productLoadTimeoutTask = Task { [weak self] in
+            do {
+                try await Task.sleep(nanoseconds: timeoutNanoseconds)
+                await self?.failProductLoad(loadID: loadID)
+            } catch {
+                return
             }
-            await refreshPurchasedProducts()
-        } catch {
-            products = []
+        }
+    }
+
+    private func completeProductLoad(
+        loadID: UUID,
+        fetchedProducts: [Product],
+        requestedProductIDs: [String]
+    ) {
+        guard activeProductLoadID == loadID else { return }
+
+        isLoading = false
+        activeProductLoadID = nil
+        productLoadTask = nil
+        productLoadTimeoutTask?.cancel()
+        productLoadTimeoutTask = nil
+
+        let productOrder = Dictionary(uniqueKeysWithValues: requestedProductIDs.enumerated().map { ($0.element, $0.offset) })
+        products = fetchedProducts.sorted {
+            (productOrder[$0.id] ?? Int.max) < (productOrder[$1.id] ?? Int.max)
+        }
+        if missingProductCount > 0 {
             productLoadMessage = AppContent.copy.paywall.storeUnavailableMessage
         }
+
+        Task { [weak self] in
+            await self?.refreshPurchasedProducts()
+        }
+    }
+
+    private func failProductLoad(loadID: UUID) {
+        guard activeProductLoadID == loadID else { return }
+
+        productLoadTask?.cancel()
+        productLoadTimeoutTask?.cancel()
+        productLoadTask = nil
+        productLoadTimeoutTask = nil
+        activeProductLoadID = nil
+        isLoading = false
+        products = []
+        productLoadMessage = AppContent.copy.paywall.storeUnavailableMessage
+    }
+
+    private func cancelProductLoad(loadID: UUID) {
+        guard activeProductLoadID == loadID else { return }
+
+        productLoadTask = nil
+        productLoadTimeoutTask?.cancel()
+        productLoadTimeoutTask = nil
+        activeProductLoadID = nil
+        isLoading = false
     }
 
     func product(for product: SubscriptionProduct) -> Product? {
