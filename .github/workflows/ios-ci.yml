@@ -39,7 +39,7 @@ jobs:
           set -euo pipefail
           XCODE_APP=/Applications/Xcode_26.6.app
           if [ ! -d "$XCODE_APP" ]; then
-            echo "::error::Xcode 26.6 is required for reliable local StoreKit tests."
+            echo "::error::Xcode 26.6 is required for the release build checks."
             ls -1 /Applications | grep '^Xcode' || true
             exit 1
           fi
@@ -118,15 +118,6 @@ jobs:
             CODE_SIGNING_ALLOWED=NO \
             build-for-testing
 
-      - name: Test StoreKit purchases and entitlement changes on iPhone and iPad
-        timeout-minutes: 8
-        run: bash tools/test-storekit.sh /tmp/PipeBossBuild /tmp/PipeBossPurchaseTests
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: StoreKit-test-results
-          path: /tmp/PipeBossPurchaseTests
-
       - name: Capture native iPhone and iPad screens
         if: ${{ always() && !cancelled() }}
         run: bash tools/capture-simulator-screenshots.sh /tmp/PipeBossBuild/Build/Products/Debug-iphonesimulator/PipeBossAI.app /tmp/PipeBossScreenshots
@@ -135,6 +126,39 @@ jobs:
         with:
           name: native-iPhone-iPad-screenshots
           path: /tmp/PipeBossScreenshots
+
+  storekit:
+    if: ${{ github.event_name != 'workflow_dispatch' || inputs.translation_locale == 'none' }}
+    name: StoreKit integration on Xcode 26.2
+    runs-on: macos-26
+    timeout-minutes: 12
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+      PIPEBOSS_SIMULATOR_RUNTIME: '26.2'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      # Keep the local test environment separate from the release SDK while
+      # diagnosing Apple's newer command-line StoreKit configuration regression.
+      - name: Select paired Xcode 26.2 and iOS 26.2 Simulator
+        run: |
+          set -euo pipefail
+          XCODE_APP=/Applications/Xcode_26.2.app
+          if [ ! -d "$XCODE_APP" ]; then
+            echo "::error::The pinned StoreKit test compiler is unavailable."
+            exit 1
+          fi
+          sudo xcode-select -s "$XCODE_APP/Contents/Developer"
+          xcodebuild -version
+          xcrun simctl list runtimes
+      - name: Test StoreKit purchases and entitlement changes on iPhone and iPad
+        timeout-minutes: 8
+        run: bash tools/test-storekit.sh /tmp/PipeBossStoreKitBuild /tmp/PipeBossPurchaseTests
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: StoreKit-test-results
+          path: /tmp/PipeBossPurchaseTests
 
   translation_drafts:
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.translation_locale != 'none' }}
