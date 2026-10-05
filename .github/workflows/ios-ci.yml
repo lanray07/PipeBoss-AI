@@ -6,11 +6,26 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      translation_locale:
+        description: Choose none for an iOS build, or a language for translation drafts only
+        type: choice
+        options: [none, all, es, fr, de, pt-BR]
+        default: none
+      translation_dry_run:
+        description: Estimate translation volume without calling the provider
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
 
 jobs:
   build:
+    if: ${{ github.event_name != 'workflow_dispatch' || inputs.translation_locale == 'none' }}
     name: Build PipeBoss AI
     runs-on: macos-26
+    timeout-minutes: 30
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -81,3 +96,12 @@ jobs:
         with:
           name: native-iPhone-iPad-screenshots
           path: /tmp/PipeBossScreenshots
+
+  translation_drafts:
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.translation_locale != 'none' }}
+    uses: ./.github/workflows/localization.yml
+    with:
+      locale: ${{ inputs.translation_locale }}
+      dry_run: ${{ inputs.translation_dry_run }}
+    secrets:
+      DEEPL_AUTH_KEY: ${{ secrets.DEEPL_AUTH_KEY }}

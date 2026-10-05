@@ -41,6 +41,14 @@ Optionally pass `--glossary-id YOUR_DEEPL_GLOSSARY_ID` for a matching English/ta
 
 The `Generate translation drafts` GitHub workflow defaults to a cost-estimate dry run when dispatched manually. On main-branch content updates it generates cached drafts for Spanish, French, German and Brazilian Portuguese if the translation secret exists. If the secret is missing, it generates estimates and an explicit notice only. It uploads drafts as artifacts, never ships unreviewed content, never submits an app, and never changes prices. Only public source copy is sent to the provider.
 
+Before the new workflow is merged to main, the existing `iOS CI` workflow can call it on the feature branch. Its default `translation_locale: none` runs the iOS build; selecting a locale runs translation drafts instead. For example:
+
+```powershell
+gh workflow run ios-ci.yml --ref feature/localization-and-learning-growth -f translation_locale=all -f translation_dry_run=true
+```
+
+Inspect the estimates first. Set `translation_dry_run=false` for an actual provider request using only the GitHub secret. This route passes the translation secret explicitly, not all repository secrets.
+
 ## Review And Publish
 
 1. Review `tools/localization/drafts/<locale>.json`. Correct translations as necessary.

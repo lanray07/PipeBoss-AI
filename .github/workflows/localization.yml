@@ -1,6 +1,17 @@
 name: Generate translation drafts
 
 on:
+  workflow_call:
+    inputs:
+      locale:
+        type: string
+        default: all
+      dry_run:
+        type: boolean
+        default: true
+    secrets:
+      DEEPL_AUTH_KEY:
+        required: false
   push:
     branches: [main]
     paths: ['PipeBossAI/Content/AppContent.swift', 'tools/localization/source.json']
