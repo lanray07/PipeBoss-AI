@@ -37,6 +37,42 @@
         }
       }
     },
+    "+10% coins on business jobs.": {
+      "comment": "upgrades.7.effectDescription",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+10% coins on business jobs."
+          }
+        }
+      }
+    },
+    "+10% coins on commercial jobs.": {
+      "comment": "upgrades.6.effectDescription",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+10% coins on commercial jobs."
+          }
+        }
+      }
+    },
+    "+30 seconds on emergency job timers.": {
+      "comment": "upgrades.5.effectDescription",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "+30 seconds on emergency job timers."
+          }
+        }
+      }
+    },
     "+5% coin bonus on beginner jobs.": {
       "comment": "upgrades.0.effectDescription",
       "extractionState": "manual",
@@ -495,6 +531,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "A washroom flush valve runs constantly between busy periods."
+          }
+        }
+      }
+    },
+    "Accuracy uses up to 500 recent attempts; total attempts are lifetime counts.": {
+      "comment": "copy.training.windowNote",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Accuracy uses up to 500 recent attempts; total attempts are lifetime counts."
           }
         }
       }
@@ -7597,24 +7645,6 @@
         }
       }
     },
-    "Placeholder for qualified heating modules and regulated safety checks.": {
-      "comment": "tools.13.summary",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Placeholder for qualified heating modules and regulated safety checks."
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Herramienta de simulación para módulos de calefacción y controles de seguridad regulados."
-          }
-        }
-      }
-    },
     "Plan drain cleaning, pressure checks, spares, and hygiene-safe handover.": {
       "comment": "jobs.22.repairOptions.0.detail",
       "extractionState": "manual",
@@ -8043,6 +8073,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Protect public areas."
+          }
+        }
+      }
+    },
+    "Protect your virtual business as you take higher-value maintenance contracts.": {
+      "comment": "upgrades.6.summary",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Protect your virtual business as you take higher-value maintenance contracts."
           }
         }
       }
@@ -8803,18 +8845,6 @@
         }
       }
     },
-    "Required before taking higher-value maintenance contracts.": {
-      "comment": "upgrades.6.summary",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Required before taking higher-value maintenance contracts."
-          }
-        }
-      }
-    },
     "Required tools": {
       "comment": "copy.jobs.requiredTools; copy.simulation.requiredTools",
       "extractionState": "manual",
@@ -9435,6 +9465,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Shower head has visible scale."
+          }
+        }
+      }
+    },
+    "Simulation tool for regulated heating checks. Real combustion work requires a qualified professional.": {
+      "comment": "tools.13.summary",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Simulation tool for regulated heating checks. Real combustion work requires a qualified professional."
           }
         }
       }
@@ -10933,20 +10975,14 @@
         }
       }
     },
-    "This clears local XP, coins, tools, completed jobs, and onboarding state on this device.": {
+    "This clears local career progress, practice history, and onboarding. Current Apple purchases remain available.": {
       "comment": "copy.settings.resetConfirmMessage",
       "extractionState": "manual",
       "localizations": {
         "en": {
           "stringUnit": {
             "state": "translated",
-            "value": "This clears local XP, coins, tools, completed jobs, and onboarding state on this device."
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Se eliminarán los XP, monedas, herramientas, trabajos completados y la configuración inicial de este dispositivo."
+            "value": "This clears local career progress, practice history, and onboarding. Current Apple purchases remain available."
           }
         }
       }
@@ -11631,42 +11667,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "Los trabajos disponibles dependen de tu nivel, herramientas, energía y paquetes prémium."
-          }
-        }
-      }
-    },
-    "Unlocks commercial contract chain.": {
-      "comment": "upgrades.6.effectDescription",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Unlocks commercial contract chain."
-          }
-        }
-      }
-    },
-    "Unlocks faster emergency job starts.": {
-      "comment": "upgrades.5.effectDescription",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Unlocks faster emergency job starts."
-          }
-        }
-      }
-    },
-    "Unlocks owner-mode decision jobs.": {
-      "comment": "upgrades.7.effectDescription",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Unlocks owner-mode decision jobs."
           }
         }
       }

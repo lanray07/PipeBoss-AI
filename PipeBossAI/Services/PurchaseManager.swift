@@ -156,7 +156,7 @@ final class PurchaseManager: ObservableObject {
     }
 
     func purchase(_ product: Product) async {
-        guard !isPurchasing else { return }
+        guard !isPurchasing, !isRestoring else { return }
         isPurchasing = true
         defer { isPurchasing = false }
         errorMessage = nil

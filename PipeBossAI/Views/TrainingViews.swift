@@ -18,6 +18,7 @@ struct SkillsView: View {
                     AccuracyRow(performance: summary)
                     LText(AppContent.copy.training.attempts, values: ["count": "\(game.training.totalAttempts)"])
                         .font(.subheadline).foregroundStyle(AppTheme.muted)
+                    LText(AppContent.copy.training.windowNote).font(.caption).foregroundStyle(AppTheme.muted)
                 }
                 PracticeQueueSection(game: game)
                 if game.hasProAccess {
@@ -76,7 +77,8 @@ struct SkillsView: View {
 
     private var report: String {
         var lines = [L10n.text(AppContent.copy.training.report, language: locale.identifier),
-                     L10n.format(AppContent.copy.training.reportSummary, ["count": "\(game.training.totalAttempts)"], language: locale.identifier)]
+                     L10n.format(AppContent.copy.training.reportSummary, ["count": "\(game.training.totalAttempts)"], language: locale.identifier),
+                     L10n.text(AppContent.copy.training.windowNote, language: locale.identifier)]
         for topic in game.topicPerformance {
             lines.append(L10n.text(AppContent.copy.categoryTitle(topic.category), language: locale.identifier))
             lines.append("\(L10n.text(AppContent.copy.training.diagnosis, language: locale.identifier)): \(topic.diagnosisAccuracy.formatted(.percent.locale(locale).precision(.fractionLength(0))))")

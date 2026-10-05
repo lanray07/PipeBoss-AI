@@ -180,10 +180,6 @@ struct DashboardView: View {
                     LText(AppContent.copy.dashboard.proPrompt)
                         .font(.subheadline)
                         .foregroundStyle(AppTheme.muted)
-                    LText(AppContent.copy.reviewProductList)
-                        .font(.caption)
-                        .foregroundStyle(AppTheme.muted)
-                        .fixedSize(horizontal: false, vertical: true)
                 }
                 Spacer()
             }

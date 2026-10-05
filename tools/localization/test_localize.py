@@ -109,13 +109,19 @@ class MetadataTests(unittest.TestCase):
     def test_multibyte_keyword_limit(self):
         data = copy.deepcopy(self.metadata)
         data["localizations"]["es-ES"]["keywords"] = "é" * 51
-        with self.assertRaises(AssertionError):
+        with self.assertRaises(ValueError):
             validate_metadata(data)
 
     def test_required_privacy_link(self):
         data = copy.deepcopy(self.metadata)
         data["localizations"]["en-GB"]["description"] = "Missing legal links"
-        with self.assertRaises(AssertionError):
+        with self.assertRaises(ValueError):
+            validate_metadata(data)
+
+    def test_release_gate_requires_boolean(self):
+        data = copy.deepcopy(self.metadata)
+        data["localizations"]["es-ES"]["releaseReady"] = "false"
+        with self.assertRaises(ValueError):
             validate_metadata(data)
 
 

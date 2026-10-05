@@ -117,7 +117,7 @@ enum AppContent {
         ToolItem(id: "pipe-freeze-kit", name: "Pipe Freeze Kit", category: .specialist, summary: "Creates a temporary ice plug when isolation valves are unavailable.", cost: 650, requiredLevel: 7, performanceBoost: 3, isStarterTool: false, iconSystemName: "snowflake"),
         ToolItem(id: "press-tool", name: "Press Tool", category: .specialist, summary: "Speeds up approved press-fit installations when compatible fittings are used.", cost: 900, requiredLevel: 8, performanceBoost: 4, isStarterTool: false, iconSystemName: "hammer.fill"),
         ToolItem(id: "thermal-camera", name: "Thermal Camera", category: .testing, summary: "Helps trace hot water runs, cold spots, and concealed heating faults.", cost: 1100, requiredLevel: 10, performanceBoost: 4, isStarterTool: false, iconSystemName: "camera.filters"),
-        ToolItem(id: "combustion-analyzer", name: "Combustion Analyzer", category: .heating, summary: "Placeholder for qualified heating modules and regulated safety checks.", cost: 1400, requiredLevel: 12, performanceBoost: 4, isStarterTool: false, iconSystemName: "flame.fill"),
+        ToolItem(id: "combustion-analyzer", name: "Combustion Analyzer", category: .heating, summary: "Simulation tool for regulated heating checks. Real combustion work requires a qualified professional.", cost: 1400, requiredLevel: 12, performanceBoost: 4, isStarterTool: false, iconSystemName: "flame.fill"),
         ToolItem(id: "wet-vac", name: "Wet Vacuum", category: .drainage, summary: "Controls spills and standing water during urgent callouts.", cost: 450, requiredLevel: 5, performanceBoost: 2, isStarterTool: false, iconSystemName: "wind"),
         ToolItem(id: "soldering-kit", name: "Soldering Kit", category: .specialist, summary: "For training scenarios using safe hot-work planning and compatible pipework.", cost: 700, requiredLevel: 8, performanceBoost: 3, isStarterTool: false, iconSystemName: "flame.circle.fill"),
         ToolItem(id: "pipe-sizing-wheel", name: "Pipe Sizing Wheel", category: .testing, summary: "Compares demand, length, and pressure drop in sizing challenges.", cost: 380, requiredLevel: 6, performanceBoost: 2, isStarterTool: false, iconSystemName: "circle.hexagongrid.fill"),
@@ -130,9 +130,9 @@ enum AppContent {
         Upgrade(id: "branded-van", name: "Branded Van Wrap", category: .vehicle, summary: "A professional look helps customer trust and repeat work.", cost: 620, requiredLevel: 5, effectDescription: "+0.1 reputation on perfect jobs.", iconSystemName: "truck.box.fill", isPremium: false),
         Upgrade(id: "review-system", name: "Review Follow-Up System", category: .marketing, summary: "Ask happy customers for ratings after clean, safe jobs.", cost: 720, requiredLevel: 6, effectDescription: "+5% reputation gain.", iconSystemName: "star.bubble.fill", isPremium: false),
         Upgrade(id: "scheduling-tablet", name: "Scheduling Tablet", category: .business, summary: "Plan parts, travel, and callbacks more accurately.", cost: 840, requiredLevel: 7, effectDescription: "+1 daily energy.", iconSystemName: "ipad.landscape", isPremium: false),
-        Upgrade(id: "emergency-kit", name: "Emergency Callout Kit", category: .vehicle, summary: "Isolation tags, clamps, spill control, and temporary repair supplies.", cost: 1200, requiredLevel: 9, effectDescription: "Unlocks faster emergency job starts.", iconSystemName: "cross.case.fill", isPremium: true),
-        Upgrade(id: "commercial-insurance", name: "Commercial Insurance", category: .business, summary: "Required before taking higher-value maintenance contracts.", cost: 1500, requiredLevel: 11, effectDescription: "Unlocks commercial contract chain.", iconSystemName: "building.2.crop.circle.fill", isPremium: true),
-        Upgrade(id: "business-owner-mode", name: "Business Owner Desk", category: .business, summary: "Quote work, manage schedules, and balance profit with reputation.", cost: 1800, requiredLevel: 13, effectDescription: "Unlocks owner-mode decision jobs.", iconSystemName: "briefcase.fill", isPremium: true)
+        Upgrade(id: "emergency-kit", name: "Emergency Callout Kit", category: .vehicle, summary: "Isolation tags, clamps, spill control, and temporary repair supplies.", cost: 1200, requiredLevel: 9, effectDescription: "+30 seconds on emergency job timers.", iconSystemName: "cross.case.fill", isPremium: true),
+        Upgrade(id: "commercial-insurance", name: "Commercial Insurance", category: .business, summary: "Protect your virtual business as you take higher-value maintenance contracts.", cost: 1500, requiredLevel: 11, effectDescription: "+10% coins on commercial jobs.", iconSystemName: "building.2.crop.circle.fill", isPremium: true),
+        Upgrade(id: "business-owner-mode", name: "Business Owner Desk", category: .business, summary: "Quote work, manage schedules, and balance profit with reputation.", cost: 1800, requiredLevel: 13, effectDescription: "+10% coins on business jobs.", iconSystemName: "briefcase.fill", isPremium: true)
     ]
 
     static let learningCards: [LearningCard] = [
@@ -616,7 +616,7 @@ struct SettingsCopy {
     let legal = "Legal"
     let reset = "Reset progress"
     let resetConfirm = "Reset saved progress?"
-    let resetConfirmMessage = "This clears local XP, coins, tools, completed jobs, and onboarding state on this device."
+    let resetConfirmMessage = "This clears local career progress, practice history, and onboarding. Current Apple purchases remain available."
     let resetNow = "Reset"
     let cancel = "Cancel"
     let appVersion = "App version {version}"
@@ -660,6 +660,7 @@ struct TrainingCopy {
     let shareReport = "Share learning report"
     let report = "PipeBoss AI learning report"
     let reportSummary = "{count} recorded attempts. This is simulation practice, not proof of professional competence."
+    let windowNote = "Accuracy uses up to 500 recent attempts; total attempts are lifetime counts."
     let localMetrics = "On-device usage counts"
     let metricsSummary = "Local counts only. They are never uploaded automatically."
     let careerSessions = "Career attempts"

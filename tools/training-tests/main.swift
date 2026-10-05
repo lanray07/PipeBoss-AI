@@ -43,6 +43,22 @@ struct TrainingIntegrationChecks {
         let noEnergy = game.player
         game.recordTraining(job: job, diagnosisID: "wrong", repairID: "wrong", mode: .daily)
         precondition(game.player == noEnergy, "Daily practice stays available without energy")
+        for id in [AppContent.ProductIDs.cityExpansion, AppContent.ProductIDs.emergencyJobs, AppContent.ProductIDs.businessOwnerMode] {
+            game.syncEntitlements([id])
+            let included = PackContent.jobs(for: id, in: game.jobs)
+            precondition(!included.isEmpty && included.allSatisfy { game.hasContentAccess(to: $0) }, "Each pack grants its advertised scenario categories")
+        }
+        game.syncEntitlements([AppContent.ProductIDs.proYearly])
+        precondition(game.jobs.allSatisfy { game.hasContentAccess(to: $0) })
+        game.player.energy = 5
+        game.player.xp = 0
+        let advanced = game.jobs.first { $0.requiredLevel > 1 }!
+        precondition(!game.isJobUnlocked(advanced), "Pro must not silently bypass career level prerequisites")
+        game.player.purchasedUpgradeIDs = ["emergency-kit"]
+        let emergency = game.jobs.first { $0.category == .emergency }!
+        let withKit = game.inspectionTimeBonus(for: emergency)
+        game.player.purchasedUpgradeIDs = []
+        precondition(withKit - game.inspectionTimeBonus(for: emergency) == 30, "Emergency upgrade has the advertised timer effect")
         print("Passed MVVM persistence, practice, rewards, reset, and purchase-access integration checks.")
     }
 }

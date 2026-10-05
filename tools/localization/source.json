@@ -102,6 +102,24 @@
       ],
       "requiresSafetyReview" : false
     },
+    "+10% coins on business jobs." : {
+      "contexts" : [
+        "upgrades.7.effectDescription"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "+10% coins on commercial jobs." : {
+      "contexts" : [
+        "upgrades.6.effectDescription"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "+30 seconds on emergency job timers." : {
+      "contexts" : [
+        "upgrades.5.effectDescription"
+      ],
+      "requiresSafetyReview" : false
+    },
     "A blockage would usually slow drainage." : {
       "contexts" : [
         "jobs.0.diagnosisQuestion.options.1.detail"
@@ -315,6 +333,12 @@
     "A washroom flush valve runs constantly between busy periods." : {
       "contexts" : [
         "jobs.17.customerComplaint"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Accuracy uses up to 500 recent attempts; total attempts are lifetime counts." : {
+      "contexts" : [
+        "copy.training.windowNote"
       ],
       "requiresSafetyReview" : false
     },
@@ -3444,12 +3468,6 @@
       ],
       "requiresSafetyReview" : false
     },
-    "Placeholder for qualified heating modules and regulated safety checks." : {
-      "contexts" : [
-        "tools.13.summary"
-      ],
-      "requiresSafetyReview" : false
-    },
     "Plan drain cleaning, pressure checks, spares, and hygiene-safe handover." : {
       "contexts" : [
         "jobs.22.repairOptions.0.detail"
@@ -3641,6 +3659,12 @@
         "cards.11.bulletPoints.1"
       ],
       "requiresSafetyReview" : true
+    },
+    "Protect your virtual business as you take higher-value maintenance contracts." : {
+      "contexts" : [
+        "upgrades.6.summary"
+      ],
+      "requiresSafetyReview" : false
     },
     "PTFE Tape" : {
       "contexts" : [
@@ -3984,12 +4008,6 @@
       ],
       "requiresSafetyReview" : false
     },
-    "Required before taking higher-value maintenance contracts." : {
-      "contexts" : [
-        "upgrades.6.summary"
-      ],
-      "requiresSafetyReview" : false
-    },
     "Required tools" : {
       "contexts" : [
         "copy.jobs.requiredTools",
@@ -4246,6 +4264,12 @@
     "Shower head has visible scale." : {
       "contexts" : [
         "jobs.4.symptoms.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Simulation tool for regulated heating checks. Real combustion work requires a qualified professional." : {
+      "contexts" : [
+        "tools.13.summary"
       ],
       "requiresSafetyReview" : false
     },
@@ -4921,7 +4945,7 @@
       ],
       "requiresSafetyReview" : true
     },
-    "This clears local XP, coins, tools, completed jobs, and onboarding state on this device." : {
+    "This clears local career progress, practice history, and onboarding. Current Apple purchases remain available." : {
       "contexts" : [
         "copy.settings.resetConfirmMessage"
       ],
@@ -5219,24 +5243,6 @@
     "Unlocked work is based on level, tools, energy, and premium packs." : {
       "contexts" : [
         "copy.jobs.subtitle"
-      ],
-      "requiresSafetyReview" : false
-    },
-    "Unlocks commercial contract chain." : {
-      "contexts" : [
-        "upgrades.6.effectDescription"
-      ],
-      "requiresSafetyReview" : false
-    },
-    "Unlocks faster emergency job starts." : {
-      "contexts" : [
-        "upgrades.5.effectDescription"
-      ],
-      "requiresSafetyReview" : false
-    },
-    "Unlocks owner-mode decision jobs." : {
-      "contexts" : [
-        "upgrades.7.effectDescription"
       ],
       "requiresSafetyReview" : false
     },

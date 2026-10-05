@@ -65,7 +65,7 @@ struct TrainingProgress: Codable, Equatable {
         totalAttempts += 1
         if attempt.mode == .career { careerAttempts += 1 }
         let day = calendar.startOfDay(for: attempt.date)
-        if !learningDays.contains(day) {
+        if !learningDays.contains(where: { calendar.isDate($0, inSameDayAs: day) }) {
             learningDays.append(day)
             learningDays = Array(learningDays.sorted().suffix(366))
         }

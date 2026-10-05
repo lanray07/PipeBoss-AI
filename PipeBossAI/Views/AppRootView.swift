@@ -131,5 +131,13 @@ struct MainTabView: View {
         .sheet(isPresented: $game.showPaywall) {
             PaywallView(game: game, purchaseManager: purchaseManager)
         }
+        .alert(LocalizedStringKey(AppContent.copy.appName), isPresented: Binding(
+            get: { !game.showPaywall && purchaseManager.errorMessage != nil },
+            set: { if !$0 { purchaseManager.errorMessage = nil } }
+        )) {
+            Button(LocalizedStringKey(AppContent.copy.ok), role: .cancel) { purchaseManager.errorMessage = nil }
+        } message: {
+            LText(purchaseManager.errorMessage ?? "")
+        }
     }
 }
