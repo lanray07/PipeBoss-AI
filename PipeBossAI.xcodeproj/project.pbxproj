@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+        F1B2C3000000000000000001 /* PurchaseIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1B2C3000000000000000002; };
+        F1B2C3000000000000000003 /* PipeBossAI.storekit in Resources */ = {isa = PBXBuildFile; fileRef = E1B2C3000000000000000103; };
         B1B2C3000000000000000018 /* ScreenshotPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2C3000000000000000018; };
         B1B2C3000000000000000014 /* TrainingProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2C3000000000000000014; };
         B1B2C3000000000000000015 /* TrainingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2C3000000000000000015; };
@@ -36,7 +38,19 @@
 		B1B2C3000000000000000102 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = E1B2C3000000000000000102 /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+        F1B2C3000000000000000004 = {
+            isa = PBXContainerItemProxy;
+            containerPortal = A1B2C3000000000000000001;
+            proxyType = 1;
+            remoteGlobalIDString = A1B2C3000000000000000005;
+            remoteInfo = PipeBossAI;
+        };
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+        F1B2C3000000000000000002 /* PurchaseIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseIntegrationTests.swift; sourceTree = "<group>"; };
+        F1B2C3000000000000000005 /* PipeBossAITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PipeBossAITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
         E1B2C3000000000000000018 /* ScreenshotPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotPreview.swift; sourceTree = "<group>"; };
         E1B2C3000000000000000014 /* TrainingProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingProgress.swift; sourceTree = "<group>"; };
         E1B2C3000000000000000015 /* TrainingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingViews.swift; sourceTree = "<group>"; };
@@ -70,6 +84,12 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+        F1B2C3000000000000000006 = {
+            isa = PBXFrameworksBuildPhase;
+            buildActionMask = 2147483647;
+            files = ();
+            runOnlyForDeploymentPostprocessing = 0;
+        };
 		A1B2C3000000000000000007 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -83,6 +103,7 @@
 		D1B2C3000000000000000001 = {
 			isa = PBXGroup;
 			children = (
+				F1B2C3000000000000000007 /* PipeBossAITests */,
 				D1B2C3000000000000000003 /* PipeBossAI */,
 				D1B2C3000000000000000002 /* Products */,
 			);
@@ -91,6 +112,7 @@
 		D1B2C3000000000000000002 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				F1B2C3000000000000000005 /* PipeBossAITests.xctest */,
 				E1B2C3000000000000000201 /* PipeBossAI.app */,
 			);
 			name = Products;
@@ -196,9 +218,26 @@
 			path = StoreKit;
 			sourceTree = "<group>";
 		};
+        F1B2C3000000000000000007 /* PipeBossAITests */ = {
+            isa = PBXGroup;
+            children = (F1B2C3000000000000000002 /* PurchaseIntegrationTests.swift */);
+            path = PipeBossAITests;
+            sourceTree = "<group>";
+        };
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+        F1B2C3000000000000000008 /* PipeBossAITests */ = {
+            isa = PBXNativeTarget;
+            buildConfigurationList = F1B2C3000000000000000009;
+            buildPhases = (F1B2C300000000000000000A, F1B2C3000000000000000006, F1B2C300000000000000000B);
+            buildRules = ();
+            dependencies = (F1B2C300000000000000000C);
+            name = PipeBossAITests;
+            productName = PipeBossAITests;
+            productReference = F1B2C3000000000000000005;
+            productType = "com.apple.product-type.bundle.unit-test";
+        };
 		A1B2C3000000000000000005 /* PipeBossAI */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C1B2C3000000000000000003 /* Build configuration list for PBXNativeTarget "PipeBossAI" */;
@@ -226,6 +265,10 @@
 				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
+                    F1B2C3000000000000000008 = {
+                        CreatedOnToolsVersion = 26.0;
+                        TestTargetID = A1B2C3000000000000000005;
+                    };
 					A1B2C3000000000000000005 = {
 						CreatedOnToolsVersion = 16.0;
 					};
@@ -245,12 +288,19 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
+				F1B2C3000000000000000008 /* PipeBossAITests */,
 				A1B2C3000000000000000005 /* PipeBossAI */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+        F1B2C300000000000000000B = {
+            isa = PBXResourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (F1B2C3000000000000000003 /* PipeBossAI.storekit in Resources */);
+            runOnlyForDeploymentPostprocessing = 0;
+        };
 		A1B2C3000000000000000008 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -264,6 +314,12 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+        F1B2C300000000000000000A = {
+            isa = PBXSourcesBuildPhase;
+            buildActionMask = 2147483647;
+            files = (F1B2C3000000000000000001 /* PurchaseIntegrationTests.swift in Sources */);
+            runOnlyForDeploymentPostprocessing = 0;
+        };
 		A1B2C3000000000000000006 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -297,7 +353,47 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+        F1B2C300000000000000000C = {
+            isa = PBXTargetDependency;
+            target = A1B2C3000000000000000005;
+            targetProxy = F1B2C3000000000000000004;
+        };
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+        F1B2C300000000000000000D /* Debug */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                BUNDLE_LOADER = "$(TEST_HOST)";
+                GENERATE_INFOPLIST_FILE = YES;
+                IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+                LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@loader_path/Frameworks");
+                PRODUCT_BUNDLE_IDENTIFIER = com.pipebossai.app.tests;
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+                SWIFT_VERSION = 5.0;
+                TARGETED_DEVICE_FAMILY = "1,2";
+                TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PipeBossAI.app/PipeBossAI";
+            };
+            name = Debug;
+        };
+        F1B2C300000000000000000E /* Release */ = {
+            isa = XCBuildConfiguration;
+            buildSettings = {
+                BUNDLE_LOADER = "$(TEST_HOST)";
+                GENERATE_INFOPLIST_FILE = YES;
+                IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+                LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks", "@loader_path/Frameworks");
+                PRODUCT_BUNDLE_IDENTIFIER = com.pipebossai.app.tests;
+                PRODUCT_NAME = "$(TARGET_NAME)";
+                SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+                SWIFT_VERSION = 5.0;
+                TARGETED_DEVICE_FAMILY = "1,2";
+                TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PipeBossAI.app/PipeBossAI";
+            };
+            name = Release;
+        };
 		C1B2C3000000000000000004 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -419,7 +515,7 @@
 				ASSETCATALOG_COMPILER_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = 5ZP6GV85J6;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = PipeBossAI/Info.plist;
@@ -429,7 +525,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pipebossai.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -447,7 +543,7 @@
 				ASSETCATALOG_COMPILER_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 14;
+				CURRENT_PROJECT_VERSION = 15;
 				DEVELOPMENT_TEAM = 5ZP6GV85J6;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = PipeBossAI/Info.plist;
@@ -457,7 +553,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.pipebossai.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -472,6 +568,12 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+        F1B2C3000000000000000009 = {
+            isa = XCConfigurationList;
+            buildConfigurations = (F1B2C300000000000000000D, F1B2C300000000000000000E);
+            defaultConfigurationIsVisible = 0;
+            defaultConfigurationName = Release;
+        };
 		C1B2C3000000000000000001 /* Build configuration list for PBXProject "PipeBossAI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

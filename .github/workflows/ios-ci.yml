@@ -111,6 +111,14 @@ jobs:
           name: native-iPhone-iPad-screenshots
           path: /tmp/PipeBossScreenshots
 
+      - name: Test StoreKit purchases and entitlement changes on iPhone and iPad
+        run: bash tools/test-storekit.sh /tmp/PipeBossBuild /tmp/PipeBossPurchaseTests
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: StoreKit-test-results
+          path: /tmp/PipeBossPurchaseTests
+
   translation_drafts:
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.translation_locale != 'none' }}
     uses: ./.github/workflows/localization.yml

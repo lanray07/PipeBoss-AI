@@ -2,6 +2,8 @@
 
 Localization and listing drafts are documented in [LOCALIZATION.md](LOCALIZATION.md). Experience, retention and monetization priorities are in [GROWTH.md](GROWTH.md). The Spanish starter is a partial pilot with English fallback, not a fully translated release.
 
+The version 1.0.2 release gates and native purchase testing are documented in [RELEASE.md](RELEASE.md).
+
 PipeBoss AI is an offline-first SwiftUI plumbing training game with local skill history, spaced mistake practice, daily challenges, Pro exam sessions and shareable aggregate learning reports. All existing product IDs and price placeholders are unchanged.
 
 ## Project map
@@ -26,7 +28,7 @@ PipeBoss AI is an offline-first SwiftUI plumbing training game with local skill 
 
 The repo includes a shared Xcode scheme and GitHub Actions workflows that use hosted macOS runners:
 
-- `.github/workflows/ios-ci.yml`: builds the app for the iOS Simulator on every push and pull request.
+- `.github/workflows/ios-ci.yml`: builds Debug/Release, captures iPhone/iPad screens and tests all six products with StoreKitTest on both simulator families.
 - `.github/workflows/ios-testflight.yml`: manually archives, exports, and optionally uploads a signed IPA to App Store Connect/TestFlight.
 
 The CI workflow does not require Apple signing secrets. The TestFlight workflow requires these GitHub repository secrets:
@@ -47,7 +49,7 @@ PowerShell helpers for copying secret values:
 [Convert]::ToBase64String([IO.File]::ReadAllBytes("AuthKey_XXXXXXXXXX.p8")) | Set-Clipboard
 ```
 
-After adding the secrets in GitHub, run **Actions > iOS TestFlight Upload > Run workflow**. Leave `build_number` blank to use the GitHub run number, or enter a higher number manually if App Store Connect already has a build for version `1.0`.
+After passing the release gates, run **Actions > iOS TestFlight Upload > Run workflow** from the verified commit. Enter build number `15` for version `1.0.2`, after confirming that number is unused in App Store Connect. Uploading to TestFlight does not submit the app to App Review.
 
 Xcode Cloud is still an optional Apple-native path, but its first workflow must be created from Xcode on a Mac. The GitHub Actions path above is the Windows-friendly route for this project.
 
