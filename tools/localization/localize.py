@@ -118,11 +118,19 @@ def translate(locale, dry_run=False, glossary=None):
     manifest = read(MANIFEST)["entries"]
     path = ROOT / f"tools/localization/drafts/{locale}.json"
     draft = read(path) if path.exists() else {"locale": locale, "entries": {}}
+    if draft["locale"] != locale:
+        raise ValueError("Cached draft locale does not match the requested language")
+    draft["entries"] = {source: entry for source, entry in draft["entries"].items()
+                        if source in manifest and entry.get("sourceHash") == signature(source)}
     catalog = read(CATALOG)["strings"]
     pending = [s for s in manifest if locale not in catalog.get(s, {}).get("localizations", {})
                and draft["entries"].get(s, {}).get("sourceHash") != signature(s)]
     print(f"{locale}: {len(pending)} missing strings, {sum(map(len, pending))} source characters.")
-    if dry_run or not pending:
+    if dry_run:
+        return
+    if not pending:
+        write(path, draft)
+        validate_draft(path)
         return
     key = os.environ.get("DEEPL_AUTH_KEY")
     if not key:
@@ -137,6 +145,7 @@ def translate(locale, dry_run=False, glossary=None):
             }
         write(path, draft)
         print(f"Saved draft batch {start // 25 + 1}. No translations published.")
+    validate_draft(path)
 
 
 def publish(path):
@@ -148,11 +157,11 @@ def publish(path):
     manifest = read(MANIFEST)["entries"]
     accepted = 0
     for source, entry in draft["entries"].items():
-        if not entry.get("reviewed"):
+        if entry.get("reviewed") is not True:
             continue
         if source not in manifest or entry.get("sourceHash") != signature(source):
             raise ValueError("Reviewed draft is stale. Export content and translate again.")
-        if manifest[source]["requiresSafetyReview"] and not entry.get("safetyReviewed"):
+        if manifest[source]["requiresSafetyReview"] and entry.get("safetyReviewed") is not True:
             raise ValueError("Safety-sensitive content needs explicit trade/safety review.")
         validate_translation(source, entry["translation"])
         catalog["strings"][source]["localizations"][locale] = {
@@ -161,6 +170,21 @@ def publish(path):
         accepted += 1
     write(CATALOG, catalog)
     print(f"Published {accepted} explicitly reviewed entries for {locale}.")
+
+
+def validate_draft(path):
+    draft = read(path)
+    if draft["locale"] not in TARGETS:
+        raise ValueError("Unsupported draft locale")
+    manifest = read(MANIFEST)["entries"]
+    for source, entry in draft["entries"].items():
+        if source not in manifest or entry.get("sourceHash") != signature(source):
+            raise ValueError("Draft contains obsolete source content")
+        for flag in ("reviewed", "safetyReviewed"):
+            if type(entry.get(flag)) is not bool:
+                raise ValueError("Draft review flags must be booleans")
+        validate_translation(source, entry["translation"])
+    print(f"{draft['locale']}: {len(draft['entries'])} valid draft entries. Not published.")
 
 
 def import_manual(locale, path):
@@ -206,6 +230,8 @@ def main():
     tr.add_argument("--glossary-id")
     pub = sub.add_parser("publish")
     pub.add_argument("draft", type=Path)
+    draft_check = sub.add_parser("validate-draft")
+    draft_check.add_argument("draft", type=Path)
     seed = sub.add_parser("import-manual")
     seed.add_argument("locale", choices=TARGETS)
     seed.add_argument("path", type=Path)
@@ -219,6 +245,8 @@ def main():
         translate(args.locale, args.dry_run, args.glossary_id)
     elif args.command == "publish":
         publish(args.draft)
+    elif args.command == "validate-draft":
+        validate_draft(args.draft)
     elif args.command == "import-manual":
         import_manual(args.locale, args.path)
     else:

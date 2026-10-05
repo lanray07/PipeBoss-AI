@@ -81,7 +81,7 @@ struct JobSimulationView: View {
                 .tint(AppTheme.orange)
 
             HStack {
-                LText(AppContent.copy.simulation.customerBrief)
+                LText(phaseTitle)
                     .font(.headline)
                     .foregroundStyle(AppTheme.ink)
                 Spacer()
@@ -91,6 +91,16 @@ struct JobSimulationView: View {
             }
         }
         .pipeCard()
+    }
+
+    private var phaseTitle: String {
+        switch viewModel.phase {
+        case .brief: return AppContent.copy.simulation.customerBrief
+        case .inspect: return AppContent.copy.simulation.selectTools
+        case .diagnose: return AppContent.copy.simulation.diagnosis
+        case .repair: return AppContent.copy.simulation.repair
+        case .result: return AppContent.copy.simulation.result
+        }
     }
 
     private var briefView: some View {

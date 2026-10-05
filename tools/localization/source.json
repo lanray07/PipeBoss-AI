@@ -18,39 +18,9 @@
       ],
       "requiresSafetyReview" : false
     },
-    "{count} attempts" : {
-      "contexts" : [
-        "copy.training.attempts"
-      ],
-      "requiresSafetyReview" : false
-    },
-    "{count} day learning streak" : {
-      "contexts" : [
-        "copy.training.days"
-      ],
-      "requiresSafetyReview" : false
-    },
-    "{count} included scenarios" : {
-      "contexts" : [
-        "copy.packs.jobs"
-      ],
-      "requiresSafetyReview" : false
-    },
     "{count} recorded attempts. This is simulation practice, not proof of professional competence." : {
       "contexts" : [
         "copy.training.reportSummary"
-      ],
-      "requiresSafetyReview" : false
-    },
-    "{count} scenarios ready to revisit" : {
-      "contexts" : [
-        "copy.training.reviewCount"
-      ],
-      "requiresSafetyReview" : false
-    },
-    "{count} specialist tools" : {
-      "contexts" : [
-        "copy.packs.tools"
       ],
       "requiresSafetyReview" : false
     },
@@ -1280,6 +1250,12 @@
       ],
       "requiresSafetyReview" : true
     },
+    "Consecutive learning days: {count}" : {
+      "contexts" : [
+        "copy.training.days"
+      ],
+      "requiresSafetyReview" : false
+    },
     "Contain water, isolate, inspect the olive and pipe, then remake the joint." : {
       "contexts" : [
         "jobs.0.repairOptions.0.detail"
@@ -2358,6 +2334,12 @@
     "In progress" : {
       "contexts" : [
         "copy.training.keepGoing"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Included scenarios: {count}" : {
+      "contexts" : [
+        "copy.packs.jobs"
       ],
       "requiresSafetyReview" : false
     },
@@ -3828,6 +3810,12 @@
       ],
       "requiresSafetyReview" : true
     },
+    "Recorded attempts: {count}" : {
+      "contexts" : [
+        "copy.training.attempts"
+      ],
+      "requiresSafetyReview" : false
+    },
     "Records must be accurate and lawful." : {
       "contexts" : [
         "jobs.24.repairOptions.2.detail"
@@ -4171,6 +4159,12 @@
       ],
       "requiresSafetyReview" : false
     },
+    "Scenarios ready to revisit: {count}" : {
+      "contexts" : [
+        "copy.training.reviewCount"
+      ],
+      "requiresSafetyReview" : false
+    },
     "Scheduling Tablet" : {
       "contexts" : [
         "upgrades.4.name"
@@ -4324,6 +4318,12 @@
     "Specialist" : {
       "contexts" : [
         "toolCategory.specialist"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Specialist tools: {count}" : {
+      "contexts" : [
+        "copy.packs.tools"
       ],
       "requiresSafetyReview" : false
     },

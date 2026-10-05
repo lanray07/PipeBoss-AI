@@ -60,6 +60,29 @@ class TranslationTests(unittest.TestCase):
         localize.publish(self.draft(reviewed=False))
         self.assertNotIn("es", localize.read(self.catalog)["strings"]["Level {level}"]["localizations"])
 
+    def test_string_review_flag_never_publishes(self):
+        localize.publish(self.draft(reviewed="false"))
+        self.assertNotIn("es", localize.read(self.catalog)["strings"]["Level {level}"]["localizations"])
+
+    def test_draft_validation_checks_flags_and_tokens(self):
+        localize.validate_draft(self.draft())
+        with self.assertRaises(ValueError):
+            localize.validate_draft(self.draft(reviewed="false"))
+        with self.assertRaises(ValueError):
+            localize.validate_draft(self.draft(translation="Nivel {nivel}"))
+
+    def test_draft_validation_rejects_stale_source(self):
+        with self.assertRaises(ValueError):
+            localize.validate_draft(self.draft(sourceHash="stale"))
+
+    def test_translation_prunes_obsolete_cached_copy(self):
+        path = self.root / "tools/localization/drafts/fr.json"
+        localize.write(path, {"locale": "fr", "entries": {"Obsolete copy": {"sourceHash": "old"}}})
+        with patch.dict(localize.os.environ, {"DEEPL_AUTH_KEY": "test-only"}), patch.object(localize, "request_translations", side_effect=lambda sources, *_: sources):
+            localize.translate("fr")
+        self.assertNotIn("Obsolete copy", localize.read(path)["entries"])
+        localize.validate_draft(path)
+
     def test_reviewed_translation_publishes(self):
         localize.publish(self.draft())
         self.assertEqual(localize.read(self.catalog)["strings"]["Level {level}"]["localizations"]["es"]["stringUnit"]["value"], "Nivel {level}")

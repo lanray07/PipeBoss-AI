@@ -10,6 +10,7 @@ tools/localization/export-content*
 tools/localization/test-localization*
 __pycache__/
 test-training*
+artifacts/
 tools/localization/drafts/
 .env
 .env.*

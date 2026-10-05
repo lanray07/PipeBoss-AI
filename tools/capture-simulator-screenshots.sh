@@ -20,6 +20,9 @@ while read -r kind udid; do
   xcrun simctl ui "$udid" appearance light
   xcrun simctl install "$udid" "$app_path"
   mkdir -p "$output/$kind"
+  # Let first-boot system notifications disappear before capturing the app.
+  xcrun simctl launch "$udid" com.pipebossai.app --capture-screen dashboard
+  sleep 20
   for screen in dashboard diagnosis result skills tools learning; do
     xcrun simctl terminate "$udid" com.pipebossai.app || true
     xcrun simctl launch "$udid" com.pipebossai.app --capture-screen "$screen"

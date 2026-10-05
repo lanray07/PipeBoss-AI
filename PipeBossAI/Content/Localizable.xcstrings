@@ -2671,6 +2671,18 @@
         }
       }
     },
+    "Consecutive learning days: {count}": {
+      "comment": "copy.training.days",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Consecutive learning days: {count}"
+          }
+        }
+      }
+    },
     "Contain water, isolate, inspect the olive and pipe, then remake the joint.": {
       "comment": "jobs.0.repairOptions.0.detail",
       "extractionState": "manual",
@@ -5061,6 +5073,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "In progress"
+          }
+        }
+      }
+    },
+    "Included scenarios: {count}": {
+      "comment": "copy.packs.jobs",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Included scenarios: {count}"
           }
         }
       }
@@ -8455,6 +8479,18 @@
         }
       }
     },
+    "Recorded attempts: {count}": {
+      "comment": "copy.training.attempts",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Recorded attempts: {count}"
+          }
+        }
+      }
+    },
     "Records must be accurate and lawful.": {
       "comment": "jobs.24.repairOptions.2.detail",
       "extractionState": "manual",
@@ -9247,6 +9283,18 @@
         }
       }
     },
+    "Scenarios ready to revisit: {count}": {
+      "comment": "copy.training.reviewCount",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Scenarios ready to revisit: {count}"
+          }
+        }
+      }
+    },
     "Scheduling Tablet": {
       "comment": "upgrades.4.name",
       "extractionState": "manual",
@@ -9603,6 +9651,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "Especializadas"
+          }
+        }
+      }
+    },
+    "Specialist tools: {count}": {
+      "comment": "copy.packs.tools",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Specialist tools: {count}"
           }
         }
       }
@@ -12835,42 +12895,6 @@
         }
       }
     },
-    "{count} attempts": {
-      "comment": "copy.training.attempts",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "{count} attempts"
-          }
-        }
-      }
-    },
-    "{count} day learning streak": {
-      "comment": "copy.training.days",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "{count} day learning streak"
-          }
-        }
-      }
-    },
-    "{count} included scenarios": {
-      "comment": "copy.packs.jobs",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "{count} included scenarios"
-          }
-        }
-      }
-    },
     "{count} recorded attempts. This is simulation practice, not proof of professional competence.": {
       "comment": "copy.training.reportSummary",
       "extractionState": "manual",
@@ -12879,30 +12903,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "{count} recorded attempts. This is simulation practice, not proof of professional competence."
-          }
-        }
-      }
-    },
-    "{count} scenarios ready to revisit": {
-      "comment": "copy.training.reviewCount",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "{count} scenarios ready to revisit"
-          }
-        }
-      }
-    },
-    "{count} specialist tools": {
-      "comment": "copy.packs.tools",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "{count} specialist tools"
           }
         }
       }

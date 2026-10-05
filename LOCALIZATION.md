@@ -57,6 +57,7 @@ Inspect the estimates first. Set `translation_dry_run=false` for an actual provi
 4. Publish the reviewed entries and validate coverage:
 
 ```powershell
+python tools/localization/localize.py validate-draft tools/localization/drafts/es.json
 python tools/localization/localize.py publish tools/localization/drafts/es.json
 python tools/localization/localize.py validate
 python tools/localization/localize.py validate --release

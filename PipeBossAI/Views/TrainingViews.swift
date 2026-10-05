@@ -64,7 +64,7 @@ struct SkillsView: View {
                         LLabel(AppContent.copy.training.explorePro, systemImage: "crown.fill")
                     }.buttonStyle(SecondaryActionButtonStyle())
                 }
-            }.sectionSpacing().padding(.vertical, 20)
+            }.frame(maxWidth: 820).frame(maxWidth: .infinity).sectionSpacing().padding(.vertical, 20)
         }
         .background(AppTheme.surface)
         .navigationTitle(Text(LocalizedStringKey(AppContent.copy.training.title)))
@@ -156,7 +156,7 @@ struct PracticeSessionView: View {
                 } else {
                     results
                 }
-            }.sectionSpacing().padding(.vertical, 20)
+            }.frame(maxWidth: 820).frame(maxWidth: .infinity).sectionSpacing().padding(.vertical, 20)
         }
         .background(AppTheme.surface)
         .navigationTitle(Text(LocalizedStringKey(mode == .exam ? AppContent.copy.training.exam : AppContent.copy.training.practice)))

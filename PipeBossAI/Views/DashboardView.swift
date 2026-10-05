@@ -17,13 +17,14 @@ struct DashboardView: View {
 
             ScrollView {
                 VStack(spacing: 20) {
-                    HeroHeader(
+                    SectionTitle(
                         title: AppContent.copy.dashboard.title,
-                        subtitle: AppContent.copy.dashboard.subtitle,
-                        icon: "gauge.with.dots.needle.67percent"
+                        subtitle: AppContent.copy.dashboard.subtitle
                     )
 
                     profileCard
+
+                    nextJobCard
 
                     LazyVGrid(columns: columns, spacing: 12) {
                         MetricTile(title: AppContent.copy.dashboard.xp, value: "\(game.player.xp)", icon: "bolt.fill", tint: AppTheme.orange)
@@ -31,8 +32,6 @@ struct DashboardView: View {
                         MetricTile(title: AppContent.copy.dashboard.energy, value: game.hasProAccess ? AppContent.copy.unlimited : "\(game.player.energy)/\(game.player.maxEnergy)", icon: "battery.100percent", tint: AppTheme.blue)
                         MetricTile(title: AppContent.copy.dashboard.reputation, value: game.player.reputation.formatted(.number.locale(locale).precision(.fractionLength(1))), icon: "star.fill", tint: AppTheme.amber)
                     }
-
-                    nextJobCard
 
                     dailyChallenge
 
@@ -61,6 +60,8 @@ struct DashboardView: View {
                         .buttonStyle(PlainIconButtonStyle())
                     }
                 }
+                .frame(maxWidth: 820)
+                .frame(maxWidth: .infinity)
                 .sectionSpacing()
                 .padding(.vertical, 20)
             }

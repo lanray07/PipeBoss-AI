@@ -18,8 +18,11 @@ struct ScreenshotPreview: View {
         model.player.coins = 1840
         model.player.ownedToolIDs += ["pipe-cutter", "drain-auger", "pressure-gauge"]
         model.syncEntitlements([AppContent.ProductIDs.proMonthly])
-        let job = AppContent.jobs[0]
-        model.recordTraining(job: job, diagnosisID: "wrong", repairID: "wrong", mode: .career)
+        for (index, job) in AppContent.jobs.prefix(5).enumerated() {
+            let diagnosis = index == 0 ? job.diagnosisQuestion.options.first { $0.id != job.diagnosisQuestion.correctOptionID }!.id : job.diagnosisQuestion.correctOptionID
+            let repair = index == 0 ? job.repairOptions.first { $0.id != job.correctRepairID }!.id : job.correctRepairID
+            model.recordTraining(job: job, diagnosisID: diagnosis, repairID: repair, mode: .career)
+        }
         _game = StateObject(wrappedValue: model)
     }
 
