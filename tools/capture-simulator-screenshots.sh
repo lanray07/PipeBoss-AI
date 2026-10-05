@@ -2,17 +2,7 @@
 set -euo pipefail
 app_path="$1"
 output="$2"
-devices_json="$(xcrun simctl list devices available -j)"
-mapfile_compatible_devices="$(printf '%s' "$devices_json" | python3 -c '
-import json,sys
-devices=[d for values in json.load(sys.stdin)["devices"].values() for d in values]
-for kind in ["iPhone", "iPad"]:
-    candidates=[d for d in devices if d["name"].startswith(kind)]
-    if not candidates: raise SystemExit("No available " + kind + " simulator")
-    preferred=[d for d in candidates if ("Pro Max" if kind=="iPhone" else "13-inch") in d["name"]]
-    device=(preferred or candidates)[0]
-    print(kind + " " + device["udid"])
-')"
+mapfile_compatible_devices="$(python3 tools/select-simulators.py)"
 while read -r kind udid; do
   xcrun simctl boot "$udid" || true
   xcrun simctl bootstatus "$udid" -b

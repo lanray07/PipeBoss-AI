@@ -28,17 +28,18 @@ jobs:
     timeout-minutes: 30
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+      PIPEBOSS_SIMULATOR_RUNTIME: '26.6'
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Select Xcode 26
+      - name: Select Xcode 26.6
         run: |
           set -euo pipefail
-          XCODE_APP="$(ls -d /Applications/Xcode_26*.app /Applications/Xcode.app 2>/dev/null | head -n 1 || true)"
-          if [ -z "$XCODE_APP" ]; then
-            echo "::error::Xcode 26 is required for App Store-ready builds."
+          XCODE_APP=/Applications/Xcode_26.6.app
+          if [ ! -d "$XCODE_APP" ]; then
+            echo "::error::Xcode 26.6 is required for reliable local StoreKit tests."
             ls -1 /Applications | grep '^Xcode' || true
             exit 1
           fi
@@ -55,10 +56,11 @@ jobs:
             exit 1
           fi
 
-      - name: Install iOS 26 platform
+      - name: Install matching iOS 26.6 Simulator
         run: |
           set -euo pipefail
-          xcodebuild -downloadPlatform iOS -architectureVariant arm64
+          xcodebuild -downloadPlatform iOS -buildVersion "$PIPEBOSS_SIMULATOR_RUNTIME" -architectureVariant arm64
+          xcrun simctl list runtimes
 
       - name: Validate localization and App Store metadata
         run: |
@@ -69,6 +71,7 @@ jobs:
           python3 tools/localization/validate_metadata.py
           node --test tools/localization/test_metadata.mjs
           python3 -m unittest discover -s tools/localization -p 'test_*.py'
+          python3 -m unittest discover -s tools -p 'test_*.py'
           swiftc PipeBossAI/Core/Models.swift PipeBossAI/Core/TrainingProgress.swift PipeBossAI/Content/AppContent.swift PipeBossAI/Services/Localization.swift tools/localization/tests/main.swift -o /tmp/test-localization
           /tmp/test-localization
           swiftc -parse-as-library PipeBossAI/Core/*.swift PipeBossAI/Content/AppContent.swift PipeBossAI/Services/Localization.swift PipeBossAI/Services/ProgressStore.swift PipeBossAI/Services/Haptics.swift PipeBossAI/ViewModels/*.swift tools/training-tests/main.swift -o /tmp/test-training

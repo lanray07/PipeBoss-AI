@@ -3,15 +3,7 @@ set -euo pipefail
 derived_data="$1"
 output="$2"
 mkdir -p "$output"
-devices="$(xcrun simctl list devices available -j | python3 -c '
-import json,sys
-devices=[d for values in json.load(sys.stdin)["devices"].values() for d in values]
-for kind in ["iPhone", "iPad"]:
-    matches=[d for d in devices if d["name"].startswith(kind)]
-    if not matches: raise SystemExit("No available " + kind + " simulator")
-    preferred=[d for d in matches if ("Pro Max" if kind=="iPhone" else "13-inch") in d["name"]]
-    print(kind + " " + (preferred or matches)[0]["udid"])
-')"
+devices="$(python3 tools/select-simulators.py)"
 while read -r kind udid; do
   xcodebuild \
     -project PipeBossAI.xcodeproj \
