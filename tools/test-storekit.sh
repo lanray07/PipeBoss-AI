@@ -22,6 +22,9 @@ while read -r kind udid; do
     -resultBundlePath "$output/$kind.xcresult" \
     -parallel-testing-enabled NO \
     -maximum-concurrent-test-simulator-destinations 1 \
+    -test-timeouts-enabled YES \
+    -default-test-execution-time-allowance 120 \
+    -maximum-test-execution-time-allowance 180 \
     CODE_SIGNING_ALLOWED=NO \
     test | tee "$output/$kind.log"
   xcrun simctl shutdown "$udid" || true

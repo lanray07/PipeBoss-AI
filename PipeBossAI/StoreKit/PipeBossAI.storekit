@@ -5,6 +5,7 @@
     {
       "displayPrice" : "9.99",
       "familyShareable" : false,
+      "internalID" : "C17E0001",
       "localizations" : [
         {
           "description" : "Adds dense apartment, restaurant, and mixed-use jobs.",
@@ -19,6 +20,7 @@
     {
       "displayPrice" : "7.99",
       "familyShareable" : false,
+      "internalID" : "C17E0002",
       "localizations" : [
         {
           "description" : "Unlocks specialist tools for faster diagnosis.",
@@ -33,6 +35,7 @@
     {
       "displayPrice" : "5.99",
       "familyShareable" : false,
+      "internalID" : "C17E0003",
       "localizations" : [
         {
           "description" : "Adds burst pipes, urgent isolation, and emergency triage scenarios.",
@@ -47,6 +50,7 @@
     {
       "displayPrice" : "11.99",
       "familyShareable" : false,
+      "internalID" : "C17E0004",
       "localizations" : [
         {
           "description" : "Adds quoting, scheduling, staffing, and business owner scenarios.",
@@ -65,6 +69,7 @@
   },
   "subscriptionGroups" : [
     {
+      "id" : "C17E0010",
       "localizations" : [
         {
           "customAppName" : "PipeBoss AI",
@@ -77,6 +82,11 @@
         {
           "displayPrice" : "6.99",
           "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "C17E0011",
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "introductoryOffer" : null,
           "localizations" : [
             {
               "description" : "Unlimited jobs, advanced scenarios, mentor hints, no ads, and analytics placeholders.",
@@ -87,11 +97,17 @@
           "productID" : "com.pipebossai.pro.monthly",
           "recurringSubscriptionPeriod" : "P1M",
           "referenceName" : "PipeBoss Pro Monthly",
+          "subscriptionGroupID" : "C17E0010",
           "type" : "RecurringSubscription"
         },
         {
           "displayPrice" : "49.99",
           "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "C17E0012",
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "introductoryOffer" : null,
           "localizations" : [
             {
               "description" : "Yearly PipeBoss Pro access for apprentices, schools, and companies.",
@@ -102,6 +118,7 @@
           "productID" : "com.pipebossai.pro.yearly",
           "recurringSubscriptionPeriod" : "P1Y",
           "referenceName" : "PipeBoss Pro Yearly",
+          "subscriptionGroupID" : "C17E0010",
           "type" : "RecurringSubscription"
         }
       ]

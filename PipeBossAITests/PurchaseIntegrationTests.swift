@@ -11,6 +11,10 @@ final class PurchaseIntegrationTests: XCTestCase {
         session.resetToDefaultState()
         session.clearTransactions()
         session.disableDialogs = true
+        guard session.disableDialogs else {
+            throw NSError(domain: "PipeBossStoreKitTest", code: 1,
+                          userInfo: [NSLocalizedDescriptionKey: "Local StoreKit session could not disable dialogs; refusing to contact the App Store"])
+        }
         return session
     }
 

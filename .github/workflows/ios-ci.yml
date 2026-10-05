@@ -115,21 +115,23 @@ jobs:
             CODE_SIGNING_ALLOWED=NO \
             build-for-testing
 
-      - name: Capture native iPhone and iPad screens
-        run: bash tools/capture-simulator-screenshots.sh /tmp/PipeBossBuild/Build/Products/Debug-iphonesimulator/PipeBossAI.app /tmp/PipeBossScreenshots
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: native-iPhone-iPad-screenshots
-          path: /tmp/PipeBossScreenshots
-
       - name: Test StoreKit purchases and entitlement changes on iPhone and iPad
+        timeout-minutes: 8
         run: bash tools/test-storekit.sh /tmp/PipeBossBuild /tmp/PipeBossPurchaseTests
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: StoreKit-test-results
           path: /tmp/PipeBossPurchaseTests
+
+      - name: Capture native iPhone and iPad screens
+        if: ${{ always() && !cancelled() }}
+        run: bash tools/capture-simulator-screenshots.sh /tmp/PipeBossBuild/Build/Products/Debug-iphonesimulator/PipeBossAI.app /tmp/PipeBossScreenshots
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: native-iPhone-iPad-screenshots
+          path: /tmp/PipeBossScreenshots
 
   translation_drafts:
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.translation_locale != 'none' }}
