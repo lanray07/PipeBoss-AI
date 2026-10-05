@@ -47,6 +47,9 @@ final class PurchaseIntegrationTests: XCTestCase {
     func testAllSixProductsLoadWithoutChangingFixturePrices() async throws {
         let session = try makeSession()
         defer { session.clearTransactions() }
+        let catalogue = try await Product.products(for: AppContent.storeProducts.map(\.productID))
+        XCTAssertEqual(Set(catalogue.map(\.id)), Set(AppContent.storeProducts.map(\.productID)),
+                       "Direct StoreKit catalogue must load before testing PurchaseManager")
         let manager = try await loadedManager()
         let prices: [String: Decimal] = [
             AppContent.ProductIDs.proMonthly: Decimal(string: "6.99")!,

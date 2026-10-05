@@ -17,7 +17,8 @@ while read -r kind udid; do
     -test-timeouts-enabled YES \
     -default-test-execution-time-allowance 120 \
     -maximum-test-execution-time-allowance 180 \
-    CODE_SIGNING_ALLOWED=NO \
+    CODE_SIGNING_ALLOWED=YES \
+    CODE_SIGN_IDENTITY=- \
     test | tee "$output/$kind.log"
   xcrun simctl shutdown "$udid" || true
 done <<< "$devices"
