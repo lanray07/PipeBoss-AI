@@ -6,6 +6,8 @@ import XCTest
 final class PurchaseIntegrationTests: XCTestCase {
     @MainActor
     private func makeSession() throws -> SKTestSession {
+        XCTAssertEqual(ProcessInfo.processInfo.environment["PIPEBOSS_HOSTED_UNIT_TESTS"], "1",
+                       "Hosted tests must configure StoreKit before app-root initialization")
         let url = try XCTUnwrap(Bundle(for: Self.self).url(forResource: "PipeBossAI", withExtension: "storekit"))
         let session = try SKTestSession(contentsOf: url)
         session.resetToDefaultState()

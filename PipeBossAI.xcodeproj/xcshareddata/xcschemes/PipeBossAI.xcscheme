@@ -35,6 +35,9 @@
             <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="F1B2C3000000000000000008" BuildableName="PipeBossAITests.xctest" BlueprintName="PipeBossAITests" ReferencedContainer="container:PipeBossAI.xcodeproj" />
          </TestableReference>
       </Testables>
+      <EnvironmentVariables>
+         <EnvironmentVariable key="PIPEBOSS_HOSTED_UNIT_TESTS" value="1" isEnabled="YES" />
+      </EnvironmentVariables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
