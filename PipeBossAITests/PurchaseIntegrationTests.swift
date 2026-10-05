@@ -5,7 +5,7 @@ import XCTest
 
 final class PurchaseIntegrationTests: XCTestCase {
     @MainActor
-    private func session() throws -> SKTestSession {
+    private func makeSession() throws -> SKTestSession {
         let url = try XCTUnwrap(Bundle(for: Self.self).url(forResource: "PipeBossAI", withExtension: "storekit"))
         let session = try SKTestSession(contentsOf: url)
         session.resetToDefaultState()
@@ -41,7 +41,7 @@ final class PurchaseIntegrationTests: XCTestCase {
 
     @MainActor
     func testAllSixProductsLoadWithoutChangingFixturePrices() async throws {
-        let session = try session()
+        let session = try makeSession()
         defer { session.clearTransactions() }
         let manager = try await loadedManager()
         let prices: [String: Decimal] = [
@@ -60,7 +60,7 @@ final class PurchaseIntegrationTests: XCTestCase {
     @MainActor
     func testBothSubscriptionsPurchaseAndExpire() async throws {
         for id in [AppContent.ProductIDs.proMonthly, AppContent.ProductIDs.proYearly] {
-            let session = try session()
+            let session = try makeSession()
             defer { session.clearTransactions() }
             let manager = try await loadedManager()
             let product = try XCTUnwrap(manager.products.first { $0.id == id })
@@ -78,7 +78,7 @@ final class PurchaseIntegrationTests: XCTestCase {
     func testEveryPackUnlocksContentAndRefundRemovesAccess() async throws {
         for id in [AppContent.ProductIDs.cityExpansion, AppContent.ProductIDs.advancedTools,
                    AppContent.ProductIDs.emergencyJobs, AppContent.ProductIDs.businessOwnerMode] {
-            let session = try session()
+            let session = try makeSession()
             defer { session.clearTransactions() }
             let manager = try await loadedManager()
             let product = try XCTUnwrap(manager.products.first { $0.id == id })
@@ -114,7 +114,7 @@ final class PurchaseIntegrationTests: XCTestCase {
 
     @MainActor
     func testRelaunchAndRestoreRetainOwnedPack() async throws {
-        let session = try session()
+        let session = try makeSession()
         defer { session.clearTransactions() }
         let manager = try await loadedManager()
         let id = AppContent.ProductIDs.cityExpansion
@@ -131,7 +131,7 @@ final class PurchaseIntegrationTests: XCTestCase {
 
     @MainActor
     func testFailedPurchaseDoesNotGrantAccessOrRemainBusy() async throws {
-        let session = try session()
+        let session = try makeSession()
         defer { session.clearTransactions() }
         session.failTransactionsEnabled = true
         let manager = try await loadedManager()
