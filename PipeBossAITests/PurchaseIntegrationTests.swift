@@ -122,6 +122,7 @@ final class PurchaseIntegrationTests: XCTestCase {
         await manager.purchase(product)
         try await waitForAccess(manager, id: id, owned: true)
         let restoredManager = PurchaseManager()
+        restoredManager.errorMessage = "Previous request failed"
         await restoredManager.restorePurchases()
         try await waitForAccess(restoredManager, id: id, owned: true)
         XCTAssertEqual(restoredManager.restoreCount, 1)
@@ -133,13 +134,18 @@ final class PurchaseIntegrationTests: XCTestCase {
     func testFailedPurchaseDoesNotGrantAccessOrRemainBusy() async throws {
         let session = try makeSession()
         defer { session.clearTransactions() }
-        session.failTransactionsEnabled = true
         let manager = try await loadedManager()
+        let previousID = AppContent.ProductIDs.cityExpansion
+        let previousProduct = try XCTUnwrap(manager.products.first { $0.id == previousID })
+        await manager.purchase(previousProduct)
+        try await waitForAccess(manager, id: previousID, owned: true)
+        session.failTransactionsEnabled = true
         let id = AppContent.ProductIDs.emergencyJobs
         let product = try XCTUnwrap(manager.products.first { $0.id == id })
         await manager.purchase(product)
         XCTAssertFalse(manager.isPurchasing)
         XCTAssertFalse(manager.purchasedProductIDs.contains(id))
+        XCTAssertTrue(manager.purchasedProductIDs.contains(previousID))
         XCTAssertNil(manager.completedPurchaseID)
         XCTAssertNotNil(manager.errorMessage)
     }

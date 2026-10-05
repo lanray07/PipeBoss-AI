@@ -103,6 +103,18 @@ jobs:
             CODE_SIGNING_ALLOWED=NO \
             build
 
+      - name: Compile native StoreKit integration tests
+        run: |
+          set -o pipefail
+          xcodebuild \
+            -project PipeBossAI.xcodeproj \
+            -scheme PipeBossAI \
+            -configuration Debug \
+            -derivedDataPath /tmp/PipeBossBuild \
+            -destination 'generic/platform=iOS Simulator' \
+            CODE_SIGNING_ALLOWED=NO \
+            build-for-testing
+
       - name: Capture native iPhone and iPad screens
         run: bash tools/capture-simulator-screenshots.sh /tmp/PipeBossBuild/Build/Products/Debug-iphonesimulator/PipeBossAI.app /tmp/PipeBossScreenshots
       - uses: actions/upload-artifact@v4

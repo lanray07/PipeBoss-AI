@@ -160,6 +160,7 @@ final class PurchaseManager: ObservableObject {
         isPurchasing = true
         defer { isPurchasing = false }
         errorMessage = nil
+        completedPurchaseID = nil
         do {
             let result = try await product.purchase()
             switch result {
@@ -186,6 +187,7 @@ final class PurchaseManager: ObservableObject {
         guard !isRestoring, !isPurchasing else { return }
         isRestoring = true
         defer { isRestoring = false }
+        errorMessage = nil
         do {
             try await AppStore.sync()
             await refreshPurchasedProducts()
