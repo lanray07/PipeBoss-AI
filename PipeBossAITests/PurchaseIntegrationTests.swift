@@ -6,8 +6,10 @@ import XCTest
 final class PurchaseIntegrationTests: XCTestCase {
     @MainActor
     private func makeSession() throws -> SKTestSession {
-        XCTAssertEqual(ProcessInfo.processInfo.environment["PIPEBOSS_HOSTED_UNIT_TESTS"], "1",
-                       "Hosted tests must configure StoreKit before app-root initialization")
+        guard ProcessInfo.processInfo.environment["PIPEBOSS_HOSTED_UNIT_TESTS"] == "1" else {
+            throw NSError(domain: "PipeBossStoreKitTest", code: 2,
+                          userInfo: [NSLocalizedDescriptionKey: "Hosted tests must configure StoreKit before app-root initialization"])
+        }
         let url = try XCTUnwrap(Bundle(for: Self.self).url(forResource: "PipeBossAI", withExtension: "storekit"))
         let session = try SKTestSession(contentsOf: url)
         session.resetToDefaultState()
@@ -64,6 +66,18 @@ final class PurchaseIntegrationTests: XCTestCase {
         for product in manager.products {
             XCTAssertEqual(product.price, prices[product.id])
         }
+    }
+
+    @MainActor
+    func testLocalSessionCreatesOnlyXcodeTransactions() async throws {
+        let session = try makeSession()
+        defer { session.clearTransactions() }
+        let id = AppContent.ProductIDs.cityExpansion
+        let transaction = try await session.buyProduct(identifier: id, options: [])
+        XCTAssertEqual(transaction.productID, id)
+        XCTAssertEqual(transaction.environment, .xcode)
+        XCTAssertEqual(session.allTransactions().filter { $0.productIdentifier == id }.count, 1)
+        await transaction.finish()
     }
 
     @MainActor
