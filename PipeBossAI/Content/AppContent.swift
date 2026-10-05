@@ -405,8 +405,8 @@ struct AppCopy {
     let reviewProductList = "PipeBoss Pro Monthly, PipeBoss Pro Yearly, Emergency Jobs Pack, Advanced Tool Pack, City Expansion Pack, and Business Owner Mode."
     let educationalDisclaimer = "PipeBoss AI is for educational training and simulation only. Always follow local regulations and consult a qualified professional for real-world plumbing work."
     let privacySummary = "Your progress, practice history, and usage counts stay on this device. Nothing is sent to a tracking or advertising service. Reports are shared only when you choose."
-    let termsURL = "https://github.com/lanray07/PipeBoss-AI/blob/main/TERMS.md"
-    let privacyURL = "https://github.com/lanray07/PipeBoss-AI/blob/main/PRIVACY.md"
+    let termsURL = "https://gist.github.com/lanray07/c1cd47ad4c7b598b9067b2c3f37091c9"
+    let privacyURL = "https://gist.github.com/lanray07/64ca0d681a517c35b42bb0a5819e58a3"
     let ok = "OK"
 
     let tabs = TabCopy()
