@@ -31,3 +31,4 @@ while read -r kind udid; do
   done
   xcrun simctl shutdown "$udid"
 done <<< "$mapfile_compatible_devices"
+swift tools/validate-screenshots.swift "$output"

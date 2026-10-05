@@ -14,21 +14,10 @@ struct JobSimulationView: View {
     }
 
     #if DEBUG
-    init(game: GameViewModel, job: JobScenario, preview: JobSimulationViewModel.Phase) {
+    init(game: GameViewModel, previewModel: JobSimulationViewModel) {
         self.game = game
         startingLevel = game.player.level
-        let model = JobSimulationViewModel(job: job)
-        model.selectedToolIDs = Set(job.requiredTools)
-        if preview == .result {
-            model.phase = .repair
-            model.selectedDiagnosisID = job.diagnosisQuestion.correctOptionID
-            model.diagnosisWasCorrect = true
-            model.selectedRepairID = job.correctRepairID
-            model.confirmRepair(using: game)
-        } else {
-            model.phase = preview
-        }
-        _viewModel = StateObject(wrappedValue: model)
+        _viewModel = StateObject(wrappedValue: previewModel)
     }
     #endif
 

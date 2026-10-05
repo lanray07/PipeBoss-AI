@@ -106,6 +106,7 @@ jobs:
       - name: Capture native iPhone and iPad screens
         run: bash tools/capture-simulator-screenshots.sh /tmp/PipeBossBuild/Build/Products/Debug-iphonesimulator/PipeBossAI.app /tmp/PipeBossScreenshots
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: native-iPhone-iPad-screenshots
           path: /tmp/PipeBossScreenshots

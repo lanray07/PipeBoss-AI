@@ -5,6 +5,7 @@ import SwiftUI
 struct ScreenshotPreview: View {
     let screen: String
     @StateObject private var game: GameViewModel
+    @StateObject private var simulation: JobSimulationViewModel
     @StateObject private var purchaseManager = PurchaseManager()
 
     init(screen: String) {
@@ -23,14 +24,27 @@ struct ScreenshotPreview: View {
             let repair = index == 0 ? job.repairOptions.first { $0.id != job.correctRepairID }!.id : job.correctRepairID
             model.recordTraining(job: job, diagnosisID: diagnosis, repairID: repair, mode: .career)
         }
+        let job = AppContent.jobs[0]
+        let simulation = JobSimulationViewModel(job: job)
+        simulation.selectedToolIDs = Set(job.requiredTools)
+        if screen == "result" {
+            simulation.phase = .repair
+            simulation.selectedDiagnosisID = job.diagnosisQuestion.correctOptionID
+            simulation.diagnosisWasCorrect = true
+            simulation.selectedRepairID = job.correctRepairID
+            // Prepare the result before either model is observed by the view tree.
+            simulation.confirmRepair(using: model)
+        } else {
+            simulation.phase = .diagnose
+        }
         _game = StateObject(wrappedValue: model)
+        _simulation = StateObject(wrappedValue: simulation)
     }
 
     var body: some View {
         NavigationStack {
             switch screen {
-            case "diagnosis": JobSimulationView(game: game, job: AppContent.jobs[0], preview: .diagnose)
-            case "result": JobSimulationView(game: game, job: AppContent.jobs[0], preview: .result)
+            case "diagnosis", "result": JobSimulationView(game: game, previewModel: simulation)
             case "skills": SkillsView(game: game)
             case "tools": ToolInventoryView(game: game)
             case "learning": LearningCardsView(game: game)
