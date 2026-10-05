@@ -31,7 +31,7 @@ def selected_devices(inventory, version):
 
 
 def main():
-    version = os.environ.get("PIPEBOSS_SIMULATOR_RUNTIME", "26.6")
+    version = os.environ.get("PIPEBOSS_SIMULATOR_RUNTIME", "26.1")
     inventory = json.loads(subprocess.check_output(["xcrun", "simctl", "list", "-j"]))
     for kind, udid, device_type, runtime in selected_devices(inventory, version):
         if udid is None:

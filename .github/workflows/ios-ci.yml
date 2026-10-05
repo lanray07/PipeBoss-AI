@@ -28,7 +28,7 @@ jobs:
     timeout-minutes: 30
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
-      PIPEBOSS_SIMULATOR_RUNTIME: '26.6'
+      PIPEBOSS_SIMULATOR_RUNTIME: '26.1'
 
     steps:
       - name: Checkout
@@ -56,7 +56,7 @@ jobs:
             exit 1
           fi
 
-      - name: Install matching iOS 26.6 Simulator
+      - name: Install pinned iOS 26.1 Simulator
         run: |
           set -euo pipefail
           xcodebuild -downloadPlatform iOS -buildVersion "$PIPEBOSS_SIMULATOR_RUNTIME" -architectureVariant arm64
