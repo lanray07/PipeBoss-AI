@@ -32,7 +32,7 @@ struct ToolInventoryView: View {
                 .padding(.vertical, 20)
             }
         }
-        .navigationTitle(AppContent.copy.inventory.title)
+        .navigationTitle(Text(LocalizedStringKey(AppContent.copy.inventory.title)))
         .navigationBarTitleDisplayMode(.inline)
     }
 }
@@ -48,10 +48,10 @@ private struct ToolInventoryCard: View {
             VStack(alignment: .leading, spacing: 8) {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(tool.name)
+                        LText(tool.name)
                             .font(.headline)
                             .foregroundStyle(AppTheme.ink)
-                        Text(tool.summary)
+                        LText(tool.summary)
                             .font(.subheadline)
                             .foregroundStyle(AppTheme.muted)
                             .fixedSize(horizontal: false, vertical: true)
@@ -60,10 +60,10 @@ private struct ToolInventoryCard: View {
                 }
 
                 HStack(spacing: 10) {
-                    Label("+\(tool.performanceBoost)", systemImage: "speedometer")
-                    Label("Level \(tool.requiredLevel)", systemImage: "lock.open.fill")
+                    LLabel("+\(tool.performanceBoost)", systemImage: "speedometer")
+                    LLabel(AppContent.copy.format.level, systemImage: "lock.open.fill", values: ["level": "\(tool.requiredLevel)"])
                     if tool.isStarterTool {
-                        Label(AppContent.copy.inventory.starter, systemImage: "checkmark.seal.fill")
+                        LLabel(AppContent.copy.inventory.starter, systemImage: "checkmark.seal.fill")
                     }
                 }
                 .font(.caption.weight(.semibold))
@@ -75,7 +75,7 @@ private struct ToolInventoryCard: View {
                     Button {
                         game.buyTool(tool)
                     } label: {
-                        Label("\(AppContent.copy.inventory.buy) - \(tool.cost)", systemImage: "cart.fill")
+                        LLabel(AppContent.copy.format.buyCoins, systemImage: "cart.fill", values: ["coins": "\(tool.cost)"])
                     }
                     .buttonStyle(SecondaryActionButtonStyle())
                 }
@@ -105,8 +105,6 @@ struct BusinessUpgradeView: View {
                         icon: "briefcase.fill"
                     )
 
-                    rewardedAdsCard
-
                     VStack(alignment: .leading, spacing: 12) {
                         SectionTitle(title: AppContent.copy.business.upgrades)
                         ForEach(game.upgrades) { upgrade in
@@ -117,11 +115,10 @@ struct BusinessUpgradeView: View {
                     VStack(alignment: .leading, spacing: 12) {
                         SectionTitle(title: AppContent.copy.business.packs)
                         ForEach(oneTimeProducts) { product in
-                            ProductPackCard(
+                            PackStoreRow(
                                 product: product,
-                                storeProduct: purchaseManager.product(for: product),
-                                purchaseManager: purchaseManager,
-                                game: game
+                                game: game,
+                                purchaseManager: purchaseManager
                             )
                         }
                     }
@@ -130,40 +127,10 @@ struct BusinessUpgradeView: View {
                 .padding(.vertical, 20)
             }
         }
-        .navigationTitle(AppContent.copy.business.title)
+        .navigationTitle(Text(LocalizedStringKey(AppContent.copy.business.title)))
         .navigationBarTitleDisplayMode(.inline)
     }
 
-    private var rewardedAdsCard: some View {
-        VStack(alignment: .leading, spacing: 14) {
-            SectionTitle(
-                title: AppContent.copy.business.rewardedAds,
-                subtitle: game.hasProAccess ? AppContent.copy.paywall.proAdsSummary : AppContent.copy.paywall.optionalAdsSummary
-            )
-
-            if game.hasProAccess {
-                Label(AppContent.copy.proName, systemImage: "crown.fill")
-                    .font(.headline)
-                    .foregroundStyle(AppTheme.amber)
-            } else {
-                HStack(spacing: 10) {
-                    rewardedButton(AppContent.copy.business.coinsReward, icon: "dollarsign.circle.fill", reward: .coins)
-                    rewardedButton(AppContent.copy.business.energyReward, icon: "battery.100percent", reward: .energy)
-                }
-                rewardedButton(AppContent.copy.business.hintReward, icon: "lightbulb.fill", reward: .hint)
-            }
-        }
-        .pipeCard()
-    }
-
-    private func rewardedButton(_ title: String, icon: String, reward: RewardedAdReward) -> some View {
-        Button {
-            game.claimRewardedAdReward(reward)
-        } label: {
-            Label(title, systemImage: icon)
-        }
-        .buttonStyle(SecondaryActionButtonStyle())
-    }
 }
 
 private struct UpgradeCard: View {
@@ -177,10 +144,10 @@ private struct UpgradeCard: View {
             VStack(alignment: .leading, spacing: 8) {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading, spacing: 4) {
-                        Text(upgrade.name)
+                        LText(upgrade.name)
                             .font(.headline)
                             .foregroundStyle(AppTheme.ink)
-                        Text(upgrade.summary)
+                        LText(upgrade.summary)
                             .font(.subheadline)
                             .foregroundStyle(AppTheme.muted)
                             .fixedSize(horizontal: false, vertical: true)
@@ -191,13 +158,13 @@ private struct UpgradeCard: View {
                     }
                 }
 
-                Text(upgrade.effectDescription)
+                LText(upgrade.effectDescription)
                     .font(.caption.weight(.semibold))
                     .foregroundStyle(AppTheme.blue)
 
                 HStack(spacing: 10) {
-                    Label("\(upgrade.cost)", systemImage: "dollarsign.circle.fill")
-                    Label("Level \(upgrade.requiredLevel)", systemImage: "lock.open.fill")
+                    LLabel("\(upgrade.cost)", systemImage: "dollarsign.circle.fill")
+                    LLabel(AppContent.copy.format.level, systemImage: "lock.open.fill", values: ["level": "\(upgrade.requiredLevel)"])
                 }
                 .font(.caption.weight(.semibold))
                 .foregroundStyle(AppTheme.muted)
@@ -208,76 +175,12 @@ private struct UpgradeCard: View {
                     Button {
                         game.buyUpgrade(upgrade)
                     } label: {
-                        Label(AppContent.copy.business.buy, systemImage: "cart.fill")
+                        LLabel(AppContent.copy.business.buy, systemImage: "cart.fill")
                     }
                     .buttonStyle(SecondaryActionButtonStyle())
                 }
             }
         }
         .pipeCard()
-    }
-}
-
-private struct ProductPackCard: View {
-    let product: SubscriptionProduct
-    let storeProduct: Product?
-    @ObservedObject var purchaseManager: PurchaseManager
-    @ObservedObject var game: GameViewModel
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            HStack(alignment: .top, spacing: 12) {
-                IconBadge(icon: "shippingbox.fill", tint: AppTheme.orange)
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(product.displayName)
-                        .font(.headline)
-                        .foregroundStyle(AppTheme.ink)
-                    Text(product.subtitle)
-                        .font(.subheadline)
-                        .foregroundStyle(AppTheme.muted)
-                        .fixedSize(horizontal: false, vertical: true)
-                }
-                Spacer()
-            }
-
-            ForEach(product.benefits, id: \.self) { benefit in
-                Label(benefit, systemImage: "checkmark.circle.fill")
-                    .font(.caption)
-                    .foregroundStyle(AppTheme.muted)
-            }
-
-            if game.hasEntitlement(product.productID) {
-                LockRibbon(text: AppContent.copy.business.owned)
-            } else if let storeProduct {
-                Button {
-                    Task { @MainActor in
-                        await purchaseManager.purchase(storeProduct)
-                    }
-                } label: {
-                    Label(storeProduct.displayPrice, systemImage: "cart.fill")
-                }
-                .buttonStyle(SecondaryActionButtonStyle())
-            } else {
-                unavailableProductState
-            }
-        }
-        .pipeCard()
-    }
-
-    @ViewBuilder
-    private var unavailableProductState: some View {
-        if purchaseManager.isLoading {
-            LockRibbon(text: AppContent.copy.paywall.loadingProducts)
-        } else {
-            VStack(alignment: .leading, spacing: 8) {
-                LockRibbon(text: AppContent.copy.paywall.productUnavailable)
-                Button {
-                    Task { @MainActor in await purchaseManager.loadProducts() }
-                } label: {
-                    Label(AppContent.copy.paywall.retryStore, systemImage: "arrow.clockwise.circle.fill")
-                }
-                .buttonStyle(SecondaryActionButtonStyle())
-            }
-        }
     }
 }

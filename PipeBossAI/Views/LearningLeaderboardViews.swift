@@ -15,11 +15,16 @@ struct LearningCardsView: View {
                         icon: "book.pages.fill"
                     )
 
+                    NavigationLink { SkillsView(game: game) } label: {
+                        LLabel(AppContent.copy.training.title, systemImage: "chart.bar.fill")
+                    }.buttonStyle(SecondaryActionButtonStyle())
+                    PracticeQueueSection(game: game)
+
                     LazyVStack(spacing: 14) {
                         ForEach(game.learningCards) { card in
                             LearningCardRow(
                                 card: card,
-                                unlocked: game.player.unlockedLearningCardIDs.contains(card.id),
+                                unlocked: game.player.unlockedLearningCardIDs.contains(card.id) && (!card.isPremium || game.hasProAccess),
                                 proUnlocked: game.hasProAccess
                             )
                         }
@@ -29,7 +34,7 @@ struct LearningCardsView: View {
                 .padding(.vertical, 20)
             }
         }
-        .navigationTitle(AppContent.copy.learning.title)
+        .navigationTitle(Text(LocalizedStringKey(AppContent.copy.learning.title)))
         .navigationBarTitleDisplayMode(.inline)
     }
 }
@@ -45,7 +50,7 @@ private struct LearningCardRow: View {
                 IconBadge(icon: card.iconSystemName, tint: unlocked ? AppTheme.blue : AppTheme.muted)
                 VStack(alignment: .leading, spacing: 4) {
                     HStack(alignment: .top) {
-                        Text(card.title)
+                        LText(card.title)
                             .font(.headline)
                             .foregroundStyle(AppTheme.ink)
                         Spacer()
@@ -54,11 +59,11 @@ private struct LearningCardRow: View {
                         }
                     }
 
-                    Text(card.topic)
+                    LText(card.topic)
                         .font(.caption.bold())
                         .foregroundStyle(AppTheme.orange)
 
-                    Text(card.summary)
+                    LText(card.summary)
                         .font(.subheadline)
                         .foregroundStyle(AppTheme.muted)
                         .fixedSize(horizontal: false, vertical: true)
@@ -68,14 +73,20 @@ private struct LearningCardRow: View {
             if unlocked {
                 VStack(alignment: .leading, spacing: 8) {
                     ForEach(card.bulletPoints, id: \.self) { bullet in
-                        Label(bullet, systemImage: "checkmark.circle.fill")
+                        LLabel(bullet, systemImage: "checkmark.circle.fill")
                             .font(.subheadline)
                             .foregroundStyle(AppTheme.muted)
                             .fixedSize(horizontal: false, vertical: true)
                     }
                 }
             } else {
-                LockRibbon(text: card.isPremium && !proUnlocked ? AppContent.copy.learning.premium : "\(AppContent.copy.learning.locked) - Level \(card.requiredLevel)")
+                if card.isPremium && !proUnlocked {
+                    LockRibbon(text: AppContent.copy.learning.premium)
+                } else {
+                    LLabel(AppContent.copy.format.lockedLevel, systemImage: "lock.fill", values: ["level": "\(card.requiredLevel)"])
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(AppTheme.muted)
+                }
             }
         }
         .pipeCard()
@@ -86,28 +97,13 @@ private struct LearningCardRow: View {
 struct LeaderboardView: View {
     @ObservedObject var game: GameViewModel
 
-    private var entries: [LeaderboardEntry] {
-        var list = AppContent.leaderboard.filter { $0.name != "You" }
-        list.append(
-            LeaderboardEntry(
-                id: "player",
-                rank: max(1, 10 - min(game.player.level, 9)),
-                name: game.player.name,
-                level: game.player.level,
-                reputation: game.player.reputation,
-                badge: game.player.careerTitle
-            )
-        )
-        return list.sorted { lhs, rhs in
-            if lhs.level == rhs.level {
-                return lhs.reputation > rhs.reputation
-            }
-            return lhs.level > rhs.level
-        }
-        .enumerated()
-        .map { index, entry in
-            LeaderboardEntry(id: entry.id, rank: index + 1, name: entry.name, level: entry.level, reputation: entry.reputation, badge: entry.badge)
-        }
+    private var milestones: [(String, Bool)] {
+        let copy = AppContent.copy.training
+        return [(copy.firstJob, game.training.careerAttempts >= 1 || !game.player.completedJobIDs.isEmpty),
+                (copy.fiveJobs, game.training.careerAttempts >= 5),
+                (copy.tenJobs, game.jobs.filter(\.isFreeStarterJob).allSatisfy { game.player.completedJobIDs.contains($0.id) }),
+                (copy.firstPractice, game.training.attempts.contains { $0.mode != .career }),
+                (copy.threeDays, game.training.learningDays.count >= 3)]
     }
 
     var body: some View {
@@ -123,8 +119,15 @@ struct LeaderboardView: View {
                     )
 
                     LazyVStack(spacing: 12) {
-                        ForEach(entries) { entry in
-                            LeaderboardRow(entry: entry, isPlayer: entry.id == "player")
+                        ForEach(Array(milestones.enumerated()), id: \.offset) { _, milestone in
+                            HStack(spacing: 12) {
+                                Image(systemName: milestone.1 ? "checkmark.seal.fill" : "seal")
+                                    .foregroundStyle(milestone.1 ? AppTheme.success : AppTheme.muted)
+                                LText(milestone.0).font(.headline)
+                                Spacer()
+                                LText(milestone.1 ? AppContent.copy.training.earned : AppContent.copy.training.keepGoing)
+                                    .font(.caption).foregroundStyle(AppTheme.muted)
+                            }.pipeCard()
                         }
                     }
                 }
@@ -132,57 +135,7 @@ struct LeaderboardView: View {
                 .padding(.vertical, 20)
             }
         }
-        .navigationTitle(AppContent.copy.leaderboard.title)
+        .navigationTitle(Text(LocalizedStringKey(AppContent.copy.leaderboard.title)))
         .navigationBarTitleDisplayMode(.inline)
-    }
-}
-
-private struct LeaderboardRow: View {
-    let entry: LeaderboardEntry
-    let isPlayer: Bool
-
-    var body: some View {
-        HStack(spacing: 14) {
-            Text("#\(entry.rank)")
-                .font(.headline.bold())
-                .foregroundStyle(isPlayer ? AppTheme.orange : AppTheme.blue)
-                .frame(width: 48, alignment: .leading)
-
-            VStack(alignment: .leading, spacing: 4) {
-                Text(entry.name)
-                    .font(.headline)
-                    .foregroundStyle(AppTheme.ink)
-                Text(entry.badge)
-                    .font(.caption)
-                    .foregroundStyle(AppTheme.muted)
-            }
-
-            Spacer()
-
-            VStack(alignment: .trailing, spacing: 4) {
-                Text("Level \(entry.level)")
-                    .font(.subheadline.bold())
-                    .foregroundStyle(AppTheme.ink)
-                HStack(spacing: 4) {
-                    Image(systemName: "star.fill")
-                    Text(String(format: "%.1f", entry.reputation))
-                }
-                .font(.caption.bold())
-                .foregroundStyle(AppTheme.amber)
-            }
-        }
-        .pipeCard()
-        .overlay(alignment: .topTrailing) {
-            if isPlayer {
-                Text(AppContent.copy.dashboard.reputation)
-                    .font(.caption2.bold())
-                    .foregroundStyle(.white)
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 5)
-                    .background(AppTheme.orange)
-                    .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
-                    .padding(8)
-            }
-        }
     }
 }

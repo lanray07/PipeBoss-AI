@@ -1,7 +1,10 @@
+import StoreKit
 import SwiftUI
 
 struct DashboardView: View {
     @ObservedObject var game: GameViewModel
+    @Environment(\.locale) private var locale
+    @Environment(\.requestReview) private var requestReview
 
     private let columns = [
         GridItem(.flexible(), spacing: 12),
@@ -25,19 +28,27 @@ struct DashboardView: View {
                     LazyVGrid(columns: columns, spacing: 12) {
                         MetricTile(title: AppContent.copy.dashboard.xp, value: "\(game.player.xp)", icon: "bolt.fill", tint: AppTheme.orange)
                         MetricTile(title: AppContent.copy.dashboard.coins, value: "\(game.player.coins)", icon: "dollarsign.circle.fill", tint: AppTheme.amber)
-                        MetricTile(title: AppContent.copy.dashboard.energy, value: game.hasProAccess ? "Unlimited" : "\(game.player.energy)/\(game.player.maxEnergy)", icon: "battery.100percent", tint: AppTheme.blue)
-                        MetricTile(title: AppContent.copy.dashboard.reputation, value: String(format: "%.1f", game.player.reputation), icon: "star.fill", tint: AppTheme.amber)
+                        MetricTile(title: AppContent.copy.dashboard.energy, value: game.hasProAccess ? AppContent.copy.unlimited : "\(game.player.energy)/\(game.player.maxEnergy)", icon: "battery.100percent", tint: AppTheme.blue)
+                        MetricTile(title: AppContent.copy.dashboard.reputation, value: game.player.reputation.formatted(.number.locale(locale).precision(.fractionLength(1))), icon: "star.fill", tint: AppTheme.amber)
                     }
 
                     nextJobCard
 
-                    proCard
+                    dailyChallenge
+
+                    NavigationLink { SkillsView(game: game) } label: {
+                        LLabel(AppContent.copy.training.title, systemImage: "chart.bar.fill")
+                    }.buttonStyle(SecondaryActionButtonStyle())
+
+                    PracticeQueueSection(game: game)
+
+                    if game.training.careerAttempts > 0 { proCard }
 
                     HStack(spacing: 12) {
                         NavigationLink {
                             LeaderboardView(game: game)
                         } label: {
-                            Label(AppContent.copy.dashboard.leaderboard, systemImage: "trophy.fill")
+                            LLabel(AppContent.copy.dashboard.leaderboard, systemImage: "trophy.fill")
                         }
                         .buttonStyle(SecondaryActionButtonStyle())
 
@@ -45,7 +56,7 @@ struct DashboardView: View {
                             SettingsPrivacyView(game: game)
                         } label: {
                             Image(systemName: "gearshape.fill")
-                                .accessibilityLabel(AppContent.copy.dashboard.settings)
+                                .accessibilityLabel(Text(LocalizedStringKey(AppContent.copy.dashboard.settings)))
                         }
                         .buttonStyle(PlainIconButtonStyle())
                     }
@@ -54,8 +65,15 @@ struct DashboardView: View {
                 .padding(.vertical, 20)
             }
         }
-        .navigationTitle(AppContent.copy.appName)
+        .navigationTitle(Text(LocalizedStringKey(AppContent.copy.appName)))
         .navigationBarTitleDisplayMode(.inline)
+        .task {
+            guard game.training.shouldRequestReview() else { return }
+            do { try await Task.sleep(for: .seconds(2)) } catch { return }
+            guard game.training.shouldRequestReview(), !game.showPaywall else { return }
+            game.recordReviewRequest()
+            requestReview()
+        }
     }
 
     private var profileCard: some View {
@@ -66,10 +84,10 @@ struct DashboardView: View {
                     .foregroundStyle(AppTheme.blue)
 
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(game.player.name)
+                    Text(verbatim: game.player.name)
                         .font(.title3.bold())
                         .foregroundStyle(AppTheme.ink)
-                    Text("\(game.player.careerTitle) - Level \(game.player.level)")
+                    LText(AppContent.copy.format.careerLevel, values: ["career": L10n.text(game.player.careerTitle, language: locale.identifier), "level": "\(game.player.level)"])
                         .font(.subheadline)
                         .foregroundStyle(AppTheme.muted)
                 }
@@ -97,14 +115,14 @@ struct DashboardView: View {
 
                     VStack(alignment: .leading, spacing: 8) {
                         HStack {
-                            Text(job.title)
+                            LText(job.title)
                                 .font(.headline)
                                 .foregroundStyle(AppTheme.ink)
                             Spacer()
                             DifficultyBadge(difficulty: job.difficulty)
                         }
 
-                        Text(job.customerComplaint)
+                        LText(job.customerComplaint)
                             .font(.subheadline)
                             .foregroundStyle(AppTheme.muted)
                             .fixedSize(horizontal: false, vertical: true)
@@ -112,19 +130,42 @@ struct DashboardView: View {
                 }
 
                 NavigationLink {
-                    JobBoardView(game: game)
+                    JobSimulationView(game: game, job: job)
                 } label: {
-                    Label(AppContent.copy.dashboard.startJob, systemImage: "arrow.right.circle.fill")
+                    LLabel(AppContent.copy.dashboard.startJob, systemImage: "arrow.right.circle.fill")
                 }
                 .buttonStyle(PrimaryActionButtonStyle())
             }
             .pipeCard()
         } else {
-            EmptyState(
-                icon: "lock.open.fill",
-                title: AppContent.copy.jobs.locked,
-                message: AppContent.copy.jobs.subtitle
-            )
+            VStack(alignment: .leading, spacing: 12) {
+                if game.player.energy == 0 && !game.hasProAccess {
+                    LText(AppContent.copy.training.energySummary).foregroundStyle(AppTheme.muted)
+                }
+                NavigationLink { JobBoardView(game: game) } label: {
+                    LLabel(AppContent.copy.jobs.title, systemImage: "list.bullet.clipboard")
+                }.buttonStyle(SecondaryActionButtonStyle())
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var dailyChallenge: some View {
+        if let job = game.dailyChallenge {
+            VStack(alignment: .leading, spacing: 12) {
+                SectionTitle(title: AppContent.copy.training.daily)
+                LText(job.title).font(.headline)
+                LText(AppContent.copy.training.days, values: ["count": "\(game.training.streak())"])
+                    .font(.subheadline).foregroundStyle(AppTheme.muted)
+                if game.training.completedDaily() {
+                    LLabel(AppContent.copy.training.dailyDone, systemImage: "checkmark.circle.fill").foregroundStyle(AppTheme.success)
+                }
+                NavigationLink {
+                    PracticeSessionView(game: game, jobs: [job], mode: .daily)
+                } label: {
+                    LLabel(AppContent.copy.training.dailyStart, systemImage: "calendar.badge.clock")
+                }.buttonStyle(SecondaryActionButtonStyle())
+            }
         }
     }
 
@@ -133,13 +174,13 @@ struct DashboardView: View {
             HStack(spacing: 12) {
                 IconBadge(icon: "crown.fill", tint: AppTheme.amber)
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(AppContent.copy.paywall.title)
+                    LText(AppContent.copy.paywall.title)
                         .font(.headline)
                         .foregroundStyle(AppTheme.ink)
-                    Text(AppContent.copy.dashboard.proPrompt)
+                    LText(AppContent.copy.dashboard.proPrompt)
                         .font(.subheadline)
                         .foregroundStyle(AppTheme.muted)
-                    Text(AppContent.copy.reviewProductList)
+                    LText(AppContent.copy.reviewProductList)
                         .font(.caption)
                         .foregroundStyle(AppTheme.muted)
                         .fixedSize(horizontal: false, vertical: true)
@@ -148,9 +189,9 @@ struct DashboardView: View {
             }
 
             Button {
-                game.showPaywall = true
+                game.presentStore(reason: "dashboard")
             } label: {
-                Label(AppContent.copy.dashboard.proButton, systemImage: "sparkles")
+                LLabel(AppContent.copy.dashboard.proButton, systemImage: "sparkles")
             }
             .buttonStyle(SecondaryActionButtonStyle())
         }

@@ -47,21 +47,22 @@ enum AppContent {
                 "Commercial contracts",
                 "Exam-style quizzes",
                 "Mentor hints",
-                "No ads"
+                "Detailed skill history",
+                "No forced ads"
             ]
         ),
         SubscriptionProduct(
             id: "pro-yearly",
             productID: ProductIDs.proYearly,
             displayName: "PipeBoss Pro Yearly",
-            subtitle: "Best value for trade school learners and company training.",
+            subtitle: "Full training access, billed once per year.",
             pricePlaceholder: "$49.99 / year",
             kind: .yearlySubscription,
             benefits: [
                 "Everything in PipeBoss Pro",
-                "Detailed performance analytics placeholder",
-                "Cloud progress sync placeholder",
-                "Priority access to new modules"
+                "Annual access to advanced training",
+                "Heating and commercial scenarios",
+                "Mentor hints for every job"
             ]
         ),
         SubscriptionProduct(
@@ -149,14 +150,6 @@ enum AppContent {
         LearningCard(id: "commercial-maintenance", title: "Commercial Maintenance", topic: "Commercial", summary: "Commercial jobs reward documentation, planned isolation, and clear handover.", bulletPoints: ["Confirm site rules.", "Protect public areas.", "Record what was inspected and repaired."], requiredLevel: 11, isPremium: true, iconSystemName: "building.2.fill"),
         LearningCard(id: "quoting", title: "Quoting Basics", topic: "Business", summary: "A clear quote protects the customer and the business.", bulletPoints: ["Separate labour, materials, and contingency.", "Name exclusions.", "Confirm access and working hours."], requiredLevel: 12, isPremium: false, iconSystemName: "doc.text.fill"),
         LearningCard(id: "exam-readiness", title: "Exam-Style Checks", topic: "Assessment", summary: "Exam questions often test safe order of operations.", bulletPoints: ["Isolate before repair.", "Measure before adjusting.", "Escalate regulated work."], requiredLevel: 14, isPremium: true, iconSystemName: "checkmark.seal.fill")
-    ]
-
-    static let leaderboard: [LeaderboardEntry] = [
-        LeaderboardEntry(id: "1", rank: 1, name: "A. Morgan", level: 19, reputation: 4.9, badge: "Master Fixer"),
-        LeaderboardEntry(id: "2", rank: 2, name: "J. Patel", level: 17, reputation: 4.8, badge: "Drain Pro"),
-        LeaderboardEntry(id: "3", rank: 3, name: "S. Reed", level: 16, reputation: 4.7, badge: "Heating Ace"),
-        LeaderboardEntry(id: "4", rank: 4, name: "L. Carter", level: 14, reputation: 4.6, badge: "Commercial Ready"),
-        LeaderboardEntry(id: "5", rank: 5, name: "You", level: 1, reputation: 3.5, badge: "Rising Apprentice")
     ]
 
     static let jobs: [JobScenario] = [
@@ -411,7 +404,7 @@ struct AppCopy {
     let proName = "PipeBoss Pro"
     let reviewProductList = "PipeBoss Pro Monthly, PipeBoss Pro Yearly, Emergency Jobs Pack, Advanced Tool Pack, City Expansion Pack, and Business Owner Mode."
     let educationalDisclaimer = "PipeBoss AI is for educational training and simulation only. Always follow local regulations and consult a qualified professional for real-world plumbing work."
-    let privacySummary = "PipeBoss AI stores MVP progress on this device and does not collect unnecessary personal data."
+    let privacySummary = "Your progress, practice history, and usage counts stay on this device. Nothing is sent to a tracking or advertising service. Reports are shared only when you choose."
     let termsURL = "https://github.com/lanray07/PipeBoss-AI/blob/main/TERMS.md"
     let privacyURL = "https://github.com/lanray07/PipeBoss-AI/blob/main/PRIVACY.md"
     let ok = "OK"
@@ -427,6 +420,12 @@ struct AppCopy {
     let leaderboard = LeaderboardCopy()
     let paywall = PaywallCopy()
     let settings = SettingsCopy()
+    let format = FormatCopy()
+    let feedback = FeedbackCopy()
+    let training = TrainingCopy()
+    let packs = PackCopy()
+    let careerTitles = ["Apprentice Plumber", "Improver Plumber", "Qualified Plumber", "Lead Engineer", "Master Plumber"]
+    let unlimited = "Unlimited"
 
     func difficultyTitle(_ difficulty: JobDifficulty) -> String {
         switch difficulty {
@@ -496,10 +495,10 @@ struct DashboardCopy {
     let reputation = "Reputation"
     let careerProgress = "Career Progress"
     let nextJob = "Next recommended job"
-    let startJob = "Open job board"
+    let startJob = "Start job"
     let proPrompt = "Subscriptions and expansion packs"
     let proButton = "Open PipeBoss Store"
-    let leaderboard = "Leaderboard"
+    let leaderboard = "Achievements"
     let settings = "Settings and privacy"
 }
 
@@ -573,8 +572,8 @@ struct LearningCopy {
 }
 
 struct LeaderboardCopy {
-    let title = "Leaderboard"
-    let subtitle = "Local sample rankings for MVP screenshots. Cloud competition can be added later."
+    let title = "Achievements"
+    let subtitle = "Your career milestones, earned through practice."
     let rank = "Rank"
     let reputation = "Rating"
 }
@@ -592,10 +591,10 @@ struct PaywallCopy {
     let close = "Close"
     let subscriptions = "PipeBoss Pro subscriptions"
     let oneTimePacks = "One-time expansion packs"
-    let reviewHint = "App Review: all subscriptions and one-time purchases are available here from Home > Open PipeBoss Store. Packs are also listed on the Business tab."
+    let reviewHint = "Subscriptions and packs are optional. Your free training progress stays on this device."
     let termsSummary = "Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period. Pricing is shown by the App Store before purchase. Manage or cancel in your Apple ID subscription settings."
     let optionalAdsSummary = "Rewarded ads are optional for free users and never interrupt gameplay or learning."
-    let proAdsSummary = "PipeBoss Pro removes ads and keeps jobs unlimited."
+    let proAdsSummary = "PipeBoss Pro keeps career jobs unlimited."
     let storeUnavailableMessage = "App Store products are currently unavailable. Check the network or sandbox account and try again."
     let loadingProducts = "Loading App Store products..."
     let productUnavailable = "This product is not available from the App Store yet."
@@ -603,12 +602,16 @@ struct PaywallCopy {
     let pendingPurchaseMessage = "Purchase is pending approval."
     let restoreFailedMessage = "Restore did not complete. Try again from the App Store account used to subscribe."
     let manageUnavailableMessage = "Subscription management is unavailable in this environment."
+    let sameAccess = "Same Pro access. Choose monthly or yearly billing."
+    let active = "Current plan"
+    let switchPlan = "Change plan in subscription settings"
+    let priceUnavailable = "Connect to the App Store to see your local price."
 }
 
 struct SettingsCopy {
     let title = "Settings and Privacy"
     let subtitle = "Offline-first training with clear safety boundaries."
-    let privacy = "Privacy-friendly MVP"
+    let privacy = "Your privacy"
     let disclaimer = "Training disclaimer"
     let legal = "Legal"
     let reset = "Reset progress"
@@ -616,6 +619,107 @@ struct SettingsCopy {
     let resetConfirmMessage = "This clears local XP, coins, tools, completed jobs, and onboarding state on this device."
     let resetNow = "Reset"
     let cancel = "Cancel"
-    let appVersion = "Version 1.0 MVP"
-    let localProgress = "Local progress uses UserDefaults for the MVP."
+    let appVersion = "App version {version}"
+    let localProgress = "Progress and learning history are saved on this device."
+    let language = "Language"
+    let deviceLanguage = "Device language"
+}
+
+struct TrainingCopy {
+    let title = "Your Skills"
+    let subtitle = "Practice decisions, track progress, and revisit what needs work."
+    let diagnosis = "Diagnosis accuracy"
+    let repair = "Repair accuracy"
+    let attempts = "{count} attempts"
+    let days = "{count} day learning streak"
+    let daily = "Daily challenge"
+    let dailyDone = "Today's challenge completed"
+    let dailyStart = "Take challenge"
+    let practice = "Mistake practice"
+    let practiceStart = "Practice now"
+    let practiceSummary = "Energy-free practice. No career coins or XP are awarded."
+    let reviewCount = "{count} scenarios ready to revisit"
+    let caughtUp = "Nothing due yet"
+    let caughtUpDetail = "Complete a job to start your personal review queue."
+    let topics = "Topic breakdown"
+    let history = "Recent decisions"
+    let empty = "No attempts yet"
+    let emptyDetail = "Your first completed job starts your skill history."
+    let detailedPro = "Topic trends, decision history, and exam practice with PipeBoss Pro."
+    let exam = "Exam-style practice"
+    let examStart = "Start assessment"
+    let examSummary = "Diagnosis and repair decisions with feedback after the assessment."
+    let question = "Scenario {number} of {count}"
+    let assessmentResult = "Assessment complete"
+    let score = "{correct} of {count} decisions correct"
+    let next = "Next scenario"
+    let finish = "Finish practice"
+    let diagnosisChoice = "Diagnosis: {choice}"
+    let repairChoice = "Repair: {choice}"
+    let reviewAnswer = "Correct repair: {choice}"
+    let shareReport = "Share learning report"
+    let report = "PipeBoss AI learning report"
+    let reportSummary = "{count} recorded attempts. This is simulation practice, not proof of professional competence."
+    let localMetrics = "On-device usage counts"
+    let metricsSummary = "Local counts only. They are never uploaded automatically."
+    let careerSessions = "Career attempts"
+    let practiceSessions = "Practice attempts"
+    let storeVisits = "Store visits"
+    let purchases = "Verified purchases"
+    let restores = "Completed restores"
+    let firstJob = "First job completed"
+    let fiveJobs = "Five career attempts"
+    let tenJobs = "All 10 beginner jobs completed"
+    let firstPractice = "First practice session"
+    let threeDays = "Three learning days"
+    let earned = "Earned"
+    let keepGoing = "In progress"
+    let explorePro = "Explore Pro"
+    let energySummary = "Energy refills tomorrow. Practice stays available without energy."
+    let hintCost = "Mentor hint - 20 coins"
+    let hintInsufficient = "A mentor hint costs 20 coins."
+    let freeFirstHint = "First-job mentor hint"
+    let levelUp = "Level up! Level {level}"
+}
+
+struct PackCopy {
+    let preview = "Preview content"
+    let open = "Open included content"
+    let jobs = "{count} included scenarios"
+    let tools = "{count} specialist tools"
+    let permanent = "One-time purchase. Restore from the same Apple Account."
+    let progression = "Career level, tool requirements, and free-plan energy still apply."
+    let proOverlap = "These scenarios are already included while your Pro subscription is active. A pack keeps this content accessible after Pro ends."
+    let toolOverlap = "All included tools are already in your kit. No extra purchase is needed."
+    let business = "Includes access to premium business upgrades; upgrades still cost career coins."
+    let trial = "{count} {unit} free, then {price}. Auto-renews until cancelled."
+    let day = "days"
+    let week = "weeks"
+    let month = "months"
+    let year = "years"
+}
+
+struct FormatCopy {
+    let buyCoins = "Buy - {coins}"
+    let lockedLevel = "Locked - Level {level}"
+    let level = "Level {level}"
+    let careerLevel = "{career} - Level {level}"
+    let reachLevel = "Reach level {level}"
+    let needTools = "Need {tools}"
+    let unlockItem = "Reach level {level} to unlock {item}."
+    let earnCoins = "Earn more coins before buying {item}."
+    let rating = "{rating} star rating"
+    let monthPrice = "{price} / month. Auto-renews monthly."
+    let yearPrice = "{price} / year. Auto-renews yearly."
+    let oneTimePrice = "One-time purchase: {price}."
+    let annualSavings = "Save {percent}% compared with 12 monthly payments."
+}
+
+struct FeedbackCopy {
+    let proRequired = "PipeBoss Pro or expansion required"
+    let freeLimit = "Free plan includes the first 10 beginner jobs"
+    let emptyEnergy = "Energy empty"
+    let perfect = "Clean fix. The customer leaves a strong review."
+    let rework = "Repair completed, but the job needed rework or extra explanation."
+    let failed = "The fault is not fully resolved. Review the diagnosis and try again."
 }

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+        B1B2C3000000000000000018 /* ScreenshotPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2C3000000000000000018; };
+        B1B2C3000000000000000014 /* TrainingProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2C3000000000000000014; };
+        B1B2C3000000000000000015 /* TrainingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2C3000000000000000015; };
+        B1B2C3000000000000000016 /* PackStoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2C3000000000000000016; };
+        B1B2C3000000000000000017 /* LocalUsageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2C3000000000000000017; };
+		B1B2C3000000000000000013 /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2C3000000000000000013 /* Localization.swift */; };
+		B1B2C3000000000000000105 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = E1B2C3000000000000000105 /* Localizable.xcstrings */; };
 		B1B2C3000000000000000001 /* PipeBossAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2C3000000000000000001 /* PipeBossAIApp.swift */; };
 		B1B2C3000000000000000002 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2C3000000000000000002 /* Models.swift */; };
 		B1B2C3000000000000000003 /* AppContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B2C3000000000000000003 /* AppContent.swift */; };
@@ -30,6 +37,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+        E1B2C3000000000000000018 /* ScreenshotPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotPreview.swift; sourceTree = "<group>"; };
+        E1B2C3000000000000000014 /* TrainingProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingProgress.swift; sourceTree = "<group>"; };
+        E1B2C3000000000000000015 /* TrainingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingViews.swift; sourceTree = "<group>"; };
+        E1B2C3000000000000000016 /* PackStoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackStoreView.swift; sourceTree = "<group>"; };
+        E1B2C3000000000000000017 /* LocalUsageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalUsageView.swift; sourceTree = "<group>"; };
+		E1B2C3000000000000000013 /* Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localization.swift; sourceTree = "<group>"; };
+		E1B2C3000000000000000105 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		E1B2C3000000000000000001 /* PipeBossAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipeBossAIApp.swift; sourceTree = "<group>"; };
 		E1B2C3000000000000000002 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		E1B2C3000000000000000003 /* AppContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContent.swift; sourceTree = "<group>"; };
@@ -112,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				E1B2C3000000000000000002 /* Models.swift */,
+                E1B2C3000000000000000014 /* TrainingProgress.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -120,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				E1B2C3000000000000000003 /* AppContent.swift */,
+				E1B2C3000000000000000105 /* Localizable.xcstrings */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -139,6 +155,7 @@
 				E1B2C3000000000000000004 /* ProgressStore.swift */,
 				E1B2C3000000000000000005 /* Haptics.swift */,
 				E1B2C3000000000000000006 /* PurchaseManager.swift */,
+				E1B2C3000000000000000013 /* Localization.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -163,6 +180,10 @@
 				E1B2C3000000000000000010 /* InventoryAndBusinessViews.swift */,
 				E1B2C3000000000000000011 /* LearningLeaderboardViews.swift */,
 				E1B2C3000000000000000012 /* PaywallSettingsViews.swift */,
+                E1B2C3000000000000000015 /* TrainingViews.swift */,
+                E1B2C3000000000000000016 /* PackStoreView.swift */,
+                E1B2C3000000000000000017 /* LocalUsageView.swift */,
+                E1B2C3000000000000000018 /* ScreenshotPreview.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,6 +237,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				es,
 				Base,
 			);
 			mainGroup = D1B2C3000000000000000001;
@@ -235,6 +257,7 @@
 			files = (
 				B1B2C3000000000000000101 /* Assets.xcassets in Resources */,
 				B1B2C3000000000000000102 /* PrivacyInfo.xcprivacy in Resources */,
+				B1B2C3000000000000000105 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,6 +268,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+                B1B2C3000000000000000014 /* TrainingProgress.swift in Sources */,
+                B1B2C3000000000000000015 /* TrainingViews.swift in Sources */,
+                B1B2C3000000000000000016 /* PackStoreView.swift in Sources */,
+                B1B2C3000000000000000017 /* LocalUsageView.swift in Sources */,
+                B1B2C3000000000000000018 /* ScreenshotPreview.swift in Sources */,
 				B1B2C3000000000000000001 /* PipeBossAIApp.swift in Sources */,
 				B1B2C3000000000000000002 /* Models.swift in Sources */,
 				B1B2C3000000000000000003 /* AppContent.swift in Sources */,
@@ -263,6 +291,7 @@
 				B1B2C3000000000000000010 /* InventoryAndBusinessViews.swift in Sources */,
 				B1B2C3000000000000000011 /* LearningLeaderboardViews.swift in Sources */,
 				B1B2C3000000000000000012 /* PaywallSettingsViews.swift in Sources */,
+				B1B2C3000000000000000013 /* Localization.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

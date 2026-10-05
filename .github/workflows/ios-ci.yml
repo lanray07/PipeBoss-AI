@@ -45,6 +45,20 @@ jobs:
           set -euo pipefail
           xcodebuild -downloadPlatform iOS -architectureVariant arm64
 
+      - name: Validate localization and App Store metadata
+        run: |
+          set -euo pipefail
+          swiftc PipeBossAI/Core/Models.swift PipeBossAI/Content/AppContent.swift tools/localization/main.swift -o /tmp/export-content
+          /tmp/export-content tools/localization/source.json
+          python3 tools/localization/localize.py validate
+          python3 tools/localization/validate_metadata.py
+          node --test tools/localization/test_metadata.mjs
+          python3 -m unittest discover -s tools/localization -p 'test_*.py'
+          swiftc PipeBossAI/Core/Models.swift PipeBossAI/Core/TrainingProgress.swift PipeBossAI/Content/AppContent.swift PipeBossAI/Services/Localization.swift tools/localization/tests/main.swift -o /tmp/test-localization
+          /tmp/test-localization
+          swiftc -parse-as-library PipeBossAI/Core/*.swift PipeBossAI/Content/AppContent.swift PipeBossAI/Services/Localization.swift PipeBossAI/Services/ProgressStore.swift PipeBossAI/Services/Haptics.swift PipeBossAI/ViewModels/*.swift tools/training-tests/main.swift -o /tmp/test-training
+          /tmp/test-training
+
       - name: List schemes
         run: xcodebuild -list -project PipeBossAI.xcodeproj
 
@@ -55,7 +69,15 @@ jobs:
             -project PipeBossAI.xcodeproj \
             -scheme PipeBossAI \
             -configuration Debug \
+            -derivedDataPath /tmp/PipeBossBuild \
             -sdk iphonesimulator \
             -destination 'generic/platform=iOS Simulator' \
             CODE_SIGNING_ALLOWED=NO \
             build
+
+      - name: Capture native iPhone and iPad screens
+        run: bash tools/capture-simulator-screenshots.sh /tmp/PipeBossBuild/Build/Products/Debug-iphonesimulator/PipeBossAI.app /tmp/PipeBossScreenshots
+      - uses: actions/upload-artifact@v4
+        with:
+          name: native-iPhone-iPad-screenshots
+          path: /tmp/PipeBossScreenshots

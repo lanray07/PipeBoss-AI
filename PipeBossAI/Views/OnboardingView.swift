@@ -4,21 +4,29 @@ struct OnboardingView: View {
     @ObservedObject var game: GameViewModel
     @State private var pageIndex = 0
     @State private var apprenticeName = ""
+    @EnvironmentObject private var localization: LocalizationPreferences
 
     private let pages = AppContent.onboardingPages
 
     var body: some View {
+        GeometryReader { geometry in
         ZStack {
             PipeBackground()
 
+            ScrollView {
             VStack(spacing: 24) {
+                Picker(LocalizedStringKey(AppContent.copy.settings.language), selection: $localization.selection) {
+                    ForEach(localization.languages) { language in
+                        LText(language.name).tag(language.id)
+                    }
+                }.pickerStyle(.menu)
                 Spacer(minLength: 24)
 
                 VStack(spacing: 10) {
-                    Text(AppContent.copy.appName)
+                    LText(AppContent.copy.appName)
                         .font(.system(size: 38, weight: .black))
                         .foregroundStyle(AppTheme.navy)
-                    Text(AppContent.copy.educationalDisclaimer)
+                    LText(AppContent.copy.educationalDisclaimer)
                         .font(.footnote)
                         .foregroundStyle(AppTheme.muted)
                         .multilineTextAlignment(.center)
@@ -32,9 +40,9 @@ struct OnboardingView: View {
                     }
                 }
                 .tabViewStyle(.page(indexDisplayMode: .always))
-                .frame(height: 360)
+                .frame(height: min(360, max(260, geometry.size.height * 0.38)))
 
-                TextField(AppContent.copy.onboarding.namePlaceholder, text: $apprenticeName)
+                TextField(LocalizedStringKey(AppContent.copy.onboarding.namePlaceholder), text: $apprenticeName)
                     .textInputAutocapitalization(.words)
                     .padding(14)
                     .background(AppTheme.surface)
@@ -54,13 +62,17 @@ struct OnboardingView: View {
                         game.completeOnboarding(name: apprenticeName)
                     }
                 } label: {
-                    Label(pageIndex == pages.count - 1 ? AppContent.copy.onboarding.startButton : AppContent.copy.onboarding.nextButton, systemImage: pageIndex == pages.count - 1 ? "play.fill" : "arrow.right")
+                    LLabel(pageIndex == pages.count - 1 ? AppContent.copy.onboarding.startButton : AppContent.copy.onboarding.nextButton, systemImage: pageIndex == pages.count - 1 ? "play.fill" : "arrow.right")
                 }
                 .buttonStyle(PrimaryActionButtonStyle())
                 .padding(.horizontal, 24)
 
                 Spacer(minLength: 24)
             }
+            .frame(minHeight: geometry.size.height)
+            }
+            .scrollDismissesKeyboard(.interactively)
+        }
         }
     }
 }
@@ -78,11 +90,11 @@ private struct OnboardingPageView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
 
             VStack(spacing: 10) {
-                Text(page.title)
+                LText(page.title)
                     .font(.title.bold())
                     .foregroundStyle(AppTheme.ink)
                     .multilineTextAlignment(.center)
-                Text(page.subtitle)
+                LText(page.subtitle)
                     .font(.body)
                     .foregroundStyle(AppTheme.muted)
                     .multilineTextAlignment(.center)

@@ -226,15 +226,15 @@ struct Player: Codable, Equatable {
     var careerTitle: String {
         switch level {
         case 1...3:
-            return "Apprentice Plumber"
+            return AppContent.copy.careerTitles[0]
         case 4...8:
-            return "Improver Plumber"
+            return AppContent.copy.careerTitles[1]
         case 9...14:
-            return "Qualified Plumber"
+            return AppContent.copy.careerTitles[2]
         case 15...22:
-            return "Lead Engineer"
+            return AppContent.copy.careerTitles[3]
         default:
-            return "Master Plumber"
+            return AppContent.copy.careerTitles[4]
         }
     }
 
@@ -248,5 +248,14 @@ struct Player: Codable, Equatable {
         energy = maxEnergy
         dailyJobCount = 0
         lastEnergyRefresh = now
+    }
+}
+
+enum SubscriptionPricing {
+    static func annualSavingsPercent(monthly: Decimal, yearly: Decimal, sameCurrency: Bool) -> Int? {
+        guard sameCurrency, monthly > 0, yearly > 0, yearly < monthly * 12 else { return nil }
+        let discount = (1 - yearly / (monthly * 12)) * 100
+        let percent = Int(NSDecimalNumber(decimal: discount).doubleValue.rounded(.down))
+        return percent > 0 ? percent : nil
     }
 }

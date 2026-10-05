@@ -1,0 +1,42 @@
+name: Prepare or apply reviewed App Store localizations
+on:
+  workflow_dispatch:
+    inputs:
+      apply:
+        description: Apply reviewed metadata to an editable version (never changes pricing)
+        type: boolean
+        default: false
+      version_id:
+        description: App Store Connect editable version resource ID (not the version number)
+        type: string
+      app_info_id:
+        description: App Store Connect editable app-info resource ID
+        type: string
+permissions:
+  contents: read
+jobs:
+  metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python3 tools/localization/validate_metadata.py
+      - name: Prepare reviewed listing plan
+        if: ${{ !inputs.apply }}
+        run: node tools/localization/appstore_metadata.mjs
+      - name: Apply reviewed metadata using existing Apple API secrets
+        if: ${{ inputs.apply }}
+        env:
+          APP_STORE_CONNECT_API_KEY_ID: ${{ secrets.APP_STORE_CONNECT_API_KEY_ID }}
+          APP_STORE_CONNECT_API_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_API_ISSUER_ID }}
+          APP_STORE_CONNECT_API_KEY_BASE64: ${{ secrets.APP_STORE_CONNECT_API_KEY_BASE64 }}
+          ASC_VERSION_ID: ${{ inputs.version_id }}
+          ASC_APP_INFO_ID: ${{ inputs.app_info_id }}
+        run: node tools/localization/appstore_metadata.mjs --apply
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reviewed-listing-plan
+          path: tools/localization/drafts/metadata-plan.json

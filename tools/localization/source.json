@@ -1,0 +1,5762 @@
+{
+  "entries" : {
+    "{career} - Level {level}" : {
+      "contexts" : [
+        "copy.format.careerLevel"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "{correct} of {count} decisions correct" : {
+      "contexts" : [
+        "copy.training.score"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "{count} {unit} free, then {price}. Auto-renews until cancelled." : {
+      "contexts" : [
+        "copy.packs.trial"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "{count} attempts" : {
+      "contexts" : [
+        "copy.training.attempts"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "{count} day learning streak" : {
+      "contexts" : [
+        "copy.training.days"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "{count} included scenarios" : {
+      "contexts" : [
+        "copy.packs.jobs"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "{count} recorded attempts. This is simulation practice, not proof of professional competence." : {
+      "contexts" : [
+        "copy.training.reportSummary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "{count} scenarios ready to revisit" : {
+      "contexts" : [
+        "copy.training.reviewCount"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "{count} specialist tools" : {
+      "contexts" : [
+        "copy.packs.tools"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "{price} / month. Auto-renews monthly." : {
+      "contexts" : [
+        "copy.format.monthPrice"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "{price} / year. Auto-renews yearly." : {
+      "contexts" : [
+        "copy.format.yearPrice"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "{rating} star rating" : {
+      "contexts" : [
+        "copy.format.rating"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "+0.1 reputation on perfect jobs." : {
+      "contexts" : [
+        "upgrades.2.effectDescription"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "+1 daily energy." : {
+      "contexts" : [
+        "upgrades.4.effectDescription"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "+5% coin bonus on beginner jobs." : {
+      "contexts" : [
+        "upgrades.0.effectDescription"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "+5% reputation gain." : {
+      "contexts" : [
+        "upgrades.3.effectDescription"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "+10 XP on correct jobs." : {
+      "contexts" : [
+        "upgrades.1.effectDescription"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "A blockage would usually slow drainage." : {
+      "contexts" : [
+        "jobs.0.diagnosisQuestion.options.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "A cafe wants a monthly check after repeated sink and tap failures." : {
+      "contexts" : [
+        "jobs.22.customerComplaint"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "A clear fitting near the hot water cylinder keeps dripping." : {
+      "contexts" : [
+        "jobs.14.customerComplaint"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "A clear handover builds trust." : {
+      "contexts" : [
+        "jobs.9.diagnosisQuestion.options.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "A clear quote protects the customer and the business." : {
+      "contexts" : [
+        "cards.12.summary"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "A constant trickle often wastes a lot of water. Check the fill level before replacing parts." : {
+      "contexts" : [
+        "jobs.2.learningTip"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "A contract should record checks, recurring faults, and planned maintenance." : {
+      "contexts" : [
+        "jobs.22.diagnosisQuestion.explanation"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "A customer says the final invoice is higher than expected after extra parts were needed." : {
+      "contexts" : [
+        "jobs.24.customerComplaint"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "A customer should know what you changed and what to monitor." : {
+      "contexts" : [
+        "jobs.9.mentorHint"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "A downstairs ceiling stain keeps returning after rain is ruled out." : {
+      "contexts" : [
+        "jobs.21.customerComplaint"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "A drain fault would not vibrate a tap." : {
+      "contexts" : [
+        "jobs.5.diagnosisQuestion.options.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "A drip at a new fitting needs inspection of the sealing surfaces and correct assembly." : {
+      "contexts" : [
+        "jobs.6.diagnosisQuestion.explanation"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "A fast-closing appliance valve plus pipe movement and high pressure points to water hammer." : {
+      "contexts" : [
+        "jobs.11.diagnosisQuestion.explanation"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "A frozen condensate route can stop suitable boilers and needs safe thawing and prevention." : {
+      "contexts" : [
+        "jobs.23.diagnosisQuestion.explanation"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "A garden hose is left in a paddling pool connected to an outside tap." : {
+      "contexts" : [
+        "jobs.20.customerComplaint"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "A good plumber asks clear questions and explains options without overpromising." : {
+      "contexts" : [
+        "cards.6.summary"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "A leak after freezing weather at an exposed tap strongly suggests frost damage." : {
+      "contexts" : [
+        "jobs.8.diagnosisQuestion.explanation"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "A local new symptom usually has a local recent cause." : {
+      "contexts" : [
+        "jobs.5.mentorHint"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "A local valve issue can isolate one radiator." : {
+      "contexts" : [
+        "jobs.18.diagnosisQuestion.options.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "A loose washer can vibrate in the flow." : {
+      "contexts" : [
+        "jobs.5.diagnosisQuestion.options.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "A main issue would affect more fixtures." : {
+      "contexts" : [
+        "jobs.1.diagnosisQuestion.options.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "A mentor hint costs 20 coins." : {
+      "contexts" : [
+        "copy.training.hintInsufficient"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "A new fitting leak is often assembly, not pipe failure." : {
+      "contexts" : [
+        "jobs.6.mentorHint"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "A new utility room loses flow when two outlets run together." : {
+      "contexts" : [
+        "jobs.16.customerComplaint"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "A newly fitted washing machine valve leaves a small drip overnight." : {
+      "contexts" : [
+        "jobs.6.customerComplaint"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "A plumbing business wins trust with clear scope, written changes, and calm follow-up." : {
+      "contexts" : [
+        "jobs.24.learningTip"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "A professional look helps customer trust and repeat work." : {
+      "contexts" : [
+        "upgrades.2.summary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "A recurring stain after shower use points toward shower waste, seal, or supply routes." : {
+      "contexts" : [
+        "jobs.21.diagnosisQuestion.explanation"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "A renovation needs first-fix pipe routes checked before walls close." : {
+      "contexts" : [
+        "jobs.15.customerComplaint"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "A single radiator fault with normal system operation points local first." : {
+      "contexts" : [
+        "jobs.18.diagnosisQuestion.explanation"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "A single slow basin usually points to a local trap or waste restriction." : {
+      "contexts" : [
+        "jobs.1.diagnosisQuestion.explanation"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "A submerged hose without protection can allow contaminated water to be drawn back." : {
+      "contexts" : [
+        "jobs.20.diagnosisQuestion.explanation"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "A tap vibrates loudly after a relative tried to fix a drip." : {
+      "contexts" : [
+        "jobs.5.customerComplaint"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "A tundish drip may indicate pressure or temperature safety discharge." : {
+      "contexts" : [
+        "jobs.14.diagnosisQuestion.options.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "A warm bottom and cold top is the classic sign of trapped air." : {
+      "contexts" : [
+        "jobs.3.diagnosisQuestion.explanation"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "A washroom flush valve runs constantly between busy periods." : {
+      "contexts" : [
+        "jobs.17.customerComplaint"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Achievements" : {
+      "contexts" : [
+        "copy.dashboard.leaderboard",
+        "copy.leaderboard.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Active water plus nearby electrics means slow down and control hazards." : {
+      "contexts" : [
+        "jobs.13.mentorHint"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Active water spray." : {
+      "contexts" : [
+        "jobs.13.symptoms.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Adds dense apartment, restaurant, and mixed-use jobs." : {
+      "contexts" : [
+        "products.2.subtitle"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Adjust or repair the fill valve" : {
+      "contexts" : [
+        "jobs.2.repairOptions.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Adjustable Wrench" : {
+      "contexts" : [
+        "tools.0.name"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Advanced" : {
+      "contexts" : [
+        "difficulty.advanced"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Advanced and heating scenarios" : {
+      "contexts" : [
+        "products.0.benefits.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Advanced Tool Pack" : {
+      "contexts" : [
+        "products.3.displayName"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Aerators do not cause drain smell." : {
+      "contexts" : [
+        "jobs.7.diagnosisQuestion.options.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "After bleeding radiators, always confirm system pressure is within the safe range." : {
+      "contexts" : [
+        "jobs.3.learningTip"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Air collects at the high point and stops circulation." : {
+      "contexts" : [
+        "jobs.3.diagnosisQuestion.options.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Air or low system pressure" : {
+      "contexts" : [
+        "jobs.19.diagnosisQuestion.options.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "All" : {
+      "contexts" : [
+        "copy.jobs.allFilter"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "All 10 beginner jobs completed" : {
+      "contexts" : [
+        "copy.training.tenJobs"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "All included tools are already in your kit. No extra purchase is needed." : {
+      "contexts" : [
+        "copy.packs.toolOverlap"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Annual access to advanced training" : {
+      "contexts" : [
+        "products.1.benefits.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "App Store products are currently unavailable. Check the network or sandbox account and try again." : {
+      "contexts" : [
+        "copy.paywall.storeUnavailableMessage"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "App version {version}" : {
+      "contexts" : [
+        "copy.settings.appVersion"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Apprentice name" : {
+      "contexts" : [
+        "copy.onboarding.namePlaceholder"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Apprentice Plumber" : {
+      "contexts" : [
+        "copy.careerTitles.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Area is dry after testing." : {
+      "contexts" : [
+        "jobs.9.symptoms.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Ask happy customers for ratings after clean, safe jobs." : {
+      "contexts" : [
+        "upgrades.3.summary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Ask how future you will service this route." : {
+      "contexts" : [
+        "jobs.15.mentorHint"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Ask what could flow backward if pressure changed." : {
+      "contexts" : [
+        "jobs.20.mentorHint"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Ask what happens immediately after the appliance pumps out." : {
+      "contexts" : [
+        "jobs.7.mentorHint"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Ask whether nearby fixtures drain normally." : {
+      "contexts" : [
+        "jobs.1.mentorHint"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Assessment" : {
+      "contexts" : [
+        "cards.13.topic"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Assessment complete" : {
+      "contexts" : [
+        "copy.training.assessmentResult"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Available" : {
+      "contexts" : [
+        "copy.inventory.available"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Avoid chemical shortcuts in training." : {
+      "contexts" : [
+        "cards.5.bulletPoints.1"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Avoid contact with wastewater and clean the work area after testing." : {
+      "contexts" : [
+        "jobs.7.safetyWarning"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Avoid exceeding appliance limits." : {
+      "contexts" : [
+        "cards.4.bulletPoints.2"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Avoid questions" : {
+      "contexts" : [
+        "jobs.9.repairOptions.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Avoid unsafe or unrealistic claims." : {
+      "contexts" : [
+        "jobs.9.diagnosisQuestion.options.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Back to dashboard" : {
+      "contexts" : [
+        "copy.simulation.finish"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Back-siphonage contamination" : {
+      "contexts" : [
+        "jobs.20.diagnosisQuestion.options.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Backflow Risk on Hose Bib" : {
+      "contexts" : [
+        "jobs.20.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Backflow rules vary by location; follow local regulations." : {
+      "contexts" : [
+        "jobs.20.safetyWarning"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Bang occurs at valve closure." : {
+      "contexts" : [
+        "jobs.11.symptoms.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Banging pipes often point to loose pipework, high pressure, or fast-closing valves." : {
+      "contexts" : [
+        "cards.7.summary"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Basic Tool Kit" : {
+      "contexts" : [
+        "cards.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Basin trap" : {
+      "contexts" : [
+        "jobs.1.diagnosisQuestion.options.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Bathroom Installation Rough-In" : {
+      "contexts" : [
+        "jobs.15.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Beginner" : {
+      "contexts" : [
+        "difficulty.beginner"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Blame the customer" : {
+      "contexts" : [
+        "jobs.24.repairOptions.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Bleed air and check system pressure" : {
+      "contexts" : [
+        "jobs.3.repairOptions.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Bleed air only when appropriate." : {
+      "contexts" : [
+        "cards.8.bulletPoints.1"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Bleeds trapped air from radiators after safe pressure checks." : {
+      "contexts" : [
+        "tools.5.summary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Block the overflow" : {
+      "contexts" : [
+        "jobs.2.repairOptions.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Block the pipe to stop dripping" : {
+      "contexts" : [
+        "jobs.23.repairOptions.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Blocked basin" : {
+      "contexts" : [
+        "jobs.14.diagnosisQuestion.options.2.title",
+        "jobs.19.diagnosisQuestion.options.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Blocked drain" : {
+      "contexts" : [
+        "jobs.3.diagnosisQuestion.options.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Blocked kitchen sink" : {
+      "contexts" : [
+        "jobs.8.diagnosisQuestion.options.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Blocked Kitchen Sink" : {
+      "contexts" : [
+        "jobs.10.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Blocked main drain" : {
+      "contexts" : [
+        "jobs.5.diagnosisQuestion.options.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Blocked toilet" : {
+      "contexts" : [
+        "jobs.23.diagnosisQuestion.options.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Blocked trap" : {
+      "contexts" : [
+        "jobs.0.diagnosisQuestion.options.1.title",
+        "jobs.11.diagnosisQuestion.options.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Blocked waste" : {
+      "contexts" : [
+        "jobs.2.diagnosisQuestion.options.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Blocking ventilation can make drainage worse." : {
+      "contexts" : [
+        "jobs.7.repairOptions.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Boiler Condensate Blockage" : {
+      "contexts" : [
+        "jobs.23.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Boiler Pressure" : {
+      "contexts" : [
+        "cards.10.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Boiler Pressure Issue" : {
+      "contexts" : [
+        "jobs.12.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Boiler shows a condensate-related lockout code." : {
+      "contexts" : [
+        "jobs.23.symptoms.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Bonus XP" : {
+      "contexts" : [
+        "products.4.benefits.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Boosts confidence with pressure, drainage, and customer communication." : {
+      "contexts" : [
+        "upgrades.1.summary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Both sink and dishwasher branch are affected." : {
+      "contexts" : [
+        "jobs.10.symptoms.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Both valves appear open." : {
+      "contexts" : [
+        "jobs.18.symptoms.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Branded Van Wrap" : {
+      "contexts" : [
+        "upgrades.2.name"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Broken radiator shell" : {
+      "contexts" : [
+        "jobs.3.diagnosisQuestion.options.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Bucket and Towels" : {
+      "contexts" : [
+        "tools.3.name"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Burst Pipe Emergency" : {
+      "contexts" : [
+        "jobs.13.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Burst pipes, callouts, urgent isolation, and triage." : {
+      "contexts" : [
+        "products.4.subtitle"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Burst supply main" : {
+      "contexts" : [
+        "jobs.4.diagnosisQuestion.options.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Business" : {
+      "contexts" : [
+        "cards.12.topic",
+        "category.business",
+        "copy.tabs.business",
+        "upgradeCategory.business"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Business Owner Desk" : {
+      "contexts" : [
+        "upgrades.7.name"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Business Owner Mode" : {
+      "contexts" : [
+        "products.5.displayName"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Business simulations are educational and not legal advice." : {
+      "contexts" : [
+        "jobs.24.safetyWarning"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Business upgrades" : {
+      "contexts" : [
+        "products.5.benefits.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Business Upgrades" : {
+      "contexts" : [
+        "copy.business.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Buy" : {
+      "contexts" : [
+        "copy.inventory.buy"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Buy - {coins}" : {
+      "contexts" : [
+        "copy.format.buyCoins"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Buy upgrade" : {
+      "contexts" : [
+        "copy.business.buy"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Calculate demand and upsize route" : {
+      "contexts" : [
+        "jobs.16.repairOptions.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Cancel" : {
+      "contexts" : [
+        "copy.settings.cancel"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Cap any vent opening" : {
+      "contexts" : [
+        "jobs.7.repairOptions.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Cap the discharge pipe" : {
+      "contexts" : [
+        "jobs.14.repairOptions.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Career attempts" : {
+      "contexts" : [
+        "copy.training.careerSessions"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Career level, tool requirements, and free-plan energy still apply." : {
+      "contexts" : [
+        "copy.packs.progression"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Career Progress" : {
+      "contexts" : [
+        "copy.dashboard.careerProgress"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Catch water, clean the trap, refit seals, and test flow." : {
+      "contexts" : [
+        "jobs.1.repairOptions.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Ceiling light is nearby." : {
+      "contexts" : [
+        "jobs.13.symptoms.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Change one variable at a time." : {
+      "contexts" : [
+        "cards.9.bulletPoints.1"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Change one water source at a time and watch the stain area." : {
+      "contexts" : [
+        "jobs.21.mentorHint"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Change plan in subscription settings" : {
+      "contexts" : [
+        "copy.paywall.switchPlan"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Check appliance valves are closed before disconnecting hoses." : {
+      "contexts" : [
+        "jobs.6.safetyWarning"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Check filters and partially closed valves." : {
+      "contexts" : [
+        "cards.4.bulletPoints.1"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Check for electrical hazards and structural damage before invasive work." : {
+      "contexts" : [
+        "jobs.21.safetyWarning"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Check pressure and air safely" : {
+      "contexts" : [
+        "jobs.19.repairOptions.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Check pressure and diaphragm" : {
+      "contexts" : [
+        "jobs.17.diagnosisQuestion.options.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Check system pressure first." : {
+      "contexts" : [
+        "cards.8.bulletPoints.0"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Check the washer, jumper, and seat before testing." : {
+      "contexts" : [
+        "jobs.5.repairOptions.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Check valves and balance flow" : {
+      "contexts" : [
+        "jobs.18.repairOptions.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Check visible joints and radiators, document, and escalate regulated work." : {
+      "contexts" : [
+        "jobs.12.repairOptions.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Checks static and dynamic pressure before choosing a repair." : {
+      "contexts" : [
+        "tools.8.summary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Children use the pool." : {
+      "contexts" : [
+        "jobs.20.symptoms.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Choose the next job, sharpen your diagnosis, and keep the business moving." : {
+      "contexts" : [
+        "copy.dashboard.subtitle"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Cistern level reaches the overflow." : {
+      "contexts" : [
+        "jobs.2.symptoms.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Cistern levels do not cause outdoor tap spray." : {
+      "contexts" : [
+        "jobs.8.diagnosisQuestion.options.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Cistern overflow" : {
+      "contexts" : [
+        "jobs.15.diagnosisQuestion.options.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "City Expansion Pack" : {
+      "contexts" : [
+        "products.2.displayName"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "City job board" : {
+      "contexts" : [
+        "products.2.benefits.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Clean fix. The customer leaves a strong review." : {
+      "contexts" : [
+        "copy.feedback.perfect"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Clean shower head" : {
+      "contexts" : [
+        "jobs.12.diagnosisQuestion.options.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Clean the filter and shower head" : {
+      "contexts" : [
+        "jobs.4.repairOptions.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Clear basin trap" : {
+      "contexts" : [
+        "jobs.17.diagnosisQuestion.options.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Clear branch and flow test" : {
+      "contexts" : [
+        "jobs.10.repairOptions.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Clear water can still indicate a safety issue." : {
+      "contexts" : [
+        "jobs.14.repairOptions.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Clears deeper clogs beyond the trap when plunging is not enough." : {
+      "contexts" : [
+        "tools.7.summary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Clip accessible pipework, verify pressure, and consider an approved arrestor." : {
+      "contexts" : [
+        "jobs.11.repairOptions.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Close" : {
+      "contexts" : [
+        "copy.paywall.close"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Close walls quickly" : {
+      "contexts" : [
+        "jobs.15.repairOptions.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Coins" : {
+      "contexts" : [
+        "copy.dashboard.coins"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Cold weather and exposed plastic pipe are key clues." : {
+      "contexts" : [
+        "jobs.23.diagnosisQuestion.options.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Combustion Analyzer" : {
+      "contexts" : [
+        "tools.13.name"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Commercial" : {
+      "contexts" : [
+        "cards.11.topic",
+        "category.commercial",
+        "difficulty.commercial"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Commercial clients need documentation." : {
+      "contexts" : [
+        "jobs.22.repairOptions.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Commercial contracts" : {
+      "contexts" : [
+        "products.0.benefits.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Commercial Flush Valve Fault" : {
+      "contexts" : [
+        "jobs.17.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Commercial flush valves depend on correct pressure and internal seals." : {
+      "contexts" : [
+        "jobs.17.diagnosisQuestion.options.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Commercial Insurance" : {
+      "contexts" : [
+        "upgrades.6.name"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Commercial jobs reward documentation, planned isolation, and clear handover." : {
+      "contexts" : [
+        "cards.11.summary"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Commercial Maintenance" : {
+      "contexts" : [
+        "cards.11.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Commercial Maintenance Contract" : {
+      "contexts" : [
+        "jobs.22.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Commercial maintenance rewards repeatable diagnosis and documentation." : {
+      "contexts" : [
+        "jobs.17.learningTip"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Commercial value comes from preventing downtime, not just fixing today's fault." : {
+      "contexts" : [
+        "jobs.22.learningTip"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Communication" : {
+      "contexts" : [
+        "cards.6.topic"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Compare static and flow pressure." : {
+      "contexts" : [
+        "cards.4.bulletPoints.0"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Compare the problem outlet with the nearest normal outlet." : {
+      "contexts" : [
+        "jobs.4.mentorHint"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Compares demand, length, and pressure drop in sizing challenges." : {
+      "contexts" : [
+        "tools.16.summary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Compatibility matters." : {
+      "contexts" : [
+        "jobs.15.repairOptions.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Complete a job to start your personal review queue." : {
+      "contexts" : [
+        "copy.training.caughtUpDetail"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Complete repair" : {
+      "contexts" : [
+        "copy.simulation.confirmRepair"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Completed restores" : {
+      "contexts" : [
+        "copy.training.restores"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Compression joints seal inside the fitting. Inspect and remake the joint instead of hiding the drip." : {
+      "contexts" : [
+        "jobs.0.learningTip"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Concealed Leak Tracing" : {
+      "contexts" : [
+        "jobs.21.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Condensate must discharge safely." : {
+      "contexts" : [
+        "jobs.23.repairOptions.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Confirm access and working hours." : {
+      "contexts" : [
+        "cards.12.bulletPoints.2"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Confirm demand, use suitable fittings, and leave service access." : {
+      "contexts" : [
+        "jobs.15.repairOptions.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Confirm diagnosis" : {
+      "contexts" : [
+        "copy.simulation.confirmDiagnosis"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Confirm site rules." : {
+      "contexts" : [
+        "cards.11.bulletPoints.0"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Confirm symptoms and timing." : {
+      "contexts" : [
+        "cards.6.bulletPoints.0"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Confirm the internal isolation valve holds before working outside." : {
+      "contexts" : [
+        "jobs.8.safetyWarning"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Connect to the App Store to see your local price." : {
+      "contexts" : [
+        "copy.paywall.priceUnavailable"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Connected fixtures backing up suggests the restriction is past their shared connection." : {
+      "contexts" : [
+        "jobs.10.diagnosisQuestion.explanation"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Contain water, isolate, inspect the olive and pipe, then remake the joint." : {
+      "contexts" : [
+        "jobs.0.repairOptions.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Continuous run after flush." : {
+      "contexts" : [
+        "jobs.17.symptoms.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Contract strategy" : {
+      "contexts" : [
+        "products.5.benefits.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Controls do not explain pressure loss." : {
+      "contexts" : [
+        "jobs.12.diagnosisQuestion.options.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Controls spills and standing water during urgent callouts." : {
+      "contexts" : [
+        "tools.14.summary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Copper, plastic, and flexible connectors behave differently under heat and pressure." : {
+      "contexts" : [
+        "cards.2.summary"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Correct" : {
+      "contexts" : [
+        "copy.simulation.correct"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Correct repair: {choice}" : {
+      "contexts" : [
+        "copy.training.reviewAnswer"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Correct trap and standpipe setup" : {
+      "contexts" : [
+        "jobs.7.repairOptions.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Cosmetic clues do not diagnose this leak." : {
+      "contexts" : [
+        "jobs.6.diagnosisQuestion.options.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Create service schedule and risk notes" : {
+      "contexts" : [
+        "jobs.22.repairOptions.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Creates a temporary ice plug when isolation valves are unavailable." : {
+      "contexts" : [
+        "tools.10.summary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Current plan" : {
+      "contexts" : [
+        "copy.paywall.active"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Customer asks for prevention tips." : {
+      "contexts" : [
+        "jobs.9.symptoms.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Customer brief" : {
+      "contexts" : [
+        "copy.simulation.customerBrief"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Customer Briefs" : {
+      "contexts" : [
+        "cards.6.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Customer cannot find isolation valve." : {
+      "contexts" : [
+        "jobs.13.symptoms.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Customer communication is part of the job. A clean, honest handover protects reputation." : {
+      "contexts" : [
+        "jobs.9.learningTip"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Customer Handover Check" : {
+      "contexts" : [
+        "jobs.9.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Customer is unhappy with communication." : {
+      "contexts" : [
+        "jobs.24.symptoms.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Customer recently decorated." : {
+      "contexts" : [
+        "jobs.18.symptoms.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Customer recently noticed higher water bills." : {
+      "contexts" : [
+        "jobs.14.symptoms.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Customers need clear, calm explanations." : {
+      "contexts" : [
+        "jobs.9.repairOptions.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Cut ceiling immediately" : {
+      "contexts" : [
+        "jobs.13.diagnosisQuestion.options.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Cylinder cupboard is warm." : {
+      "contexts" : [
+        "jobs.14.symptoms.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Daily challenge" : {
+      "contexts" : [
+        "copy.training.daily"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "days" : {
+      "contexts" : [
+        "copy.packs.day"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Delete the invoice" : {
+      "contexts" : [
+        "jobs.24.repairOptions.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Demand exceeds what the route can deliver." : {
+      "contexts" : [
+        "jobs.16.diagnosisQuestion.options.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Demonstrate the fix, leave practical advice, and record warnings." : {
+      "contexts" : [
+        "jobs.9.repairOptions.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Destructive work should follow evidence." : {
+      "contexts" : [
+        "jobs.21.repairOptions.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Detailed skill history" : {
+      "contexts" : [
+        "products.0.benefits.5"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Device language" : {
+      "contexts" : [
+        "copy.settings.deviceLanguage"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Diagnose before you repair" : {
+      "contexts" : [
+        "onboarding.1.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Diagnose fault" : {
+      "contexts" : [
+        "copy.simulation.continueDiagnosis"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Diagnosis" : {
+      "contexts" : [
+        "cards.9.topic"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Diagnosis accuracy" : {
+      "contexts" : [
+        "copy.training.diagnosis"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Diagnosis and repair decisions with feedback after the assessment." : {
+      "contexts" : [
+        "copy.training.examSummary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Diagnosis challenge" : {
+      "contexts" : [
+        "copy.simulation.diagnosis"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Diagnosis: {choice}" : {
+      "contexts" : [
+        "copy.training.diagnosisChoice"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Dirty aerator" : {
+      "contexts" : [
+        "jobs.15.diagnosisQuestion.options.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Do not adjust heating pressure for a shower-head restriction." : {
+      "contexts" : [
+        "jobs.4.repairOptions.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Do not block overflow paths; correct the cause of overfilling." : {
+      "contexts" : [
+        "jobs.2.safetyWarning"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Do not cut before isolating and checking hazards." : {
+      "contexts" : [
+        "jobs.13.diagnosisQuestion.options.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Do not exceed appliance or regulatory pressure limits to mask poor sizing." : {
+      "contexts" : [
+        "jobs.16.safetyWarning"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Do not make guarantees or safety claims beyond the completed training scenario." : {
+      "contexts" : [
+        "jobs.9.safetyWarning"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Do not open or adjust gas appliance internals unless qualified." : {
+      "contexts" : [
+        "jobs.23.safetyWarning"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Do not reuse damaged seals." : {
+      "contexts" : [
+        "cards.3.bulletPoints.2"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Document and escalate appropriately" : {
+      "contexts" : [
+        "jobs.14.repairOptions.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Document safety warnings." : {
+      "contexts" : [
+        "cards.6.bulletPoints.2"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Drain Auger" : {
+      "contexts" : [
+        "tools.7.name"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Drain camera" : {
+      "contexts" : [
+        "products.3.benefits.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Drain Camera" : {
+      "contexts" : [
+        "tools.17.name"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Drain full system immediately" : {
+      "contexts" : [
+        "jobs.18.repairOptions.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Drain smells usually need trap and ventilation checks, not fragrance." : {
+      "contexts" : [
+        "jobs.7.learningTip"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Drainage" : {
+      "contexts" : [
+        "cards.5.topic",
+        "category.drainage",
+        "toolCategory.drainage"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Drainage does not cause supply pipe bang." : {
+      "contexts" : [
+        "jobs.11.diagnosisQuestion.options.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Drainage Flow" : {
+      "contexts" : [
+        "cards.5.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Drainage is not part of this heating symptom." : {
+      "contexts" : [
+        "jobs.3.diagnosisQuestion.options.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Drainage is unrelated." : {
+      "contexts" : [
+        "jobs.19.diagnosisQuestion.options.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Draining may help after isolation but is not enough alone." : {
+      "contexts" : [
+        "jobs.13.repairOptions.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Dripping Compression Joint" : {
+      "contexts" : [
+        "jobs.6.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Drips form below the compression joint." : {
+      "contexts" : [
+        "jobs.0.symptoms.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Earn extra coins" : {
+      "contexts" : [
+        "copy.business.coinsReward"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Earn more coins before buying {item}." : {
+      "contexts" : [
+        "copy.format.earnCoins"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Earn XP, upgrade your kit, improve customer ratings, and unlock advanced commercial scenarios." : {
+      "contexts" : [
+        "onboarding.2.subtitle"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Earned" : {
+      "contexts" : [
+        "copy.training.earned"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Emergency" : {
+      "contexts" : [
+        "category.emergency",
+        "difficulty.emergency"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Emergency Callout Kit" : {
+      "contexts" : [
+        "upgrades.5.name"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Emergency Jobs Pack" : {
+      "contexts" : [
+        "products.4.displayName"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Emergency profit comes after triage: isolate, make safe, contain, then repair." : {
+      "contexts" : [
+        "jobs.13.learningTip"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Emergency scenarios" : {
+      "contexts" : [
+        "products.4.benefits.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Emergency triage comes first." : {
+      "contexts" : [
+        "jobs.13.diagnosisQuestion.options.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Emergency work starts with isolation and safety before repair decisions." : {
+      "contexts" : [
+        "jobs.13.diagnosisQuestion.explanation"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Energy" : {
+      "contexts" : [
+        "copy.dashboard.energy"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Energy empty" : {
+      "contexts" : [
+        "copy.feedback.emptyEnergy"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Energy refills tomorrow. Practice stays available without energy." : {
+      "contexts" : [
+        "copy.training.energySummary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Energy-free practice. No career coins or XP are awarded." : {
+      "contexts" : [
+        "copy.training.practiceSummary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Escalate electrical, boiler, or regulated heating work to qualified professionals." : {
+      "contexts" : [
+        "jobs.19.safetyWarning"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Escalate gas or combustion work." : {
+      "contexts" : [
+        "cards.10.bulletPoints.2"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Escalate regulated or unsafe work." : {
+      "contexts" : [
+        "cards.0.bulletPoints.2"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Escalate regulated work." : {
+      "contexts" : [
+        "cards.13.bulletPoints.2"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Evening Skills Course" : {
+      "contexts" : [
+        "upgrades.1.name"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Everything in PipeBoss Pro" : {
+      "contexts" : [
+        "products.1.benefits.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Exam questions often test safe order of operations." : {
+      "contexts" : [
+        "cards.13.summary"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Exam-Style Checks" : {
+      "contexts" : [
+        "cards.13.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Exam-style practice" : {
+      "contexts" : [
+        "copy.training.exam"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Exam-style quizzes" : {
+      "contexts" : [
+        "products.0.benefits.3"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Explain disruption before starting." : {
+      "contexts" : [
+        "cards.6.bulletPoints.1"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Explain the change, improve documentation, and protect reputation." : {
+      "contexts" : [
+        "jobs.24.repairOptions.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Explain, test, and clean up" : {
+      "contexts" : [
+        "jobs.9.diagnosisQuestion.options.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Explore Pro" : {
+      "contexts" : [
+        "copy.training.explorePro"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "External condensate pipe is exposed." : {
+      "contexts" : [
+        "jobs.23.symptoms.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "External sealant does not fix the sealing face." : {
+      "contexts" : [
+        "jobs.0.repairOptions.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "External wrapping is not a professional repair." : {
+      "contexts" : [
+        "jobs.6.repairOptions.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Extra parts were approved verbally." : {
+      "contexts" : [
+        "jobs.24.symptoms.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Extra work needs clear approval and records." : {
+      "contexts" : [
+        "jobs.24.diagnosisQuestion.options.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Failed tap cartridge" : {
+      "contexts" : [
+        "jobs.0.diagnosisQuestion.options.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Fast valve closure can shock unsecured pipework." : {
+      "contexts" : [
+        "jobs.11.diagnosisQuestion.options.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Fault Diagnosis" : {
+      "contexts" : [
+        "cards.7.topic"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Fault follows freezing weather." : {
+      "contexts" : [
+        "jobs.23.symptoms.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Fault Trees" : {
+      "contexts" : [
+        "cards.9.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Fill valve set too high" : {
+      "contexts" : [
+        "jobs.2.diagnosisQuestion.options.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Find cause, restore safe pressure if appropriate, and bleed according to guidance." : {
+      "contexts" : [
+        "jobs.19.repairOptions.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Find leak and advise qualified follow-up" : {
+      "contexts" : [
+        "jobs.12.repairOptions.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Finds hidden leaks, blockages, and pipe routes with less disruption." : {
+      "contexts" : [
+        "tools.9.summary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Finish practice" : {
+      "contexts" : [
+        "copy.training.finish"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "First fix is the moment to check sizing, support, and service access." : {
+      "contexts" : [
+        "jobs.15.diagnosisQuestion.explanation"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "First job completed" : {
+      "contexts" : [
+        "copy.training.firstJob"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "First practice session" : {
+      "contexts" : [
+        "copy.training.firstPractice"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "First-job mentor hint" : {
+      "contexts" : [
+        "copy.training.freeFirstHint"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "First-line tool for simple sink, basin, and WC blockages." : {
+      "contexts" : [
+        "tools.2.summary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Fit and test a suitable trap arrangement with proper seal depth." : {
+      "contexts" : [
+        "jobs.7.repairOptions.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Fit approved backflow protection" : {
+      "contexts" : [
+        "jobs.20.repairOptions.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Fit approved service parts, retest, and note if more valves need planned work." : {
+      "contexts" : [
+        "jobs.17.repairOptions.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Fittings" : {
+      "contexts" : [
+        "cards.3.topic"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Fittings and Joints" : {
+      "contexts" : [
+        "cards.3.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Five career attempts" : {
+      "contexts" : [
+        "copy.training.fiveJobs"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Fixtures" : {
+      "contexts" : [
+        "category.fixtures"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Fixtures are not installed yet." : {
+      "contexts" : [
+        "jobs.15.diagnosisQuestion.options.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Float arm sits too high." : {
+      "contexts" : [
+        "jobs.2.symptoms.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Flow drops under simultaneous demand." : {
+      "contexts" : [
+        "jobs.16.symptoms.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Flow improves briefly after wiping the faceplate." : {
+      "contexts" : [
+        "jobs.4.symptoms.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Flow is present and localized to one tap." : {
+      "contexts" : [
+        "jobs.5.diagnosisQuestion.options.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Flow rate does not explain lockout code." : {
+      "contexts" : [
+        "jobs.23.diagnosisQuestion.options.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Follow food business hygiene and site safety requirements." : {
+      "contexts" : [
+        "jobs.22.safetyWarning"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Follow local codes, product instructions, and required inspection stages." : {
+      "contexts" : [
+        "jobs.15.safetyWarning"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Follow manufacturer installation rules." : {
+      "contexts" : [
+        "cards.2.bulletPoints.2"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Follow product instructions when descaling parts and flush before reuse." : {
+      "contexts" : [
+        "jobs.4.safetyWarning"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Follow site access rules and protect public washroom areas during testing." : {
+      "contexts" : [
+        "jobs.17.safetyWarning"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "For one slow fixture, start local. The trap tells you a lot before you escalate." : {
+      "contexts" : [
+        "jobs.1.learningTip"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "For training scenarios using safe hot-work planning and compatible pipework." : {
+      "contexts" : [
+        "tools.15.summary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Force the handle harder" : {
+      "contexts" : [
+        "jobs.17.repairOptions.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Free plan includes the first 10 beginner jobs" : {
+      "contexts" : [
+        "copy.feedback.freeLimit"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Frost-damaged pipe or fitting" : {
+      "contexts" : [
+        "jobs.8.diagnosisQuestion.options.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Frozen or blocked condensate pipe" : {
+      "contexts" : [
+        "jobs.23.diagnosisQuestion.options.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Frozen pipe" : {
+      "contexts" : [
+        "jobs.5.diagnosisQuestion.options.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Full training access with flexible monthly billing." : {
+      "contexts" : [
+        "products.0.subtitle"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Full training access, billed once per year." : {
+      "contexts" : [
+        "products.1.subtitle"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Gas, combustion, and regulated boiler work must be handled by qualified professionals." : {
+      "contexts" : [
+        "jobs.12.safetyWarning"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Good drainage depends on clear traps, correct falls, venting, and clean routes." : {
+      "contexts" : [
+        "cards.5.summary"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Good handover includes what was found, what was fixed, and what the customer should watch for." : {
+      "contexts" : [
+        "jobs.9.diagnosisQuestion.explanation"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Good installation work is planned before the pipe is hidden." : {
+      "contexts" : [
+        "jobs.15.learningTip"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Good leak tracing reduces damage by proving the route before opening surfaces." : {
+      "contexts" : [
+        "jobs.21.learningTip"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Grow a real trade career" : {
+      "contexts" : [
+        "onboarding.2.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Gurgling noise after heating starts." : {
+      "contexts" : [
+        "jobs.3.symptoms.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Gurgling plus low pressure can cause pump noise." : {
+      "contexts" : [
+        "jobs.19.diagnosisQuestion.options.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Hair and soap often collect here." : {
+      "contexts" : [
+        "jobs.1.diagnosisQuestion.options.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Hand Tools" : {
+      "contexts" : [
+        "toolCategory.handTools"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Heating" : {
+      "contexts" : [
+        "cards.10.topic",
+        "cards.8.topic",
+        "category.heating",
+        "difficulty.heating",
+        "toolCategory.heating"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Heating and commercial scenarios" : {
+      "contexts" : [
+        "products.1.benefits.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Heating Basics" : {
+      "contexts" : [
+        "cards.8.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Heating faults need safe checks around pressure, air, sludge, pumps, and controls." : {
+      "contexts" : [
+        "cards.8.summary"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Heating systems can be hot and pressurized; work within training limits." : {
+      "contexts" : [
+        "jobs.18.safetyWarning"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Heating water can be hot. Use a cloth and follow manufacturer pressure guidance." : {
+      "contexts" : [
+        "jobs.3.safetyWarning"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Helps trace hot water runs, cold spots, and concealed heating faults." : {
+      "contexts" : [
+        "tools.12.summary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Hidden poor work becomes expensive rework." : {
+      "contexts" : [
+        "jobs.15.repairOptions.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "High pressure and loose pipework" : {
+      "contexts" : [
+        "jobs.11.diagnosisQuestion.options.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "High shower flow" : {
+      "contexts" : [
+        "jobs.23.diagnosisQuestion.options.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "High site pressure recorded." : {
+      "contexts" : [
+        "jobs.17.symptoms.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "High-use kitchen sink." : {
+      "contexts" : [
+        "jobs.22.symptoms.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Higher pressure decisions" : {
+      "contexts" : [
+        "products.4.benefits.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Higher reward jobs" : {
+      "contexts" : [
+        "products.2.benefits.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Hit the pump casing" : {
+      "contexts" : [
+        "jobs.19.repairOptions.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Home" : {
+      "contexts" : [
+        "copy.tabs.home"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Hose end submerged." : {
+      "contexts" : [
+        "jobs.20.symptoms.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Hot water delay" : {
+      "contexts" : [
+        "jobs.20.diagnosisQuestion.options.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Hot water fault" : {
+      "contexts" : [
+        "jobs.7.diagnosisQuestion.options.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Hot Water Tundish Drip" : {
+      "contexts" : [
+        "jobs.14.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "How should this be treated?" : {
+      "contexts" : [
+        "jobs.14.diagnosisQuestion.prompt"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Identify water, heat, electrical, and hygiene risks." : {
+      "contexts" : [
+        "cards.0.bulletPoints.0"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "If a fault appears straight after a part change, inspect the changed part first." : {
+      "contexts" : [
+        "jobs.5.learningTip"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Ignore because it is clear water" : {
+      "contexts" : [
+        "jobs.14.repairOptions.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Ignore because it is outside" : {
+      "contexts" : [
+        "jobs.20.repairOptions.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Ignore staff feedback" : {
+      "contexts" : [
+        "jobs.22.repairOptions.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Ignore the noise" : {
+      "contexts" : [
+        "jobs.11.repairOptions.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Impact can damage equipment." : {
+      "contexts" : [
+        "jobs.19.repairOptions.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Improver Plumber" : {
+      "contexts" : [
+        "copy.careerTitles.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "In progress" : {
+      "contexts" : [
+        "copy.training.keepGoing"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Includes access to premium business upgrades; upgrades still cost career coins." : {
+      "contexts" : [
+        "copy.packs.business"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Incoming cold main" : {
+      "contexts" : [
+        "jobs.10.diagnosisQuestion.options.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Incoming pressure" : {
+      "contexts" : [
+        "jobs.1.diagnosisQuestion.options.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Incoming water does not affect drainage." : {
+      "contexts" : [
+        "jobs.10.diagnosisQuestion.options.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Incorrect Pipe Sizing Issue" : {
+      "contexts" : [
+        "jobs.16.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Increase boiler pressure" : {
+      "contexts" : [
+        "jobs.4.repairOptions.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Indoor stop valve works." : {
+      "contexts" : [
+        "jobs.8.symptoms.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Inspect before tightening." : {
+      "contexts" : [
+        "cards.3.bulletPoints.0"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Inspect issue" : {
+      "contexts" : [
+        "copy.simulation.inspect"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Inspect symptoms, pick the right tools, answer diagnosis checks, and avoid expensive rework." : {
+      "contexts" : [
+        "onboarding.1.subtitle"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Inspection Camera" : {
+      "contexts" : [
+        "tools.9.name"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Inspects underground and commercial drainage routes." : {
+      "contexts" : [
+        "tools.17.summary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Installation" : {
+      "contexts" : [
+        "category.installation"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Intermediate" : {
+      "contexts" : [
+        "difficulty.intermediate"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Intermittent discharge visible at tundish." : {
+      "contexts" : [
+        "jobs.14.symptoms.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Isolate and reseat correct washer" : {
+      "contexts" : [
+        "jobs.5.repairOptions.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Isolate before repair." : {
+      "contexts" : [
+        "cards.13.bulletPoints.0"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Isolate the water supply and protect the cabinet before opening the joint." : {
+      "contexts" : [
+        "jobs.0.safetyWarning"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Isolate water and make area safe" : {
+      "contexts" : [
+        "jobs.13.diagnosisQuestion.options.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Isolate water before opening tap bodies." : {
+      "contexts" : [
+        "jobs.5.safetyWarning"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Isolate, contain, and temporary repair" : {
+      "contexts" : [
+        "jobs.13.repairOptions.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Isolate, inspect, replace damaged seals, and retest." : {
+      "contexts" : [
+        "jobs.6.repairOptions.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Isolate, inspect, reseat, and tighten" : {
+      "contexts" : [
+        "jobs.0.repairOptions.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Isolate, replace damaged part, add protection" : {
+      "contexts" : [
+        "jobs.8.repairOptions.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Isolation tags, clamps, spill control, and temporary repair supplies." : {
+      "contexts" : [
+        "upgrades.5.summary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Job Board" : {
+      "contexts" : [
+        "copy.jobs.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Job result" : {
+      "contexts" : [
+        "copy.simulation.result"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Job timer" : {
+      "contexts" : [
+        "copy.simulation.timer"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Jobs" : {
+      "contexts" : [
+        "copy.tabs.jobs"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Joint faces and seals" : {
+      "contexts" : [
+        "jobs.6.diagnosisQuestion.options.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Keep away from electrical hazards and contact qualified help where required." : {
+      "contexts" : [
+        "jobs.13.safetyWarning"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Keep common washers, traps, and fittings ready for fast jobs." : {
+      "contexts" : [
+        "upgrades.0.summary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Keep towels and a bucket ready before loosening fittings." : {
+      "contexts" : [
+        "cards.1.bulletPoints.1"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Keeps water contained while you isolate, drain, or open fittings." : {
+      "contexts" : [
+        "tools.3.summary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Know when regulated heating work needs a qualified professional." : {
+      "contexts" : [
+        "cards.8.bulletPoints.2"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Language" : {
+      "contexts" : [
+        "copy.settings.language"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Lead Engineer" : {
+      "contexts" : [
+        "copy.careerTitles.3"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Leak worsens when hot tap runs." : {
+      "contexts" : [
+        "jobs.0.symptoms.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Leaking Pipe Under Sink" : {
+      "contexts" : [
+        "jobs.0.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Leaks" : {
+      "contexts" : [
+        "category.leaks"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Learn" : {
+      "contexts" : [
+        "copy.tabs.learn"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Learning Cards" : {
+      "contexts" : [
+        "copy.learning.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Leave a bucket under it" : {
+      "contexts" : [
+        "jobs.6.repairOptions.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Leave quickly" : {
+      "contexts" : [
+        "jobs.9.diagnosisQuestion.options.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Leave tap open permanently" : {
+      "contexts" : [
+        "jobs.8.repairOptions.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Legal" : {
+      "contexts" : [
+        "copy.settings.legal"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Level {level}" : {
+      "contexts" : [
+        "copy.format.level"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Level locked" : {
+      "contexts" : [
+        "copy.inventory.lockedLevel"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Level up! Level {level}" : {
+      "contexts" : [
+        "copy.training.levelUp"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Listen to where the sound starts and compare it with pressure readings." : {
+      "contexts" : [
+        "jobs.19.mentorHint"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Loading App Store products..." : {
+      "contexts" : [
+        "copy.paywall.loadingProducts"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Local counts only. They are never uploaded automatically." : {
+      "contexts" : [
+        "copy.training.metricsSummary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Local scale can restrict flow at one outlet." : {
+      "contexts" : [
+        "jobs.4.diagnosisQuestion.options.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Locked" : {
+      "contexts" : [
+        "copy.jobs.locked",
+        "copy.learning.locked"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Locked - Level {level}" : {
+      "contexts" : [
+        "copy.format.lockedLevel"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Long pipe runs planned." : {
+      "contexts" : [
+        "jobs.15.symptoms.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Long small-bore run feeds both outlets." : {
+      "contexts" : [
+        "jobs.16.symptoms.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Look for leaks before topping up." : {
+      "contexts" : [
+        "cards.10.bulletPoints.0"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Look for repeated blockages upstream." : {
+      "contexts" : [
+        "cards.5.bulletPoints.2"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Look for whether the water stops below or above the overflow point." : {
+      "contexts" : [
+        "jobs.2.mentorHint"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Loose compression joint" : {
+      "contexts" : [
+        "jobs.0.diagnosisQuestion.options.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Loose or wrong washer" : {
+      "contexts" : [
+        "jobs.5.diagnosisQuestion.options.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Low boiler pressure" : {
+      "contexts" : [
+        "jobs.11.diagnosisQuestion.options.2.title",
+        "jobs.24.diagnosisQuestion.options.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Low boiler pressure can be a symptom. Find why pressure is dropping before adjusting anything." : {
+      "contexts" : [
+        "jobs.12.learningTip"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Low cistern level" : {
+      "contexts" : [
+        "jobs.8.diagnosisQuestion.options.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Low pressure" : {
+      "contexts" : [
+        "jobs.2.diagnosisQuestion.options.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Low pressure and air symptoms can create noisy circulation." : {
+      "contexts" : [
+        "jobs.19.diagnosisQuestion.explanation"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Low pressure may be a symptom, not the root cause." : {
+      "contexts" : [
+        "cards.10.summary"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Low pressure would slow filling, not cause overflow." : {
+      "contexts" : [
+        "jobs.2.diagnosisQuestion.options.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Low Shower Pressure" : {
+      "contexts" : [
+        "jobs.4.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Main drain blocked" : {
+      "contexts" : [
+        "jobs.18.diagnosisQuestion.options.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Main sewer" : {
+      "contexts" : [
+        "jobs.1.diagnosisQuestion.options.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Makes square cuts on copper or plastic pipe for neat repairs." : {
+      "contexts" : [
+        "tools.6.summary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Manage subscription" : {
+      "contexts" : [
+        "copy.paywall.manage"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Map the branch connections before choosing a tool." : {
+      "contexts" : [
+        "jobs.10.mentorHint"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Marketing" : {
+      "contexts" : [
+        "upgradeCategory.marketing"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Masking odor does not fix drainage gases." : {
+      "contexts" : [
+        "jobs.7.repairOptions.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Master Plumber" : {
+      "contexts" : [
+        "copy.careerTitles.4"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Master Plumber Tip" : {
+      "contexts" : [
+        "copy.simulation.masterTip"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Match fittings to pipe material." : {
+      "contexts" : [
+        "cards.2.bulletPoints.0"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Materials" : {
+      "contexts" : [
+        "cards.2.topic"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Measure before adjusting." : {
+      "contexts" : [
+        "cards.13.bulletPoints.1"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Measure pressure." : {
+      "contexts" : [
+        "cards.7.bulletPoints.1"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Mentor hint" : {
+      "contexts" : [
+        "copy.simulation.mentorHint"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Mentor hint - 20 coins" : {
+      "contexts" : [
+        "copy.training.hintCost"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Mentor hints" : {
+      "contexts" : [
+        "products.0.benefits.4"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Mentor hints for every job" : {
+      "contexts" : [
+        "products.1.benefits.3"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Missing tools" : {
+      "contexts" : [
+        "copy.jobs.missingTools"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Mistake practice" : {
+      "contexts" : [
+        "copy.training.practice"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Moisture linked to shower use" : {
+      "contexts" : [
+        "jobs.21.diagnosisQuestion.options.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Moisture meter peaks below shower wall." : {
+      "contexts" : [
+        "jobs.21.symptoms.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Monthly" : {
+      "contexts" : [
+        "copy.paywall.monthly"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "months" : {
+      "contexts" : [
+        "copy.packs.month"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Mop without isolation" : {
+      "contexts" : [
+        "jobs.13.repairOptions.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "More pressure can make vibration worse." : {
+      "contexts" : [
+        "jobs.5.repairOptions.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "More speed can worsen noise without fixing air." : {
+      "contexts" : [
+        "jobs.19.repairOptions.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Most small leaks come from poor seating, wrong inserts, damaged olives, or over-tightening." : {
+      "contexts" : [
+        "cards.3.summary"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Multiple connected outlets point downstream of the trap." : {
+      "contexts" : [
+        "jobs.10.diagnosisQuestion.options.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Multiple fixtures share one branch." : {
+      "contexts" : [
+        "jobs.15.symptoms.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Multiple outlets are affected under demand." : {
+      "contexts" : [
+        "jobs.16.repairOptions.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Name exclusions." : {
+      "contexts" : [
+        "cards.12.bulletPoints.1"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Need {tools}" : {
+      "contexts" : [
+        "copy.format.needTools"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Needs rework" : {
+      "contexts" : [
+        "copy.simulation.needsRework"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Never block safety discharge routes." : {
+      "contexts" : [
+        "jobs.14.repairOptions.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Never silence a safety warning without finding the cause." : {
+      "contexts" : [
+        "jobs.14.mentorHint"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "New vibration after work needs inspection." : {
+      "contexts" : [
+        "jobs.5.repairOptions.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Next" : {
+      "contexts" : [
+        "copy.onboarding.nextButton"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Next recommended job" : {
+      "contexts" : [
+        "copy.dashboard.nextJob"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Next scenario" : {
+      "contexts" : [
+        "copy.training.next"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "No attempts yet" : {
+      "contexts" : [
+        "copy.training.empty"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "No backflow device visible." : {
+      "contexts" : [
+        "jobs.20.symptoms.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "No energy" : {
+      "contexts" : [
+        "copy.jobs.noEnergy"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "No forced ads" : {
+      "contexts" : [
+        "products.0.benefits.6"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "No heating symptom is described." : {
+      "contexts" : [
+        "jobs.24.diagnosisQuestion.options.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "No leak visible at basin or WC." : {
+      "contexts" : [
+        "jobs.21.symptoms.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "No other fixtures are affected." : {
+      "contexts" : [
+        "jobs.1.symptoms.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "No other fixtures make noise." : {
+      "contexts" : [
+        "jobs.5.symptoms.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "No spray under pressure." : {
+      "contexts" : [
+        "jobs.6.symptoms.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "No visible boiler leak." : {
+      "contexts" : [
+        "jobs.12.symptoms.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "No visible leak." : {
+      "contexts" : [
+        "jobs.7.symptoms.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Noise at pump body." : {
+      "contexts" : [
+        "jobs.19.symptoms.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Noise starts when the tap is half open." : {
+      "contexts" : [
+        "jobs.5.symptoms.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Noisy Heating Pump" : {
+      "contexts" : [
+        "jobs.19.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Noisy Pipes: Water Hammer" : {
+      "contexts" : [
+        "jobs.11.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Noisy pumps often need system condition checks, not just pump speed changes." : {
+      "contexts" : [
+        "jobs.19.learningTip"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Noisy Tap After Washer Change" : {
+      "contexts" : [
+        "jobs.5.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Normal condensation" : {
+      "contexts" : [
+        "jobs.14.diagnosisQuestion.options.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Nothing due yet" : {
+      "contexts" : [
+        "copy.training.caughtUp"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Offline-first training with clear safety boundaries." : {
+      "contexts" : [
+        "copy.settings.subtitle"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "OK" : {
+      "contexts" : [
+        "copy.ok"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Old part is available to show." : {
+      "contexts" : [
+        "jobs.9.symptoms.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "On-device usage counts" : {
+      "contexts" : [
+        "copy.training.localMetrics"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "One cold radiator is not enough evidence." : {
+      "contexts" : [
+        "jobs.18.diagnosisQuestion.options.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "One cold radiator usually deserves local valve, air, and balancing checks before major work." : {
+      "contexts" : [
+        "jobs.18.learningTip"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "One downstairs radiator stays cold while others heat normally." : {
+      "contexts" : [
+        "jobs.18.customerComplaint"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "One radiator valve shows staining." : {
+      "contexts" : [
+        "jobs.12.symptoms.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "One weak outlet with visible scale points to a local restriction." : {
+      "contexts" : [
+        "jobs.4.diagnosisQuestion.explanation"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "One-time expansion packs" : {
+      "contexts" : [
+        "copy.paywall.oneTimePacks"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "One-time packs" : {
+      "contexts" : [
+        "copy.business.packs"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "One-time purchase: {price}." : {
+      "contexts" : [
+        "copy.format.oneTimePrice"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "One-time purchase. Restore from the same Apple Account." : {
+      "contexts" : [
+        "copy.packs.permanent"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Open a drain trap" : {
+      "contexts" : [
+        "jobs.11.repairOptions.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Open all taps only" : {
+      "contexts" : [
+        "jobs.13.repairOptions.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Open included content" : {
+      "contexts" : [
+        "copy.packs.open"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Open PipeBoss Store" : {
+      "contexts" : [
+        "copy.dashboard.proButton"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Open the valve and leave" : {
+      "contexts" : [
+        "jobs.3.repairOptions.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Operators know the pattern of use." : {
+      "contexts" : [
+        "jobs.22.repairOptions.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Optional rewarded ads" : {
+      "contexts" : [
+        "copy.business.rewardedAds"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Organized Parts Bins" : {
+      "contexts" : [
+        "upgrades.0.name"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Original quote missed access issues." : {
+      "contexts" : [
+        "jobs.24.symptoms.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Other heating emitters are working." : {
+      "contexts" : [
+        "jobs.18.diagnosisQuestion.options.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Other outlets are normal." : {
+      "contexts" : [
+        "jobs.4.diagnosisQuestion.options.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Other taps run normally." : {
+      "contexts" : [
+        "jobs.4.symptoms.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Outdoor Tap Frost Leak" : {
+      "contexts" : [
+        "jobs.8.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Outdoor taps need frost planning: isolation, drain-down, and insulation where required." : {
+      "contexts" : [
+        "jobs.8.learningTip"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Outside taps still connect to potable supplies." : {
+      "contexts" : [
+        "jobs.20.repairOptions.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Over-tighten the nut" : {
+      "contexts" : [
+        "jobs.0.repairOptions.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Owned" : {
+      "contexts" : [
+        "copy.business.owned",
+        "copy.inventory.owned"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Paint color" : {
+      "contexts" : [
+        "jobs.21.diagnosisQuestion.options.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Paint color is not diagnostic." : {
+      "contexts" : [
+        "jobs.21.diagnosisQuestion.options.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Paint over the stain" : {
+      "contexts" : [
+        "jobs.21.repairOptions.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Paint over valve" : {
+      "contexts" : [
+        "jobs.18.repairOptions.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Patterns matter in high-use sites." : {
+      "contexts" : [
+        "jobs.22.diagnosisQuestion.options.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Pipe Cutter" : {
+      "contexts" : [
+        "tools.6.name"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Pipe freeze kit" : {
+      "contexts" : [
+        "products.3.benefits.3"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Pipe Freeze Kit" : {
+      "contexts" : [
+        "tools.10.name"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Pipe is supported and not moving." : {
+      "contexts" : [
+        "jobs.6.symptoms.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Pipe Materials" : {
+      "contexts" : [
+        "cards.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Pipe sizing or flow restriction" : {
+      "contexts" : [
+        "jobs.16.diagnosisQuestion.options.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Pipe Sizing Wheel" : {
+      "contexts" : [
+        "tools.16.name"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Pipe to valve is warm on one side only." : {
+      "contexts" : [
+        "jobs.18.symptoms.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Pipe valves feel warm." : {
+      "contexts" : [
+        "jobs.3.symptoms.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Pipe was not isolated during frost." : {
+      "contexts" : [
+        "jobs.8.symptoms.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "PipeBoss AI is for educational training and simulation only. Always follow local regulations and consult a qualified professional for real-world plumbing work." : {
+      "contexts" : [
+        "copy.educationalDisclaimer"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "PipeBoss AI learning report" : {
+      "contexts" : [
+        "copy.training.report"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "PipeBoss Pro keeps career jobs unlimited." : {
+      "contexts" : [
+        "copy.paywall.proAdsSummary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "PipeBoss Pro Monthly" : {
+      "contexts" : [
+        "products.0.displayName"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "PipeBoss Pro Monthly, PipeBoss Pro Yearly, Emergency Jobs Pack, Advanced Tool Pack, City Expansion Pack, and Business Owner Mode." : {
+      "contexts" : [
+        "copy.reviewProductList"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "PipeBoss Pro or expansion required" : {
+      "contexts" : [
+        "copy.feedback.proRequired"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "PipeBoss Pro subscriptions" : {
+      "contexts" : [
+        "copy.paywall.subscriptions"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "PipeBoss Pro Yearly" : {
+      "contexts" : [
+        "products.1.displayName"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "PipeBoss Store" : {
+      "contexts" : [
+        "copy.paywall.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Pipes bang loudly when the washing machine stops filling." : {
+      "contexts" : [
+        "jobs.11.customerComplaint"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Pipes move in a cupboard." : {
+      "contexts" : [
+        "jobs.11.symptoms.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Placeholder for qualified heating modules and regulated safety checks." : {
+      "contexts" : [
+        "tools.13.summary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Plan drain cleaning, pressure checks, spares, and hygiene-safe handover." : {
+      "contexts" : [
+        "jobs.22.repairOptions.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Plan parts, travel, and callbacks more accurately." : {
+      "contexts" : [
+        "upgrades.4.summary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Planned inspection and log" : {
+      "contexts" : [
+        "jobs.22.diagnosisQuestion.options.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Plunger" : {
+      "contexts" : [
+        "tools.2.name"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Plunging gives only brief relief." : {
+      "contexts" : [
+        "jobs.10.symptoms.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Poor sizing and support create future faults." : {
+      "contexts" : [
+        "jobs.15.diagnosisQuestion.options.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Poor trap arrangement can allow sewer smell." : {
+      "contexts" : [
+        "jobs.7.diagnosisQuestion.options.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Possible system leak" : {
+      "contexts" : [
+        "jobs.12.diagnosisQuestion.options.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Pour stronger chemicals" : {
+      "contexts" : [
+        "jobs.10.repairOptions.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Practical notes unlock as you level up and complete jobs." : {
+      "contexts" : [
+        "copy.learning.subtitle"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Practice attempts" : {
+      "contexts" : [
+        "copy.training.practiceSessions"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Practice decisions, track progress, and revisit what needs work." : {
+      "contexts" : [
+        "copy.training.subtitle"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Practice now" : {
+      "contexts" : [
+        "copy.training.practiceStart"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Press tool" : {
+      "contexts" : [
+        "products.3.benefits.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Press Tool" : {
+      "contexts" : [
+        "tools.11.name"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Pressure" : {
+      "contexts" : [
+        "cards.4.topic"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Pressure alone does not locate a use-related leak." : {
+      "contexts" : [
+        "jobs.21.diagnosisQuestion.options.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Pressure at rest can look fine even when pipework cannot deliver flow under demand." : {
+      "contexts" : [
+        "jobs.16.diagnosisQuestion.explanation"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Pressure Basics" : {
+      "contexts" : [
+        "cards.4.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Pressure controls must be suitable for local regulations and manufacturer limits." : {
+      "contexts" : [
+        "jobs.11.safetyWarning"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Pressure does not control drain speed." : {
+      "contexts" : [
+        "jobs.1.diagnosisQuestion.options.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Pressure falls after topping up." : {
+      "contexts" : [
+        "jobs.12.symptoms.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Pressure Gauge" : {
+      "contexts" : [
+        "tools.8.name"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Pressure increase may breach limits and miss friction loss." : {
+      "contexts" : [
+        "jobs.16.repairOptions.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Pressure problems need measurements, not guesses." : {
+      "contexts" : [
+        "cards.4.summary"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Preview content" : {
+      "contexts" : [
+        "copy.packs.preview"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Privacy Policy" : {
+      "contexts" : [
+        "copy.paywall.privacy"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Pro" : {
+      "contexts" : [
+        "copy.jobs.premium"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Pro card" : {
+      "contexts" : [
+        "copy.learning.premium"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Progress and learning history are saved on this device." : {
+      "contexts" : [
+        "copy.settings.localProgress"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Promise it will never fail" : {
+      "contexts" : [
+        "jobs.9.diagnosisQuestion.options.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Protect public areas." : {
+      "contexts" : [
+        "cards.11.bulletPoints.1"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "PTFE Tape" : {
+      "contexts" : [
+        "tools.4.name"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Purchase is pending approval." : {
+      "contexts" : [
+        "copy.paywall.pendingPurchaseMessage"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Qualified Plumber" : {
+      "contexts" : [
+        "copy.careerTitles.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Quote a full bathroom" : {
+      "contexts" : [
+        "jobs.13.diagnosisQuestion.options.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Quote challenges" : {
+      "contexts" : [
+        "products.5.benefits.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Quote Dispute Follow-Up" : {
+      "contexts" : [
+        "jobs.24.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Quote work, manage schedules, and balance profit with reputation." : {
+      "contexts" : [
+        "upgrades.7.summary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Quoting Basics" : {
+      "contexts" : [
+        "cards.12.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Quoting, scheduling, staffing, and customer reputation challenges." : {
+      "contexts" : [
+        "products.5.subtitle"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Radiator air" : {
+      "contexts" : [
+        "jobs.16.diagnosisQuestion.options.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Radiator Cold at Top" : {
+      "contexts" : [
+        "jobs.3.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Radiator Key" : {
+      "contexts" : [
+        "tools.5.name"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Radiator Not Heating Downstairs" : {
+      "contexts" : [
+        "jobs.18.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Radiator sludge" : {
+      "contexts" : [
+        "jobs.20.diagnosisQuestion.options.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Raise incoming pressure" : {
+      "contexts" : [
+        "jobs.5.repairOptions.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Raise pressure only" : {
+      "contexts" : [
+        "jobs.16.repairOptions.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Raise water temperature" : {
+      "contexts" : [
+        "jobs.20.repairOptions.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Rank" : {
+      "contexts" : [
+        "copy.leaderboard.rank"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Rating" : {
+      "contexts" : [
+        "copy.leaderboard.reputation"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Reach level {level}" : {
+      "contexts" : [
+        "copy.format.reachLevel"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Reach level {level} to unlock {item}." : {
+      "contexts" : [
+        "copy.format.unlockItem"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Reactive-only work is costly." : {
+      "contexts" : [
+        "jobs.22.diagnosisQuestion.options.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Recent decisions" : {
+      "contexts" : [
+        "copy.training.history"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Recent decorating can leave valves closed, painted, or disturbed." : {
+      "contexts" : [
+        "jobs.18.mentorHint"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Recommendations should match evidence." : {
+      "contexts" : [
+        "jobs.9.repairOptions.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Record symptoms, advise customer, and refer regulated checks." : {
+      "contexts" : [
+        "jobs.14.repairOptions.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Record what was inspected and repaired." : {
+      "contexts" : [
+        "cards.11.bulletPoints.2"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Records must be accurate and lawful." : {
+      "contexts" : [
+        "jobs.24.repairOptions.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Recurring pressure loss usually has a cause." : {
+      "contexts" : [
+        "jobs.12.diagnosisQuestion.options.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Refill energy" : {
+      "contexts" : [
+        "copy.jobs.refillEnergy"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Refill job energy" : {
+      "contexts" : [
+        "copy.business.energyReward"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Remake the joint correctly" : {
+      "contexts" : [
+        "jobs.6.repairOptions.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Remove and clear the trap" : {
+      "contexts" : [
+        "jobs.1.repairOptions.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Remove debris, descale safely, refit, and test." : {
+      "contexts" : [
+        "jobs.4.repairOptions.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Remove the gauge" : {
+      "contexts" : [
+        "jobs.12.repairOptions.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Remove the hazard and use suitable protection per local rules." : {
+      "contexts" : [
+        "jobs.20.repairOptions.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Remove the radiator" : {
+      "contexts" : [
+        "jobs.3.repairOptions.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Remove trap debris first." : {
+      "contexts" : [
+        "cards.5.bulletPoints.0"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Remove trap debris, auger the branch, then test both outlets." : {
+      "contexts" : [
+        "jobs.10.repairOptions.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Repair accuracy" : {
+      "contexts" : [
+        "copy.training.repair"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Repair completed, but the job needed rework or extra explanation." : {
+      "contexts" : [
+        "copy.feedback.rework"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Repair decision" : {
+      "contexts" : [
+        "copy.simulation.repair"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Repair the split section and advise winter isolation." : {
+      "contexts" : [
+        "jobs.8.repairOptions.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Repair: {choice}" : {
+      "contexts" : [
+        "copy.training.repairChoice"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Repeated hammer can damage fittings." : {
+      "contexts" : [
+        "jobs.11.repairOptions.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Repeated pressure loss should trigger a leak check before any top-up habit." : {
+      "contexts" : [
+        "jobs.12.diagnosisQuestion.explanation"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Replace all pipework" : {
+      "contexts" : [
+        "jobs.4.repairOptions.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Replace boiler" : {
+      "contexts" : [
+        "jobs.18.diagnosisQuestion.options.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Replace dishwasher" : {
+      "contexts" : [
+        "jobs.10.repairOptions.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Replace everything immediately" : {
+      "contexts" : [
+        "jobs.22.diagnosisQuestion.options.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Replace tap washer" : {
+      "contexts" : [
+        "jobs.16.repairOptions.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Replace the tap" : {
+      "contexts" : [
+        "jobs.1.repairOptions.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Replace the toilet pan" : {
+      "contexts" : [
+        "jobs.2.repairOptions.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Replace toilet seat" : {
+      "contexts" : [
+        "jobs.17.diagnosisQuestion.options.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Replace worn consumables early." : {
+      "contexts" : [
+        "cards.1.bulletPoints.2"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Reproduce the symptom." : {
+      "contexts" : [
+        "cards.7.bulletPoints.0"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Reputation" : {
+      "contexts" : [
+        "copy.dashboard.reputation"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Required before taking higher-value maintenance contracts." : {
+      "contexts" : [
+        "upgrades.6.summary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Required tools" : {
+      "contexts" : [
+        "copy.jobs.requiredTools",
+        "copy.simulation.requiredTools"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Reset" : {
+      "contexts" : [
+        "copy.settings.resetNow"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Reset progress" : {
+      "contexts" : [
+        "copy.settings.reset"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Reset saved progress?" : {
+      "contexts" : [
+        "copy.settings.resetConfirm"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Restore did not complete. Try again from the App Store account used to subscribe." : {
+      "contexts" : [
+        "copy.paywall.restoreFailedMessage"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Restore purchases" : {
+      "contexts" : [
+        "copy.paywall.restore"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Retest after every repair." : {
+      "contexts" : [
+        "cards.9.bulletPoints.2"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Retry App Store products" : {
+      "contexts" : [
+        "copy.paywall.retryStore"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Review Follow-Up System" : {
+      "contexts" : [
+        "upgrades.3.name"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Review PipeBoss Pro subscriptions and one-time expansion packs." : {
+      "contexts" : [
+        "copy.paywall.subtitle"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Review records and offer clear resolution" : {
+      "contexts" : [
+        "jobs.24.repairOptions.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Revise route, supports, and sizing" : {
+      "contexts" : [
+        "jobs.15.repairOptions.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Reward" : {
+      "contexts" : [
+        "copy.jobs.reward"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Rewarded ads are optional for free users and never interrupt gameplay or learning." : {
+      "contexts" : [
+        "copy.paywall.optionalAdsSummary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Rip out wall immediately" : {
+      "contexts" : [
+        "jobs.21.repairOptions.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Running Toilet Cistern" : {
+      "contexts" : [
+        "jobs.2.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Safely thaw, insulate, and advise" : {
+      "contexts" : [
+        "jobs.23.repairOptions.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Safety" : {
+      "contexts" : [
+        "cards.0.topic"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Safety devices are not nuisances. Discharge pipework exists to show a fault safely." : {
+      "contexts" : [
+        "jobs.14.learningTip"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Safety discharge pipework needs proper qualified investigation." : {
+      "contexts" : [
+        "jobs.14.diagnosisQuestion.explanation"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Safety discharge requiring qualified assessment" : {
+      "contexts" : [
+        "jobs.14.diagnosisQuestion.options.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Safety First" : {
+      "contexts" : [
+        "cards.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Safety warning" : {
+      "contexts" : [
+        "copy.simulation.safety"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Same Pro access. Choose monthly or yearly billing." : {
+      "contexts" : [
+        "copy.paywall.sameAccess"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Save {percent}% compared with 12 monthly payments." : {
+      "contexts" : [
+        "copy.format.annualSavings"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Scaled shower head or filter" : {
+      "contexts" : [
+        "jobs.4.diagnosisQuestion.options.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Scenario {number} of {count}" : {
+      "contexts" : [
+        "copy.training.question"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Scheduling Tablet" : {
+      "contexts" : [
+        "upgrades.4.name"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Screwdriver Set" : {
+      "contexts" : [
+        "tools.1.name"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Sealant tape for suitable threaded joints when specified." : {
+      "contexts" : [
+        "tools.4.summary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Secure pipework and control pressure" : {
+      "contexts" : [
+        "jobs.11.repairOptions.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Secure pipework where accessible." : {
+      "contexts" : [
+        "cards.7.bulletPoints.2"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Select tools" : {
+      "contexts" : [
+        "copy.simulation.selectTools"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Separate labour, materials, and contingency." : {
+      "contexts" : [
+        "cards.12.bulletPoints.0"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Service valve and document site pattern" : {
+      "contexts" : [
+        "jobs.17.repairOptions.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Set pump to maximum" : {
+      "contexts" : [
+        "jobs.19.repairOptions.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Set the water level correctly, then flush test." : {
+      "contexts" : [
+        "jobs.2.repairOptions.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Settings and privacy" : {
+      "contexts" : [
+        "copy.dashboard.settings"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Settings and Privacy" : {
+      "contexts" : [
+        "copy.settings.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Several valves are the same model." : {
+      "contexts" : [
+        "jobs.17.symptoms.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Share learning report" : {
+      "contexts" : [
+        "copy.training.shareReport"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Show repair and document advice" : {
+      "contexts" : [
+        "jobs.9.repairOptions.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Shower head has visible scale." : {
+      "contexts" : [
+        "jobs.4.symptoms.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Skipping handover hurts reputation." : {
+      "contexts" : [
+        "jobs.9.diagnosisQuestion.options.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Slow Bathroom Basin Drain" : {
+      "contexts" : [
+        "jobs.1.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Slow drip at threaded connection." : {
+      "contexts" : [
+        "jobs.6.symptoms.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Small drips still matter. Remake the joint and test dry before handover." : {
+      "contexts" : [
+        "jobs.6.learningTip"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Smear sealant outside the joint" : {
+      "contexts" : [
+        "jobs.0.repairOptions.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Smell appears after discharge." : {
+      "contexts" : [
+        "jobs.7.symptoms.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Soldering Kit" : {
+      "contexts" : [
+        "tools.15.name"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Some radiators gurgle." : {
+      "contexts" : [
+        "jobs.19.symptoms.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Specialist" : {
+      "contexts" : [
+        "toolCategory.specialist"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Speeds up approved press-fit installations when compatible fittings are used." : {
+      "contexts" : [
+        "tools.11.summary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Spend coins on systems that improve speed, trust, and training depth." : {
+      "contexts" : [
+        "copy.business.subtitle"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Spray appears behind the wall plate." : {
+      "contexts" : [
+        "jobs.8.symptoms.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Staff report slow drains at closing." : {
+      "contexts" : [
+        "jobs.22.symptoms.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Stain grows after bathroom use." : {
+      "contexts" : [
+        "jobs.21.symptoms.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Staining at a valve is stronger evidence than the number on its own." : {
+      "contexts" : [
+        "jobs.12.mentorHint"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Standpipe trap is shallow." : {
+      "contexts" : [
+        "jobs.7.symptoms.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Start" : {
+      "contexts" : [
+        "copy.jobs.start"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Start as an apprentice" : {
+      "contexts" : [
+        "onboarding.0.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Start assessment" : {
+      "contexts" : [
+        "copy.training.examStart"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Start career" : {
+      "contexts" : [
+        "copy.onboarding.startButton"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Start job" : {
+      "contexts" : [
+        "copy.dashboard.startJob"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Start with isolation and symptoms." : {
+      "contexts" : [
+        "cards.9.bulletPoints.0"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Start with less invasive local checks." : {
+      "contexts" : [
+        "jobs.18.repairOptions.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Start with reliable hand tools and learn when a specialist tool is worth the cost." : {
+      "contexts" : [
+        "cards.1.summary"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Start with the simple non-invasive fix." : {
+      "contexts" : [
+        "jobs.3.repairOptions.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Starter kit" : {
+      "contexts" : [
+        "copy.inventory.starter"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Starter spanner for compression nuts, valves, and simple fittings." : {
+      "contexts" : [
+        "tools.0.summary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Static pressure is acceptable." : {
+      "contexts" : [
+        "jobs.16.symptoms.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Static pressure is not the same as usable flow under demand." : {
+      "contexts" : [
+        "jobs.16.learningTip"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Static pressure reads high." : {
+      "contexts" : [
+        "jobs.11.symptoms.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Stop the source and manage immediate hazards." : {
+      "contexts" : [
+        "jobs.13.diagnosisQuestion.options.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Stop water, protect electrics by escalating, and make a safe temporary repair." : {
+      "contexts" : [
+        "jobs.13.repairOptions.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Stop, isolate, protect the property, and check the limits of your competence." : {
+      "contexts" : [
+        "cards.0.summary"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Store visits" : {
+      "contexts" : [
+        "copy.training.storeVisits"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Street pressure only" : {
+      "contexts" : [
+        "jobs.21.diagnosisQuestion.options.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Stud wall has limited support points." : {
+      "contexts" : [
+        "jobs.15.symptoms.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Submerged hoses can contaminate potable water." : {
+      "contexts" : [
+        "jobs.20.diagnosisQuestion.options.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Subscribe" : {
+      "contexts" : [
+        "copy.paywall.subscribe"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Subscription management is unavailable in this environment." : {
+      "contexts" : [
+        "copy.paywall.manageUnavailableMessage"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Subscriptions and expansion packs" : {
+      "contexts" : [
+        "copy.dashboard.proPrompt"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Subscriptions and packs are optional. Your free training progress stays on this device." : {
+      "contexts" : [
+        "copy.paywall.reviewHint"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Subscriptions renew automatically unless cancelled at least 24 hours before the end of the current period. Pricing is shown by the App Store before purchase. Manage or cancel in your Apple ID subscription settings." : {
+      "contexts" : [
+        "copy.paywall.termsSummary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Support pipework to prevent stress." : {
+      "contexts" : [
+        "cards.2.bulletPoints.1"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Symptoms" : {
+      "contexts" : [
+        "copy.simulation.symptoms"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "System pressure is low." : {
+      "contexts" : [
+        "jobs.19.symptoms.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Take cash with no record" : {
+      "contexts" : [
+        "jobs.22.repairOptions.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Take challenge" : {
+      "contexts" : [
+        "copy.training.dailyStart"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Take realistic plumbing jobs, build confidence, and learn the practical choices behind each fix." : {
+      "contexts" : [
+        "onboarding.0.subtitle"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Tap aerator scale" : {
+      "contexts" : [
+        "jobs.7.diagnosisQuestion.options.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Tap cartridge" : {
+      "contexts" : [
+        "jobs.10.diagnosisQuestion.options.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Tap cartridges fail often." : {
+      "contexts" : [
+        "jobs.22.symptoms.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Tap temperature" : {
+      "contexts" : [
+        "jobs.6.diagnosisQuestion.options.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Tap was recently dismantled." : {
+      "contexts" : [
+        "jobs.5.symptoms.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Tell customer it is normal" : {
+      "contexts" : [
+        "jobs.5.repairOptions.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Tell customer to top up daily" : {
+      "contexts" : [
+        "jobs.12.repairOptions.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Temperature does not solve backflow risk." : {
+      "contexts" : [
+        "jobs.20.repairOptions.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Temperature is not the primary clue here." : {
+      "contexts" : [
+        "jobs.6.diagnosisQuestion.options.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Terms of Use" : {
+      "contexts" : [
+        "copy.paywall.terms"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Test with one outlet, then two outlets, and compare the drop." : {
+      "contexts" : [
+        "jobs.16.mentorHint"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Testing" : {
+      "contexts" : [
+        "toolCategory.testing"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "That escalates the dispute." : {
+      "contexts" : [
+        "jobs.24.repairOptions.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "That may worsen stuck parts." : {
+      "contexts" : [
+        "jobs.18.repairOptions.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "The basin fills up and drains away slowly after shaving." : {
+      "contexts" : [
+        "jobs.1.customerComplaint"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "The boiler pressure drops every few days and the heating stops." : {
+      "contexts" : [
+        "jobs.12.customerComplaint"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "The boiler stops on cold mornings and a small plastic pipe outside is frozen." : {
+      "contexts" : [
+        "jobs.23.customerComplaint"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "The central heating pump sounds like gravel when it starts." : {
+      "contexts" : [
+        "jobs.19.customerComplaint"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "The cistern overfills into the overflow." : {
+      "contexts" : [
+        "jobs.2.diagnosisQuestion.options.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "The fault is in the cistern fill control." : {
+      "contexts" : [
+        "jobs.2.repairOptions.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "The fault is not fully resolved. Review the diagnosis and try again." : {
+      "contexts" : [
+        "copy.feedback.failed"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "The gauge is a safety indicator, not the problem." : {
+      "contexts" : [
+        "jobs.12.repairOptions.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "The issue is a flush valve, not a basin waste." : {
+      "contexts" : [
+        "jobs.17.diagnosisQuestion.options.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "The issue is supply-side shock." : {
+      "contexts" : [
+        "jobs.11.repairOptions.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "The issue is water quality protection." : {
+      "contexts" : [
+        "jobs.20.diagnosisQuestion.options.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "The kitchen sink is full of greasy water and the dishwasher backs up." : {
+      "contexts" : [
+        "jobs.10.customerComplaint"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "The leak is behind the plate, not the handle." : {
+      "contexts" : [
+        "jobs.8.repairOptions.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "The leak only appears around the compression joint while water passes through that section." : {
+      "contexts" : [
+        "jobs.0.diagnosisQuestion.explanation"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "The noise timing tells you it is linked to valve closure." : {
+      "contexts" : [
+        "jobs.11.mentorHint"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "The nut and olive are not sealing correctly." : {
+      "contexts" : [
+        "jobs.0.diagnosisQuestion.options.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "The odor after discharge points to trap seal or waste arrangement issues." : {
+      "contexts" : [
+        "jobs.7.diagnosisQuestion.explanation"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "The outside pipe and timing are stronger clues than room thermostat settings." : {
+      "contexts" : [
+        "jobs.23.mentorHint"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "The outside tap sprays when opened after a cold night." : {
+      "contexts" : [
+        "jobs.8.customerComplaint"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "The overflow is a safety route and must not be blocked." : {
+      "contexts" : [
+        "jobs.2.repairOptions.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "The pan clears normally after flushing." : {
+      "contexts" : [
+        "jobs.2.diagnosisQuestion.options.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "The pattern points to air before replacement." : {
+      "contexts" : [
+        "jobs.3.diagnosisQuestion.options.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "The pressure reading and constant run point to valve internals or operating pressure." : {
+      "contexts" : [
+        "jobs.17.diagnosisQuestion.explanation"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "The repair is complete, but the customer wants to know what changed." : {
+      "contexts" : [
+        "jobs.9.customerComplaint"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "The repair may be valid, but approval and documentation were weak." : {
+      "contexts" : [
+        "jobs.24.diagnosisQuestion.explanation"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "The seal must be correct inside the fitting." : {
+      "contexts" : [
+        "jobs.6.diagnosisQuestion.options.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "The seat does not control flush flow." : {
+      "contexts" : [
+        "jobs.17.diagnosisQuestion.options.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "The shared drain route is the symptom source." : {
+      "contexts" : [
+        "jobs.10.repairOptions.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "The shower flow has become weak over the last few weeks." : {
+      "contexts" : [
+        "jobs.4.customerComplaint"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "The smell follows drainage discharge." : {
+      "contexts" : [
+        "jobs.7.diagnosisQuestion.options.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "The source remains active." : {
+      "contexts" : [
+        "jobs.21.repairOptions.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "The symptom is on cold fill closure." : {
+      "contexts" : [
+        "jobs.11.diagnosisQuestion.options.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "The tap is not causing backup." : {
+      "contexts" : [
+        "jobs.10.diagnosisQuestion.options.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "The tap is not causing slow waste flow." : {
+      "contexts" : [
+        "jobs.1.repairOptions.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "The technical fix is done; the fault is the change process." : {
+      "contexts" : [
+        "jobs.24.mentorHint"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "The temperature pattern matters: cold top usually means air." : {
+      "contexts" : [
+        "jobs.3.mentorHint"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "The timing after a washer change and local vibration point to the tap internals." : {
+      "contexts" : [
+        "jobs.5.diagnosisQuestion.explanation"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "The toilet keeps trickling into the pan after flushing." : {
+      "contexts" : [
+        "jobs.2.customerComplaint"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "The upstairs radiator is warm at the bottom but cold at the top." : {
+      "contexts" : [
+        "jobs.3.customerComplaint"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "The utility room smells after the washing machine drains." : {
+      "contexts" : [
+        "jobs.7.customerComplaint"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "The water level is reaching the overflow, so the fill control needs adjustment or repair." : {
+      "contexts" : [
+        "jobs.2.diagnosisQuestion.explanation"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "There is no sign of whole-property failure." : {
+      "contexts" : [
+        "jobs.4.diagnosisQuestion.options.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Thermal camera" : {
+      "contexts" : [
+        "products.3.benefits.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Thermal Camera" : {
+      "contexts" : [
+        "tools.12.name"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "These scenarios are already included while your Pro subscription is active. A pack keeps this content accessible after Pro ends." : {
+      "contexts" : [
+        "copy.packs.proOverlap"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "This avoids diagnosis and can create safety issues." : {
+      "contexts" : [
+        "jobs.1.repairOptions.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "This avoids repair and disrupts the site." : {
+      "contexts" : [
+        "jobs.17.repairOptions.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "This can crush fittings and make the leak worse." : {
+      "contexts" : [
+        "jobs.0.repairOptions.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "This can damage pipework and injure people." : {
+      "contexts" : [
+        "jobs.23.repairOptions.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "This can damage the mechanism." : {
+      "contexts" : [
+        "jobs.17.repairOptions.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "This clears local XP, coins, tools, completed jobs, and onboarding state on this device." : {
+      "contexts" : [
+        "copy.settings.resetConfirmMessage"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "This does not affect sealed heating pressure." : {
+      "contexts" : [
+        "jobs.12.diagnosisQuestion.options.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "This does not repair the fault." : {
+      "contexts" : [
+        "jobs.6.repairOptions.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "This ignores the fault and can introduce system problems." : {
+      "contexts" : [
+        "jobs.12.repairOptions.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "This is a communication and quoting issue." : {
+      "contexts" : [
+        "jobs.24.diagnosisQuestion.options.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "This is a planning stage issue." : {
+      "contexts" : [
+        "jobs.15.diagnosisQuestion.options.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "This is excessive without measured evidence." : {
+      "contexts" : [
+        "jobs.4.repairOptions.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "This is not a basin waste issue." : {
+      "contexts" : [
+        "jobs.14.diagnosisQuestion.options.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "This is not a bathroom fixture issue." : {
+      "contexts" : [
+        "jobs.19.diagnosisQuestion.options.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "This is not a heating circuit." : {
+      "contexts" : [
+        "jobs.20.diagnosisQuestion.options.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "This is not a heating emitter symptom." : {
+      "contexts" : [
+        "jobs.16.diagnosisQuestion.options.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "This is not a WC symptom." : {
+      "contexts" : [
+        "jobs.23.diagnosisQuestion.options.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "This is unrelated to an outdoor tap spray." : {
+      "contexts" : [
+        "jobs.8.diagnosisQuestion.options.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "This misses trapped air and pressure checks." : {
+      "contexts" : [
+        "jobs.3.repairOptions.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "This product is not available from the App Store yet." : {
+      "contexts" : [
+        "copy.paywall.productUnavailable"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "This skips mechanical diagnosis and creates hazards." : {
+      "contexts" : [
+        "jobs.10.repairOptions.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "This wastes water and is unsafe." : {
+      "contexts" : [
+        "jobs.8.repairOptions.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "This would leak from the tap body, not the pipe joint." : {
+      "contexts" : [
+        "jobs.0.diagnosisQuestion.options.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Three learning days" : {
+      "contexts" : [
+        "copy.training.threeDays"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Tighten the tap handle" : {
+      "contexts" : [
+        "jobs.8.repairOptions.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Time" : {
+      "contexts" : [
+        "copy.jobs.time"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Timing and location point to the shower area." : {
+      "contexts" : [
+        "jobs.21.diagnosisQuestion.options.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Today's challenge completed" : {
+      "contexts" : [
+        "copy.training.dailyDone"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Tool Inventory" : {
+      "contexts" : [
+        "copy.inventory.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Tools" : {
+      "contexts" : [
+        "cards.1.topic",
+        "copy.tabs.tools"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Top section stays cold." : {
+      "contexts" : [
+        "jobs.3.symptoms.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Topic breakdown" : {
+      "contexts" : [
+        "copy.training.topics"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Topic trends, decision history, and exam practice with PipeBoss Pro." : {
+      "contexts" : [
+        "copy.training.detailedPro"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Trace and test non-invasively first" : {
+      "contexts" : [
+        "jobs.21.repairOptions.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Trace the water to the highest wet point before choosing the repair." : {
+      "contexts" : [
+        "jobs.0.mentorHint"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Training" : {
+      "contexts" : [
+        "upgradeCategory.training"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Training disclaimer" : {
+      "contexts" : [
+        "copy.settings.disclaimer"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Trap area smells slightly stale." : {
+      "contexts" : [
+        "jobs.1.symptoms.2"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Trap is dry above the joint." : {
+      "contexts" : [
+        "jobs.0.symptoms.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Trap is greasy." : {
+      "contexts" : [
+        "jobs.10.symptoms.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Trap seal being disturbed" : {
+      "contexts" : [
+        "jobs.7.diagnosisQuestion.options.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Trap smell" : {
+      "contexts" : [
+        "jobs.16.diagnosisQuestion.options.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Trapped air" : {
+      "contexts" : [
+        "jobs.3.diagnosisQuestion.options.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Turn off washroom indefinitely" : {
+      "contexts" : [
+        "jobs.17.repairOptions.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Turn repeat callouts into a maintenance pattern." : {
+      "contexts" : [
+        "jobs.22.mentorHint"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Turn thermostat up" : {
+      "contexts" : [
+        "jobs.12.diagnosisQuestion.options.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Unclear change control" : {
+      "contexts" : [
+        "jobs.24.diagnosisQuestion.options.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Undersized or unsupported runs" : {
+      "contexts" : [
+        "jobs.15.diagnosisQuestion.options.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Unlimited" : {
+      "contexts" : [
+        "copy.unlimited"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Unlimited jobs" : {
+      "contexts" : [
+        "products.0.benefits.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Unlock hint" : {
+      "contexts" : [
+        "copy.simulation.unlockHint"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Unlock one hint" : {
+      "contexts" : [
+        "copy.business.hintReward"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Unlock specialist tools for faster diagnosis." : {
+      "contexts" : [
+        "products.3.subtitle"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Unlocked" : {
+      "contexts" : [
+        "copy.learning.unlocked"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Unlocked work is based on level, tools, energy, and premium packs." : {
+      "contexts" : [
+        "copy.jobs.subtitle"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Unlocks commercial contract chain." : {
+      "contexts" : [
+        "upgrades.6.effectDescription"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Unlocks faster emergency job starts." : {
+      "contexts" : [
+        "upgrades.5.effectDescription"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Unlocks owner-mode decision jobs." : {
+      "contexts" : [
+        "upgrades.7.effectDescription"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Unvented cylinder work is regulated in many places and must be handled by qualified professionals." : {
+      "contexts" : [
+        "jobs.14.safetyWarning"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Upgrade the kit as jobs become more technical." : {
+      "contexts" : [
+        "copy.inventory.subtitle"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Upgrades" : {
+      "contexts" : [
+        "copy.business.upgrades"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Upsell unrelated work" : {
+      "contexts" : [
+        "jobs.9.repairOptions.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Urban fault patterns" : {
+      "contexts" : [
+        "products.2.benefits.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Use air freshener" : {
+      "contexts" : [
+        "jobs.7.repairOptions.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Use boiling water" : {
+      "contexts" : [
+        "jobs.23.repairOptions.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Use chemicals only" : {
+      "contexts" : [
+        "jobs.1.repairOptions.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Use evidence before major spend." : {
+      "contexts" : [
+        "jobs.22.diagnosisQuestion.options.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Use eye protection and avoid unknown chemical residues." : {
+      "contexts" : [
+        "jobs.10.safetyWarning"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Use inserts on compatible plastic pipe." : {
+      "contexts" : [
+        "cards.3.bulletPoints.1"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Use isolation valves before opening pipework." : {
+      "contexts" : [
+        "cards.0.bulletPoints.1"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Use manufacturer guidance and prevent recurrence with routing or insulation advice." : {
+      "contexts" : [
+        "jobs.23.repairOptions.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Use manufacturer guidance." : {
+      "contexts" : [
+        "cards.10.bulletPoints.1"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Use measured evidence to revise pipe sizing or route restrictions." : {
+      "contexts" : [
+        "jobs.16.repairOptions.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Use observation, moisture patterns, and controlled testing before opening surfaces." : {
+      "contexts" : [
+        "jobs.21.repairOptions.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Use spare random fittings" : {
+      "contexts" : [
+        "jobs.15.repairOptions.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Use the right jaw size to avoid rounding nuts." : {
+      "contexts" : [
+        "cards.1.bulletPoints.0"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Useful for access panels, cistern parts, brackets, and simple trim." : {
+      "contexts" : [
+        "tools.1.summary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Valve stuck or closed" : {
+      "contexts" : [
+        "jobs.18.diagnosisQuestion.options.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Vehicle" : {
+      "contexts" : [
+        "upgradeCategory.vehicle"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Vent carefully, catch water, then confirm pressure is safe." : {
+      "contexts" : [
+        "jobs.3.repairOptions.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Verified purchases" : {
+      "contexts" : [
+        "copy.training.purchases"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Verify valve operation, bleed if needed, and rebalance where appropriate." : {
+      "contexts" : [
+        "jobs.18.repairOptions.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Visible discharge from safety pipework should not be dismissed." : {
+      "contexts" : [
+        "jobs.14.diagnosisQuestion.options.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Wait for breakdowns" : {
+      "contexts" : [
+        "jobs.22.diagnosisQuestion.options.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Wall color" : {
+      "contexts" : [
+        "jobs.6.diagnosisQuestion.options.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Washing Machine Trap Smell" : {
+      "contexts" : [
+        "jobs.7.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Waste branch after the trap" : {
+      "contexts" : [
+        "jobs.10.diagnosisQuestion.options.0.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Waste traps do not reduce supply flow." : {
+      "contexts" : [
+        "jobs.16.diagnosisQuestion.options.2.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Watch optional ad" : {
+      "contexts" : [
+        "copy.jobs.watchAd"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Water appears in the cabinet whenever the kitchen tap runs." : {
+      "contexts" : [
+        "jobs.0.customerComplaint"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Water drains after one minute." : {
+      "contexts" : [
+        "jobs.1.symptoms.1"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Water expansion can split exposed parts." : {
+      "contexts" : [
+        "jobs.8.diagnosisQuestion.options.0.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Water Hammer" : {
+      "contexts" : [
+        "cards.7.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Water hammer diagnosis needs symptom reproduction, pressure measurement, and pipe support checks." : {
+      "contexts" : [
+        "jobs.11.learningTip"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Water is spraying through a ceiling after a pipe split upstairs." : {
+      "contexts" : [
+        "jobs.13.customerComplaint"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Water quality protection is plumbing, not paperwork." : {
+      "contexts" : [
+        "jobs.20.learningTip"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Water trickles into the pan." : {
+      "contexts" : [
+        "jobs.2.symptoms.0"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Water will continue causing damage." : {
+      "contexts" : [
+        "jobs.13.repairOptions.1.detail"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Wear gloves and avoid mixing unknown drain chemicals." : {
+      "contexts" : [
+        "jobs.1.safetyWarning"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Weather history is a diagnostic clue." : {
+      "contexts" : [
+        "jobs.8.mentorHint"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Weather-related faults need both a fix and prevention advice." : {
+      "contexts" : [
+        "jobs.23.learningTip"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "weeks" : {
+      "contexts" : [
+        "copy.packs.week"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Wet Vacuum" : {
+      "contexts" : [
+        "tools.14.name"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "What caused the business fault?" : {
+      "contexts" : [
+        "jobs.24.diagnosisQuestion.prompt"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "What combination best explains the fault?" : {
+      "contexts" : [
+        "jobs.11.diagnosisQuestion.prompt"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "What does good static pressure but poor combined flow suggest?" : {
+      "contexts" : [
+        "jobs.16.diagnosisQuestion.prompt"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "What does the cold top suggest?" : {
+      "contexts" : [
+        "jobs.3.diagnosisQuestion.prompt"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "What does this pattern suggest?" : {
+      "contexts" : [
+        "jobs.19.diagnosisQuestion.prompt"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "What evidence is strongest?" : {
+      "contexts" : [
+        "jobs.21.diagnosisQuestion.prompt"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "What is the best first check?" : {
+      "contexts" : [
+        "jobs.4.diagnosisQuestion.prompt"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "What is the best next diagnostic step?" : {
+      "contexts" : [
+        "jobs.17.diagnosisQuestion.prompt"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "What is the best professional response?" : {
+      "contexts" : [
+        "jobs.9.diagnosisQuestion.prompt"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "What is the first priority?" : {
+      "contexts" : [
+        "jobs.13.diagnosisQuestion.prompt"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "What is the key hazard?" : {
+      "contexts" : [
+        "jobs.20.diagnosisQuestion.prompt"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "What is the likely cause?" : {
+      "contexts" : [
+        "jobs.7.diagnosisQuestion.prompt"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "What is the likely issue?" : {
+      "contexts" : [
+        "jobs.2.diagnosisQuestion.prompt",
+        "jobs.23.diagnosisQuestion.prompt"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "What is the main planning risk?" : {
+      "contexts" : [
+        "jobs.15.diagnosisQuestion.prompt"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "What is the most likely fault?" : {
+      "contexts" : [
+        "jobs.0.diagnosisQuestion.prompt"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "What likely caused the leak?" : {
+      "contexts" : [
+        "jobs.8.diagnosisQuestion.prompt"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "What should the maintenance plan include?" : {
+      "contexts" : [
+        "jobs.22.diagnosisQuestion.prompt"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "What should you check before adding more sealant?" : {
+      "contexts" : [
+        "jobs.6.diagnosisQuestion.prompt"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "What should you check first?" : {
+      "contexts" : [
+        "jobs.18.diagnosisQuestion.prompt"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "What should you investigate before repeatedly topping up?" : {
+      "contexts" : [
+        "jobs.12.diagnosisQuestion.prompt"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "What should you suspect first?" : {
+      "contexts" : [
+        "jobs.5.diagnosisQuestion.prompt"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "When only one outlet is weak, inspect local strainers, filters, and aerators first." : {
+      "contexts" : [
+        "jobs.4.learningTip"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "When several fixtures share a model, one repair can reveal a site-wide pattern." : {
+      "contexts" : [
+        "jobs.17.mentorHint"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "When two appliances share a backup, think shared pipework." : {
+      "contexts" : [
+        "jobs.10.learningTip"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Where is the blockage most likely?" : {
+      "contexts" : [
+        "jobs.10.diagnosisQuestion.prompt"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Where should you inspect first?" : {
+      "contexts" : [
+        "jobs.1.diagnosisQuestion.prompt"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Whole-house pressure failure" : {
+      "contexts" : [
+        "jobs.4.diagnosisQuestion.options.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Work from simple observable evidence toward invasive checks." : {
+      "contexts" : [
+        "cards.9.summary"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Workshop" : {
+      "contexts" : [
+        "upgradeCategory.workshop"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Workshop Dashboard" : {
+      "contexts" : [
+        "copy.dashboard.title"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Wrap tape around the outside" : {
+      "contexts" : [
+        "jobs.6.repairOptions.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Wrong plunger" : {
+      "contexts" : [
+        "jobs.24.diagnosisQuestion.options.1.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "Wrong toilet seat" : {
+      "contexts" : [
+        "jobs.19.diagnosisQuestion.options.2.title"
+      ],
+      "requiresSafetyReview" : true
+    },
+    "XP" : {
+      "contexts" : [
+        "copy.dashboard.xp"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Yearly" : {
+      "contexts" : [
+        "copy.paywall.yearly"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "years" : {
+      "contexts" : [
+        "copy.packs.year"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Your career milestones, earned through practice." : {
+      "contexts" : [
+        "copy.leaderboard.subtitle"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Your first completed job starts your skill history." : {
+      "contexts" : [
+        "copy.training.emptyDetail"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Your privacy" : {
+      "contexts" : [
+        "copy.settings.privacy"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Your progress, practice history, and usage counts stay on this device. Nothing is sent to a tracking or advertising service. Reports are shared only when you choose." : {
+      "contexts" : [
+        "copy.privacySummary"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Your Skills" : {
+      "contexts" : [
+        "copy.training.title"
+      ],
+      "requiresSafetyReview" : false
+    }
+  },
+  "sourceLanguage" : "en"
+}

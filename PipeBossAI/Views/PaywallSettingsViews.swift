@@ -33,6 +33,15 @@ struct PaywallView: View {
 
                         VStack(alignment: .leading, spacing: 12) {
                             SectionTitle(title: AppContent.copy.paywall.subscriptions)
+                            LText(AppContent.copy.paywall.sameAccess)
+                                .font(.subheadline)
+                                .foregroundStyle(AppTheme.muted)
+                            if let savings = purchaseManager.annualSavingsPercent {
+                                LLabel(AppContent.copy.format.annualSavings, systemImage: "tag.fill", values: ["percent": "\(savings)"])
+                                    .font(.subheadline.weight(.semibold))
+                                    .foregroundStyle(AppTheme.success)
+                                    .fixedSize(horizontal: false, vertical: true)
+                            }
                             ForEach(subscriptionProducts) { product in
                                 PaywallProductRow(
                                     product: product,
@@ -46,10 +55,9 @@ struct PaywallView: View {
                         VStack(alignment: .leading, spacing: 12) {
                             SectionTitle(title: AppContent.copy.paywall.oneTimePacks)
                             ForEach(oneTimeProducts) { product in
-                                PaywallOneTimeProductRow(
+                                PackStoreRow(
                                     product: product,
-                                    storeProduct: purchaseManager.product(for: product),
-                                    owned: game.hasEntitlement(product.productID),
+                                    game: game,
                                     purchaseManager: purchaseManager
                                 )
                             }
@@ -62,14 +70,15 @@ struct PaywallView: View {
                             Button {
                                 Task { @MainActor in await purchaseManager.restorePurchases() }
                             } label: {
-                                Label(AppContent.copy.paywall.restore, systemImage: "arrow.clockwise.circle.fill")
+                                LLabel(AppContent.copy.paywall.restore, systemImage: "arrow.clockwise.circle.fill")
                             }
                             .buttonStyle(SecondaryActionButtonStyle())
+                            .disabled(purchaseManager.isRestoring || purchaseManager.isPurchasing)
 
                             Button {
                                 Task { @MainActor in await purchaseManager.manageSubscriptions() }
                             } label: {
-                                Label(AppContent.copy.paywall.manage, systemImage: "person.crop.circle.badge.gearshape")
+                                LLabel(AppContent.copy.paywall.manage, systemImage: "person.crop.circle.badge.gearshape")
                             }
                             .buttonStyle(SecondaryActionButtonStyle())
                         }
@@ -78,21 +87,21 @@ struct PaywallView: View {
                     .padding(.vertical, 20)
                 }
             }
-            .navigationTitle(AppContent.copy.paywall.title)
+            .navigationTitle(Text(LocalizedStringKey(AppContent.copy.paywall.title)))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .topBarTrailing) {
-                    Button(AppContent.copy.paywall.close) {
+                    Button(LocalizedStringKey(AppContent.copy.paywall.close)) {
                         dismiss()
                     }
                 }
             }
-            .alert(AppContent.copy.appName, isPresented: purchaseAlertBinding) {
-                Button(AppContent.copy.ok, role: .cancel) {
+            .alert(LocalizedStringKey(AppContent.copy.appName), isPresented: purchaseAlertBinding) {
+                Button(LocalizedStringKey(AppContent.copy.ok), role: .cancel) {
                     purchaseManager.errorMessage = nil
                 }
             } message: {
-                Text(purchaseManager.errorMessage ?? "")
+                LText(purchaseManager.errorMessage ?? "")
             }
             .task {
                 if purchaseManager.products.isEmpty {
@@ -115,7 +124,7 @@ struct PaywallView: View {
         VStack(alignment: .leading, spacing: 10) {
             SectionTitle(title: AppContent.copy.proName)
             ForEach(subscriptionProducts.flatMap(\.benefits).uniqued(), id: \.self) { benefit in
-                Label(benefit, systemImage: "checkmark.circle.fill")
+                LLabel(benefit, systemImage: "checkmark.circle.fill")
                     .font(.subheadline)
                     .foregroundStyle(AppTheme.muted)
                     .fixedSize(horizontal: false, vertical: true)
@@ -129,18 +138,18 @@ struct PaywallView: View {
         if purchaseManager.isLoading || purchaseManager.productLoadMessage != nil {
             VStack(alignment: .leading, spacing: 12) {
                 if purchaseManager.isLoading {
-                    Label(AppContent.copy.paywall.loadingProducts, systemImage: "hourglass")
+                    LLabel(AppContent.copy.paywall.loadingProducts, systemImage: "hourglass")
                         .font(.subheadline.weight(.semibold))
                         .foregroundStyle(AppTheme.blue)
                 } else if let message = purchaseManager.productLoadMessage {
-                    Label(message, systemImage: "exclamationmark.triangle.fill")
+                    LLabel(message, systemImage: "exclamationmark.triangle.fill")
                         .font(.subheadline.weight(.semibold))
                         .foregroundStyle(AppTheme.danger)
 
                     Button {
                         Task { @MainActor in await purchaseManager.loadProducts() }
                     } label: {
-                        Label(AppContent.copy.paywall.retryStore, systemImage: "arrow.clockwise.circle.fill")
+                        LLabel(AppContent.copy.paywall.retryStore, systemImage: "arrow.clockwise.circle.fill")
                     }
                     .buttonStyle(SecondaryActionButtonStyle())
                 }
@@ -151,17 +160,17 @@ struct PaywallView: View {
 
     private var termsCard: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text(AppContent.copy.paywall.termsSummary)
+            LText(AppContent.copy.paywall.termsSummary)
                 .font(.footnote)
                 .foregroundStyle(AppTheme.muted)
                 .fixedSize(horizontal: false, vertical: true)
 
-            Text(AppContent.copy.paywall.reviewHint)
+            LText(AppContent.copy.paywall.reviewHint)
                 .font(.footnote.weight(.semibold))
                 .foregroundStyle(AppTheme.blue)
                 .fixedSize(horizontal: false, vertical: true)
 
-            Text(AppContent.copy.educationalDisclaimer)
+            LText(AppContent.copy.educationalDisclaimer)
                 .font(.footnote.weight(.semibold))
                 .foregroundStyle(AppTheme.danger)
                 .fixedSize(horizontal: false, vertical: true)
@@ -176,7 +185,7 @@ struct PaywallView: View {
 
     private func legalLink(_ title: String, urlString: String) -> some View {
         Link(destination: URL(string: urlString)!) {
-            Label(title, systemImage: "doc.text.fill")
+            LLabel(title, systemImage: "doc.text.fill")
         }
         .font(.footnote.bold())
         .foregroundStyle(AppTheme.blue)
@@ -188,6 +197,7 @@ private struct PaywallProductRow: View {
     let storeProduct: Product?
     let owned: Bool
     @ObservedObject var purchaseManager: PurchaseManager
+    @State private var eligibleTrial: Product.SubscriptionOffer?
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
@@ -195,10 +205,10 @@ private struct PaywallProductRow: View {
                 IconBadge(icon: product.kind == .yearlySubscription ? "calendar.badge.checkmark" : "calendar", tint: AppTheme.amber)
 
                 VStack(alignment: .leading, spacing: 5) {
-                    Text(product.displayName)
+                    LText(product.displayName)
                         .font(.headline)
                         .foregroundStyle(AppTheme.ink)
-                    Text(product.subtitle)
+                    LText(product.subtitle)
                         .font(.subheadline)
                         .foregroundStyle(AppTheme.muted)
                         .fixedSize(horizontal: false, vertical: true)
@@ -208,54 +218,71 @@ private struct PaywallProductRow: View {
             }
 
             ForEach(product.benefits.prefix(3), id: \.self) { benefit in
-                Label(benefit, systemImage: "checkmark.circle.fill")
+                LLabel(benefit, systemImage: "checkmark.circle.fill")
                     .font(.caption)
                     .foregroundStyle(AppTheme.muted)
             }
 
-            Text(subscriptionTermsText)
+            Group {
+                if let storeProduct {
+                    LText(
+                        product.kind == .yearlySubscription ? AppContent.copy.format.yearPrice : AppContent.copy.format.monthPrice,
+                        values: ["price": storeProduct.displayPrice]
+                    )
+                } else {
+                    LText(AppContent.copy.paywall.priceUnavailable)
+                }
+            }
                 .font(.caption.weight(.semibold))
                 .foregroundStyle(AppTheme.blue)
                 .fixedSize(horizontal: false, vertical: true)
 
             if owned {
-                LockRibbon(text: AppContent.copy.business.owned)
+                LLabel(AppContent.copy.paywall.active, systemImage: "checkmark.seal.fill")
+                    .foregroundStyle(AppTheme.success)
+            } else if purchaseManager.purchasedProductIDs.contains(AppContent.ProductIDs.proMonthly)
+                        || purchaseManager.purchasedProductIDs.contains(AppContent.ProductIDs.proYearly) {
+                Button {
+                    Task { @MainActor in await purchaseManager.manageSubscriptions() }
+                } label: {
+                    LLabel(AppContent.copy.paywall.switchPlan, systemImage: "arrow.triangle.2.circlepath")
+                }
+                .buttonStyle(SecondaryActionButtonStyle())
             } else if let storeProduct {
+                if let trial = eligibleTrial {
+                    LText(AppContent.copy.packs.trial, values: ["count": "\(trial.period.value)", "unit": L10n.text(trialUnit(trial.period.unit)), "price": storeProduct.displayPrice])
+                        .font(.subheadline.weight(.semibold)).foregroundStyle(AppTheme.blue)
+                }
                 Button {
                     Task { @MainActor in
                         await purchaseManager.purchase(storeProduct)
                     }
                 } label: {
-                    Label(storeProduct.displayPrice, systemImage: "crown.fill")
+                    LLabel(storeProduct.displayPrice, systemImage: "crown.fill")
                 }
                 .buttonStyle(PrimaryActionButtonStyle())
+                .disabled(purchaseManager.isPurchasing)
             } else {
                 unavailableProductState
             }
         }
         .pipeCard()
+        .task(id: storeProduct?.id) {
+            eligibleTrial = nil
+            guard !owned, let info = storeProduct?.subscription,
+                  let offer = info.introductoryOffer, offer.paymentMode == .freeTrial else { return }
+            if await info.isEligibleForIntroOffer { eligibleTrial = offer }
+        }
     }
 
-    private var subscriptionTermsText: String {
-        let length: String
-        let unit: String
-        switch product.kind {
-        case .monthlySubscription:
-            length = "1 month"
-            unit = "month"
-        case .yearlySubscription:
-            length = "1 year"
-            unit = "year"
-        case .nonConsumable:
-            length = "one time"
-            unit = "purchase"
+    private func trialUnit(_ unit: Product.SubscriptionPeriod.Unit) -> String {
+        switch unit {
+        case .day: return AppContent.copy.packs.day
+        case .week: return AppContent.copy.packs.week
+        case .month: return AppContent.copy.packs.month
+        case .year: return AppContent.copy.packs.year
+        @unknown default: return AppContent.copy.packs.day
         }
-
-        if let storeProduct {
-            return "Length: \(length). Price: \(storeProduct.displayPrice) per \(unit)."
-        }
-
-        return "Length: \(length). Price: \(product.pricePlaceholder)."
     }
 
     @ViewBuilder
@@ -268,7 +295,7 @@ private struct PaywallProductRow: View {
                 Button {
                     Task { @MainActor in await purchaseManager.loadProducts() }
                 } label: {
-                    Label(AppContent.copy.paywall.retryStore, systemImage: "arrow.clockwise.circle.fill")
+                    LLabel(AppContent.copy.paywall.retryStore, systemImage: "arrow.clockwise.circle.fill")
                 }
                 .buttonStyle(SecondaryActionButtonStyle())
             }
@@ -276,79 +303,10 @@ private struct PaywallProductRow: View {
     }
 }
 
-private struct PaywallOneTimeProductRow: View {
-    let product: SubscriptionProduct
-    let storeProduct: Product?
-    let owned: Bool
-    @ObservedObject var purchaseManager: PurchaseManager
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            HStack(alignment: .top, spacing: 12) {
-                IconBadge(icon: "shippingbox.fill", tint: AppTheme.orange)
-
-                VStack(alignment: .leading, spacing: 5) {
-                    Text(product.displayName)
-                        .font(.headline)
-                        .foregroundStyle(AppTheme.ink)
-                    Text(product.subtitle)
-                        .font(.subheadline)
-                        .foregroundStyle(AppTheme.muted)
-                        .fixedSize(horizontal: false, vertical: true)
-                }
-
-                Spacer()
-            }
-
-            ForEach(product.benefits, id: \.self) { benefit in
-                Label(benefit, systemImage: "checkmark.circle.fill")
-                    .font(.caption)
-                    .foregroundStyle(AppTheme.muted)
-            }
-
-            Text("One-time purchase. Price: \(storeProduct?.displayPrice ?? product.pricePlaceholder).")
-                .font(.caption.weight(.semibold))
-                .foregroundStyle(AppTheme.blue)
-                .fixedSize(horizontal: false, vertical: true)
-
-            if owned {
-                LockRibbon(text: AppContent.copy.business.owned)
-            } else if let storeProduct {
-                Button {
-                    Task { @MainActor in
-                        await purchaseManager.purchase(storeProduct)
-                    }
-                } label: {
-                    Label(storeProduct.displayPrice, systemImage: "cart.fill")
-                }
-                .buttonStyle(SecondaryActionButtonStyle())
-            } else {
-                unavailableProductState
-            }
-        }
-        .pipeCard()
-    }
-
-    @ViewBuilder
-    private var unavailableProductState: some View {
-        if purchaseManager.isLoading {
-            LockRibbon(text: AppContent.copy.paywall.loadingProducts)
-        } else {
-            VStack(alignment: .leading, spacing: 8) {
-                LockRibbon(text: AppContent.copy.paywall.productUnavailable)
-                Button {
-                    Task { @MainActor in await purchaseManager.loadProducts() }
-                } label: {
-                    Label(AppContent.copy.paywall.retryStore, systemImage: "arrow.clockwise.circle.fill")
-                }
-                .buttonStyle(SecondaryActionButtonStyle())
-            }
-        }
-    }
-}
 
 struct SettingsPrivacyView: View {
     @ObservedObject var game: GameViewModel
+    @EnvironmentObject private var localization: LocalizationPreferences
     @State private var showResetConfirmation = false
 
     var body: some View {
@@ -363,13 +321,22 @@ struct SettingsPrivacyView: View {
                         icon: "gearshape.fill"
                     )
 
+                    Picker(LocalizedStringKey(AppContent.copy.settings.language), selection: $localization.selection) {
+                        ForEach(localization.languages) { language in
+                            LText(language.name).tag(language.id)
+                        }
+                    }
+                    .pickerStyle(.menu)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .pipeCard()
+
                     VStack(alignment: .leading, spacing: 14) {
                         SectionTitle(title: AppContent.copy.settings.privacy)
-                        Text(AppContent.copy.privacySummary)
+                        LText(AppContent.copy.privacySummary)
                             .font(.subheadline)
                             .foregroundStyle(AppTheme.muted)
                             .fixedSize(horizontal: false, vertical: true)
-                        Label(AppContent.copy.settings.localProgress, systemImage: "internaldrive.fill")
+                        LLabel(AppContent.copy.settings.localProgress, systemImage: "internaldrive.fill")
                             .font(.subheadline)
                             .foregroundStyle(AppTheme.muted)
                     }
@@ -377,7 +344,7 @@ struct SettingsPrivacyView: View {
 
                     VStack(alignment: .leading, spacing: 14) {
                         SectionTitle(title: AppContent.copy.settings.disclaimer)
-                        Text(AppContent.copy.educationalDisclaimer)
+                        LText(AppContent.copy.educationalDisclaimer)
                             .font(.subheadline.weight(.semibold))
                             .foregroundStyle(AppTheme.danger)
                             .fixedSize(horizontal: false, vertical: true)
@@ -387,12 +354,12 @@ struct SettingsPrivacyView: View {
                     VStack(alignment: .leading, spacing: 14) {
                         SectionTitle(title: AppContent.copy.settings.legal)
                         Link(destination: URL(string: AppContent.copy.termsURL)!) {
-                            Label(AppContent.copy.paywall.terms, systemImage: "doc.text.fill")
+                            LLabel(AppContent.copy.paywall.terms, systemImage: "doc.text.fill")
                         }
                         Link(destination: URL(string: AppContent.copy.privacyURL)!) {
-                            Label(AppContent.copy.paywall.privacy, systemImage: "hand.raised.fill")
+                            LLabel(AppContent.copy.paywall.privacy, systemImage: "hand.raised.fill")
                         }
-                        Text(AppContent.copy.settings.appVersion)
+                        LText(AppContent.copy.settings.appVersion, values: ["version": Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0"])
                             .font(.footnote)
                             .foregroundStyle(AppTheme.muted)
                     }
@@ -400,10 +367,12 @@ struct SettingsPrivacyView: View {
                     .foregroundStyle(AppTheme.blue)
                     .pipeCard()
 
+                    LocalUsageView(game: game)
+
                     Button(role: .destructive) {
                         showResetConfirmation = true
                     } label: {
-                        Label(AppContent.copy.settings.reset, systemImage: "trash.fill")
+                        LLabel(AppContent.copy.settings.reset, systemImage: "trash.fill")
                     }
                     .buttonStyle(SecondaryActionButtonStyle())
                 }
@@ -411,15 +380,15 @@ struct SettingsPrivacyView: View {
                 .padding(.vertical, 20)
             }
         }
-        .navigationTitle(AppContent.copy.settings.title)
+        .navigationTitle(Text(LocalizedStringKey(AppContent.copy.settings.title)))
         .navigationBarTitleDisplayMode(.inline)
-        .alert(AppContent.copy.settings.resetConfirm, isPresented: $showResetConfirmation) {
-            Button(AppContent.copy.settings.cancel, role: .cancel) {}
-            Button(AppContent.copy.settings.resetNow, role: .destructive) {
+        .alert(LocalizedStringKey(AppContent.copy.settings.resetConfirm), isPresented: $showResetConfirmation) {
+            Button(LocalizedStringKey(AppContent.copy.settings.cancel), role: .cancel) {}
+            Button(LocalizedStringKey(AppContent.copy.settings.resetNow), role: .destructive) {
                 game.resetProgress()
             }
         } message: {
-            Text(AppContent.copy.settings.resetConfirmMessage)
+            LText(AppContent.copy.settings.resetConfirmMessage)
         }
     }
 }

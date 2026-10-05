@@ -1,0 +1,64 @@
+name: Generate translation drafts
+
+on:
+  push:
+    branches: [main]
+    paths: ['PipeBossAI/Content/AppContent.swift', 'tools/localization/source.json']
+  workflow_dispatch:
+    inputs:
+      locale:
+        type: choice
+        options: [all, es, fr, de, pt-BR]
+        required: true
+        default: all
+      dry_run:
+        description: Estimate missing source characters without calling the paid provider
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  translate:
+    strategy:
+      fail-fast: false
+      matrix:
+        locale: ${{ fromJSON((github.event_name != 'workflow_dispatch' || inputs.locale == 'all') && '["es","fr","de","pt-BR"]' || format('["{0}"]', inputs.locale)) }}
+    runs-on: macos-26
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: tools/localization/drafts/${{ matrix.locale }}.json
+          key: translations-v1-${{ matrix.locale }}-${{ hashFiles('PipeBossAI/Content/AppContent.swift') }}
+          restore-keys: translations-v1-${{ matrix.locale }}-
+      - name: Export real app content
+        run: |
+          set -euo pipefail
+          swiftc PipeBossAI/Core/Models.swift PipeBossAI/Content/AppContent.swift tools/localization/main.swift -o /tmp/export-content
+          /tmp/export-content tools/localization/source.json
+          python3 tools/localization/localize.py sync
+      - name: Generate drafts only
+        env:
+          DEEPL_AUTH_KEY: ${{ secrets.DEEPL_AUTH_KEY }}
+          TARGET_LOCALE: ${{ matrix.locale }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
+        run: |
+          set -euo pipefail
+          if [ "$DRY_RUN" = "true" ] || [ -z "$DEEPL_AUTH_KEY" ]; then
+            if [ -z "$DEEPL_AUTH_KEY" ]; then
+              echo "::notice::DEEPL_AUTH_KEY is not configured. Only a translation estimate will be generated. Apple signing keys cannot generate translations."
+            fi
+            python3 tools/localization/localize.py translate "$TARGET_LOCALE" --dry-run
+          else
+            python3 tools/localization/localize.py translate "$TARGET_LOCALE"
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: translation-drafts-${{ matrix.locale }}
+          retention-days: 14
+          path: |
+            tools/localization/source.json
+            tools/localization/drafts/*.json

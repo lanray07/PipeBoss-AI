@@ -13,9 +13,14 @@ enum StoreError: Error {
 final class PurchaseManager: ObservableObject {
     @Published private(set) var products: [Product] = []
     @Published private(set) var purchasedProductIDs: Set<String> = []
+    @Published private(set) var hasRefreshedEntitlements = false
     @Published private(set) var hasAttemptedProductLoad = false
     @Published private(set) var productLoadMessage: String?
     @Published var isLoading = false
+    @Published private(set) var isPurchasing = false
+    @Published private(set) var isRestoring = false
+    @Published private(set) var completedPurchaseID: String?
+    @Published private(set) var restoreCount = 0
     @Published var errorMessage: String?
 
     private var transactionUpdates: Task<Void, Never>?
@@ -34,6 +39,21 @@ final class PurchaseManager: ObservableObject {
 
     init() {
         transactionUpdates = listenForTransactions()
+        Task { [weak self] in await self?.refreshPurchasedProducts() }
+    }
+
+    var annualSavingsPercent: Int? {
+        guard let monthly = products.first(where: { $0.id == AppContent.ProductIDs.proMonthly }),
+              let yearly = products.first(where: { $0.id == AppContent.ProductIDs.proYearly }),
+              monthly.subscription?.subscriptionPeriod.unit == .month,
+              monthly.subscription?.subscriptionPeriod.value == 1,
+              yearly.subscription?.subscriptionPeriod.unit == .year,
+              yearly.subscription?.subscriptionPeriod.value == 1 else { return nil }
+        return SubscriptionPricing.annualSavingsPercent(
+            monthly: monthly.price,
+            yearly: yearly.price,
+            sameCurrency: monthly.priceFormatStyle.currencyCode == yearly.priceFormatStyle.currencyCode
+        )
     }
 
     deinit {
@@ -136,14 +156,18 @@ final class PurchaseManager: ObservableObject {
     }
 
     func purchase(_ product: Product) async {
+        guard !isPurchasing else { return }
+        isPurchasing = true
+        defer { isPurchasing = false }
         errorMessage = nil
         do {
             let result = try await product.purchase()
             switch result {
             case .success(let verification):
                 let transaction = try checkVerified(verification)
-                purchasedProductIDs.insert(transaction.productID)
+                await refreshPurchasedProducts()
                 await transaction.finish()
+                completedPurchaseID = product.id
                 Haptics.success()
             case .userCancelled:
                 break
@@ -159,9 +183,13 @@ final class PurchaseManager: ObservableObject {
     }
 
     func restorePurchases() async {
+        guard !isRestoring, !isPurchasing else { return }
+        isRestoring = true
+        defer { isRestoring = false }
         do {
             try await AppStore.sync()
             await refreshPurchasedProducts()
+            restoreCount += 1
             Haptics.success()
         } catch {
             errorMessage = AppContent.copy.paywall.restoreFailedMessage
@@ -174,6 +202,7 @@ final class PurchaseManager: ObservableObject {
             guard let transaction = try? checkVerified(result) else { continue }
             purchasedIDs.insert(transaction.productID)
         }
+        hasRefreshedEntitlements = true
         purchasedProductIDs = purchasedIDs
     }
 
@@ -198,7 +227,7 @@ final class PurchaseManager: ObservableObject {
         Task {
             for await result in Transaction.updates {
                 guard let transaction = try? checkVerified(result) else { continue }
-                purchasedProductIDs.insert(transaction.productID)
+                await refreshPurchasedProducts()
                 await transaction.finish()
             }
         }
