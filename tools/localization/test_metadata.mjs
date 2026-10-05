@@ -17,3 +17,10 @@ test('invalid reviewed metadata fails before any API operation', () => {
   invalid.localizations['en-GB'].name = 'x'.repeat(31);
   assert.throws(() => metadataPlan(invalid), /invalid name/);
 });
+test('string and missing review flags cannot bypass the publication gate', () => {
+  const invalid = structuredClone(content);
+  invalid.localizations['es-ES'].releaseReady = 'false';
+  assert.throws(() => metadataPlan(invalid), /releaseReady must be a boolean/);
+  delete invalid.localizations['es-ES'].releaseReady;
+  assert.throws(() => metadataPlan(invalid), /releaseReady must be a boolean/);
+});

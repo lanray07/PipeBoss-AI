@@ -6,7 +6,8 @@ const source = new URL('../../AppStoreAssets/Metadata/localizations.json', impor
 export function metadataPlan(content) {
   const plan = [];
   for (const [locale, item] of Object.entries(content.localizations)) {
-    if (!item.releaseReady) continue;
+    if (typeof item.releaseReady !== 'boolean') throw new Error(`${locale}: releaseReady must be a boolean`);
+    if (item.releaseReady !== true) continue;
     for (const [field, limit] of Object.entries({ name: 30, subtitle: 30, promotionalText: 170, description: 4000 })) {
       if (typeof item[field] !== 'string' || [...item[field]].length > limit) throw new Error(`${locale}: invalid ${field}`);
     }
@@ -58,8 +59,8 @@ async function run() {
     if (!response.ok) throw new Error(`App Store metadata request failed: HTTP ${response.status}`);
     return response.status === 204 ? null : response.json();
   }
-  const version = (await api(`/v1/appStoreVersions/${versionID}`)).data;
-  const info = (await api(`/v1/appInfos/${appInfoID}`)).data;
+  const version = (await api(`/v1/appStoreVersions/${versionID}?include=app`)).data;
+  const info = (await api(`/v1/appInfos/${appInfoID}?include=app`)).data;
   for (const resource of [version, info]) {
     if (resource.relationships?.app?.data?.id !== '6767889535') throw new Error('Target is not PipeBoss AI');
   }
