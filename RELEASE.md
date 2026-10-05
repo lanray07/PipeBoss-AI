@@ -28,5 +28,6 @@ The app repository is private. Do not use its file URLs in the app or public lis
 
 - Privacy: https://gist.github.com/lanray07/64ca0d681a517c35b42bb0a5819e58a3
 - Terms: https://gist.github.com/lanray07/c1cd47ad4c7b598b9067b2c3f37091c9
+- Support: https://gist.github.com/lanray07/7812238839aa8f8fbf4ea23d8f18b4c6
 
-Update those documents with `gh gist edit <id> PRIVACY.md` or `gh gist edit <id> TERMS.md` when the matching source changes. Verify the public pages without GitHub authentication before submission. The Apple standard EULA remains linked in the listing description.
+Update those documents with `gh gist edit <id> PRIVACY.md`, `gh gist edit <id> TERMS.md` or `gh gist edit <id> SUPPORT.md` when the matching source changes. Verify the public pages without GitHub authentication before submission. The Apple standard EULA remains linked in the listing description. The support page replaces the inaccessible private repository issue URL; the optional marketing URL is blank.
