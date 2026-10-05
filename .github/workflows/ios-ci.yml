@@ -90,6 +90,19 @@ jobs:
             CODE_SIGNING_ALLOWED=NO \
             build
 
+      - name: Build Release for iOS without signing
+        run: |
+          set -o pipefail
+          xcodebuild \
+            -project PipeBossAI.xcodeproj \
+            -scheme PipeBossAI \
+            -configuration Release \
+            -derivedDataPath /tmp/PipeBossBuild \
+            -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+
       - name: Capture native iPhone and iPad screens
         run: bash tools/capture-simulator-screenshots.sh /tmp/PipeBossBuild/Build/Products/Debug-iphonesimulator/PipeBossAI.app /tmp/PipeBossScreenshots
       - uses: actions/upload-artifact@v4
