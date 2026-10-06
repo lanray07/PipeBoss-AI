@@ -8,11 +8,13 @@ The live version is 1.0.1 (14). This update uses 1.0.2 (15); verify App Store Co
 - Inspect the native screens, including the result view. Simulator fixtures are Debug-only and must not be enabled in a signed Release build.
 - Merge PR #1 only after those checks pass. Run `ios-testflight.yml` from the merged commit with build number `15` and upload enabled.
 - Install the processed signed build through TestFlight. Confirm both subscriptions, four packs, cancellation, restore, relaunch access, Pro expiry and offline progress where applicable. StoreKitTest uses local fixture products and cannot verify Apple's real product catalogue, agreements or sandbox accounts.
-- Keep machine-generated translations and non-English listing drafts unpublished until language and plumbing-safety review. The Spanish starter is a partial pilot, not a complete new market release.
+- Keep machine-generated in-app translations and non-English listing metadata drafts unpublished until language and plumbing-safety review. The Spanish starter is a partial pilot, not a complete new market release. The owner separately requested App Store screenshot marketing captions for all 50 locales; those caption sets are saved in the draft version, with English app-interface disclosure. This does not establish native-language editorial review or in-app localization.
 - Apply the reviewed English metadata from `AppStoreAssets/Metadata/localizations.json` only to the editable new version. Release and beta copy are in `AppStoreAssets/Metadata/release-1.0.2.json`; `releaseReady` stays false until all gates are evidenced.
 - Upload visually reviewed screenshots from the current commit. Attach the tested build and accurate reviewer steps. Do not claim unperformed tests in review notes.
 
 ## Testing
+
+The revoked PipeBoss signing identity and invalid profile were replaced on 6 October 2026. The new signed 1.0.2 (15) archive, export and upload succeeded in run 37486546739, and Apple processed the build successfully. Build 15 is attached to the draft and available in the owner's existing internal TestFlight group. See RELEASE_STATUS.md for evidence and the outstanding real-device checks. The release remains a draft pending those checks and final submission validation.
 
 `PipeBossAITests/PurchaseIntegrationTests.swift` exercises real StoreKit APIs against the local test configuration. It covers loading all six products, fixture price stability, monthly/yearly purchases and expiry, all four pack unlocks and refunds, restored access after recreating the purchase manager, and failed purchases leaving neither entitlement nor a busy state.
 
