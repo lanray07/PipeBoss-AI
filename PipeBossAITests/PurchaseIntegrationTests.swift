@@ -136,6 +136,26 @@ final class PurchaseIntegrationTests: XCTestCase {
     }
 
     @MainActor
+    func testPipeBossPackCatalogueWithoutSubscriptions() async throws {
+        let source = try XCTUnwrap(Bundle(for: Self.self).url(forResource: "PipeBossAI", withExtension: "storekit"))
+        var fixture = try XCTUnwrap(JSONSerialization.jsonObject(with: Data(contentsOf: source)) as? [String: Any])
+        fixture["subscriptionGroups"] = []
+        let url = FileManager.default.temporaryDirectory.appendingPathComponent("PackControl-\(UUID()).storekit")
+        try JSONSerialization.data(withJSONObject: fixture).write(to: url)
+        defer { try? FileManager.default.removeItem(at: url) }
+        let session = try makeSession(configurationURL: url)
+        defer { session.clearTransactions() }
+        let ids = [AppContent.ProductIDs.cityExpansion, AppContent.ProductIDs.advancedTools,
+                   AppContent.ProductIDs.emergencyJobs, AppContent.ProductIDs.businessOwnerMode]
+        let catalogue = try await Product.products(for: ids)
+        XCTAssertEqual(Set(catalogue.map(\.id)), Set(ids), "The pack-only catalogue isolates subscription configuration")
+        let transaction = try await session.buyProduct(identifier: ids[0], options: [])
+        XCTAssertEqual(transaction.productID, ids[0])
+        XCTAssertEqual(transaction.environment, .xcode)
+        await transaction.finish()
+    }
+
+    @MainActor
     func testBothSubscriptionsPurchaseAndExpire() async throws {
         for id in [AppContent.ProductIDs.proMonthly, AppContent.ProductIDs.proYearly] {
             let session = try makeSession()

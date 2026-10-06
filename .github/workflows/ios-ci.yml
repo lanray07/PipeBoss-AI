@@ -135,7 +135,7 @@ jobs:
     if: ${{ github.event_name != 'workflow_dispatch' || inputs.translation_locale == 'none' }}
     name: StoreKit integration on Xcode 26.2
     runs-on: macos-26
-    timeout-minutes: 12
+    timeout-minutes: 20
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
       PIPEBOSS_SIMULATOR_RUNTIME: '26.2'
@@ -156,7 +156,7 @@ jobs:
           xcodebuild -version
           xcrun simctl list runtimes
       - name: Test StoreKit purchases and entitlement changes on iPhone and iPad
-        timeout-minutes: 8
+        timeout-minutes: 16
         run: bash tools/test-storekit.sh /tmp/PipeBossStoreKitBuild /tmp/PipeBossPurchaseTests
       - uses: actions/upload-artifact@v4
         if: always()

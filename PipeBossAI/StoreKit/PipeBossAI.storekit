@@ -70,13 +70,7 @@
   "subscriptionGroups" : [
     {
       "id" : "C17E0010",
-      "localizations" : [
-        {
-          "customAppName" : "PipeBoss AI",
-          "locale" : "en_US",
-          "name" : "PipeBoss Pro"
-        }
-      ],
+      "localizations" : [],
       "name" : "PipeBoss Pro",
       "subscriptions" : [
         {
