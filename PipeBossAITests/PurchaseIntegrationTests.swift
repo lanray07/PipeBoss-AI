@@ -156,6 +156,24 @@ final class PurchaseIntegrationTests: XCTestCase {
     }
 
     @MainActor
+    func testUnchangedFixtureFromTemporaryFile() async throws {
+        let source = try XCTUnwrap(Bundle(for: Self.self).url(forResource: "PipeBossAI", withExtension: "storekit"))
+        let url = FileManager.default.temporaryDirectory.appendingPathComponent("FullControl-\(UUID()).storekit")
+        try FileManager.default.copyItem(at: source, to: url)
+        defer { try? FileManager.default.removeItem(at: url) }
+        let session = try makeSession(configurationURL: url)
+        defer { session.clearTransactions() }
+        let catalogue = try await Product.products(for: AppContent.storeProducts.map(\.productID))
+        XCTAssertEqual(Set(catalogue.map(\.id)), Set(AppContent.storeProducts.map(\.productID)),
+                       "The unchanged temporary fixture isolates bundle-location behaviour")
+        let id = AppContent.ProductIDs.cityExpansion
+        let transaction = try await session.buyProduct(identifier: id, options: [])
+        XCTAssertEqual(transaction.productID, id)
+        XCTAssertEqual(transaction.environment, .xcode)
+        await transaction.finish()
+    }
+
+    @MainActor
     func testBothSubscriptionsPurchaseAndExpire() async throws {
         for id in [AppContent.ProductIDs.proMonthly, AppContent.ProductIDs.proYearly] {
             let session = try makeSession()
