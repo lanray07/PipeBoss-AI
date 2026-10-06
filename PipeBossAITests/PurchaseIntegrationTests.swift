@@ -5,12 +5,12 @@ import XCTest
 
 final class PurchaseIntegrationTests: XCTestCase {
     @MainActor
-    private func makeSession() throws -> SKTestSession {
+    private func makeSession(configurationURL: URL? = nil) throws -> SKTestSession {
         guard ProcessInfo.processInfo.environment["PIPEBOSS_HOSTED_UNIT_TESTS"] == "1" else {
             throw NSError(domain: "PipeBossStoreKitTest", code: 2,
                           userInfo: [NSLocalizedDescriptionKey: "Hosted tests must configure StoreKit before app-root initialization"])
         }
-        let url = try XCTUnwrap(Bundle(for: Self.self).url(forResource: "PipeBossAI", withExtension: "storekit"))
+        let url = try configurationURL ?? XCTUnwrap(Bundle(for: Self.self).url(forResource: "PipeBossAI", withExtension: "storekit"))
         let session = try SKTestSession(contentsOf: url)
         session.resetToDefaultState()
         session.clearTransactions()
@@ -77,6 +77,61 @@ final class PurchaseIntegrationTests: XCTestCase {
         XCTAssertEqual(transaction.productID, id)
         XCTAssertEqual(transaction.environment, .xcode)
         XCTAssertEqual(session.allTransactions().filter { $0.productIdentifier == id }.count, 1)
+        await transaction.finish()
+    }
+
+    @MainActor
+    func testMinimalSampleCatalogueCreatesOnlyXcodeTransactions() async throws {
+        // A single-product control isolates fixture complexity from StoreKit's local service.
+        let id = "nonconsumable.pickuptruck"
+        let fixture: [String: Any] = [
+            "identifier": "E8BE4D16",
+            "nonRenewingSubscriptions": [],
+            "products": [[
+                "displayPrice": "4.99",
+                "familyShareable": false,
+                "internalID": "C63E7D42",
+                "localizations": [["description": "Medium duty truck", "displayName": "Pickup Truck", "locale": "en_US"]],
+                "productID": id,
+                "referenceName": "Pickup Truck",
+                "type": "NonConsumable"
+            ]],
+            "settings": ["_locale": "en_US", "_storefront": "USA"],
+            "subscriptionGroups": [],
+            "version": ["major": 4, "minor": 0]
+        ]
+        let url = FileManager.default.temporaryDirectory.appendingPathComponent("StoreKitControl-\(UUID()).storekit")
+        try JSONSerialization.data(withJSONObject: fixture).write(to: url)
+        defer { try? FileManager.default.removeItem(at: url) }
+        let session = try makeSession(configurationURL: url)
+        defer { session.clearTransactions() }
+        let catalogue = try await Product.products(for: [id])
+        XCTAssertEqual(catalogue.map(\.id), [id], "The independent single-product catalogue must load")
+        let transaction = try await session.buyProduct(identifier: id, options: [])
+        XCTAssertEqual(transaction.productID, id)
+        XCTAssertEqual(transaction.environment, .xcode)
+        await transaction.finish()
+    }
+
+    @MainActor
+    func testNamedConfigurationCreatesOnlyXcodeTransactions() async throws {
+        guard ProcessInfo.processInfo.environment["PIPEBOSS_HOSTED_UNIT_TESTS"] == "1" else {
+            throw NSError(domain: "PipeBossStoreKitTest", code: 2)
+        }
+        let session = try SKTestSession(configurationFileNamed: "PipeBossAI")
+        session.resetToDefaultState()
+        session.clearTransactions()
+        session.disableDialogs = true
+        guard session.disableDialogs else {
+            throw NSError(domain: "PipeBossStoreKitTest", code: 1)
+        }
+        defer { session.clearTransactions() }
+        let id = AppContent.ProductIDs.cityExpansion
+        let catalogue = try await Product.products(for: [id])
+        XCTAssertEqual(catalogue.map(\.id), [id], "The named-configuration constructor must activate the catalogue")
+        let transaction = try await session.buyProduct(identifier: id, options: [])
+        XCTAssertEqual(transaction.productID, id)
+        XCTAssertEqual(transaction.environment, .xcode)
         await transaction.finish()
     }
 
