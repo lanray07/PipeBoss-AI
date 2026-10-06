@@ -182,13 +182,6 @@ jobs:
             -exportOptionsPlist "$EXPORT_OPTIONS" \
             -exportPath "$RUNNER_TEMP/export"
 
-      - name: Upload IPA artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: PipeBossAI-ipa
-          path: ${{ runner.temp }}/export/*.ipa
-          if-no-files-found: error
-
       - name: Upload to App Store Connect
         if: ${{ inputs.upload_to_testflight == 'true' }}
         run: |
@@ -206,14 +199,6 @@ jobs:
           set -e
           if [ "$upload_status" -ne 0 ]; then
             tail -n 80 "$UPLOAD_LOG"
-            echo "::error title=App Store Connect upload failed::altool upload failed. See PipeBossAI-upload-diagnostics artifact for the full log."
+            echo "::error title=App Store Connect upload failed::altool upload failed. See this job's upload step log."
             exit "$upload_status"
           fi
-
-      - name: Upload diagnostics
-        if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: PipeBossAI-upload-diagnostics
-          path: ${{ runner.temp }}/*upload*.log
-          if-no-files-found: ignore

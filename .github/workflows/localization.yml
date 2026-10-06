@@ -66,10 +66,15 @@ jobs:
           else
             python3 tools/localization/localize.py translate "$TARGET_LOCALE"
           fi
-      - uses: actions/upload-artifact@v4
-        with:
-          name: translation-drafts-${{ matrix.locale }}
-          retention-days: 14
-          path: |
-            tools/localization/source.json
-            tools/localization/drafts/*.json
+      - name: Print draft evidence without retained artifacts
+        env:
+          TARGET_LOCALE: ${{ matrix.locale }}
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from pathlib import Path
+          for path in [Path('tools/localization/source.json'), Path('tools/localization/drafts') / (os.environ['TARGET_LOCALE'] + '.json')]:
+              if path.exists():
+                  print('PIPEBOSS_TRANSLATION_FILE ' + str(path))
+                  print(json.dumps(json.loads(path.read_text(encoding='utf-8')), ensure_ascii=False))
+          PY

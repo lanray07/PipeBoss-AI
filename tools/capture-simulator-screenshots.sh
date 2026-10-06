@@ -22,3 +22,5 @@ while read -r kind udid; do
   xcrun simctl shutdown "$udid"
 done <<< "$mapfile_compatible_devices"
 swift tools/validate-screenshots.swift "$output"
+# Job logs do not consume the account's retained artifact-storage allowance.
+node tools/read-ci-screenshots.mjs --export "$output"

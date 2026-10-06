@@ -74,6 +74,7 @@ jobs:
           python3 tools/localization/localize.py validate
           python3 tools/localization/validate_metadata.py
           node --test tools/localization/test_metadata.mjs
+          node --test tools/test_ci_screenshots.mjs
           python3 -m unittest discover -s tools/localization -p 'test_*.py'
           python3 -m unittest discover -s tools -p 'test_*.py'
           swiftc PipeBossAI/Core/Models.swift PipeBossAI/Core/TrainingProgress.swift PipeBossAI/Content/AppContent.swift PipeBossAI/Services/Localization.swift tools/localization/tests/main.swift -o /tmp/test-localization
@@ -123,13 +124,7 @@ jobs:
             build-for-testing
 
       - name: Capture native iPhone and iPad screens
-        if: ${{ always() && !cancelled() }}
         run: bash tools/capture-simulator-screenshots.sh /tmp/PipeBossBuild/Build/Products/Debug-iphonesimulator/PipeBossAI.app /tmp/PipeBossScreenshots
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: native-iPhone-iPad-screenshots
-          path: /tmp/PipeBossScreenshots
 
   storekit:
     if: ${{ github.event_name != 'workflow_dispatch' || inputs.translation_locale == 'none' }}
@@ -158,11 +153,6 @@ jobs:
       - name: Test StoreKit purchases and entitlement changes on iPhone and iPad
         timeout-minutes: 16
         run: bash tools/test-storekit.sh /tmp/PipeBossStoreKitBuild /tmp/PipeBossPurchaseTests
-      - uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: StoreKit-test-results
-          path: /tmp/PipeBossPurchaseTests
 
   translation_drafts:
     if: ${{ github.event_name == 'workflow_dispatch' && inputs.translation_locale != 'none' }}

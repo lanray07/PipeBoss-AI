@@ -36,7 +36,5 @@ jobs:
           ASC_VERSION_ID: ${{ inputs.version_id }}
           ASC_APP_INFO_ID: ${{ inputs.app_info_id }}
         run: node tools/localization/appstore_metadata.mjs --apply
-      - uses: actions/upload-artifact@v4
-        with:
-          name: reviewed-listing-plan
-          path: tools/localization/drafts/metadata-plan.json
+      - name: Print reviewed listing plan
+        run: node -e "console.log(require('fs').readFileSync('tools/localization/drafts/metadata-plan.json', 'utf8'))"

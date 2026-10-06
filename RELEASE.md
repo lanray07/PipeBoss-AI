@@ -16,13 +16,15 @@ The live version is 1.0.1 (14). This update uses 1.0.2 (15); verify App Store Co
 
 `PipeBossAITests/PurchaseIntegrationTests.swift` exercises real StoreKit APIs against the local test configuration. It covers loading all six products, fixture price stability, monthly/yearly purchases and expiry, all four pack unlocks and refunds, restored access after recreating the purchase manager, and failed purchases leaving neither entitlement nor a busy state.
 
-`tools/test-storekit.sh` runs this suite sequentially on an iPhone and iPad simulator. CI uploads logs and `.xcresult` evidence. Local simulation is separate from signed-build sandbox QA; neither a compile nor previous App Store approval establishes that the new build's purchases work.
+`tools/test-storekit.sh` runs this suite sequentially on an iPhone and iPad simulator. Test output is preserved in GitHub job logs; `.xcresult` bundles exist only on the ephemeral runner. Local simulation is separate from signed-build sandbox QA; neither a compile nor previous App Store approval establishes that the new build's purchases work.
 
 Keep the test fixture's optional subscription-group localizations empty. Its previous custom group-localization record caused the local service to reject the entire catalogue with `ASOctaneSupportXPCService.ConfigurationError`, including unrelated packs. Removing that record restored all six products and the iPhone purchase suite in run 37403964630 without changing product IDs, prices or production purchase code. Product display names/descriptions remain in their own localization records. The six-product loading test guards this behaviour through the real StoreKit service.
 
 ## Windows Workflow
 
 GitHub Actions supplies macOS and Xcode using standard hosted runners, which are free for this public repository. Do not switch to paid larger runners, enable paid overages or change app prices. Signing keys stay in GitHub repository secrets; do not download or commit them. Release and metadata workflows are manual-only; pull-request builds do not receive Apple or DeepL secrets. Localization accepts only DeepL API Free keys and automatic content updates are estimate-only. TestFlight installation and the native sandbox purchase UI still require an iPhone or iPad. If hosted runners are unavailable, keep the release draft and wait for verified build results instead of submitting an older build.
+
+No workflow uploads retained Actions artifacts. Standard public runner minutes are free, but artifact storage has separate account limits. Screenshots are returned as checksum-verified PNG blocks in the build job log. Export the completed build job's log with `gh run view <run-id> --repo lanray07/PipeBoss-AI --job <job-id> --log`, then run `node tools/read-ci-screenshots.mjs <log-file> <output-directory>`. The reader requires all 12 expected files and rejects unknown paths, duplicate blocks, malformed data and checksum mismatches. Visually inspect the restored images before release. Translation drafts and metadata plans are printed in their job logs; translation cache entries remain small. The signed IPA is sent directly to App Store Connect when requested, not retained on GitHub. This does not change or verify existing account-wide billing budgets or historical storage usage.
 
 ## Public Legal Pages
 
