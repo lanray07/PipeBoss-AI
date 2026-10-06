@@ -16,11 +16,12 @@
 - Replaced old mixed/duplicate screenshot sets with 1,000 optimized marketing images across all 50 locales: four each for iPhone 6.5-inch, iPhone 6.7-inch and iPad 12.9-inch, plus eight Duo images (four outer/four inner). All 200 sets passed read-only verification for count, exact order and COMPLETE processing state, with zero errors. Evidence: AppStoreAssets/ReleaseProof/optimized-screenshot-verification.json and optimized-duo-en-GB.png / optimized-duo-fr-FR.png.
 - Optimized images show complete current native iPhone/iPad captures with large keyworded headlines. Captions are machine-translated; depicted UI and listing metadata remain English, disclosed in each image's localized footer. Duo compositions reuse the iPhone/iPad captures and do not establish native Duo compatibility or native-language editorial review. Sources and rendering/upload workflow are retained in AppStoreAssets/SourceCaptures/1.0.2 and tools.
 - The stored review-note source now matches the caption-localization clarification saved in App Store Connect.
+- Added a text-free navy/orange plumbing header to version 1.0.2, exported as a 3840 × 1646 opaque RGB PNG. English (U.K.) shows 1 of 1 Header Asset; French confirms it uses the primary header. Artwork and prompt are retained under AppStoreAssets/Creative/Header-1.0.2, with UI proof under AppStoreAssets/ReleaseProof/header-en-GB.png.
 
 ## Still required before submission
 
 - Real-device TestFlight checks below. The owner confirmed that an iPhone or iPad is available. Simulator tests do not replace these checks.
-- Final screenshot/caption accuracy review and App Store submission validation. The optional Header and Search Results creative slots can remain empty; https://developer.apple.com/help/app-store-connect/manage-app-information/manage-your-app-store-assets confirms they are optional.
+- Final screenshot/caption accuracy review and App Store submission validation. The Header asset is now populated. The optional Search Results creative slot can remain empty; https://developer.apple.com/help/app-store-connect/manage-app-information/manage-your-app-store-assets confirms creative assets are optional.
 
 ## TestFlight checks for the owner
 
