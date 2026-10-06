@@ -13,7 +13,8 @@
 - Public Privacy, Terms and Support gists return HTTP 200, are public, and match the current source documents.
 - App Privacy is published as Data Not Collected; the source privacy manifest declares local UserDefaults access. The build declares no non-exempt encryption.
 - App Information contains an age rating (4+ with regional ratings), Education category, content-rights declaration and trader identification.
-- All 50 locale Duo sets contain eight processed assets each. Captions are machine-translated; depicted UI and listing metadata remain English. These illustrated marketing assets do not establish native Duo compatibility or native-language editorial review.
+- Replaced old mixed/duplicate screenshot sets with 1,000 optimized marketing images across all 50 locales: four each for iPhone 6.5-inch, iPhone 6.7-inch and iPad 12.9-inch, plus eight Duo images (four outer/four inner). All 200 sets passed read-only verification for count, exact order and COMPLETE processing state, with zero errors. Evidence: AppStoreAssets/ReleaseProof/optimized-screenshot-verification.json and optimized-duo-en-GB.png / optimized-duo-fr-FR.png.
+- Optimized images show complete current native iPhone/iPad captures with large keyworded headlines. Captions are machine-translated; depicted UI and listing metadata remain English, disclosed in each image's localized footer. Duo compositions reuse the iPhone/iPad captures and do not establish native Duo compatibility or native-language editorial review. Sources and rendering/upload workflow are retained in AppStoreAssets/SourceCaptures/1.0.2 and tools.
 - The stored review-note source now matches the caption-localization clarification saved in App Store Connect.
 
 ## Still required before submission

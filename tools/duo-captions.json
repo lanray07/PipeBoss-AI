@@ -1,0 +1,1202 @@
+{
+  "en-GB": {
+    "rtl": false,
+    "name": "English (U.K.)",
+    "footer": "Educational simulation. App interface in English.",
+    "shots": [
+      {
+        "subtitle": "Practise leaks, blocked drains and water pressure faults.",
+        "title": "Plumbing Training Game"
+      },
+      {
+        "subtitle": "Read symptoms and choose a plumbing diagnosis.",
+        "title": "Practise Fault Diagnosis"
+      },
+      {
+        "subtitle": "Build your kit for pipe, drain and heating scenarios.",
+        "title": "Learn Plumbing Tools"
+      },
+      {
+        "subtitle": "Choose a repair and learn from job feedback.",
+        "title": "Plumbing Repair Simulation"
+      }
+    ],
+    "tagline": "Plumbing training game"
+  },
+  "en-AU": {
+    "rtl": false,
+    "name": "English (Australia)",
+    "footer": "Educational simulation. App interface in English.",
+    "shots": [
+      {
+        "subtitle": "Practise leaks, blocked drains and water pressure faults.",
+        "title": "Plumbing Training Game"
+      },
+      {
+        "subtitle": "Read symptoms and choose a plumbing diagnosis.",
+        "title": "Practise Fault Diagnosis"
+      },
+      {
+        "subtitle": "Build your kit for pipe, drain and heating scenarios.",
+        "title": "Learn Plumbing Tools"
+      },
+      {
+        "subtitle": "Choose a repair and learn from job feedback.",
+        "title": "Plumbing Repair Simulation"
+      }
+    ],
+    "tagline": "Plumbing training game"
+  },
+  "en-CA": {
+    "rtl": false,
+    "name": "English (Canada)",
+    "footer": "Educational simulation. App interface in English.",
+    "shots": [
+      {
+        "subtitle": "Practise leaks, blocked drains and water pressure faults.",
+        "title": "Plumbing Training Game"
+      },
+      {
+        "subtitle": "Read symptoms and choose a plumbing diagnosis.",
+        "title": "Practise Fault Diagnosis"
+      },
+      {
+        "subtitle": "Build your kit for pipe, drain and heating scenarios.",
+        "title": "Learn Plumbing Tools"
+      },
+      {
+        "subtitle": "Choose a repair and learn from job feedback.",
+        "title": "Plumbing Repair Simulation"
+      }
+    ],
+    "tagline": "Plumbing training game"
+  },
+  "en-US": {
+    "rtl": false,
+    "name": "English (U.S.)",
+    "footer": "Educational simulation. App interface in English.",
+    "shots": [
+      {
+        "subtitle": "Practice leaks, blocked drains and water pressure faults.",
+        "title": "Plumbing Training Game"
+      },
+      {
+        "subtitle": "Read symptoms and choose a plumbing diagnosis.",
+        "title": "Practice Fault Diagnosis"
+      },
+      {
+        "subtitle": "Build your kit for pipe, drain and heating scenarios.",
+        "title": "Learn Plumbing Tools"
+      },
+      {
+        "subtitle": "Choose a repair and learn from job feedback.",
+        "title": "Plumbing Repair Simulation"
+      }
+    ],
+    "tagline": "Plumbing training game"
+  },
+  "ar-SA": {
+    "rtl": true,
+    "name": "Arabic",
+    "footer": "محاكاة تعليمية. واجهة التطبيق باللغة الإنجليزية.",
+    "shots": [
+      {
+        "subtitle": "تدرّب على التسربات وانسداد المصارف وأعطال ضغط المياه.",
+        "title": "تعلّم السباكة باللعب"
+      },
+      {
+        "subtitle": "اقرأ الأعراض واختر تشخيص عطل السباكة.",
+        "title": "تدرّب على تشخيص الأعطال"
+      },
+      {
+        "subtitle": "جهّز أدواتك لمهام الأنابيب والصرف والتدفئة.",
+        "title": "تعرّف على أدوات السباكة"
+      },
+      {
+        "subtitle": "اختر الإصلاح وتعلّم من ملاحظات كل مهمة.",
+        "title": "محاكاة إصلاح السباكة"
+      }
+    ],
+    "tagline": "لعبة تدريب على السباكة"
+  },
+  "bn": {
+    "rtl": false,
+    "name": "Bangla",
+    "footer": "শিক্ষামূলক সিমুলেশন। অ্যাপের ইন্টারফেস ইংরেজিতে।",
+    "shots": [
+      {
+        "subtitle": "লিক, বন্ধ ড্রেন ও পানির চাপের সমস্যা নিয়ে অনুশীলন করুন।",
+        "title": "খেলে প্লাম্বিং শিখুন"
+      },
+      {
+        "subtitle": "লক্ষণ পড়ে প্লাম্বিং সমস্যার কারণ বেছে নিন।",
+        "title": "ত্রুটি নির্ণয়ের অনুশীলন"
+      },
+      {
+        "subtitle": "পাইপ, ড্রেন ও হিটিংয়ের কাজের জন্য সরঞ্জাম সংগ্রহ করুন।",
+        "title": "প্লাম্বিংয়ের সরঞ্জাম শিখুন"
+      },
+      {
+        "subtitle": "মেরামত বেছে নিন ও কাজের ফলাফল থেকে শিখুন।",
+        "title": "প্লাম্বিং মেরামতের সিমুলেশন"
+      }
+    ],
+    "tagline": "প্লাম্বিং শেখার খেলা"
+  },
+  "ca": {
+    "rtl": false,
+    "name": "Catalan",
+    "footer": "Simulació educativa. Interfície de l’app en anglès.",
+    "shots": [
+      {
+        "subtitle": "Practica amb fuites, desguassos obstruïts i problemes de pressió.",
+        "title": "Aprèn fontaneria jugant"
+      },
+      {
+        "subtitle": "Llegeix els símptomes i tria un diagnòstic de fontaneria.",
+        "title": "Practica el diagnòstic"
+      },
+      {
+        "subtitle": "Prepara les eines per a canonades, desguassos i calefacció.",
+        "title": "Coneix les eines de fontaneria"
+      },
+      {
+        "subtitle": "Tria una reparació i aprèn amb els comentaris de cada feina.",
+        "title": "Simula reparacions"
+      }
+    ],
+    "tagline": "Joc de formació en fontaneria"
+  },
+  "zh-Hans": {
+    "rtl": false,
+    "name": "Chinese (Simplified)",
+    "footer": "教育模拟。应用界面为英语。",
+    "shots": [
+      {
+        "subtitle": "练习处理漏水、排水堵塞和水压故障。",
+        "title": "在游戏中学习水暖技能"
+      },
+      {
+        "subtitle": "阅读症状并选择水暖故障诊断。",
+        "title": "练习故障诊断"
+      },
+      {
+        "subtitle": "为管道、排水和供暖任务准备工具。",
+        "title": "认识水暖工具"
+      },
+      {
+        "subtitle": "选择维修方案，从任务反馈中学习。",
+        "title": "模拟水暖维修"
+      }
+    ],
+    "tagline": "水暖技能训练游戏"
+  },
+  "zh-Hant": {
+    "rtl": false,
+    "name": "Chinese (Traditional)",
+    "footer": "教育模擬。應用程式介面為英語。",
+    "shots": [
+      {
+        "subtitle": "練習處理漏水、排水堵塞和水壓故障。",
+        "title": "在遊戲中學習水電技能"
+      },
+      {
+        "subtitle": "閱讀症狀並選擇水電故障診斷。",
+        "title": "練習故障診斷"
+      },
+      {
+        "subtitle": "為管線、排水和供暖任務準備工具。",
+        "title": "認識水電工具"
+      },
+      {
+        "subtitle": "選擇維修方案，從任務回饋中學習。",
+        "title": "模擬水電維修"
+      }
+    ],
+    "tagline": "水電技能訓練遊戲"
+  },
+  "hr": {
+    "rtl": false,
+    "name": "Croatian",
+    "footer": "Edukativna simulacija. Sučelje aplikacije je na engleskom.",
+    "shots": [
+      {
+        "subtitle": "Vježbajte curenja, začepljene odvode i probleme s tlakom vode.",
+        "title": "Učite vodoinstalacije"
+      },
+      {
+        "subtitle": "Pročitajte simptome i odaberite uzrok kvara.",
+        "title": "Vježbajte dijagnostiku"
+      },
+      {
+        "subtitle": "Pripremite alat za cijevi, odvode i grijanje.",
+        "title": "Upoznajte vodoinstalaterski alat"
+      },
+      {
+        "subtitle": "Odaberite popravak i učite iz povratnih informacija.",
+        "title": "Simulirajte popravke"
+      }
+    ],
+    "tagline": "Igra za učenje vodoinstalacija"
+  },
+  "cs": {
+    "rtl": false,
+    "name": "Czech",
+    "footer": "Výuková simulace. Rozhraní aplikace je v angličtině.",
+    "shots": [
+      {
+        "subtitle": "Procvičujte úniky vody, ucpané odpady a poruchy tlaku.",
+        "title": "Učte se instalatérství"
+      },
+      {
+        "subtitle": "Přečtěte příznaky a vyberte příčinu závady.",
+        "title": "Procvičte diagnostiku"
+      },
+      {
+        "subtitle": "Sestavte výbavu pro potrubí, odpady a topení.",
+        "title": "Poznejte instalatérské nářadí"
+      },
+      {
+        "subtitle": "Vyberte opravu a učte se ze zpětné vazby.",
+        "title": "Simulujte opravy"
+      }
+    ],
+    "tagline": "Výuková instalatérská hra"
+  },
+  "da": {
+    "rtl": false,
+    "name": "Danish",
+    "footer": "Læringssimulation. Appens brugerflade er på engelsk.",
+    "shots": [
+      {
+        "subtitle": "Øv dig på lækager, tilstoppede afløb og vandtryksfejl.",
+        "title": "Lær VVS gennem spil"
+      },
+      {
+        "subtitle": "Læs symptomerne, og vælg en VVS-diagnose.",
+        "title": "Øv fejldiagnose"
+      },
+      {
+        "subtitle": "Saml værktøj til rør, afløb og varmeopgaver.",
+        "title": "Lær VVS-værktøjerne"
+      },
+      {
+        "subtitle": "Vælg en reparation, og lær af opgavens feedback.",
+        "title": "Simuler VVS-reparationer"
+      }
+    ],
+    "tagline": "Træningsspil om VVS"
+  },
+  "nl-NL": {
+    "rtl": false,
+    "name": "Dutch",
+    "footer": "Educatieve simulatie. De app-interface is in het Engels.",
+    "shots": [
+      {
+        "subtitle": "Oefen met lekkages, verstopte afvoeren en waterdrukproblemen.",
+        "title": "Leer loodgieterswerk"
+      },
+      {
+        "subtitle": "Lees de symptomen en kies een diagnose.",
+        "title": "Oefen storingsdiagnose"
+      },
+      {
+        "subtitle": "Bouw je uitrusting voor leidingen, afvoer en verwarming.",
+        "title": "Leer loodgietersgereedschap"
+      },
+      {
+        "subtitle": "Kies een reparatie en leer van de feedback.",
+        "title": "Simuleer reparaties"
+      }
+    ],
+    "tagline": "Trainingsspel voor loodgieters"
+  },
+  "fi": {
+    "rtl": false,
+    "name": "Finnish",
+    "footer": "Opetussimulaatio. Sovelluksen käyttöliittymä on englanniksi.",
+    "shots": [
+      {
+        "subtitle": "Harjoittele vuotoja, tukoksia ja vedenpaineen häiriöitä.",
+        "title": "Opi putkitöitä pelaamalla"
+      },
+      {
+        "subtitle": "Lue oireet ja valitse putkivian diagnoosi.",
+        "title": "Harjoittele vianmääritystä"
+      },
+      {
+        "subtitle": "Kokoa työkalut putki-, viemäri- ja lämmitystehtäviin.",
+        "title": "Tutustu putkityökaluihin"
+      },
+      {
+        "subtitle": "Valitse korjaus ja opi tehtävän palautteesta.",
+        "title": "Simuloi putkikorjauksia"
+      }
+    ],
+    "tagline": "Putkityön harjoittelupeli"
+  },
+  "fr-FR": {
+    "rtl": false,
+    "name": "French",
+    "footer": "Simulation éducative. Interface de l’application en anglais.",
+    "shots": [
+      {
+        "subtitle": "Entraînez-vous sur les fuites, drains bouchés et problèmes de pression.",
+        "title": "Apprenez la plomberie"
+      },
+      {
+        "subtitle": "Lisez les symptômes et choisissez un diagnostic de plomberie.",
+        "title": "Exercez le diagnostic"
+      },
+      {
+        "subtitle": "Préparez votre équipement pour tuyaux, drains et chauffage.",
+        "title": "Découvrez les outils"
+      },
+      {
+        "subtitle": "Choisissez une réparation et apprenez grâce aux retours.",
+        "title": "Simulez les réparations"
+      }
+    ],
+    "tagline": "Jeu de formation en plomberie"
+  },
+  "fr-CA": {
+    "rtl": false,
+    "name": "French (Canada)",
+    "footer": "Simulation éducative. Interface de l’application en anglais.",
+    "shots": [
+      {
+        "subtitle": "Exercez-vous sur les fuites, drains bouchés et problèmes de pression.",
+        "title": "Apprenez la plomberie"
+      },
+      {
+        "subtitle": "Lisez les symptômes et choisissez un diagnostic de plomberie.",
+        "title": "Exercez le diagnostic"
+      },
+      {
+        "subtitle": "Préparez votre équipement pour tuyaux, drains et chauffage.",
+        "title": "Découvrez les outils"
+      },
+      {
+        "subtitle": "Choisissez une réparation et apprenez grâce aux commentaires.",
+        "title": "Simulez les réparations"
+      }
+    ],
+    "tagline": "Jeu de formation en plomberie"
+  },
+  "de-DE": {
+    "rtl": false,
+    "name": "German",
+    "footer": "Lernsimulation. Die App-Oberfläche ist auf Englisch.",
+    "shots": [
+      {
+        "subtitle": "Übe Lecks, verstopfte Abflüsse und Wasserdruckprobleme.",
+        "title": "Sanitärtechnik lernen"
+      },
+      {
+        "subtitle": "Lies die Symptome und wähle eine Fehlerdiagnose.",
+        "title": "Fehlerdiagnose üben"
+      },
+      {
+        "subtitle": "Stelle dein Werkzeug für Rohre, Abflüsse und Heizung zusammen.",
+        "title": "Werkzeuge kennenlernen"
+      },
+      {
+        "subtitle": "Wähle eine Reparatur und lerne aus dem Feedback.",
+        "title": "Reparaturen simulieren"
+      }
+    ],
+    "tagline": "Lernspiel für Sanitärtechnik"
+  },
+  "el": {
+    "rtl": false,
+    "name": "Greek",
+    "footer": "Εκπαιδευτική προσομοίωση. Η εφαρμογή έχει αγγλικό περιβάλλον.",
+    "shots": [
+      {
+        "subtitle": "Εξασκήσου σε διαρροές, βουλωμένες αποχετεύσεις και προβλήματα πίεσης.",
+        "title": "Μάθε υδραυλικές εργασίες"
+      },
+      {
+        "subtitle": "Διάβασε τα συμπτώματα και επίλεξε διάγνωση βλάβης.",
+        "title": "Εξασκήσου στη διάγνωση"
+      },
+      {
+        "subtitle": "Φτιάξε το σετ σου για σωλήνες, αποχετεύσεις και θέρμανση.",
+        "title": "Γνώρισε τα εργαλεία"
+      },
+      {
+        "subtitle": "Επίλεξε επισκευή και μάθε από την ανατροφοδότηση.",
+        "title": "Προσομοίωσε επισκευές"
+      }
+    ],
+    "tagline": "Παιχνίδι εκπαίδευσης υδραυλικών"
+  },
+  "gu": {
+    "rtl": false,
+    "name": "Gujarati",
+    "footer": "શૈક્ષણિક સિમ્યુલેશન. ઍપનું ઇન્ટરફેસ અંગ્રેજીમાં છે.",
+    "shots": [
+      {
+        "subtitle": "લીક, બંધ ડ્રેન અને પાણીના દબાણની ખામીનો અભ્યાસ કરો.",
+        "title": "રમત દ્વારા પ્લમ્બિંગ શીખો"
+      },
+      {
+        "subtitle": "લક્ષણો વાંચો અને પ્લમ્બિંગની ખામીનું નિદાન પસંદ કરો.",
+        "title": "ખામીનું નિદાન શીખો"
+      },
+      {
+        "subtitle": "પાઇપ, ડ્રેન અને હીટિંગનાં કામ માટે સાધનો ભેગાં કરો.",
+        "title": "પ્લમ્બિંગનાં સાધનો જાણો"
+      },
+      {
+        "subtitle": "રિપેર પસંદ કરો અને કામના પ્રતિસાદમાંથી શીખો.",
+        "title": "પ્લમ્બિંગ રિપેર સિમ્યુલેશન"
+      }
+    ],
+    "tagline": "પ્લમ્બિંગ શીખવાની રમત"
+  },
+  "he": {
+    "rtl": true,
+    "name": "Hebrew",
+    "footer": "סימולציה לימודית. ממשק האפליקציה באנגלית.",
+    "shots": [
+      {
+        "subtitle": "תרגלו נזילות, סתימות ובעיות בלחץ המים.",
+        "title": "למדו אינסטלציה במשחק"
+      },
+      {
+        "subtitle": "קראו את התסמינים ובחרו אבחון לתקלה.",
+        "title": "תרגלו אבחון תקלות"
+      },
+      {
+        "subtitle": "הרכיבו ערכת כלים לצינורות, ניקוז וחימום.",
+        "title": "הכירו כלי אינסטלציה"
+      },
+      {
+        "subtitle": "בחרו תיקון ולמדו מהמשוב על העבודה.",
+        "title": "סימולציית תיקונים"
+      }
+    ],
+    "tagline": "משחק ללימוד אינסטלציה"
+  },
+  "hi": {
+    "rtl": false,
+    "name": "Hindi",
+    "footer": "शैक्षिक सिमुलेशन। ऐप का इंटरफ़ेस अंग्रेज़ी में है।",
+    "shots": [
+      {
+        "subtitle": "रिसाव, बंद नालियों और पानी के दबाव की समस्याओं का अभ्यास करें।",
+        "title": "खेलकर प्लंबिंग सीखें"
+      },
+      {
+        "subtitle": "लक्षण पढ़ें और प्लंबिंग की खराबी का कारण चुनें।",
+        "title": "खराबी पहचानने का अभ्यास"
+      },
+      {
+        "subtitle": "पाइप, नाली और हीटिंग के काम के लिए औज़ार जुटाएँ।",
+        "title": "प्लंबिंग के औज़ार सीखें"
+      },
+      {
+        "subtitle": "मरम्मत चुनें और काम की प्रतिक्रिया से सीखें।",
+        "title": "प्लंबिंग मरम्मत सिमुलेशन"
+      }
+    ],
+    "tagline": "प्लंबिंग सीखने का खेल"
+  },
+  "hu": {
+    "rtl": false,
+    "name": "Hungarian",
+    "footer": "Oktatási szimuláció. Az alkalmazás felülete angol nyelvű.",
+    "shots": [
+      {
+        "subtitle": "Gyakorolj szivárgásokat, dugulásokat és víznyomáshibákat.",
+        "title": "Tanulj vízvezeték-szerelést"
+      },
+      {
+        "subtitle": "Olvasd el a tüneteket, és válassz diagnózist.",
+        "title": "Gyakorold a hibafeltárást"
+      },
+      {
+        "subtitle": "Állítsd össze eszközeidet cső-, lefolyó- és fűtési munkákhoz.",
+        "title": "Ismerd meg a szerszámokat"
+      },
+      {
+        "subtitle": "Válassz javítást, és tanulj a visszajelzésből.",
+        "title": "Szimulálj javításokat"
+      }
+    ],
+    "tagline": "Vízvezeték-szerelési oktatójáték"
+  },
+  "id": {
+    "rtl": false,
+    "name": "Indonesian",
+    "footer": "Simulasi edukasi. Antarmuka aplikasi berbahasa Inggris.",
+    "shots": [
+      {
+        "subtitle": "Latih kebocoran, saluran tersumbat dan masalah tekanan air.",
+        "title": "Belajar perpipaan lewat game"
+      },
+      {
+        "subtitle": "Baca gejala dan pilih diagnosis masalah perpipaan.",
+        "title": "Latih diagnosis kerusakan"
+      },
+      {
+        "subtitle": "Siapkan alat untuk pipa, saluran air dan pemanas.",
+        "title": "Kenali alat perpipaan"
+      },
+      {
+        "subtitle": "Pilih perbaikan dan pelajari umpan balik tugas.",
+        "title": "Simulasi perbaikan pipa"
+      }
+    ],
+    "tagline": "Game latihan perpipaan"
+  },
+  "it": {
+    "rtl": false,
+    "name": "Italian",
+    "footer": "Simulazione educativa. Interfaccia dell’app in inglese.",
+    "shots": [
+      {
+        "subtitle": "Esercitati su perdite, scarichi ostruiti e problemi di pressione.",
+        "title": "Impara l’idraulica giocando"
+      },
+      {
+        "subtitle": "Leggi i sintomi e scegli una diagnosi idraulica.",
+        "title": "Esercita la diagnosi"
+      },
+      {
+        "subtitle": "Prepara il kit per tubi, scarichi e riscaldamento.",
+        "title": "Scopri gli attrezzi idraulici"
+      },
+      {
+        "subtitle": "Scegli una riparazione e impara dai riscontri.",
+        "title": "Simula le riparazioni"
+      }
+    ],
+    "tagline": "Gioco di formazione idraulica"
+  },
+  "ja": {
+    "rtl": false,
+    "name": "Japanese",
+    "footer": "学習用シミュレーション。アプリの操作画面は英語です。",
+    "shots": [
+      {
+        "subtitle": "水漏れ、排水の詰まり、水圧の問題に取り組もう。",
+        "title": "ゲームで配管を学ぼう"
+      },
+      {
+        "subtitle": "症状を読んで配管の故障原因を選ぼう。",
+        "title": "故障診断を練習"
+      },
+      {
+        "subtitle": "配管・排水・暖房の課題に使う工具を揃えよう。",
+        "title": "配管工具を学ぼう"
+      },
+      {
+        "subtitle": "修理方法を選び、結果のフィードバックから学ぼう。",
+        "title": "配管修理シミュレーション"
+      }
+    ],
+    "tagline": "配管トレーニングゲーム"
+  },
+  "kn": {
+    "rtl": false,
+    "name": "Kannada",
+    "footer": "ಶೈಕ್ಷಣಿಕ ಸಿಮ್ಯುಲೇಶನ್. ಆ್ಯಪ್ ಇಂಟರ್‌ಫೇಸ್ ಇಂಗ್ಲಿಷ್‌ನಲ್ಲಿದೆ.",
+    "shots": [
+      {
+        "subtitle": "ಸೋರಿಕೆ, ಮುಚ್ಚಿದ ಚರಂಡಿ ಮತ್ತು ನೀರಿನ ಒತ್ತಡದ ದೋಷಗಳನ್ನು ಅಭ್ಯಾಸ ಮಾಡಿ.",
+        "title": "ಆಟದ ಮೂಲಕ ಪ್ಲಂಬಿಂಗ್ ಕಲಿಯಿರಿ"
+      },
+      {
+        "subtitle": "ಲಕ್ಷಣಗಳನ್ನು ಓದಿ ಪ್ಲಂಬಿಂಗ್ ದೋಷದ ಕಾರಣ ಆರಿಸಿ.",
+        "title": "ದೋಷ ಪತ್ತೆ ಅಭ್ಯಾಸ"
+      },
+      {
+        "subtitle": "ಪೈಪ್, ಚರಂಡಿ ಮತ್ತು ತಾಪನ ಕಾರ್ಯಗಳಿಗೆ ಉಪಕರಣ ಸಂಗ್ರಹಿಸಿ.",
+        "title": "ಪ್ಲಂಬಿಂಗ್ ಉಪಕರಣ ತಿಳಿಯಿರಿ"
+      },
+      {
+        "subtitle": "ದುರಸ್ತಿ ಆರಿಸಿ ಮತ್ತು ಪ್ರತಿಕ್ರಿಯೆಯಿಂದ ಕಲಿಯಿರಿ.",
+        "title": "ಪ್ಲಂಬಿಂಗ್ ದುರಸ್ತಿ ಸಿಮ್ಯುಲೇಶನ್"
+      }
+    ],
+    "tagline": "ಪ್ಲಂಬಿಂಗ್ ಕಲಿಕೆಯ ಆಟ"
+  },
+  "ko": {
+    "rtl": false,
+    "name": "Korean",
+    "footer": "교육용 시뮬레이션. 앱 인터페이스는 영어입니다.",
+    "shots": [
+      {
+        "subtitle": "누수, 배수구 막힘, 수압 문제를 연습하세요.",
+        "title": "게임으로 배관 배우기"
+      },
+      {
+        "subtitle": "증상을 읽고 배관 고장 진단을 선택하세요.",
+        "title": "고장 진단 연습"
+      },
+      {
+        "subtitle": "배관, 배수, 난방 작업에 필요한 공구를 모으세요.",
+        "title": "배관 공구 배우기"
+      },
+      {
+        "subtitle": "수리 방법을 선택하고 작업 피드백으로 배우세요.",
+        "title": "배관 수리 시뮬레이션"
+      }
+    ],
+    "tagline": "배관 기술 학습 게임"
+  },
+  "ms": {
+    "rtl": false,
+    "name": "Malay",
+    "footer": "Simulasi pendidikan. Antara muka aplikasi dalam bahasa Inggeris.",
+    "shots": [
+      {
+        "subtitle": "Latih kebocoran, saliran tersumbat dan masalah tekanan air.",
+        "title": "Belajar kerja paip"
+      },
+      {
+        "subtitle": "Baca gejala dan pilih diagnosis masalah paip.",
+        "title": "Latih diagnosis kerosakan"
+      },
+      {
+        "subtitle": "Sediakan alat untuk paip, saliran dan pemanasan.",
+        "title": "Kenali alat kerja paip"
+      },
+      {
+        "subtitle": "Pilih pembaikan dan belajar daripada maklum balas.",
+        "title": "Simulasi pembaikan paip"
+      }
+    ],
+    "tagline": "Permainan latihan paip"
+  },
+  "ml": {
+    "rtl": false,
+    "name": "Malayalam",
+    "footer": "വിദ്യാഭ്യാസ സിമുലേഷൻ. ആപ്പിന്റെ ഇന്റർഫേസ് ഇംഗ്ലീഷിലാണ്.",
+    "shots": [
+      {
+        "subtitle": "ചോർച്ച, അടഞ്ഞ ഡ്രെയിൻ, ജലമർദ്ദ തകരാർ എന്നിവ പരിശീലിക്കൂ.",
+        "title": "കളിച്ച് പ്ലംബിംഗ് പഠിക്കൂ"
+      },
+      {
+        "subtitle": "ലക്ഷണങ്ങൾ വായിച്ച് പ്ലംബിംഗ് തകരാറിന്റെ കാരണം തിരഞ്ഞെടുക്കൂ.",
+        "title": "തകരാർ കണ്ടെത്താൻ പരിശീലിക്കൂ"
+      },
+      {
+        "subtitle": "പൈപ്പ്, ഡ്രെയിൻ, ഹീറ്റിംഗ് ജോലികൾക്കുള്ള ഉപകരണങ്ങൾ ശേഖരിക്കൂ.",
+        "title": "പ്ലംബിംഗ് ഉപകരണങ്ങൾ പഠിക്കൂ"
+      },
+      {
+        "subtitle": "അറ്റകുറ്റപ്പണി തിരഞ്ഞെടുത്ത് പ്രതികരണത്തിൽ നിന്ന് പഠിക്കൂ.",
+        "title": "പ്ലംബിംഗ് റിപ്പയർ സിമുലേഷൻ"
+      }
+    ],
+    "tagline": "പ്ലംബിംഗ് പഠന ഗെയിം"
+  },
+  "mr": {
+    "rtl": false,
+    "name": "Marathi",
+    "footer": "शैक्षणिक सिम्युलेशन. ॲपचा इंटरफेस इंग्रजीत आहे.",
+    "shots": [
+      {
+        "subtitle": "गळती, बंद नाले आणि पाण्याच्या दाबातील बिघाडाचा सराव करा.",
+        "title": "खेळातून प्लंबिंग शिका"
+      },
+      {
+        "subtitle": "लक्षणे वाचा आणि प्लंबिंगच्या बिघाडाचे कारण निवडा.",
+        "title": "बिघाड शोधण्याचा सराव"
+      },
+      {
+        "subtitle": "पाइप, नाले आणि हीटिंगच्या कामांसाठी साधने गोळा करा.",
+        "title": "प्लंबिंगची साधने ओळखा"
+      },
+      {
+        "subtitle": "दुरुस्ती निवडा आणि कामाच्या अभिप्रायातून शिका.",
+        "title": "प्लंबिंग दुरुस्ती सिम्युलेशन"
+      }
+    ],
+    "tagline": "प्लंबिंग शिकण्याचा खेळ"
+  },
+  "no": {
+    "rtl": false,
+    "name": "Norwegian",
+    "footer": "Læringssimulering. Appens grensesnitt er på engelsk.",
+    "shots": [
+      {
+        "subtitle": "Øv på lekkasjer, tette avløp og problemer med vanntrykk.",
+        "title": "Lær rørleggerarbeid"
+      },
+      {
+        "subtitle": "Les symptomene og velg en diagnose.",
+        "title": "Øv på feildiagnose"
+      },
+      {
+        "subtitle": "Samle verktøy for rør, avløp og varmeoppgaver.",
+        "title": "Lær om rørleggerverktøy"
+      },
+      {
+        "subtitle": "Velg en reparasjon og lær av tilbakemeldingen.",
+        "title": "Simuler rørreparasjoner"
+      }
+    ],
+    "tagline": "Treningsspill for rørleggere"
+  },
+  "or": {
+    "rtl": false,
+    "name": "Odia",
+    "footer": "ଶିକ୍ଷାମୂଳକ ସିମୁଲେସନ୍। ଆପ୍ ଇଣ୍ଟରଫେସ୍ ଇଂରାଜୀରେ ଅଛି।",
+    "shots": [
+      {
+        "subtitle": "ଲିକ୍, ବନ୍ଦ ଡ୍ରେନ୍ ଓ ଜଳଚାପ ତ୍ରୁଟିର ଅଭ୍ୟାସ କରନ୍ତୁ।",
+        "title": "ଖେଳି ପ୍ଲମ୍ବିଂ ଶିଖନ୍ତୁ"
+      },
+      {
+        "subtitle": "ଲକ୍ଷଣ ପଢ଼ି ପ୍ଲମ୍ବିଂ ତ୍ରୁଟିର କାରଣ ବାଛନ୍ତୁ।",
+        "title": "ତ୍ରୁଟି ଚିହ୍ନଟ ଅଭ୍ୟାସ"
+      },
+      {
+        "subtitle": "ପାଇପ୍, ଡ୍ରେନ୍ ଓ ହିଟିଂ କାମ ପାଇଁ ଉପକରଣ ସଂଗ୍ରହ କରନ୍ତୁ।",
+        "title": "ପ୍ଲମ୍ବିଂ ଉପକରଣ ଜାଣନ୍ତୁ"
+      },
+      {
+        "subtitle": "ମରାମତି ବାଛି କାମର ମତାମତରୁ ଶିଖନ୍ତୁ।",
+        "title": "ପ୍ଲମ୍ବିଂ ମରାମତି ସିମୁଲେସନ୍"
+      }
+    ],
+    "tagline": "ପ୍ଲମ୍ବିଂ ଶିକ୍ଷା ଖେଳ"
+  },
+  "pl": {
+    "rtl": false,
+    "name": "Polish",
+    "footer": "Symulacja edukacyjna. Interfejs aplikacji jest po angielsku.",
+    "shots": [
+      {
+        "subtitle": "Ćwicz wycieki, zatkane odpływy i problemy z ciśnieniem.",
+        "title": "Ucz się hydrauliki w grze"
+      },
+      {
+        "subtitle": "Przeczytaj objawy i wybierz diagnozę.",
+        "title": "Ćwicz diagnozowanie usterek"
+      },
+      {
+        "subtitle": "Zbierz narzędzia do rur, odpływów i ogrzewania.",
+        "title": "Poznaj narzędzia hydrauliczne"
+      },
+      {
+        "subtitle": "Wybierz naprawę i ucz się z informacji zwrotnej.",
+        "title": "Symuluj naprawy"
+      }
+    ],
+    "tagline": "Gra do nauki hydrauliki"
+  },
+  "pt-BR": {
+    "rtl": false,
+    "name": "Portuguese (Brazil)",
+    "footer": "Simulação educativa. Interface do app em inglês.",
+    "shots": [
+      {
+        "subtitle": "Pratique vazamentos, ralos entupidos e problemas de pressão.",
+        "title": "Aprenda hidráulica jogando"
+      },
+      {
+        "subtitle": "Leia os sintomas e escolha um diagnóstico hidráulico.",
+        "title": "Pratique o diagnóstico"
+      },
+      {
+        "subtitle": "Monte seu kit para tubos, drenagem e aquecimento.",
+        "title": "Conheça as ferramentas"
+      },
+      {
+        "subtitle": "Escolha um reparo e aprenda com o feedback.",
+        "title": "Simule reparos hidráulicos"
+      }
+    ],
+    "tagline": "Jogo de treinamento hidráulico"
+  },
+  "pt-PT": {
+    "rtl": false,
+    "name": "Portuguese (Portugal)",
+    "footer": "Simulação educativa. Interface da aplicação em inglês.",
+    "shots": [
+      {
+        "subtitle": "Pratique fugas, esgotos entupidos e problemas de pressão.",
+        "title": "Aprenda canalização"
+      },
+      {
+        "subtitle": "Leia os sintomas e escolha um diagnóstico de canalização.",
+        "title": "Pratique o diagnóstico"
+      },
+      {
+        "subtitle": "Prepare o kit para tubos, esgotos e aquecimento.",
+        "title": "Conheça as ferramentas"
+      },
+      {
+        "subtitle": "Escolha uma reparação e aprenda com os comentários.",
+        "title": "Simule reparações"
+      }
+    ],
+    "tagline": "Jogo de formação em canalização"
+  },
+  "pa": {
+    "rtl": false,
+    "name": "Punjabi",
+    "footer": "ਸਿੱਖਿਆ ਲਈ ਸਿਮੂਲੇਸ਼ਨ। ਐਪ ਦਾ ਇੰਟਰਫੇਸ ਅੰਗਰੇਜ਼ੀ ਵਿੱਚ ਹੈ।",
+    "shots": [
+      {
+        "subtitle": "ਲੀਕ, ਬੰਦ ਨਾਲੀਆਂ ਅਤੇ ਪਾਣੀ ਦੇ ਦਬਾਅ ਦੀਆਂ ਖ਼ਰਾਬੀਆਂ ਦਾ ਅਭਿਆਸ ਕਰੋ।",
+        "title": "ਖੇਡ ਕੇ ਪਲੰਬਿੰਗ ਸਿੱਖੋ"
+      },
+      {
+        "subtitle": "ਲੱਛਣ ਪੜ੍ਹੋ ਅਤੇ ਪਲੰਬਿੰਗ ਦੀ ਖ਼ਰਾਬੀ ਦਾ ਕਾਰਨ ਚੁਣੋ।",
+        "title": "ਖ਼ਰਾਬੀ ਪਛਾਣਨ ਦਾ ਅਭਿਆਸ"
+      },
+      {
+        "subtitle": "ਪਾਈਪ, ਨਾਲੀ ਅਤੇ ਹੀਟਿੰਗ ਦੇ ਕੰਮ ਲਈ ਔਜ਼ਾਰ ਇਕੱਠੇ ਕਰੋ।",
+        "title": "ਪਲੰਬਿੰਗ ਦੇ ਔਜ਼ਾਰ ਜਾਣੋ"
+      },
+      {
+        "subtitle": "ਮੁਰੰਮਤ ਚੁਣੋ ਅਤੇ ਕੰਮ ਦੇ ਫੀਡਬੈਕ ਤੋਂ ਸਿੱਖੋ।",
+        "title": "ਪਲੰਬਿੰਗ ਮੁਰੰਮਤ ਸਿਮੂਲੇਸ਼ਨ"
+      }
+    ],
+    "tagline": "ਪਲੰਬਿੰਗ ਸਿੱਖਣ ਦੀ ਖੇਡ"
+  },
+  "ro": {
+    "rtl": false,
+    "name": "Romanian",
+    "footer": "Simulare educativă. Interfața aplicației este în engleză.",
+    "shots": [
+      {
+        "subtitle": "Exersează scurgeri, canale înfundate și probleme de presiune.",
+        "title": "Învață lucrări de instalații"
+      },
+      {
+        "subtitle": "Citește simptomele și alege diagnosticul defecțiunii.",
+        "title": "Exersează diagnosticarea"
+      },
+      {
+        "subtitle": "Pregătește trusa pentru țevi, scurgeri și încălzire.",
+        "title": "Cunoaște uneltele"
+      },
+      {
+        "subtitle": "Alege reparația și învață din feedback.",
+        "title": "Simulează reparații"
+      }
+    ],
+    "tagline": "Joc de instruire în instalații"
+  },
+  "ru": {
+    "rtl": false,
+    "name": "Russian",
+    "footer": "Учебная симуляция. Интерфейс приложения на английском.",
+    "shots": [
+      {
+        "subtitle": "Тренируйтесь устранять протечки, засоры и проблемы давления.",
+        "title": "Изучайте сантехнику в игре"
+      },
+      {
+        "subtitle": "Прочитайте симптомы и выберите причину неисправности.",
+        "title": "Практикуйте диагностику"
+      },
+      {
+        "subtitle": "Соберите инструменты для труб, сливов и отопления.",
+        "title": "Изучайте инструменты"
+      },
+      {
+        "subtitle": "Выберите ремонт и учитесь по результатам задания.",
+        "title": "Симуляция ремонта"
+      }
+    ],
+    "tagline": "Игра для обучения сантехнике"
+  },
+  "sk": {
+    "rtl": false,
+    "name": "Slovak",
+    "footer": "Vzdelávacia simulácia. Rozhranie aplikácie je v angličtine.",
+    "shots": [
+      {
+        "subtitle": "Precvičujte úniky vody, upchaté odpady a poruchy tlaku.",
+        "title": "Učte sa inštalatérstvo"
+      },
+      {
+        "subtitle": "Prečítajte príznaky a vyberte príčinu poruchy.",
+        "title": "Precvičte diagnostiku"
+      },
+      {
+        "subtitle": "Zostavte výbavu pre potrubia, odpady a kúrenie.",
+        "title": "Spoznajte inštalatérske náradie"
+      },
+      {
+        "subtitle": "Vyberte opravu a učte sa zo spätnej väzby.",
+        "title": "Simulujte opravy"
+      }
+    ],
+    "tagline": "Inštalatérska vzdelávacia hra"
+  },
+  "sl": {
+    "rtl": false,
+    "name": "Slovenian",
+    "footer": "Izobraževalna simulacija. Vmesnik aplikacije je v angleščini.",
+    "shots": [
+      {
+        "subtitle": "Vadite puščanje, zamašene odtoke in težave s tlakom vode.",
+        "title": "Učite se vodovodnih del"
+      },
+      {
+        "subtitle": "Preberite simptome in izberite vzrok napake.",
+        "title": "Vadite diagnozo napak"
+      },
+      {
+        "subtitle": "Pripravite orodje za cevi, odtoke in ogrevanje.",
+        "title": "Spoznajte vodovodna orodja"
+      },
+      {
+        "subtitle": "Izberite popravilo in se učite iz povratnih informacij.",
+        "title": "Simulirajte popravila"
+      }
+    ],
+    "tagline": "Igra za učenje vodovodnih del"
+  },
+  "es-MX": {
+    "rtl": false,
+    "name": "Spanish (Mexico)",
+    "footer": "Simulación educativa. Interfaz de la app en inglés.",
+    "shots": [
+      {
+        "subtitle": "Practica fugas, desagües tapados y problemas de presión.",
+        "title": "Aprende plomería jugando"
+      },
+      {
+        "subtitle": "Lee los síntomas y elige un diagnóstico de plomería.",
+        "title": "Practica el diagnóstico"
+      },
+      {
+        "subtitle": "Prepara tu equipo para tuberías, desagües y calefacción.",
+        "title": "Conoce las herramientas"
+      },
+      {
+        "subtitle": "Elige una reparación y aprende con los comentarios.",
+        "title": "Simula reparaciones"
+      }
+    ],
+    "tagline": "Juego de capacitación en plomería"
+  },
+  "es-ES": {
+    "rtl": false,
+    "name": "Spanish (Spain)",
+    "footer": "Simulación educativa. Interfaz de la aplicación en inglés.",
+    "shots": [
+      {
+        "subtitle": "Practica fugas, desagües atascados y problemas de presión.",
+        "title": "Aprende fontanería jugando"
+      },
+      {
+        "subtitle": "Lee los síntomas y elige un diagnóstico de fontanería.",
+        "title": "Practica el diagnóstico"
+      },
+      {
+        "subtitle": "Prepara tu equipo para tuberías, desagües y calefacción.",
+        "title": "Conoce las herramientas"
+      },
+      {
+        "subtitle": "Elige una reparación y aprende con los comentarios.",
+        "title": "Simula reparaciones"
+      }
+    ],
+    "tagline": "Juego de formación en fontanería"
+  },
+  "sv": {
+    "rtl": false,
+    "name": "Swedish",
+    "footer": "Utbildningssimulering. Appens gränssnitt är på engelska.",
+    "shots": [
+      {
+        "subtitle": "Öva på läckor, igensatta avlopp och problem med vattentryck.",
+        "title": "Lär dig VVS genom spel"
+      },
+      {
+        "subtitle": "Läs symtomen och välj en VVS-diagnos.",
+        "title": "Öva på feldiagnos"
+      },
+      {
+        "subtitle": "Samla verktyg för rör, avlopp och värmeuppgifter.",
+        "title": "Lär känna VVS-verktygen"
+      },
+      {
+        "subtitle": "Välj en reparation och lär av återkopplingen.",
+        "title": "Simulera reparationer"
+      }
+    ],
+    "tagline": "Träningsspel för VVS"
+  },
+  "ta": {
+    "rtl": false,
+    "name": "Tamil",
+    "footer": "கல்விக்கான சிமுலேஷன். செயலியின் இடைமுகம் ஆங்கிலத்தில் உள்ளது.",
+    "shots": [
+      {
+        "subtitle": "கசிவுகள், அடைத்த வடிகால்கள், நீர் அழுத்தக் கோளாறுகளைப் பயிற்சி செய்யவும்.",
+        "title": "விளையாடி பிளம்பிங் கற்கவும்"
+      },
+      {
+        "subtitle": "அறிகுறிகளைப் படித்து பிளம்பிங் கோளாறின் காரணத்தைத் தேர்வுசெய்யவும்.",
+        "title": "கோளாறு கண்டறியும் பயிற்சி"
+      },
+      {
+        "subtitle": "குழாய், வடிகால், வெப்பமூட்டும் பணிகளுக்குக் கருவிகளைச் சேகரிக்கவும்.",
+        "title": "பிளம்பிங் கருவிகளை அறியவும்"
+      },
+      {
+        "subtitle": "பழுதுபார்ப்பைத் தேர்வுசெய்து கருத்துகளிலிருந்து கற்கவும்.",
+        "title": "பிளம்பிங் பழுது சிமுலேஷன்"
+      }
+    ],
+    "tagline": "பிளம்பிங் பயிற்சி விளையாட்டு"
+  },
+  "te": {
+    "rtl": false,
+    "name": "Telugu",
+    "footer": "విద్యా సిమ్యులేషన్. యాప్ ఇంటర్‌ఫేస్ ఆంగ్లంలో ఉంది.",
+    "shots": [
+      {
+        "subtitle": "లీకులు, మూసుకుపోయిన డ్రెయిన్‌లు, నీటి ఒత్తిడి లోపాలను సాధన చేయండి.",
+        "title": "ఆడుతూ ప్లంబింగ్ నేర్చుకోండి"
+      },
+      {
+        "subtitle": "లక్షణాలను చదివి ప్లంబింగ్ లోపానికి కారణం ఎంచుకోండి.",
+        "title": "లోప నిర్ధారణ సాధన"
+      },
+      {
+        "subtitle": "పైపు, డ్రెయిన్, హీటింగ్ పనులకు పనిముట్లు సేకరించండి.",
+        "title": "ప్లంబింగ్ పనిముట్లు తెలుసుకోండి"
+      },
+      {
+        "subtitle": "మరమ్మతు ఎంచుకుని పని అభిప్రాయం నుంచి నేర్చుకోండి.",
+        "title": "ప్లంబింగ్ మరమ్మతు సిమ్యులేషన్"
+      }
+    ],
+    "tagline": "ప్లంబింగ్ శిక్షణ ఆట"
+  },
+  "th": {
+    "rtl": false,
+    "name": "Thai",
+    "footer": "การจำลองเพื่อการศึกษา อินเทอร์เฟซแอปเป็นภาษาอังกฤษ",
+    "shots": [
+      {
+        "subtitle": "ฝึกแก้ปัญหาน้ำรั่ว ท่อระบายน้ำอุดตัน และแรงดันน้ำผิดปกติ",
+        "title": "เรียนรู้งานประปาผ่านเกม"
+      },
+      {
+        "subtitle": "อ่านอาการและเลือกสาเหตุของปัญหางานประปา",
+        "title": "ฝึกวินิจฉัยปัญหา"
+      },
+      {
+        "subtitle": "รวบรวมเครื่องมือสำหรับท่อ ระบบระบายน้ำ และระบบทำความร้อน",
+        "title": "เรียนรู้เครื่องมืองานประปา"
+      },
+      {
+        "subtitle": "เลือกวิธีซ่อมและเรียนรู้จากผลตอบรับของงาน",
+        "title": "จำลองการซ่อมประปา"
+      }
+    ],
+    "tagline": "เกมฝึกทักษะงานประปา"
+  },
+  "tr": {
+    "rtl": false,
+    "name": "Turkish",
+    "footer": "Eğitim simülasyonu. Uygulama arayüzü İngilizcedir.",
+    "shots": [
+      {
+        "subtitle": "Sızıntı, tıkalı gider ve su basıncı sorunları üzerinde çalışın.",
+        "title": "Oyunla tesisat öğrenin"
+      },
+      {
+        "subtitle": "Belirtileri okuyun ve bir tesisat teşhisi seçin.",
+        "title": "Arıza teşhisini çalışın"
+      },
+      {
+        "subtitle": "Boru, gider ve ısıtma işleri için aletlerinizi toplayın.",
+        "title": "Tesisat aletlerini tanıyın"
+      },
+      {
+        "subtitle": "Onarım seçin ve iş geri bildiriminden öğrenin.",
+        "title": "Onarımları simüle edin"
+      }
+    ],
+    "tagline": "Tesisat eğitimi oyunu"
+  },
+  "uk": {
+    "rtl": false,
+    "name": "Ukrainian",
+    "footer": "Навчальна симуляція. Інтерфейс застосунку англійською.",
+    "shots": [
+      {
+        "subtitle": "Тренуйтеся на протіканнях, засміченнях і проблемах тиску.",
+        "title": "Вивчайте сантехніку у грі"
+      },
+      {
+        "subtitle": "Прочитайте симптоми й оберіть причину несправності.",
+        "title": "Практикуйте діагностику"
+      },
+      {
+        "subtitle": "Зберіть інструменти для труб, зливів і опалення.",
+        "title": "Вивчайте інструменти"
+      },
+      {
+        "subtitle": "Оберіть ремонт і навчайтеся за відгуками про завдання.",
+        "title": "Симуляція ремонту"
+      }
+    ],
+    "tagline": "Гра для навчання сантехніки"
+  },
+  "ur": {
+    "rtl": true,
+    "name": "Urdu",
+    "footer": "تعلیمی سیمولیشن۔ ایپ کا انٹرفیس انگریزی میں ہے۔",
+    "shots": [
+      {
+        "subtitle": "رساؤ، بند نالیوں اور پانی کے دباؤ کی خرابیوں کی مشق کریں۔",
+        "title": "کھیل کر پلمبنگ سیکھیں"
+      },
+      {
+        "subtitle": "علامات پڑھیں اور پلمبنگ کی خرابی کی وجہ منتخب کریں۔",
+        "title": "خرابی کی تشخیص کی مشق"
+      },
+      {
+        "subtitle": "پائپ، نکاسی اور ہیٹنگ کے کام کے لیے اوزار جمع کریں۔",
+        "title": "پلمبنگ کے اوزار جانیں"
+      },
+      {
+        "subtitle": "مرمت منتخب کریں اور کام کے نتائج سے سیکھیں۔",
+        "title": "پلمبنگ مرمت کی سیمولیشن"
+      }
+    ],
+    "tagline": "پلمبنگ سیکھنے کا کھیل"
+  },
+  "vi": {
+    "rtl": false,
+    "name": "Vietnamese",
+    "footer": "Mô phỏng giáo dục. Giao diện ứng dụng bằng tiếng Anh.",
+    "shots": [
+      {
+        "subtitle": "Luyện xử lý rò rỉ, tắc đường thoát nước và lỗi áp lực nước.",
+        "title": "Học sửa ống nước qua trò chơi"
+      },
+      {
+        "subtitle": "Đọc triệu chứng và chọn nguyên nhân sự cố đường ống.",
+        "title": "Luyện chẩn đoán sự cố"
+      },
+      {
+        "subtitle": "Chuẩn bị bộ dụng cụ cho ống, thoát nước và sưởi.",
+        "title": "Tìm hiểu dụng cụ"
+      },
+      {
+        "subtitle": "Chọn cách sửa và học từ phản hồi công việc.",
+        "title": "Mô phỏng sửa ống nước"
+      }
+    ],
+    "tagline": "Trò chơi học nghề sửa ống nước"
+  }
+}

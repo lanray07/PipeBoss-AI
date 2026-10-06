@@ -6,6 +6,11 @@ xcuserdata/
 *.ipa
 desktop-screenshot*.png
 Signing/
+AppStoreAssets/Screenshots/Optimized-1.0.2/**/*.png
+AppStoreAssets/Screenshots/Optimized-1.0.2/manifest.json
+AppStoreAssets/Screenshots/Optimized-1.0.2/upload-report.json
+AppStoreAssets/Screenshots/Optimized-1.0.2/verification.json
+AppStoreAssets/Screenshots/Optimized-1.0.2/remote-backups/
 tools/localization/export-content*
 tools/localization/test-localization*
 __pycache__/
