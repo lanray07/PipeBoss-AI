@@ -24,6 +24,12 @@
       ],
       "requiresSafetyReview" : false
     },
+    "{message}\nSupport reference: {code}" : {
+      "contexts" : [
+        "copy.paywall.restoreFailureWithCode"
+      ],
+      "requiresSafetyReview" : false
+    },
     "{price} / month. Auto-renews monthly." : {
       "contexts" : [
         "copy.format.monthPrice"
@@ -3660,6 +3666,18 @@
       ],
       "requiresSafetyReview" : false
     },
+    "Purchase refresh completed. No active subscriptions or owned packs were found for this App Store account." : {
+      "contexts" : [
+        "copy.paywall.restoreNoPurchasesMessage"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "Purchases refreshed. Your active subscriptions and owned packs are available." : {
+      "contexts" : [
+        "copy.paywall.restoreCompletedMessage"
+      ],
+      "requiresSafetyReview" : false
+    },
     "Qualified Plumber" : {
       "contexts" : [
         "copy.careerTitles.2"
@@ -4018,12 +4036,6 @@
     "Reset saved progress?" : {
       "contexts" : [
         "copy.settings.resetConfirm"
-      ],
-      "requiresSafetyReview" : false
-    },
-    "Restore did not complete. Try again from the App Store account used to subscribe." : {
-      "contexts" : [
-        "copy.paywall.restoreFailedMessage"
       ],
       "requiresSafetyReview" : false
     },
@@ -4645,6 +4657,18 @@
       ],
       "requiresSafetyReview" : true
     },
+    "The App Store could not complete authentication. Please retry and complete Apple's sign-in prompt." : {
+      "contexts" : [
+        "copy.paywall.restoreAuthenticationMessage"
+      ],
+      "requiresSafetyReview" : false
+    },
+    "The App Store could not complete the purchase refresh. Existing verified purchases remain available. Please try again." : {
+      "contexts" : [
+        "copy.paywall.restoreFailedMessage"
+      ],
+      "requiresSafetyReview" : false
+    },
     "The basin fills up and drains away slowly after shaving." : {
       "contexts" : [
         "jobs.1.customerComplaint"
@@ -4782,6 +4806,12 @@
         "jobs.17.diagnosisQuestion.explanation"
       ],
       "requiresSafetyReview" : true
+    },
+    "The purchase refresh could not connect to the App Store. Check your connection and try again." : {
+      "contexts" : [
+        "copy.paywall.restoreNetworkMessage"
+      ],
+      "requiresSafetyReview" : false
     },
     "The repair is complete, but the customer wants to know what changed." : {
       "contexts" : [
