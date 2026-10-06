@@ -1,4 +1,4 @@
-# Version 1.0.2 (15) readiness — 6 October 2026
+# Version 1.0.2 (16) readiness — 6 October 2026
 
 ## Completed
 
@@ -6,9 +6,9 @@
 - Replaced the revoked PipeBoss signing certificate and invalid provisioning profile. The new profile is ACTIVE. Other apps' signing certificates were retained.
 - Updated the existing GitHub signing secrets. Private material remains outside Git in the ignored Signing directory.
 - Signed archive, IPA export and App Store Connect upload passed: https://github.com/lanray07/PipeBoss-AI/actions/runs/37486546739
-- Apple processed 1.0.2 (15) successfully (VALID, APP_STORE_ELIGIBLE), and it is attached to the editable 1.0.2 version.
+- Apple processed 1.0.2 (15) successfully (VALID, APP_STORE_ELIGIBLE), and it was attached to the editable 1.0.2 version before the restore repair.
 - Internal TestFlight state is IN_BETA_TESTING. The existing PipeBoss Beta Testers group automatically includes build 15 and contains the owner's one existing tester account. TestFlight notes are saved in English (U.K.). Proof: AppStoreAssets/ReleaseProof/testflight-1.0.2-15.png and release-verification.json.
-- Current app code passed iOS CI and StoreKit integration on both simulator families: https://github.com/lanray07/PipeBoss-AI/actions/runs/37407322146
+- Earlier build 15 app code passed iOS CI and StoreKit integration on both simulator families: https://github.com/lanray07/PipeBoss-AI/actions/runs/37407322146
 - Restored and visually inspected all 12 checksum-verified native screenshots from that CI run. Dashboard, diagnosis, result, skills, tools and learning screens are readable on iPhone and iPad. Local evidence is under DerivedData/ReleaseVerification/native.
 - Public Privacy, Terms and Support gists return HTTP 200, are public, and match the current source documents.
 - App Privacy is published as Data Not Collected; the source privacy manifest declares local UserDefaults access. The build declares no non-exempt encryption.
@@ -25,7 +25,7 @@
 
 ## TestFlight checks for the owner
 
-Install **1.0.2 (15)** from TestFlight. Do not test the public 1.0.1 app or expired build 14.
+Install **1.0.2 (16)** from TestFlight. Build 15 has a failed restore check; do not test the public 1.0.1 app or expired build 14.
 
 1. Finish onboarding and a beginner job. Check diagnosis, repair feedback, XP/coins and progress after force quit/relaunch.
 2. Try the daily challenge, energy-free practice, mistake review and Skills. Confirm practice does not grant career XP/coins or use career energy.
@@ -34,4 +34,19 @@ Install **1.0.2 (15)** from TestFlight. Do not test the public 1.0.1 app or expi
 5. Disable connectivity after loading content and verify gameplay and saved progress. Purchases require connectivity.
 6. Check small-screen scrolling and iPad layouts where available. Report crashes, inaccessible controls, misleading copy or lost progress before submission.
 
-No real-device QA result is claimed yet. Version 1.0.2 remains a submission draft.
+## Owner's iPhone checks — 6 October 2026
+
+- Owner reports the iPhone appearance looks alright.
+- Supplied TestFlight screenshot shows Emergency Jobs Pack and Business Owner Mode marked Owned. This confirms those entitlements are recognized in the displayed session; persistence after relaunch has not yet been confirmed.
+- Restore Purchases produced “Restore did not complete. Try again from the App Store account used to subscribe.” Build 15 maps any error from AppStore.sync() to that generic text, so the screenshot does not identify the underlying StoreKit error or prove an account mismatch. The owner confirmed completing the password authentication prompt. Restore QA has not passed; do not submit until resolved and retested.
+- Offline saved-progress checks and the other purchase scenarios remain unconfirmed.
+
+Version 1.0.2 remains a submission draft. No complete real-device QA pass is claimed.
+
+## Restore fix — build 16
+
+- Reproduced failed-sync handling and cancellation faults in StoreKit regression run 37501316174: stale verified-entitlement state, lost diagnostic code and misleading account-mismatch text. Apple's original device sync failure itself is not reproduced or identified by that injection.
+- PR #2 refreshes verified entitlements after sync failure, reports cancellation quietly, distinguishes network/authentication failures, and shows a sanitized support reference without account, URL or transaction details. Failed sync is not counted as success. Successful refreshes display a confirmation or no-active-purchases result.
+- The new tests cover verified ownership, refunds, error privacy and retry recovery. Full native CI passed in https://github.com/lanray07/PipeBoss-AI/actions/runs/37502821739: Debug Simulator and Release device builds, native captures and all 11 StoreKit tests on each of iPhone and iPad. The first attempt had an Xcode test-fixture certificate failure; the fresh-runner retry passed without weakening verification. PR #2 merged as 1ad7d21084b2e251e737a0c83f981d2570977de5. Build number 16 was confirmed unused before upload preparation.
+- Signed build 16 archive, export and upload passed: https://github.com/lanray07/PipeBoss-AI/actions/runs/37507204318. Apple processed the build as VALID and APP_STORE_ELIGIBLE. Build 16 is IN_BETA_TESTING in the existing PipeBoss Beta Testers group, its English retest notes are saved, and it replaces build 15 in the editable 1.0.2 draft. Proof: AppStoreAssets/ReleaseProof/testflight-1.0.2-16.png and restore-build16-verification.json.
+- Build 16 must be tested on the owner's iPhone: complete Restore Purchases authentication, check the confirmation and Owned packs, relaunch, and verify offline saved progress. If sync still fails, capture the support reference. Do not submit on the basis of a failed-sync fallback or the older build 15 check.

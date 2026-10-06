@@ -49,7 +49,7 @@ PowerShell helpers for copying secret values:
 [Convert]::ToBase64String([IO.File]::ReadAllBytes("AuthKey_XXXXXXXXXX.p8")) | Set-Clipboard
 ```
 
-After passing the release gates, run **Actions > iOS TestFlight Upload > Run workflow** from the verified commit. Enter build number `15` for version `1.0.2`, after confirming that number is unused in App Store Connect. Uploading to TestFlight does not submit the app to App Review.
+After passing the release gates, run **Actions > iOS TestFlight Upload > Run workflow** from the verified commit. The latest uploaded repair is version `1.0.2` build `16`, replacing build 15 for the Restore Purchases fix. For a subsequent upload, select a new unused build number in App Store Connect. Uploading to TestFlight does not submit the app to App Review.
 
 Xcode Cloud is still an optional Apple-native path, but its first workflow must be created from Xcode on a Mac. The GitHub Actions path above is the Windows-friendly route for this project.
 

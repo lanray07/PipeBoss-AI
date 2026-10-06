@@ -1,12 +1,12 @@
 # PipeBoss AI 1.0.2 Release
 
-The live version is 1.0.1 (14). This update uses 1.0.2 (15); verify App Store Connect before any upload. Existing product IDs, Apple price schedules and local StoreKit price fixtures remain unchanged.
+The live version is 1.0.1 (14). This update uses 1.0.2 (16), replacing build 15 after the owner's Restore Purchases failure; verify App Store Connect before any upload. Existing product IDs, Apple price schedules and local StoreKit price fixtures remain unchanged.
 
 ## Release Gates
 
 - Pass current-commit iOS CI: content checks, Debug Simulator and Release device compilation, nonblank iPhone/iPad screenshots and StoreKit integration tests on both device families.
 - Inspect the native screens, including the result view. Simulator fixtures are Debug-only and must not be enabled in a signed Release build.
-- Merge PR #1 only after those checks pass. Run `ios-testflight.yml` from the merged commit with build number `15` and upload enabled.
+- Restore-fix PR #2 merged after those checks passed, and `ios-testflight.yml` uploaded signed build `16` from commit `1ad7d21084b2e251e737a0c83f981d2570977de5`. Any subsequent upload requires a new unused build number and validation of its app-code changes.
 - Install the processed signed build through TestFlight. Confirm both subscriptions, four packs, cancellation, restore, relaunch access, Pro expiry and offline progress where applicable. StoreKitTest uses local fixture products and cannot verify Apple's real product catalogue, agreements or sandbox accounts.
 - Keep machine-generated in-app translations and non-English listing metadata drafts unpublished until language and plumbing-safety review. The Spanish starter is a partial pilot, not a complete new market release. The owner separately requested App Store screenshot marketing captions for all 50 locales; those caption sets are saved in the draft version, with English app-interface disclosure. This does not establish native-language editorial review or in-app localization.
 - Apply the reviewed English metadata from `AppStoreAssets/Metadata/localizations.json` only to the editable new version. Release and beta copy are in `AppStoreAssets/Metadata/release-1.0.2.json`; `releaseReady` stays false until all gates are evidenced.

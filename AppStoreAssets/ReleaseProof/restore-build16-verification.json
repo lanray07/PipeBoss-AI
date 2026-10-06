@@ -1,0 +1,48 @@
+{
+  "version": "1.0.2",
+  "build": "16",
+  "sourceCommit": "1ad7d21084b2e251e737a0c83f981d2570977de5",
+  "pullRequest": "https://github.com/lanray07/PipeBoss-AI/pull/2",
+  "ciRun": "https://github.com/lanray07/PipeBoss-AI/actions/runs/37502821739",
+  "ciAttempt": 2,
+  "storeKitTestsPerFamily": 11,
+  "storeKitFamilies": [
+    "iPhone",
+    "iPad"
+  ],
+  "storeKitFailures": 0,
+  "uploadRun": "https://github.com/lanray07/PipeBoss-AI/actions/runs/37507204318",
+  "apple": {
+    "build": {
+      "id": "da894931-3e3a-4b7d-b1e4-539b4ddcc463",
+      "version": "16",
+      "uploadedDate": "2026-10-06T19:00:03+01:00",
+      "expirationDate": "2027-01-04T18:00:03+00:00",
+      "expired": false,
+      "minOsVersion": "17.0",
+      "lsMinimumSystemVersion": null,
+      "computedMinMacOsVersion": "14.0",
+      "computedMinVisionOsVersion": "1.0",
+      "iconAssetToken": {
+        "templateUrl": "https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/47/90/23/479023aa-1edd-32bb-140d-8a8a8f73feec/AppIcon76x76@2x_U007eipad.png/{w}x{h}bb.{f}",
+        "width": 152,
+        "height": 152
+      },
+      "processingState": "VALID",
+      "buildAudienceType": "APP_STORE_ELIGIBLE",
+      "usesNonExemptEncryption": false
+    },
+    "beta": {
+      "autoNotifyEnabled": true,
+      "internalBuildState": "IN_BETA_TESTING",
+      "externalBuildState": "READY_FOR_BETA_SUBMISSION"
+    },
+    "inInternalGroup": true,
+    "selectedBuild": "16"
+  },
+  "deviceRestoreRetest": "pending",
+  "appReviewSubmitted": false,
+  "originalAppleSyncFailure": "not identified by build 15 generic alert",
+  "betaNotesMatch": true,
+  "appStoreState": "PREPARE_FOR_SUBMISSION"
+}
