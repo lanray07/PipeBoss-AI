@@ -99,9 +99,10 @@ struct PaywallView: View {
             .alert(LocalizedStringKey(AppContent.copy.appName), isPresented: purchaseAlertBinding) {
                 Button(LocalizedStringKey(AppContent.copy.ok), role: .cancel) {
                     purchaseManager.errorMessage = nil
+                    purchaseManager.restoreNotice = nil
                 }
             } message: {
-                LText(purchaseManager.errorMessage ?? "")
+                LText(purchaseManager.errorMessage ?? purchaseManager.restoreNotice ?? "")
             }
             .task {
                 if purchaseManager.products.isEmpty {
@@ -113,9 +114,12 @@ struct PaywallView: View {
 
     private var purchaseAlertBinding: Binding<Bool> {
         Binding(
-            get: { purchaseManager.errorMessage != nil },
+            get: { purchaseManager.errorMessage != nil || purchaseManager.restoreNotice != nil },
             set: { isPresented in
-                if !isPresented { purchaseManager.errorMessage = nil }
+                if !isPresented {
+                    purchaseManager.errorMessage = nil
+                    purchaseManager.restoreNotice = nil
+                }
             }
         )
     }

@@ -8131,6 +8131,30 @@
         }
       }
     },
+    "Purchase refresh completed. No active subscriptions or owned packs were found for this App Store account.": {
+      "comment": "copy.paywall.restoreNoPurchasesMessage",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Purchase refresh completed. No active subscriptions or owned packs were found for this App Store account."
+          }
+        }
+      }
+    },
+    "Purchases refreshed. Your active subscriptions and owned packs are available.": {
+      "comment": "copy.paywall.restoreCompletedMessage",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Purchases refreshed. Your active subscriptions and owned packs are available."
+          }
+        }
+      }
+    },
     "Qualified Plumber": {
       "comment": "copy.careerTitles.2",
       "extractionState": "manual",
@@ -8949,24 +8973,6 @@
           "stringUnit": {
             "state": "translated",
             "value": "¿Restablecer el progreso guardado?"
-          }
-        }
-      }
-    },
-    "Restore did not complete. Try again from the App Store account used to subscribe.": {
-      "comment": "copy.paywall.restoreFailedMessage",
-      "extractionState": "manual",
-      "localizations": {
-        "en": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "Restore did not complete. Try again from the App Store account used to subscribe."
-          }
-        },
-        "es": {
-          "stringUnit": {
-            "state": "translated",
-            "value": "La restauración no se ha completado. Inténtalo con la cuenta del App Store utilizada para suscribirte."
           }
         }
       }
@@ -10399,6 +10405,30 @@
         }
       }
     },
+    "The App Store could not complete authentication. Please retry and complete Apple's sign-in prompt.": {
+      "comment": "copy.paywall.restoreAuthenticationMessage",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The App Store could not complete authentication. Please retry and complete Apple's sign-in prompt."
+          }
+        }
+      }
+    },
+    "The App Store could not complete the purchase refresh. Existing verified purchases remain available. Please try again.": {
+      "comment": "copy.paywall.restoreFailedMessage",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The App Store could not complete the purchase refresh. Existing verified purchases remain available. Please try again."
+          }
+        }
+      }
+    },
     "The basin fills up and drains away slowly after shaving.": {
       "comment": "jobs.1.customerComplaint",
       "extractionState": "manual",
@@ -10689,6 +10719,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "The pressure reading and constant run point to valve internals or operating pressure."
+          }
+        }
+      }
+    },
+    "The purchase refresh could not connect to the App Store. Check your connection and try again.": {
+      "comment": "copy.paywall.restoreNetworkMessage",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "The purchase refresh could not connect to the App Store. Check your connection and try again."
           }
         }
       }
@@ -12915,6 +12957,18 @@
           "stringUnit": {
             "state": "translated",
             "value": "{count} {unit} free, then {price}. Auto-renews until cancelled."
+          }
+        }
+      }
+    },
+    "{message}\nSupport reference: {code}": {
+      "comment": "copy.paywall.restoreFailureWithCode",
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "{message}\nSupport reference: {code}"
           }
         }
       }

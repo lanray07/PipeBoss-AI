@@ -22,6 +22,7 @@ final class PurchaseManager: ObservableObject {
     @Published private(set) var completedPurchaseID: String?
     @Published private(set) var restoreCount = 0
     @Published private(set) var restoreFailureCode: String?
+    @Published var restoreNotice: String?
     @Published var errorMessage: String?
 
     private var transactionUpdates: Task<Void, Never>?
@@ -80,6 +81,7 @@ final class PurchaseManager: ObservableObject {
         hasAttemptedProductLoad = true
         productLoadMessage = nil
         errorMessage = nil
+        restoreNotice = nil
 
         let requestedProductIDs = expectedProductIDs
         let timeoutNanoseconds = productLoadTimeoutNanoseconds
@@ -167,6 +169,7 @@ final class PurchaseManager: ObservableObject {
         defer { isPurchasing = false }
         errorMessage = nil
         completedPurchaseID = nil
+        restoreNotice = nil
         do {
             let result = try await product.purchase()
             switch result {
@@ -194,14 +197,62 @@ final class PurchaseManager: ObservableObject {
         isRestoring = true
         defer { isRestoring = false }
         errorMessage = nil
+        restoreNotice = nil
+        restoreFailureCode = nil
         do {
             try await synchronizePurchases()
             await refreshPurchasedProducts()
             restoreCount += 1
+            restoreNotice = L10n.text(purchasedProductIDs.isEmpty
+                ? AppContent.copy.paywall.restoreNoPurchasesMessage
+                : AppContent.copy.paywall.restoreCompletedMessage)
             Haptics.success()
         } catch {
-            errorMessage = AppContent.copy.paywall.restoreFailedMessage
+            // A failed server sync must not stop verified on-device entitlement
+            // refresh. This also applies refunds/revocations without inventing access.
+            await refreshPurchasedProducts()
+            let failure = restoreFailure(error)
+            guard !failure.cancelled else { return }
+            restoreFailureCode = failure.code
+            errorMessage = L10n.format(AppContent.copy.paywall.restoreFailureWithCode,
+                ["message": L10n.text(failure.message), "code": failure.code])
+            Haptics.error()
         }
+    }
+
+    private func restoreFailure(_ error: Error, depth: Int = 0) -> (cancelled: Bool, message: String, code: String) {
+        if error is CancellationError { return (true, "", "") }
+        if let storeError = error as? StoreKitError {
+            switch storeError {
+            case .userCancelled:
+                return (true, "", "")
+            case .networkError(let networkError):
+                return restoreFailure(networkError, depth: depth + 1)
+            case .systemError(let underlying) where depth < 3:
+                return restoreFailure(underlying, depth: depth + 1)
+            case .unknown:
+                return (false, AppContent.copy.paywall.restoreFailedMessage, "StoreKit.unknown")
+            default:
+                break
+            }
+        }
+        let nsError = error as NSError
+        if nsError.domain == SKErrorDomain && nsError.code == SKError.Code.paymentCancelled.rawValue {
+            return (true, "", "")
+        }
+        if nsError.domain == NSURLErrorDomain {
+            if nsError.code == URLError.cancelled.rawValue { return (true, "", "") }
+            let authenticationCodes = [URLError.userAuthenticationRequired.rawValue, URLError.userCancelledAuthentication.rawValue]
+            return (false, authenticationCodes.contains(nsError.code)
+                ? AppContent.copy.paywall.restoreAuthenticationMessage
+                : AppContent.copy.paywall.restoreNetworkMessage,
+                "Network.\(nsError.code)")
+        }
+        // Support reference only: never expose localized descriptions, URLs,
+        // account identifiers, transaction data, or the error's userInfo payload.
+        let allowed = CharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789._-")
+        let domain = String(String.UnicodeScalarView(nsError.domain.unicodeScalars.filter { allowed.contains($0) }.prefix(80)))
+        return (false, AppContent.copy.paywall.restoreFailedMessage, "\(domain.isEmpty ? "Store" : domain).\(nsError.code)")
     }
 
     func refreshPurchasedProducts() async {

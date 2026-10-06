@@ -151,6 +151,7 @@ final class PurchaseIntegrationTests: XCTestCase {
         XCTAssertEqual(restoredManager.restoreCount, 1)
         XCTAssertFalse(restoredManager.isRestoring)
         XCTAssertNil(restoredManager.errorMessage)
+        XCTAssertEqual(restoredManager.restoreNotice, AppContent.copy.paywall.restoreCompletedMessage)
     }
 
     @MainActor
@@ -179,6 +180,7 @@ final class PurchaseIntegrationTests: XCTestCase {
         XCTAssertNotNil(restoring.errorMessage)
         XCTAssertFalse(restoring.errorMessage?.contains("account used to subscribe") ?? true)
         XCTAssertFalse(restoring.isRestoring)
+        XCTAssertNil(restoring.restoreNotice)
     }
 
     @MainActor
@@ -191,6 +193,58 @@ final class PurchaseIntegrationTests: XCTestCase {
         XCTAssertNil(manager.restoreFailureCode)
         XCTAssertEqual(manager.restoreCount, 0)
         XCTAssertFalse(manager.isRestoring)
+        XCTAssertNil(manager.restoreNotice)
+    }
+
+    @MainActor
+    func testFailedSyncLoadsExistingVerifiedPackWithoutClaimingSyncSucceeded() async throws {
+        let session = try makeSession()
+        defer { session.clearTransactions() }
+        let id = AppContent.ProductIDs.emergencyJobs
+        let transaction = try await session.buyProduct(identifier: id, options: [])
+        await transaction.finish()
+        let manager = PurchaseManager(synchronizePurchases: { throw StoreKitError.unknown }, observeTransactions: false)
+        XCTAssertTrue(manager.purchasedProductIDs.isEmpty)
+        await manager.restorePurchases()
+        XCTAssertTrue(manager.purchasedProductIDs.contains(id))
+        XCTAssertEqual(manager.restoreCount, 0)
+        XCTAssertNil(manager.restoreNotice)
+        XCTAssertEqual(manager.restoreFailureCode, "StoreKit.unknown")
+        XCTAssertNotNil(manager.errorMessage)
+    }
+
+    @MainActor
+    func testRestoreNetworkFailureThenSuccessfulRetryClearsErrorAndConfirmsResult() async throws {
+        let session = try makeSession()
+        defer { session.clearTransactions() }
+        var shouldFail = true
+        let manager = PurchaseManager(synchronizePurchases: {
+            if shouldFail { throw StoreKitError.networkError(URLError(.notConnectedToInternet)) }
+        }, observeTransactions: false)
+        await manager.restorePurchases()
+        XCTAssertEqual(manager.restoreFailureCode, "Network.-1009")
+        XCTAssertTrue(manager.errorMessage?.contains(AppContent.copy.paywall.restoreNetworkMessage) ?? false)
+        XCTAssertEqual(manager.restoreCount, 0)
+        shouldFail = false
+        await manager.restorePurchases()
+        XCTAssertNil(manager.restoreFailureCode)
+        XCTAssertNil(manager.errorMessage)
+        XCTAssertEqual(manager.restoreNotice, AppContent.copy.paywall.restoreNoPurchasesMessage)
+        XCTAssertEqual(manager.restoreCount, 1)
+        XCTAssertFalse(manager.isRestoring)
+    }
+
+    @MainActor
+    func testRestoreDiagnosticsDoNotExposeUnderlyingUserInfo() async throws {
+        let session = try makeSession()
+        defer { session.clearTransactions() }
+        let manager = PurchaseManager(synchronizePurchases: {
+            throw StoreKitError.systemError(NSError(domain: "StoreService", code: 7,
+                userInfo: [NSLocalizedDescriptionKey: "PRIVATE_ACCOUNT_OR_TRANSACTION_DETAIL"]))
+        }, observeTransactions: false)
+        await manager.restorePurchases()
+        XCTAssertEqual(manager.restoreFailureCode, "StoreService.7")
+        XCTAssertFalse(manager.errorMessage?.contains("PRIVATE_ACCOUNT_OR_TRANSACTION_DETAIL") ?? true)
     }
 
     @MainActor
