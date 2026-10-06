@@ -142,8 +142,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      # Keep the local test environment separate from the release SDK while
-      # diagnosing Apple's newer command-line StoreKit configuration regression.
+      # Use an installed matching compiler/runtime for local StoreKit tests.
+      # Release compilation and screenshot checks remain on Xcode 26.6.
       - name: Select paired Xcode 26.2 and iOS 26.2 Simulator
         run: |
           set -euo pipefail

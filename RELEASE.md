@@ -18,6 +18,8 @@ The live version is 1.0.1 (14). This update uses 1.0.2 (15); verify App Store Co
 
 `tools/test-storekit.sh` runs this suite sequentially on an iPhone and iPad simulator. CI uploads logs and `.xcresult` evidence. Local simulation is separate from signed-build sandbox QA; neither a compile nor previous App Store approval establishes that the new build's purchases work.
 
+Keep the test fixture's optional subscription-group localizations empty. Its previous custom group-localization record caused the local service to reject the entire catalogue with `ASOctaneSupportXPCService.ConfigurationError`, including unrelated packs. Removing that record restored all six products and the iPhone purchase suite in run 37403964630 without changing product IDs, prices or production purchase code. Product display names/descriptions remain in their own localization records. The six-product loading test guards this behaviour through the real StoreKit service.
+
 ## Windows Workflow
 
 GitHub Actions supplies macOS and Xcode using standard hosted runners, which are free for this public repository. Do not switch to paid larger runners, enable paid overages or change app prices. Signing keys stay in GitHub repository secrets; do not download or commit them. Release and metadata workflows are manual-only; pull-request builds do not receive Apple or DeepL secrets. Localization accepts only DeepL API Free keys and automatic content updates are estimate-only. TestFlight installation and the native sandbox purchase UI still require an iPhone or iPad. If hosted runners are unavailable, keep the release draft and wait for verified build results instead of submitting an older build.
