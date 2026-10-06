@@ -1,14 +1,19 @@
 # PipeBoss AI
 
-PipeBoss AI is a SwiftUI plumbing training game MVP. It is offline-first, MVVM-oriented, and ready to expand with final screenshots, analytics, and cloud services.
+Localization and listing drafts are documented in [LOCALIZATION.md](LOCALIZATION.md). Experience, retention and monetization priorities are in [GROWTH.md](GROWTH.md). The Spanish starter is a partial pilot with English fallback, not a fully translated release.
+
+The version 1.0.2 release gates and native purchase testing are documented in [RELEASE.md](RELEASE.md).
+
+PipeBoss AI is an offline-first SwiftUI plumbing training game with local skill history, spaced mistake practice, daily challenges, Pro exam sessions and shareable aggregate learning reports. All existing product IDs and price placeholders are unchanged.
 
 ## Project map
 
-- `PipeBossAI/Content/AppContent.swift`: central editable app copy, product IDs, jobs, tools, upgrades, learning cards, onboarding, and leaderboard sample data.
+- `PipeBossAI/Content/AppContent.swift`: central editable app copy, product IDs, jobs, tools, upgrades, learning cards and onboarding.
+- `PipeBossAI/Core/TrainingProgress.swift`: bounded attempt history, topic accuracy, review scheduling, learning streaks and daily rotation.
 - `PipeBossAI/Core/Models.swift`: player, job, diagnosis, tool, learning, upgrade, subscription, and result models.
 - `PipeBossAI/ViewModels`: gameplay state, local progress, job simulation state, rewards, unlock logic, and haptics triggers.
 - `PipeBossAI/Services`: UserDefaults persistence, StoreKit 2 purchase manager, and haptics wrapper.
-- `PipeBossAI/Views`: onboarding, dashboard, job board, simulation, inventory, upgrades, learning cards, leaderboard, paywall, and privacy/settings screens.
+- `PipeBossAI/Views`: onboarding, dashboard, job board, simulation, inventory, upgrades, learning cards, skills, real personal achievements, pack previews, paywall and privacy/settings screens.
 - `PipeBossAI/StoreKit/PipeBossAI.storekit`: local StoreKit configuration matching the App Store Connect product IDs in `AppContent.ProductIDs`.
 
 ## Before App Store submission
@@ -23,7 +28,7 @@ PipeBoss AI is a SwiftUI plumbing training game MVP. It is offline-first, MVVM-o
 
 The repo includes a shared Xcode scheme and GitHub Actions workflows that use hosted macOS runners:
 
-- `.github/workflows/ios-ci.yml`: builds the app for the iOS Simulator on every push and pull request.
+- `.github/workflows/ios-ci.yml`: builds Debug/Release, captures iPhone/iPad screens and tests all six products with StoreKitTest on both simulator families.
 - `.github/workflows/ios-testflight.yml`: manually archives, exports, and optionally uploads a signed IPA to App Store Connect/TestFlight.
 
 The CI workflow does not require Apple signing secrets. The TestFlight workflow requires these GitHub repository secrets:
@@ -44,7 +49,7 @@ PowerShell helpers for copying secret values:
 [Convert]::ToBase64String([IO.File]::ReadAllBytes("AuthKey_XXXXXXXXXX.p8")) | Set-Clipboard
 ```
 
-After adding the secrets in GitHub, run **Actions > iOS TestFlight Upload > Run workflow**. Leave `build_number` blank to use the GitHub run number, or enter a higher number manually if App Store Connect already has a build for version `1.0`.
+After passing the release gates, run **Actions > iOS TestFlight Upload > Run workflow** from the verified commit. Enter build number `15` for version `1.0.2`, after confirming that number is unused in App Store Connect. Uploading to TestFlight does not submit the app to App Review.
 
 Xcode Cloud is still an optional Apple-native path, but its first workflow must be created from Xcode on a Mac. The GitHub Actions path above is the Windows-friendly route for this project.
 
@@ -58,3 +63,15 @@ Xcode Cloud is still an optional Apple-native path, but its first workflow must 
 - `com.pipebossai.pack.businessowner`
 
 The current MVP intentionally stores progress locally with UserDefaults and does not collect personal data.
+
+## Experience and monetization update
+
+- First recommended job opens directly; its timer begins after inspection, not during the customer brief.
+- Practice and daily challenges cost no energy and grant no farmable career rewards. Incorrect decisions enter an immediate review queue; correct reviews move to 1, 3, 7 and 14-day intervals.
+- Pro includes topic breakdowns, recent decisions, assessment sessions and an aggregate report export. Free users keep accuracy summaries and mistake practice.
+- Pack previews show actual scenarios/tools and prerequisites. Owned packs link directly to content. Pro overlap and already-owned tool kits are disclosed.
+- Trial copy appears only for an eligible StoreKit-provided free trial. No introductory offer or price schedule is created by the code.
+- Fake leaderboard competitors and simulated ad rewards are removed. First-job hints are free; later free-plan hints cost 20 earned coins. A real rewarded-ad integration requires ad-network configuration, consent and updated privacy disclosures before it should be enabled.
+- Native StoreKit review requests follow engagement thresholds and cooldowns without filtering by purchase or score.
+- CI checks localization, metadata, persistence, entitlement access and practice rewards, builds iOS on macOS, and captures real Simulator iPhone/iPad screens using debug-only fixtures. Screenshots are checksum-verified blocks in the job log, not retained artifacts or automatic listing uploads. Readback instructions are in RELEASE.md.
+- Remote analytics, cloud sync, school licensing, paid acquisition, store-page experiments and professional translation/safety review still require external configuration or human validation; they are not represented as finished services.

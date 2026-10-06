@@ -2,6 +2,7 @@ import SwiftUI
 
 struct JobBoardView: View {
     @ObservedObject var game: GameViewModel
+    @Environment(\.locale) private var locale
     @State private var selectedDifficulty: JobDifficulty?
     @State private var activeJob: JobScenario?
 
@@ -24,6 +25,13 @@ struct JobBoardView: View {
 
                     filterBar
 
+                    if !game.hasProAccess && game.player.energy == 0 {
+                        LText(AppContent.copy.training.energySummary).font(.subheadline).foregroundStyle(AppTheme.muted)
+                        NavigationLink { SkillsView(game: game) } label: {
+                            LLabel(AppContent.copy.training.practiceStart, systemImage: "arrow.triangle.2.circlepath")
+                        }.buttonStyle(SecondaryActionButtonStyle())
+                    }
+
                     LazyVStack(spacing: 14) {
                         ForEach(filteredJobs) { job in
                             Button {
@@ -31,8 +39,8 @@ struct JobBoardView: View {
                             } label: {
                                 JobBoardCard(
                                     job: job,
-                                    requiredToolNames: job.requiredTools.compactMap { game.tool(withID: $0)?.name },
-                                    lockReason: game.lockReason(for: job),
+                                    requiredToolNames: job.requiredTools.compactMap { game.tool(withID: $0)?.name }.map { L10n.text($0, language: locale.identifier) },
+                                    lockReason: game.lockReason(for: job, language: locale.identifier),
                                     completed: game.player.completedJobIDs.contains(job.id)
                                 )
                             }
@@ -44,7 +52,7 @@ struct JobBoardView: View {
                 .padding(.vertical, 20)
             }
         }
-        .navigationTitle(AppContent.copy.jobs.title)
+        .navigationTitle(Text(LocalizedStringKey(AppContent.copy.jobs.title)))
         .navigationBarTitleDisplayMode(.inline)
         .navigationDestination(item: $activeJob) { job in
             JobSimulationView(game: game, job: job)
@@ -69,7 +77,7 @@ struct JobBoardView: View {
                 selectedDifficulty = difficulty
             }
         } label: {
-            Text(title)
+            LText(title)
                 .font(.subheadline.weight(.semibold))
                 .foregroundStyle(selectedDifficulty == difficulty ? .white : AppTheme.navy)
                 .padding(.horizontal, 12)
@@ -89,10 +97,10 @@ struct JobBoardView: View {
             return
         }
 
-        if !game.isJobUnlocked(job) {
-            game.showPaywall = true
+        if !game.hasContentAccess(to: job) {
+            game.presentStore(reason: "lockedJob")
         } else {
-            game.alertMessage = game.lockReason(for: job)
+            game.alertMessage = game.lockReason(for: job, language: locale.identifier)
         }
     }
 }
@@ -110,7 +118,7 @@ private struct JobBoardCard: View {
 
                 VStack(alignment: .leading, spacing: 8) {
                     HStack(alignment: .top) {
-                        Text(job.title)
+                        LText(job.title)
                             .font(.headline)
                             .foregroundStyle(AppTheme.ink)
                             .fixedSize(horizontal: false, vertical: true)
@@ -118,7 +126,7 @@ private struct JobBoardCard: View {
                         DifficultyBadge(difficulty: job.difficulty)
                     }
 
-                    Text(job.customerComplaint)
+                    LText(job.customerComplaint)
                         .font(.subheadline)
                         .foregroundStyle(AppTheme.muted)
                         .fixedSize(horizontal: false, vertical: true)
@@ -126,11 +134,11 @@ private struct JobBoardCard: View {
             }
 
             HStack(spacing: 10) {
-                Label("\(job.timeLimitMinutes)m", systemImage: "timer")
-                Label("\(job.rewardCoins)", systemImage: "dollarsign.circle")
-                Label("\(job.rewardXP) XP", systemImage: "bolt.fill")
+                LLabel("\(job.timeLimitMinutes)m", systemImage: "timer")
+                LLabel("\(job.rewardCoins)", systemImage: "dollarsign.circle")
+                LLabel("\(job.rewardXP) XP", systemImage: "bolt.fill")
                 if completed {
-                    Label(AppContent.copy.simulation.correct, systemImage: "checkmark.seal.fill")
+                    LLabel(AppContent.copy.simulation.correct, systemImage: "checkmark.seal.fill")
                         .foregroundStyle(AppTheme.success)
                 }
             }
@@ -138,10 +146,10 @@ private struct JobBoardCard: View {
             .foregroundStyle(AppTheme.muted)
 
             VStack(alignment: .leading, spacing: 6) {
-                Text(AppContent.copy.jobs.requiredTools)
+                LText(AppContent.copy.jobs.requiredTools)
                     .font(.caption.bold())
                     .foregroundStyle(AppTheme.ink)
-                Text(requiredToolNames.joined(separator: ", "))
+                LText(requiredToolNames.joined(separator: ", "))
                     .font(.caption)
                     .foregroundStyle(AppTheme.muted)
                     .fixedSize(horizontal: false, vertical: true)

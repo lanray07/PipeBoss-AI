@@ -36,11 +36,11 @@ struct HeroHeader: View {
         VStack(alignment: .leading, spacing: 14) {
             HStack(alignment: .top) {
                 VStack(alignment: .leading, spacing: 8) {
-                    Text(title)
+                    LText(title)
                         .font(.largeTitle.bold())
                         .foregroundStyle(.white)
                         .fixedSize(horizontal: false, vertical: true)
-                    Text(subtitle)
+                    LText(subtitle)
                         .font(.callout)
                         .foregroundStyle(.white.opacity(0.78))
                         .fixedSize(horizontal: false, vertical: true)
@@ -74,11 +74,11 @@ struct SectionTitle: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
-            Text(title)
+            LText(title)
                 .font(.title3.bold())
                 .foregroundStyle(AppTheme.ink)
             if let subtitle {
-                Text(subtitle)
+                LText(subtitle)
                     .font(.subheadline)
                     .foregroundStyle(AppTheme.muted)
             }
@@ -98,12 +98,12 @@ struct MetricTile: View {
             Image(systemName: icon)
                 .font(.title3)
                 .foregroundStyle(tint)
-            Text(value)
+            LText(value)
                 .font(.title2.bold())
                 .foregroundStyle(AppTheme.ink)
                 .lineLimit(1)
                 .minimumScaleFactor(0.75)
-            Text(title)
+            LText(title)
                 .font(.caption.weight(.semibold))
                 .foregroundStyle(AppTheme.muted)
                 .lineLimit(1)
@@ -120,11 +120,11 @@ struct XPProgressBar: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack {
-                Text(label)
+                LText(label)
                     .font(.subheadline.weight(.semibold))
                     .foregroundStyle(AppTheme.ink)
                 Spacer()
-                Text("\(Int(progress * 100))%")
+                LText("\(Int(progress * 100))%")
                     .font(.caption.weight(.bold))
                     .foregroundStyle(AppTheme.blue)
             }
@@ -146,7 +146,7 @@ struct DifficultyBadge: View {
     let difficulty: JobDifficulty
 
     var body: some View {
-        Text(AppContent.copy.difficultyTitle(difficulty))
+        LText(AppContent.copy.difficultyTitle(difficulty))
             .font(.caption.bold())
             .foregroundStyle(foreground)
             .padding(.horizontal, 9)
@@ -193,7 +193,7 @@ struct LockRibbon: View {
     let text: String
 
     var body: some View {
-        Label(text, systemImage: "lock.fill")
+        LLabel(text, systemImage: "lock.fill")
             .font(.caption.bold())
             .foregroundStyle(.white)
             .lineLimit(2)
@@ -207,6 +207,7 @@ struct LockRibbon: View {
 
 struct RatingStars: View {
     let rating: Double
+    @Environment(\.locale) private var locale
 
     var body: some View {
         HStack(spacing: 2) {
@@ -216,7 +217,7 @@ struct RatingStars: View {
                     .font(.caption)
             }
         }
-        .accessibilityLabel("\(String(format: "%.1f", rating)) star rating")
+        .accessibilityLabel(L10n.format(AppContent.copy.format.rating, ["rating": rating.formatted(.number.locale(locale).precision(.fractionLength(1)))], language: locale.identifier))
     }
 }
 
@@ -229,10 +230,10 @@ struct StatRow: View {
         HStack(spacing: 12) {
             IconBadge(icon: icon, tint: AppTheme.blue)
             VStack(alignment: .leading, spacing: 3) {
-                Text(title)
+                LText(title)
                     .font(.subheadline.weight(.semibold))
                     .foregroundStyle(AppTheme.ink)
-                Text(value)
+                LText(value)
                     .font(.caption)
                     .foregroundStyle(AppTheme.muted)
             }
@@ -251,10 +252,10 @@ struct EmptyState: View {
             Image(systemName: icon)
                 .font(.system(size: 42, weight: .bold))
                 .foregroundStyle(AppTheme.blue)
-            Text(title)
+            LText(title)
                 .font(.headline)
                 .foregroundStyle(AppTheme.ink)
-            Text(message)
+            LText(message)
                 .font(.subheadline)
                 .foregroundStyle(AppTheme.muted)
                 .multilineTextAlignment(.center)

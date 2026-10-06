@@ -6,24 +6,44 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      translation_locale:
+        description: Choose none for an iOS build, or a language for translation drafts only
+        type: choice
+        options: [none, all, es, fr, de, pt-BR]
+        default: none
+      translation_dry_run:
+        description: Estimate translation volume without calling the provider
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ios-ci-${{ github.ref }}-${{ inputs.translation_locale || 'none' }}
+  cancel-in-progress: true
 
 jobs:
   build:
+    if: ${{ github.event_name != 'workflow_dispatch' || inputs.translation_locale == 'none' }}
     name: Build PipeBoss AI
     runs-on: macos-26
+    timeout-minutes: 30
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+      PIPEBOSS_SIMULATOR_RUNTIME: '26.1'
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Select Xcode 26
+      - name: Select Xcode 26.6
         run: |
           set -euo pipefail
-          XCODE_APP="$(ls -d /Applications/Xcode_26*.app /Applications/Xcode.app 2>/dev/null | head -n 1 || true)"
-          if [ -z "$XCODE_APP" ]; then
-            echo "::error::Xcode 26 is required for App Store-ready builds."
+          XCODE_APP=/Applications/Xcode_26.6.app
+          if [ ! -d "$XCODE_APP" ]; then
+            echo "::error::Xcode 26.6 is required for the release build checks."
             ls -1 /Applications | grep '^Xcode' || true
             exit 1
           fi
@@ -40,10 +60,27 @@ jobs:
             exit 1
           fi
 
-      - name: Install iOS 26 platform
+      - name: Install pinned iOS 26.1 Simulator
         run: |
           set -euo pipefail
-          xcodebuild -downloadPlatform iOS -architectureVariant arm64
+          xcodebuild -downloadPlatform iOS -buildVersion "$PIPEBOSS_SIMULATOR_RUNTIME" -architectureVariant arm64
+          xcrun simctl list runtimes
+
+      - name: Validate localization and App Store metadata
+        run: |
+          set -euo pipefail
+          swiftc PipeBossAI/Core/Models.swift PipeBossAI/Content/AppContent.swift tools/localization/main.swift -o /tmp/export-content
+          /tmp/export-content tools/localization/source.json
+          python3 tools/localization/localize.py validate
+          python3 tools/localization/validate_metadata.py
+          node --test tools/localization/test_metadata.mjs
+          node --test tools/test_ci_screenshots.mjs
+          python3 -m unittest discover -s tools/localization -p 'test_*.py'
+          python3 -m unittest discover -s tools -p 'test_*.py'
+          swiftc PipeBossAI/Core/Models.swift PipeBossAI/Core/TrainingProgress.swift PipeBossAI/Content/AppContent.swift PipeBossAI/Services/Localization.swift tools/localization/tests/main.swift -o /tmp/test-localization
+          /tmp/test-localization
+          swiftc -parse-as-library PipeBossAI/Core/*.swift PipeBossAI/Content/AppContent.swift PipeBossAI/Services/Localization.swift PipeBossAI/Services/ProgressStore.swift PipeBossAI/Services/Haptics.swift PipeBossAI/ViewModels/*.swift tools/training-tests/main.swift -o /tmp/test-training
+          /tmp/test-training
 
       - name: List schemes
         run: xcodebuild -list -project PipeBossAI.xcodeproj
@@ -55,7 +92,73 @@ jobs:
             -project PipeBossAI.xcodeproj \
             -scheme PipeBossAI \
             -configuration Debug \
+            -derivedDataPath /tmp/PipeBossBuild \
             -sdk iphonesimulator \
             -destination 'generic/platform=iOS Simulator' \
             CODE_SIGNING_ALLOWED=NO \
             build
+
+      - name: Build Release for iOS without signing
+        run: |
+          set -o pipefail
+          xcodebuild \
+            -project PipeBossAI.xcodeproj \
+            -scheme PipeBossAI \
+            -configuration Release \
+            -derivedDataPath /tmp/PipeBossBuild \
+            -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+
+      - name: Compile native StoreKit integration tests
+        run: |
+          set -o pipefail
+          xcodebuild \
+            -project PipeBossAI.xcodeproj \
+            -scheme PipeBossAI \
+            -configuration Debug \
+            -derivedDataPath /tmp/PipeBossBuild \
+            -destination 'generic/platform=iOS Simulator' \
+            CODE_SIGNING_ALLOWED=NO \
+            build-for-testing
+
+      - name: Capture native iPhone and iPad screens
+        run: bash tools/capture-simulator-screenshots.sh /tmp/PipeBossBuild/Build/Products/Debug-iphonesimulator/PipeBossAI.app /tmp/PipeBossScreenshots
+
+  storekit:
+    if: ${{ github.event_name != 'workflow_dispatch' || inputs.translation_locale == 'none' }}
+    name: StoreKit integration on Xcode 26.2
+    runs-on: macos-26
+    timeout-minutes: 20
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+      PIPEBOSS_SIMULATOR_RUNTIME: '26.2'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      # Use an installed matching compiler/runtime for local StoreKit tests.
+      # Release compilation and screenshot checks remain on Xcode 26.6.
+      - name: Select paired Xcode 26.2 and iOS 26.2 Simulator
+        run: |
+          set -euo pipefail
+          XCODE_APP=/Applications/Xcode_26.2.app
+          if [ ! -d "$XCODE_APP" ]; then
+            echo "::error::The pinned StoreKit test compiler is unavailable."
+            exit 1
+          fi
+          sudo xcode-select -s "$XCODE_APP/Contents/Developer"
+          xcodebuild -version
+          xcrun simctl list runtimes
+      - name: Test StoreKit purchases and entitlement changes on iPhone and iPad
+        timeout-minutes: 16
+        run: bash tools/test-storekit.sh /tmp/PipeBossStoreKitBuild /tmp/PipeBossPurchaseTests
+
+  translation_drafts:
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.translation_locale != 'none' }}
+    uses: ./.github/workflows/localization.yml
+    with:
+      locale: ${{ inputs.translation_locale }}
+      dry_run: ${{ inputs.translation_dry_run }}
+    secrets:
+      DEEPL_AUTH_KEY: ${{ secrets.DEEPL_AUTH_KEY }}

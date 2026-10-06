@@ -4,11 +4,22 @@ struct JobSimulationView: View {
     @ObservedObject var game: GameViewModel
     @StateObject private var viewModel: JobSimulationViewModel
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.locale) private var locale
+    private let startingLevel: Int
 
     init(game: GameViewModel, job: JobScenario) {
         self.game = game
+        startingLevel = game.player.level
         _viewModel = StateObject(wrappedValue: JobSimulationViewModel(job: job))
     }
+
+    #if DEBUG
+    init(game: GameViewModel, previewModel: JobSimulationViewModel) {
+        self.game = game
+        startingLevel = game.player.level
+        _viewModel = StateObject(wrappedValue: previewModel)
+    }
+    #endif
 
     var body: some View {
         ZStack {
@@ -35,7 +46,7 @@ struct JobSimulationView: View {
                 .padding(.vertical, 20)
             }
         }
-        .navigationTitle(viewModel.job.title)
+        .navigationTitle(Text(LocalizedStringKey(viewModel.job.title)))
         .navigationBarTitleDisplayMode(.inline)
         .task {
             viewModel.startTimer()
@@ -50,7 +61,7 @@ struct JobSimulationView: View {
             HStack {
                 DifficultyBadge(difficulty: viewModel.job.difficulty)
                 Spacer()
-                Label(viewModel.formattedTime, systemImage: "timer")
+                LLabel(viewModel.formattedTime, systemImage: "timer")
                     .font(.subheadline.bold())
                     .foregroundStyle(viewModel.remainingSeconds < 60 ? AppTheme.danger : AppTheme.navy)
             }
@@ -59,11 +70,11 @@ struct JobSimulationView: View {
                 .tint(AppTheme.orange)
 
             HStack {
-                Text(AppContent.copy.simulation.customerBrief)
+                LText(phaseTitle)
                     .font(.headline)
                     .foregroundStyle(AppTheme.ink)
                 Spacer()
-                Text(AppContent.copy.categoryTitle(viewModel.job.category))
+                LText(AppContent.copy.categoryTitle(viewModel.job.category))
                     .font(.caption.bold())
                     .foregroundStyle(AppTheme.blue)
             }
@@ -71,9 +82,19 @@ struct JobSimulationView: View {
         .pipeCard()
     }
 
+    private var phaseTitle: String {
+        switch viewModel.phase {
+        case .brief: return AppContent.copy.simulation.customerBrief
+        case .inspect: return AppContent.copy.simulation.selectTools
+        case .diagnose: return AppContent.copy.simulation.diagnosis
+        case .repair: return AppContent.copy.simulation.repair
+        case .result: return AppContent.copy.simulation.result
+        }
+    }
+
     private var briefView: some View {
         VStack(alignment: .leading, spacing: 16) {
-            Text(viewModel.job.customerComplaint)
+            LText(viewModel.job.customerComplaint)
                 .font(.title3.weight(.semibold))
                 .foregroundStyle(AppTheme.ink)
                 .fixedSize(horizontal: false, vertical: true)
@@ -83,9 +104,9 @@ struct JobSimulationView: View {
             hintBox
 
             Button {
-                viewModel.startInspection()
+                viewModel.startInspection(using: game)
             } label: {
-                Label(AppContent.copy.simulation.inspect, systemImage: "magnifyingglass")
+                LLabel(AppContent.copy.simulation.inspect, systemImage: "magnifyingglass")
             }
             .buttonStyle(PrimaryActionButtonStyle())
         }
@@ -119,7 +140,7 @@ struct JobSimulationView: View {
             Button {
                 viewModel.moveToDiagnosis()
             } label: {
-                Label(AppContent.copy.simulation.continueDiagnosis, systemImage: "questionmark.circle.fill")
+                LLabel(AppContent.copy.simulation.continueDiagnosis, systemImage: "questionmark.circle.fill")
             }
             .buttonStyle(PrimaryActionButtonStyle())
             .disabled(!viewModel.allRequiredToolsSelected)
@@ -132,7 +153,7 @@ struct JobSimulationView: View {
         VStack(alignment: .leading, spacing: 16) {
             SectionTitle(title: AppContent.copy.simulation.diagnosis)
 
-            Text(viewModel.job.diagnosisQuestion.prompt)
+            LText(viewModel.job.diagnosisQuestion.prompt)
                 .font(.headline)
                 .foregroundStyle(AppTheme.ink)
                 .fixedSize(horizontal: false, vertical: true)
@@ -151,7 +172,7 @@ struct JobSimulationView: View {
             Button {
                 viewModel.confirmDiagnosis()
             } label: {
-                Label(AppContent.copy.simulation.confirmDiagnosis, systemImage: "checkmark.circle.fill")
+                LLabel(AppContent.copy.simulation.confirmDiagnosis, systemImage: "checkmark.circle.fill")
             }
             .buttonStyle(PrimaryActionButtonStyle())
             .disabled(viewModel.selectedDiagnosisID == nil)
@@ -186,7 +207,7 @@ struct JobSimulationView: View {
             Button {
                 viewModel.confirmRepair(using: game)
             } label: {
-                Label(AppContent.copy.simulation.confirmRepair, systemImage: "wrench.and.screwdriver.fill")
+                LLabel(AppContent.copy.simulation.confirmRepair, systemImage: "wrench.and.screwdriver.fill")
             }
             .buttonStyle(PrimaryActionButtonStyle())
             .disabled(viewModel.selectedRepairID == nil)
@@ -198,19 +219,26 @@ struct JobSimulationView: View {
     @ViewBuilder
     private var resultView: some View {
         if let outcome = viewModel.outcome {
+            if game.player.level > startingLevel {
+                LLabel(AppContent.copy.training.levelUp, systemImage: "star.circle.fill", values: ["level": "\(game.player.level)"])
+                    .font(.title3.bold()).foregroundStyle(AppTheme.orange)
+            }
             ResultCard(outcome: outcome) {
                 dismiss()
             }
+            NavigationLink { SkillsView(game: game) } label: {
+                LLabel(AppContent.copy.training.title, systemImage: "chart.bar.fill")
+            }.buttonStyle(SecondaryActionButtonStyle())
         }
     }
 
     private var symptomList: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Text(AppContent.copy.simulation.symptoms)
+            LText(AppContent.copy.simulation.symptoms)
                 .font(.headline)
                 .foregroundStyle(AppTheme.ink)
             ForEach(viewModel.job.symptoms, id: \.self) { symptom in
-                Label(symptom, systemImage: "drop.circle.fill")
+                LLabel(symptom, systemImage: "drop.circle.fill")
                     .font(.subheadline)
                     .foregroundStyle(AppTheme.muted)
                     .fixedSize(horizontal: false, vertical: true)
@@ -220,10 +248,10 @@ struct JobSimulationView: View {
 
     private var safetyWarning: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Label(AppContent.copy.simulation.safety, systemImage: "exclamationmark.triangle.fill")
+            LLabel(AppContent.copy.simulation.safety, systemImage: "exclamationmark.triangle.fill")
                 .font(.headline)
                 .foregroundStyle(AppTheme.danger)
-            Text(viewModel.job.safetyWarning)
+            LText(viewModel.job.safetyWarning)
                 .font(.subheadline)
                 .foregroundStyle(AppTheme.muted)
                 .fixedSize(horizontal: false, vertical: true)
@@ -235,12 +263,12 @@ struct JobSimulationView: View {
 
     private var hintBox: some View {
         VStack(alignment: .leading, spacing: 10) {
-            Label(AppContent.copy.simulation.mentorHint, systemImage: "sparkles")
+            LLabel(AppContent.copy.simulation.mentorHint, systemImage: "sparkles")
                 .font(.headline)
                 .foregroundStyle(AppTheme.blue)
 
             if viewModel.hintUnlocked {
-                Text(viewModel.job.mentorHint)
+                LText(viewModel.job.mentorHint)
                     .font(.subheadline)
                     .foregroundStyle(AppTheme.muted)
                     .fixedSize(horizontal: false, vertical: true)
@@ -248,7 +276,7 @@ struct JobSimulationView: View {
                 Button {
                     viewModel.unlockHint(using: game)
                 } label: {
-                    Label(AppContent.copy.simulation.unlockHint, systemImage: game.hasProAccess ? "lightbulb.fill" : "play.rectangle.fill")
+                    LLabel(game.hasProAccess ? AppContent.copy.simulation.unlockHint : (game.training.careerAttempts == 0 ? AppContent.copy.training.freeFirstHint : AppContent.copy.training.hintCost), systemImage: "lightbulb.fill")
                 }
                 .buttonStyle(SecondaryActionButtonStyle())
             }
@@ -270,10 +298,10 @@ private struct ToolSelectionRow: View {
             HStack(spacing: 12) {
                 IconBadge(icon: tool.iconSystemName, tint: owned ? AppTheme.blue : AppTheme.muted)
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(tool.name)
+                    LText(tool.name)
                         .font(.headline)
                         .foregroundStyle(AppTheme.ink)
-                    Text(owned ? tool.summary : AppContent.copy.jobs.missingTools)
+                    LText(owned ? tool.summary : AppContent.copy.jobs.missingTools)
                         .font(.caption)
                         .foregroundStyle(AppTheme.muted)
                         .fixedSize(horizontal: false, vertical: true)
@@ -315,10 +343,10 @@ private struct OptionRow: View {
                     .frame(width: 28)
 
                 VStack(alignment: .leading, spacing: 4) {
-                    Text(option.title)
+                    LText(option.title)
                         .font(.headline)
                         .foregroundStyle(AppTheme.ink)
-                    Text(option.detail)
+                    LText(option.detail)
                         .font(.subheadline)
                         .foregroundStyle(AppTheme.muted)
                         .fixedSize(horizontal: false, vertical: true)
@@ -367,10 +395,10 @@ private struct FeedbackBanner: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Label(title, systemImage: correct ? "checkmark.circle.fill" : "exclamationmark.triangle.fill")
+            LLabel(title, systemImage: correct ? "checkmark.circle.fill" : "exclamationmark.triangle.fill")
                 .font(.headline)
                 .foregroundStyle(correct ? AppTheme.success : AppTheme.danger)
-            Text(message)
+            LText(message)
                 .font(.subheadline)
                 .foregroundStyle(AppTheme.muted)
                 .fixedSize(horizontal: false, vertical: true)
@@ -385,6 +413,8 @@ private struct ResultCard: View {
     let outcome: JobOutcome
     let finish: () -> Void
     @State private var pulse = false
+    @Environment(\.locale) private var locale
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
 
     var body: some View {
         VStack(alignment: .leading, spacing: 18) {
@@ -393,14 +423,14 @@ private struct ResultCard: View {
                     .font(.system(size: 58, weight: .bold))
                     .foregroundStyle(outcome.repairCorrect ? AppTheme.success : AppTheme.orange)
                     .scaleEffect(pulse ? 1.05 : 0.95)
-                    .animation(.spring(response: 0.45, dampingFraction: 0.62).repeatCount(2, autoreverses: true), value: pulse)
+                    .animation(reduceMotion ? nil : .spring(response: 0.45, dampingFraction: 0.62).repeatCount(2, autoreverses: true), value: pulse)
 
-                Text(outcome.jobTitle)
+                LText(outcome.jobTitle)
                     .font(.title2.bold())
                     .foregroundStyle(AppTheme.ink)
                     .multilineTextAlignment(.center)
 
-                Text(outcome.message)
+                LText(outcome.message)
                     .font(.subheadline)
                     .foregroundStyle(AppTheme.muted)
                     .multilineTextAlignment(.center)
@@ -413,13 +443,13 @@ private struct ResultCard: View {
                 ResultMetricTile(title: AppContent.copy.dashboard.coins, value: "+\(outcome.coinsAwarded)", icon: "dollarsign.circle.fill", tint: AppTheme.amber)
             }
 
-            StatRow(icon: "star.fill", title: AppContent.copy.dashboard.reputation, value: "\(String(format: "%.1f", outcome.rating)) rating")
+            StatRow(icon: "star.fill", title: AppContent.copy.dashboard.reputation, value: L10n.format(AppContent.copy.format.rating, ["rating": outcome.rating.formatted(.number.locale(locale).precision(.fractionLength(1)))], language: locale.identifier))
 
             VStack(alignment: .leading, spacing: 8) {
-                Label(AppContent.copy.simulation.masterTip, systemImage: "graduationcap.fill")
+                LLabel(AppContent.copy.simulation.masterTip, systemImage: "graduationcap.fill")
                     .font(.headline)
                     .foregroundStyle(AppTheme.blue)
-                Text(outcome.learningTip)
+                LText(outcome.learningTip)
                     .font(.subheadline)
                     .foregroundStyle(AppTheme.muted)
                     .fixedSize(horizontal: false, vertical: true)
@@ -429,10 +459,10 @@ private struct ResultCard: View {
             .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
 
             VStack(alignment: .leading, spacing: 8) {
-                Label(AppContent.copy.simulation.safety, systemImage: "exclamationmark.triangle.fill")
+                LLabel(AppContent.copy.simulation.safety, systemImage: "exclamationmark.triangle.fill")
                     .font(.headline)
                     .foregroundStyle(AppTheme.danger)
-                Text(outcome.safetyWarning)
+                LText(outcome.safetyWarning)
                     .font(.subheadline)
                     .foregroundStyle(AppTheme.muted)
                     .fixedSize(horizontal: false, vertical: true)
@@ -442,7 +472,7 @@ private struct ResultCard: View {
             .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
 
             Button(action: finish) {
-                Label(AppContent.copy.simulation.finish, systemImage: "house.fill")
+                LLabel(AppContent.copy.simulation.finish, systemImage: "house.fill")
             }
             .buttonStyle(PrimaryActionButtonStyle())
         }
@@ -463,10 +493,10 @@ private struct ResultMetricTile: View {
         VStack(alignment: .leading, spacing: 8) {
             Image(systemName: icon)
                 .foregroundStyle(tint)
-            Text(value)
+            LText(value)
                 .font(.title2.bold())
                 .foregroundStyle(AppTheme.ink)
-            Text(title)
+            LText(title)
                 .font(.caption.weight(.semibold))
                 .foregroundStyle(AppTheme.muted)
         }

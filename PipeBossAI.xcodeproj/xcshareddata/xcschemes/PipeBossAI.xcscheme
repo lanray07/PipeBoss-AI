@@ -6,6 +6,9 @@
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
       <BuildActionEntries>
+         <BuildActionEntry buildForTesting="YES" buildForRunning="NO" buildForProfiling="NO" buildForArchiving="NO" buildForAnalyzing="NO">
+            <BuildableReference BuildableIdentifier="primary" BlueprintIdentifier="F1B2C3000000000000000008" BuildableName="PipeBossAITests.xctest" BlueprintName="PipeBossAITests" ReferencedContainer="container:PipeBossAI.xcodeproj" />
+         </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
@@ -26,7 +29,10 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      shouldUseLaunchSchemeArgsEnv = "NO">
+      <TestPlans>
+         <TestPlanReference reference="container:PipeBossAI.xctestplan" default="YES" />
+      </TestPlans>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -37,8 +43,7 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
-      allowLocationSimulation = "YES"
-      StoreKitConfigurationFileReference = "container:PipeBossAI/StoreKit/PipeBossAI.storekit">
+      allowLocationSimulation = "YES">
       <BuildableProductRunnable
          runnableDebuggingMode = "0">
          <BuildableReference
@@ -49,6 +54,7 @@
             ReferencedContainer = "container:PipeBossAI.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <StoreKitConfigurationFileReference identifier="../../PipeBossAI/StoreKit/PipeBossAI.storekit" />
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

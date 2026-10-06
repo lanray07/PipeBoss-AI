@@ -9,30 +9,64 @@ enum AppTab: Hashable {
 }
 
 struct AppRootView: View {
+    @Environment(\.scenePhase) private var scenePhase
     @StateObject private var game = GameViewModel()
     @StateObject private var purchaseManager = PurchaseManager()
+    @StateObject private var localization = LocalizationPreferences()
 
     var body: some View {
+        Group {
+            #if DEBUG
+            if let index = ProcessInfo.processInfo.arguments.firstIndex(of: "--capture-screen"),
+               ProcessInfo.processInfo.arguments.indices.contains(index + 1) {
+                ScreenshotPreview(screen: ProcessInfo.processInfo.arguments[index + 1])
+            } else {
+                appContent
+            }
+            #else
+            appContent
+            #endif
+        }
+        .onChange(of: scenePhase) { _, phase in
+            if phase == .active {
+                game.refreshDailyEnergy()
+                Task { await purchaseManager.refreshPurchasedProducts() }
+            }
+        }
+        .task {
+            if !ProcessInfo.processInfo.arguments.contains("--capture-screen") {
+                await purchaseManager.loadProducts()
+            }
+        }
+        .onReceive(purchaseManager.$purchasedProductIDs) { productIDs in
+            if purchaseManager.hasRefreshedEntitlements {
+                game.syncEntitlements(productIDs)
+            }
+        }
+        .onReceive(purchaseManager.$completedPurchaseID.dropFirst()) { productID in
+            if let productID { game.training.recordEvent("purchase.verified.\(productID)") }
+        }
+        .onReceive(purchaseManager.$restoreCount.dropFirst()) { _ in
+            game.training.recordEvent("restore.completed")
+        }
+        .alert(LocalizedStringKey("PipeBoss AI"), isPresented: alertBinding) {
+            Button(LocalizedStringKey(AppContent.copy.ok), role: .cancel) {
+                game.alertMessage = nil
+            }
+        } message: {
+            LText(game.alertMessage ?? "")
+        }
+        .environmentObject(localization)
+        .environment(\.locale, localization.locale)
+    }
+
+    private var appContent: some View {
         Group {
             if game.player.hasCompletedOnboarding {
                 MainTabView(game: game, purchaseManager: purchaseManager)
             } else {
                 OnboardingView(game: game)
             }
-        }
-        .task {
-            await purchaseManager.loadProducts()
-            game.syncEntitlements(purchaseManager.purchasedProductIDs)
-        }
-        .onReceive(purchaseManager.$purchasedProductIDs) { productIDs in
-            game.syncEntitlements(productIDs)
-        }
-        .alert("PipeBoss AI", isPresented: alertBinding) {
-            Button(AppContent.copy.ok, role: .cancel) {
-                game.alertMessage = nil
-            }
-        } message: {
-            Text(game.alertMessage ?? "")
         }
     }
 
@@ -57,7 +91,7 @@ struct MainTabView: View {
                 DashboardView(game: game)
             }
             .tabItem {
-                Label(AppContent.copy.tabs.home, systemImage: "house.fill")
+                LLabel(AppContent.copy.tabs.home, systemImage: "house.fill")
             }
             .tag(AppTab.home)
 
@@ -65,7 +99,7 @@ struct MainTabView: View {
                 JobBoardView(game: game)
             }
             .tabItem {
-                Label(AppContent.copy.tabs.jobs, systemImage: "list.bullet.clipboard.fill")
+                LLabel(AppContent.copy.tabs.jobs, systemImage: "list.bullet.clipboard.fill")
             }
             .tag(AppTab.jobs)
 
@@ -73,7 +107,7 @@ struct MainTabView: View {
                 ToolInventoryView(game: game)
             }
             .tabItem {
-                Label(AppContent.copy.tabs.tools, systemImage: "wrench.and.screwdriver.fill")
+                LLabel(AppContent.copy.tabs.tools, systemImage: "wrench.and.screwdriver.fill")
             }
             .tag(AppTab.tools)
 
@@ -81,7 +115,7 @@ struct MainTabView: View {
                 LearningCardsView(game: game)
             }
             .tabItem {
-                Label(AppContent.copy.tabs.learn, systemImage: "book.pages.fill")
+                LLabel(AppContent.copy.tabs.learn, systemImage: "book.pages.fill")
             }
             .tag(AppTab.learn)
 
@@ -89,13 +123,21 @@ struct MainTabView: View {
                 BusinessUpgradeView(game: game, purchaseManager: purchaseManager)
             }
             .tabItem {
-                Label(AppContent.copy.tabs.business, systemImage: "briefcase.fill")
+                LLabel(AppContent.copy.tabs.business, systemImage: "briefcase.fill")
             }
             .tag(AppTab.business)
         }
         .tint(AppTheme.orange)
         .sheet(isPresented: $game.showPaywall) {
             PaywallView(game: game, purchaseManager: purchaseManager)
+        }
+        .alert(LocalizedStringKey(AppContent.copy.appName), isPresented: Binding(
+            get: { !game.showPaywall && purchaseManager.errorMessage != nil },
+            set: { if !$0 { purchaseManager.errorMessage = nil } }
+        )) {
+            Button(LocalizedStringKey(AppContent.copy.ok), role: .cancel) { purchaseManager.errorMessage = nil }
+        } message: {
+            LText(purchaseManager.errorMessage ?? "")
         }
     }
 }

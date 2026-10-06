@@ -52,10 +52,10 @@ final class JobSimulationViewModel: ObservableObject {
     }
 
     func startTimer() {
-        guard timerTask == nil else { return }
+        guard timerTask == nil, phase != .brief, phase != .result else { return }
         timerTask = Task { [weak self] in
             while !Task.isCancelled {
-                try? await Task.sleep(for: .seconds(1))
+                do { try await Task.sleep(for: .seconds(1)) } catch { return }
                 await MainActor.run {
                     guard let self, self.phase != .result, self.remainingSeconds > 0 else { return }
                     self.remainingSeconds -= 1
@@ -69,8 +69,11 @@ final class JobSimulationViewModel: ObservableObject {
         timerTask = nil
     }
 
-    func startInspection() {
+    func startInspection(using game: GameViewModel) {
+        guard phase == .brief else { return }
+        remainingSeconds += game.inspectionTimeBonus(for: job)
         phase = .inspect
+        startTimer()
         Haptics.lightTap()
     }
 
@@ -104,7 +107,7 @@ final class JobSimulationViewModel: ObservableObject {
     }
 
     func confirmRepair(using game: GameViewModel) {
-        guard selectedRepairID != nil else {
+        guard phase == .repair, let selectedRepairID, let selectedDiagnosisID else {
             Haptics.warning()
             return
         }
@@ -117,18 +120,15 @@ final class JobSimulationViewModel: ObservableObject {
             repairCorrect: repairCorrect,
             remainingSeconds: remainingSeconds
         )
+        game.recordTraining(job: job, diagnosisID: selectedDiagnosisID, repairID: selectedRepairID, mode: .career)
         repairCorrect ? Haptics.success() : Haptics.error()
         phase = .result
         stopTimer()
     }
 
     func unlockHint(using game: GameViewModel) {
-        if game.hasProAccess {
-            hintUnlocked = true
-            Haptics.success()
-        } else {
-            game.claimRewardedAdReward(.hint)
-            hintUnlocked = true
-        }
+        guard !hintUnlocked else { return }
+        hintUnlocked = game.unlockMentorHint()
+        if hintUnlocked { Haptics.success() }
     }
 }
