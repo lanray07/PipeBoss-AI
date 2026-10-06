@@ -21,12 +21,14 @@ final class PurchaseManager: ObservableObject {
     @Published private(set) var isRestoring = false
     @Published private(set) var completedPurchaseID: String?
     @Published private(set) var restoreCount = 0
+    @Published private(set) var restoreFailureCode: String?
     @Published var errorMessage: String?
 
     private var transactionUpdates: Task<Void, Never>?
     private var productLoadTask: Task<Void, Never>?
     private var productLoadTimeoutTask: Task<Void, Never>?
     private var activeProductLoadID: UUID?
+    private let synchronizePurchases: @MainActor () async throws -> Void
     private let productLoadTimeoutNanoseconds: UInt64 = 12_000_000_000
     private var expectedProductIDs: [String] {
         AppContent.storeProducts.map(\.productID)
@@ -37,9 +39,13 @@ final class PurchaseManager: ObservableObject {
         return expectedProductIDs.filter { !loadedIDs.contains($0) }.count
     }
 
-    init() {
-        transactionUpdates = listenForTransactions()
-        Task { [weak self] in await self?.refreshPurchasedProducts() }
+    init(synchronizePurchases: @escaping @MainActor () async throws -> Void = { try await AppStore.sync() },
+         observeTransactions: Bool = true) {
+        self.synchronizePurchases = synchronizePurchases
+        if observeTransactions {
+            transactionUpdates = listenForTransactions()
+            Task { [weak self] in await self?.refreshPurchasedProducts() }
+        }
     }
 
     var annualSavingsPercent: Int? {
@@ -189,7 +195,7 @@ final class PurchaseManager: ObservableObject {
         defer { isRestoring = false }
         errorMessage = nil
         do {
-            try await AppStore.sync()
+            try await synchronizePurchases()
             await refreshPurchasedProducts()
             restoreCount += 1
             Haptics.success()

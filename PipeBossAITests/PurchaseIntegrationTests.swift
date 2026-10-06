@@ -154,6 +154,46 @@ final class PurchaseIntegrationTests: XCTestCase {
     }
 
     @MainActor
+    func testRestoreSyncFailureStillRefreshesVerifiedEntitlementsAndReportsCause() async throws {
+        let session = try makeSession()
+        defer { session.clearTransactions() }
+        let id = AppContent.ProductIDs.businessOwnerMode
+        let manager = try await loadedManager()
+        let product = try XCTUnwrap(manager.products.first { $0.id == id })
+        await manager.purchase(product)
+        try await waitForAccess(manager, id: id, owned: true)
+
+        let restoring = PurchaseManager(synchronizePurchases: {
+            throw StoreKitError.unknown
+        }, observeTransactions: false)
+        // Freeze its starting snapshot. Restore itself must refresh it,
+        // even when Apple's synchronization fails after authentication.
+        await restoring.refreshPurchasedProducts()
+        let transaction = try XCTUnwrap(session.allTransactions().last { $0.productIdentifier == id })
+        try session.refundTransaction(identifier: transaction.identifier)
+        try await waitForAccess(manager, id: id, owned: false)
+        await restoring.restorePurchases()
+        XCTAssertFalse(restoring.purchasedProductIDs.contains(id), "Failed sync must still refresh verified entitlements, including refunds")
+        XCTAssertEqual(restoring.restoreCount, 0, "An incomplete sync must never be counted as a successful restore")
+        XCTAssertEqual(restoring.restoreFailureCode, "StoreKit.unknown")
+        XCTAssertNotNil(restoring.errorMessage)
+        XCTAssertFalse(restoring.errorMessage?.contains("account used to subscribe") ?? true)
+        XCTAssertFalse(restoring.isRestoring)
+    }
+
+    @MainActor
+    func testCancelledRestoreDoesNotReportFailureOrSuccess() async throws {
+        let session = try makeSession()
+        defer { session.clearTransactions() }
+        let manager = PurchaseManager(synchronizePurchases: { throw StoreKitError.userCancelled })
+        await manager.restorePurchases()
+        XCTAssertNil(manager.errorMessage)
+        XCTAssertNil(manager.restoreFailureCode)
+        XCTAssertEqual(manager.restoreCount, 0)
+        XCTAssertFalse(manager.isRestoring)
+    }
+
+    @MainActor
     func testFailedPurchaseDoesNotGrantAccessOrRemainBusy() async throws {
         let session = try makeSession()
         defer { session.clearTransactions() }
