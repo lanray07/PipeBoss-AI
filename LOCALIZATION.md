@@ -27,7 +27,7 @@ The exporter reflects actual models, not source-code regular expressions. It exc
 
 ## Auto-Translate
 
-Use a DeepL API Free or Pro credential named `DEEPL_AUTH_KEY` in **GitHub repository Actions secrets**. Never put a credential in the app, repository or a chat message. The existing Apple signing/API secrets cannot generate translations. An API subscription may incur charges; dry-run first. No local credential setup is needed.
+Use a DeepL API Free credential named `DEEPL_AUTH_KEY` in **GitHub repository Actions secrets**. Only Free keys ending in `:fx` are accepted; paid keys are rejected before any network request. Never put a credential in the app, repository or a chat message. The existing Apple signing/API secrets cannot generate translations. No local credential setup is needed. Exhausted free quota stops translation instead of switching to a paid endpoint.
 
 ```powershell
 python tools/localization/localize.py translate es --dry-run
@@ -39,7 +39,7 @@ python tools/localization/localize.py translate pt-BR
 
 Optionally pass `--glossary-id YOUR_DEEPL_GLOSSARY_ID` for a matching English/target-language trade terminology glossary. Drafts contain source hashes and explicit review flags. Named placeholders, PipeBoss branding and legal URLs are protected and checked after translation. Each completed batch is cached; interrupted runs can resume. Timeouts and retries are bounded.
 
-The `Generate translation drafts` GitHub workflow defaults to a cost-estimate dry run when dispatched manually. On main-branch content updates it generates cached drafts for Spanish, French, German and Brazilian Portuguese if the translation secret exists. If the secret is missing, it generates estimates and an explicit notice only. It uploads drafts as artifacts, never ships unreviewed content, never submits an app, and never changes prices. Only public source copy is sent to the provider.
+The `Generate translation drafts` GitHub workflow defaults to an estimate-only dry run when dispatched manually. Main-branch content updates always produce estimates without contacting DeepL. Actual Free API requests require an explicit dispatch with `dry_run: false` and the Free secret. If the secret is missing, it generates estimates and an explicit notice only. It uploads drafts as artifacts, never ships unreviewed content, never submits an app, and never changes prices. Only public source copy is sent to the provider.
 
 Before the new workflow is merged to main, the existing `iOS CI` workflow can call it on the feature branch. Its default `translation_locale: none` runs the iOS build; selecting a locale runs translation drafts instead. For example:
 

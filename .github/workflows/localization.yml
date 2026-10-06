@@ -23,7 +23,7 @@ on:
         required: true
         default: all
       dry_run:
-        description: Estimate missing source characters without calling the paid provider
+        description: Estimate missing source characters without calling DeepL API Free
         type: boolean
         default: true
 
@@ -55,7 +55,7 @@ jobs:
         env:
           DEEPL_AUTH_KEY: ${{ secrets.DEEPL_AUTH_KEY }}
           TARGET_LOCALE: ${{ matrix.locale }}
-          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
+          DRY_RUN: ${{ github.event_name == 'push' || inputs.dry_run }}
         run: |
           set -euo pipefail
           if [ "$DRY_RUN" = "true" ] || [ -z "$DEEPL_AUTH_KEY" ]; then

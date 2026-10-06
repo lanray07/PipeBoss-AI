@@ -20,11 +20,11 @@ The live version is 1.0.1 (14). This update uses 1.0.2 (15); verify App Store Co
 
 ## Windows Workflow
 
-GitHub Actions supplies macOS and Xcode. Signing keys stay in GitHub repository secrets; do not download or commit them. TestFlight installation and the native sandbox purchase UI still require an iPhone or iPad. If hosted runners are unavailable, keep the release draft and wait for verified build results instead of submitting an older build.
+GitHub Actions supplies macOS and Xcode using standard hosted runners, which are free for this public repository. Do not switch to paid larger runners, enable paid overages or change app prices. Signing keys stay in GitHub repository secrets; do not download or commit them. Release and metadata workflows are manual-only; pull-request builds do not receive Apple or DeepL secrets. Localization accepts only DeepL API Free keys and automatic content updates are estimate-only. TestFlight installation and the native sandbox purchase UI still require an iPhone or iPad. If hosted runners are unavailable, keep the release draft and wait for verified build results instead of submitting an older build.
 
 ## Public Legal Pages
 
-The app repository is private. Do not use its file URLs in the app or public listing. Only the privacy and terms documents are published separately:
+The app repository is now public for free standard-runner builds. Keep the existing public legal and support pages stable instead of changing the app's legal links with repository visibility:
 
 - Privacy: https://gist.github.com/lanray07/64ca0d681a517c35b42bb0a5819e58a3
 - Terms: https://gist.github.com/lanray07/c1cd47ad4c7b598b9067b2c3f37091c9

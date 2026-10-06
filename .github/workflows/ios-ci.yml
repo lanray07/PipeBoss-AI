@@ -20,6 +20,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: ios-ci-${{ github.ref }}-${{ inputs.translation_locale || 'none' }}
+  cancel-in-progress: true
+
 jobs:
   build:
     if: ${{ github.event_name != 'workflow_dispatch' || inputs.translation_locale == 'none' }}

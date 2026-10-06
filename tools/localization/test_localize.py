@@ -1,4 +1,5 @@
 import copy
+import io
 import json
 from pathlib import Path
 import tempfile
@@ -120,6 +121,20 @@ class TranslationTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 localize.translate("fr")
             provider.assert_not_called()
+
+    def test_paid_provider_key_is_rejected_before_network(self):
+        with patch.object(localize.request, "urlopen") as network:
+            with self.assertRaisesRegex(ValueError, "API Free"):
+                localize.request_translations(["Level {level}"], "fr", "test-only-paid")
+            network.assert_not_called()
+
+    def test_free_provider_uses_only_free_endpoint(self):
+        response = io.StringIO(json.dumps({"translations": [{"text": "<text>Niveau <keep>{level}</keep></text>"}]}))
+        with patch.object(localize.request, "urlopen", return_value=response) as network:
+            self.assertEqual(localize.request_translations(["Level {level}"], "fr", "test-only:fx"), ["Niveau {level}"])
+            req = network.call_args.args[0]
+            self.assertEqual(req.full_url, "https://api-free.deepl.com/v2/translate")
+            self.assertEqual(network.call_args.kwargs["timeout"], 45)
 
 
 class MetadataTests(unittest.TestCase):

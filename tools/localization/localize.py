@@ -66,7 +66,9 @@ def protected_xml(source):
 
 
 def request_translations(sources, locale, key, glossary=None):
-    endpoint = "https://api-free.deepl.com/v2/translate" if key.endswith(":fx") else "https://api.deepl.com/v2/translate"
+    if not key.endswith(":fx"):
+        raise ValueError("Only a DeepL API Free key is allowed. Paid translation requests are disabled.")
+    endpoint = "https://api-free.deepl.com/v2/translate"
     body = {
         "text": [protected_xml(s) for s in sources], "source_lang": "EN", "target_lang": TARGETS[locale],
         "tag_handling": "xml", "ignore_tags": ["keep"], "preserve_formatting": True,
