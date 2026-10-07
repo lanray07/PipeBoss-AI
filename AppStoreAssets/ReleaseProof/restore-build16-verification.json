@@ -51,5 +51,11 @@
   "ownerTestDevices": [
     "iPhone 16 Pro Max",
     "iPad 8th generation"
-  ]
+  ],
+  "ownerReportedDeviceVersions": {
+    "iPhone": "26.3.1(a)",
+    "iPad": "26.7"
+  },
+  "affectedDevices": "Owner confirms same failure on iPhone and iPad",
+  "mobileDataRetest": "pending"
 }
