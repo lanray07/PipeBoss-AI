@@ -40,9 +40,16 @@
     "inInternalGroup": true,
     "selectedBuild": "16"
   },
-  "deviceRestoreRetest": "pending",
+  "deviceRestoreRetest": "failed: StoreKit.unknown on 2026-10-07",
   "appReviewSubmitted": false,
-  "originalAppleSyncFailure": "not identified by build 15 generic alert",
+  "originalAppleSyncFailure": "Build 16 reports StoreKitError.unknown; underlying cause remains unidentified",
   "betaNotesMatch": true,
-  "appStoreState": "PREPARE_FOR_SUBMISSION"
+  "appStoreState": "PREPARE_FOR_SUBMISSION",
+  "deviceOwnershipAfterRelaunch": "Owner confirms Emergency Jobs Pack and Business Owner Mode remain Owned",
+  "deviceErrorEvidence": "restore-build16-device-error-2026-10-07.png",
+  "deviceAuthentication": "Owner confirms completing password prompt for build 16 restore",
+  "ownerTestDevices": [
+    "iPhone 16 Pro Max",
+    "iPad 8th generation"
+  ]
 }
