@@ -1,0 +1,1553 @@
+{
+  "createdAt": "2026-10-08T10:39:13.292Z",
+  "draftOnly": true,
+  "sourceVersionId": "fe8bb46d-7337-47c4-8fb1-d224ddce21f1",
+  "expectedLocaleCount": 50,
+  "machineTranslatedCaptions": true,
+  "appInterface": "English",
+  "pages": [
+    {
+      "name": "Apprentice Plumbing Training",
+      "id": "9f0c2c55-4c5d-4aa3-9d49-f436757ae017",
+      "versionId": "ea555748-77dc-4c6d-8e10-d0286807795e",
+      "url": "https://apps.apple.com/us/app/pipeboss-ai/id6767889535?ppid=9f0c2c55-4c5d-4aa3-9d49-f436757ae017",
+      "state": "PREPARE_FOR_SUBMISSION",
+      "localizations": [
+        {
+          "locale": "en-GB",
+          "id": "6b0ec485-5961-472c-b622-3c2bdd2a0152",
+          "promotionalText": "Practise plumbing with 10 beginner jobs. Build apprentice skills in fault diagnosis, tool selection and repair decisions. Educational simulation; app in English.",
+          "keywords": [
+            "apprentice",
+            "trade",
+            "training",
+            "quiz"
+          ],
+          "keywordStatus": "assigned",
+          "screenshotCount": 15,
+          "headerCount": 1,
+          "verified": true
+        },
+        {
+          "locale": "pa-IN",
+          "id": "a6492e2d-6848-4ff3-b0e3-2cce81ae3875",
+          "promotionalText": "ਖੇਡ ਕੇ ਪਲੰਬਿੰਗ ਸਿੱਖੋ. ਲੀਕ, ਬੰਦ ਨਾਲੀਆਂ ਅਤੇ ਪਾਣੀ ਦੇ ਦਬਾਅ ਦੀਆਂ ਖ਼ਰਾਬੀਆਂ ਦਾ ਅਭਿਆਸ ਕਰੋ। ਸਿੱਖਿਆ ਲਈ ਸਿਮੂਲੇਸ਼ਨ। ਐਪ ਦਾ ਇੰਟਰਫੇਸ ਅੰਗਰੇਜ਼ੀ ਵਿੱਚ ਹੈ।",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "da",
+          "id": "8f4c3bb7-5249-4f0c-ab9c-77aed4b98db9",
+          "promotionalText": "Lær VVS gennem spil. Øv dig på lækager, tilstoppede afløb og vandtryksfejl. Læringssimulation. Appens brugerflade er på engelsk.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "sv",
+          "id": "fc0197d2-63c2-4385-b512-56cd09409e73",
+          "promotionalText": "Lär dig VVS genom spel. Öva på läckor, igensatta avlopp och problem med vattentryck. Utbildningssimulering. Appens gränssnitt är på engelska.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "cs",
+          "id": "a27c8eec-047f-4ccb-a03a-b6924d1da3c3",
+          "promotionalText": "Učte se instalatérství. Procvičujte úniky vody, ucpané odpady a poruchy tlaku. Výuková simulace. Rozhraní aplikace je v angličtině.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "sk",
+          "id": "257eeb3d-5cd5-407e-a522-a49388e93d2e",
+          "promotionalText": "Učte sa inštalatérstvo. Precvičujte úniky vody, upchaté odpady a poruchy tlaku. Vzdelávacia simulácia. Rozhranie aplikácie je v angličtine.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "mr-IN",
+          "id": "b7e1e826-b245-4005-8114-36cca1c1ddb6",
+          "promotionalText": "खेळातून प्लंबिंग शिका. गळती, बंद नाले आणि पाण्याच्या दाबातील बिघाडाचा सराव करा. शैक्षणिक सिम्युलेशन. ॲपचा इंटरफेस इंग्रजीत आहे.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "gu-IN",
+          "id": "3c0ce176-3199-42f2-91a0-39eb068eba52",
+          "promotionalText": "રમત દ્વારા પ્લમ્બિંગ શીખો. લીક, બંધ ડ્રેન અને પાણીના દબાણની ખામીનો અભ્યાસ કરો. શૈક્ષણિક સિમ્યુલેશન. ઍપનું ઇન્ટરફેસ અંગ્રેજીમાં છે.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "hr",
+          "id": "301ce340-8ec3-4410-9fde-61efe1451de6",
+          "promotionalText": "Učite vodoinstalacije. Vježbajte curenja, začepljene odvode i probleme s tlakom vode. Edukativna simulacija. Sučelje aplikacije je na engleskom.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ml-IN",
+          "id": "b3220540-0e89-4f9d-b537-2e93b0c77503",
+          "promotionalText": "കളിച്ച് പ്ലംബിംഗ് പഠിക്കൂ. ചോർച്ച, അടഞ്ഞ ഡ്രെയിൻ, ജലമർദ്ദ തകരാർ എന്നിവ പരിശീലിക്കൂ. വിദ്യാഭ്യാസ സിമുലേഷൻ. ആപ്പിന്റെ ഇന്റർഫേസ് ഇംഗ്ലീഷിലാണ്.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "pl",
+          "id": "8b5f78f4-35c9-4356-8e96-e54a97735a40",
+          "promotionalText": "Ucz się hydrauliki w grze. Ćwicz wycieki, zatkane odpływy i problemy z ciśnieniem. Symulacja edukacyjna. Interfejs aplikacji jest po angielsku.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ms",
+          "id": "a05b0ea2-b73d-42ca-9bd3-f954affedbfd",
+          "promotionalText": "Belajar kerja paip. Latih kebocoran, saliran tersumbat dan masalah tekanan air. Simulasi pendidikan. Antara muka aplikasi dalam bahasa Inggeris.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "he",
+          "id": "22990ea5-5fd6-4b88-b598-41392f12aa81",
+          "promotionalText": "למדו אינסטלציה במשחק. תרגלו נזילות, סתימות ובעיות בלחץ המים. סימולציה לימודית. ממשק האפליקציה באנגלית.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "vi",
+          "id": "f40efc6f-1868-425a-ac0d-ac7267259160",
+          "promotionalText": "Học sửa ống nước qua trò chơi. Luyện xử lý rò rỉ, tắc đường thoát nước và lỗi áp lực nước. Mô phỏng giáo dục. Giao diện ứng dụng bằng tiếng Anh.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "sl-SI",
+          "id": "fd64fcde-1710-4003-9f5d-8605342dafdc",
+          "promotionalText": "Učite se vodovodnih del. Vadite puščanje, zamašene odtoke in težave s tlakom vode. Izobraževalna simulacija. Vmesnik aplikacije je v angleščini.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ko",
+          "id": "54262324-ff66-42ad-8c8f-297631b77ffd",
+          "promotionalText": "게임으로 배관 배우기. 누수, 배수구 막힘, 수압 문제를 연습하세요. 교육용 시뮬레이션. 앱 인터페이스는 영어입니다.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "es-ES",
+          "id": "d48cf80d-9aa8-47c9-b74f-035ec9c4090c",
+          "promotionalText": "Aprende fontanería jugando. Practica fugas, desagües atascados y problemas de presión. Simulación educativa. Interfaz de la aplicación en inglés.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "de-DE",
+          "id": "c7014ffa-01a1-40a7-baaf-59de18774a4b",
+          "promotionalText": "Sanitärtechnik lernen. Übe Lecks, verstopfte Abflüsse und Wasserdruckprobleme. Lernsimulation. Die App-Oberfläche ist auf Englisch.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ca",
+          "id": "66fd3706-03cf-4635-86aa-5964c6e2e261",
+          "promotionalText": "Aprèn fontaneria jugant. Practica amb fuites, desguassos obstruïts i problemes de pressió. Simulació educativa. Interfície de l’app en anglès.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "en-CA",
+          "id": "d9d00780-1b4e-4661-89e3-352df54b953f",
+          "promotionalText": "Practise plumbing with 10 beginner jobs. Build apprentice skills in fault diagnosis, tool selection and repair decisions. Educational simulation; app in English.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "pt-BR",
+          "id": "4ab8f837-6e02-4227-b55f-f47524ab1a30",
+          "promotionalText": "Aprenda hidráulica jogando. Pratique vazamentos, ralos entupidos e problemas de pressão. Simulação educativa. Interface do app em inglês.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ro",
+          "id": "5f7ae1ab-a006-4886-860f-9f37d86ed0bb",
+          "promotionalText": "Învață lucrări de instalații. Exersează scurgeri, canale înfundate și probleme de presiune. Simulare educativă. Interfața aplicației este în engleză.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "hi",
+          "id": "f0811b78-26a1-47d8-8b1b-4f98b0c17782",
+          "promotionalText": "खेलकर प्लंबिंग सीखें. रिसाव, बंद नालियों और पानी के दबाव की समस्याओं का अभ्यास करें। शैक्षिक सिमुलेशन। ऐप का इंटरफ़ेस अंग्रेज़ी में है।",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "kn-IN",
+          "id": "a2ea8037-b441-4569-af1f-e2d2120ebeb2",
+          "promotionalText": "ಆಟದ ಮೂಲಕ ಪ್ಲಂಬಿಂಗ್ ಕಲಿಯಿರಿ. ಸೋರಿಕೆ, ಮುಚ್ಚಿದ ಚರಂಡಿ ಮತ್ತು ನೀರಿನ ಒತ್ತಡದ ದೋಷಗಳನ್ನು ಅಭ್ಯಾಸ ಮಾಡಿ. ಶೈಕ್ಷಣಿಕ ಸಿಮ್ಯುಲೇಶನ್. ಆ್ಯಪ್ ಇಂಟರ್‌ಫೇಸ್ ಇಂಗ್ಲಿಷ್‌ನಲ್ಲಿದೆ.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "en-US",
+          "id": "aeae0002-02ae-4e52-9cd6-da379738085b",
+          "promotionalText": "Practise plumbing with 10 beginner jobs. Build apprentice skills in fault diagnosis, tool selection and repair decisions. Educational simulation; app in English.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "es-MX",
+          "id": "829d16ce-7055-4a7d-983b-c2ba50fd76ac",
+          "promotionalText": "Aprende plomería jugando. Practica fugas, desagües tapados y problemas de presión. Simulación educativa. Interfaz de la app en inglés.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "tr",
+          "id": "38e6744a-6e7d-44c9-9df6-78a1ceef397b",
+          "promotionalText": "Oyunla tesisat öğrenin. Sızıntı, tıkalı gider ve su basıncı sorunları üzerinde çalışın. Eğitim simülasyonu. Uygulama arayüzü İngilizcedir.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "th",
+          "id": "5c72c432-fb8d-47b1-93e8-45509311a814",
+          "promotionalText": "เรียนรู้งานประปาผ่านเกม. ฝึกแก้ปัญหาน้ำรั่ว ท่อระบายน้ำอุดตัน และแรงดันน้ำผิดปกติ การจำลองเพื่อการศึกษา อินเทอร์เฟซแอปเป็นภาษาอังกฤษ",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "id",
+          "id": "9743d6f9-6491-448a-9b04-93fbe9a4184f",
+          "promotionalText": "Belajar perpipaan lewat game. Latih kebocoran, saluran tersumbat dan masalah tekanan air. Simulasi edukasi. Antarmuka aplikasi berbahasa Inggris.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "en-AU",
+          "id": "5dd2b04b-6717-4c62-b408-745b3c2af416",
+          "promotionalText": "Practise plumbing with 10 beginner jobs. Build apprentice skills in fault diagnosis, tool selection and repair decisions. Educational simulation; app in English.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "fr-CA",
+          "id": "992d937b-b8c1-4300-8a85-722e6a2cd8bb",
+          "promotionalText": "Apprenez la plomberie. Exercez-vous sur les fuites, drains bouchés et problèmes de pression. Simulation éducative. Interface de l’application en anglais.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "nl-NL",
+          "id": "5394e63b-0712-4cad-a8b0-5c981d87c7c6",
+          "promotionalText": "Leer loodgieterswerk. Oefen met lekkages, verstopte afvoeren en waterdrukproblemen. Educatieve simulatie. De app-interface is in het Engels.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "fi",
+          "id": "ff266c6b-912e-44eb-b071-8fc595d0f895",
+          "promotionalText": "Opi putkitöitä pelaamalla. Harjoittele vuotoja, tukoksia ja vedenpaineen häiriöitä. Opetussimulaatio. Sovelluksen käyttöliittymä on englanniksi.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "bn-BD",
+          "id": "0a02fc57-7849-4035-8e00-fd196f4aca72",
+          "promotionalText": "খেলে প্লাম্বিং শিখুন. লিক, বন্ধ ড্রেন ও পানির চাপের সমস্যা নিয়ে অনুশীলন করুন। শিক্ষামূলক সিমুলেশন। অ্যাপের ইন্টারফেস ইংরেজিতে।",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "uk",
+          "id": "0a307380-fd47-48ca-a827-94c30758cdc1",
+          "promotionalText": "Вивчайте сантехніку у грі. Тренуйтеся на протіканнях, засміченнях і проблемах тиску. Навчальна симуляція. Інтерфейс застосунку англійською.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "hu",
+          "id": "bd7d0833-9b30-4c87-9110-ea134ba0a41f",
+          "promotionalText": "Tanulj vízvezeték-szerelést. Gyakorolj szivárgásokat, dugulásokat és víznyomáshibákat. Oktatási szimuláció. Az alkalmazás felülete angol nyelvű.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "te-IN",
+          "id": "7ae7bc14-e35f-4d6f-b11e-d74f169d170b",
+          "promotionalText": "ఆడుతూ ప్లంబింగ్ నేర్చుకోండి. లీకులు, మూసుకుపోయిన డ్రెయిన్‌లు, నీటి ఒత్తిడి లోపాలను సాధన చేయండి. విద్యా సిమ్యులేషన్. యాప్ ఇంటర్‌ఫేస్ ఆంగ్లంలో ఉంది.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "el",
+          "id": "9d8e94c5-2056-4719-b517-5c7d15a0fac8",
+          "promotionalText": "Μάθε υδραυλικές εργασίες. Εξασκήσου σε διαρροές, βουλωμένες αποχετεύσεις και προβλήματα πίεσης. Εκπαιδευτική προσομοίωση. Η εφαρμογή έχει αγγλικό περιβάλλον.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "it",
+          "id": "52096416-3002-478f-a425-3ea6942680b0",
+          "promotionalText": "Impara l’idraulica giocando. Esercitati su perdite, scarichi ostruiti e problemi di pressione. Simulazione educativa. Interfaccia dell’app in inglese.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "pt-PT",
+          "id": "8fbb1282-7b80-48a6-9189-84845ad97c1f",
+          "promotionalText": "Aprenda canalização. Pratique fugas, esgotos entupidos e problemas de pressão. Simulação educativa. Interface da aplicação em inglês.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "or-IN",
+          "id": "5dc8a70f-d239-4b80-a797-2d1e98941277",
+          "promotionalText": "ଖେଳି ପ୍ଲମ୍ବିଂ ଶିଖନ୍ତୁ. ଲିକ୍, ବନ୍ଦ ଡ୍ରେନ୍ ଓ ଜଳଚାପ ତ୍ରୁଟିର ଅଭ୍ୟାସ କରନ୍ତୁ। ଶିକ୍ଷାମୂଳକ ସିମୁଲେସନ୍। ଆପ୍ ଇଣ୍ଟରଫେସ୍ ଇଂରାଜୀରେ ଅଛି।",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ru",
+          "id": "7e01f91c-5a68-40b0-813c-3eaee511e842",
+          "promotionalText": "Изучайте сантехнику в игре. Тренируйтесь устранять протечки, засоры и проблемы давления. Учебная симуляция. Интерфейс приложения на английском.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ta-IN",
+          "id": "297744ae-e4c6-4cb8-9423-19a964aac442",
+          "promotionalText": "விளையாடி பிளம்பிங் கற்கவும். கசிவுகள், அடைத்த வடிகால்கள், நீர் அழுத்தக் கோளாறுகளைப் பயிற்சி செய்யவும். கல்விக்கான சிமுலேஷன். செயலியின் இடைமுகம் ஆங்கிலத்தில் உள்ளது.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "fr-FR",
+          "id": "931201e8-7450-4719-8dde-edcf111725b6",
+          "promotionalText": "Apprenez la plomberie. Entraînez-vous sur les fuites, drains bouchés et problèmes de pression. Simulation éducative. Interface de l’application en anglais.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ar-SA",
+          "id": "9f44f977-52ca-489b-a8ad-df19d7023b73",
+          "promotionalText": "تعلّم السباكة باللعب. تدرّب على التسربات وانسداد المصارف وأعطال ضغط المياه. محاكاة تعليمية. واجهة التطبيق باللغة الإنجليزية.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "zh-Hans",
+          "id": "15c70eca-2fb0-4e29-b8cb-2822c2f0230f",
+          "promotionalText": "在游戏中学习水暖技能. 练习处理漏水、排水堵塞和水压故障。 教育模拟。应用界面为英语。",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "zh-Hant",
+          "id": "4159f179-b37d-4414-acae-5a3adcb24c2b",
+          "promotionalText": "在遊戲中學習水電技能. 練習處理漏水、排水堵塞和水壓故障。 教育模擬。應用程式介面為英語。",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "no",
+          "id": "cb518f0a-ba25-4ee1-a743-4e0523002865",
+          "promotionalText": "Lær rørleggerarbeid. Øv på lekkasjer, tette avløp og problemer med vanntrykk. Læringssimulering. Appens grensesnitt er på engelsk.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ur-PK",
+          "id": "e476e967-9f32-48ba-b7fc-f1412896639a",
+          "promotionalText": "کھیل کر پلمبنگ سیکھیں. رساؤ، بند نالیوں اور پانی کے دباؤ کی خرابیوں کی مشق کریں۔ تعلیمی سیمولیشن۔ ایپ کا انٹرفیس انگریزی میں ہے۔",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ja",
+          "id": "1ed64a7d-2e18-495b-95c7-e04838223857",
+          "promotionalText": "ゲームで配管を学ぼう. 水漏れ、排水の詰まり、水圧の問題に取り組もう。 学習用シミュレーション。アプリの操作画面は英語です。",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        }
+      ]
+    },
+    {
+      "name": "Plumbing Fault Diagnosis",
+      "id": "693b5445-3c3d-4983-9ce2-d9c2d5f87a18",
+      "versionId": "f2035a62-ecd6-4883-a506-19dc5ca3558b",
+      "url": "https://apps.apple.com/us/app/pipeboss-ai/id6767889535?ppid=693b5445-3c3d-4983-9ce2-d9c2d5f87a18",
+      "state": "PREPARE_FOR_SUBMISSION",
+      "localizations": [
+        {
+          "locale": "en-GB",
+          "id": "4b1cf3d0-3dd5-4b54-9d0a-fd8d42b268ed",
+          "promotionalText": "Practise diagnosing leaks, blocked drains and water pressure faults. Choose a repair and learn from feedback. Educational simulation; app in English.",
+          "keywords": [
+            "plumbing",
+            "plumber",
+            "drain",
+            "DIY"
+          ],
+          "keywordStatus": "assigned",
+          "screenshotCount": 15,
+          "headerCount": 1,
+          "verified": true
+        },
+        {
+          "locale": "pa-IN",
+          "id": "8d4277ae-ad38-47cb-ba30-7ec4da3fc610",
+          "promotionalText": "ਖ਼ਰਾਬੀ ਪਛਾਣਨ ਦਾ ਅਭਿਆਸ. ਲੱਛਣ ਪੜ੍ਹੋ ਅਤੇ ਪਲੰਬਿੰਗ ਦੀ ਖ਼ਰਾਬੀ ਦਾ ਕਾਰਨ ਚੁਣੋ। ਸਿੱਖਿਆ ਲਈ ਸਿਮੂਲੇਸ਼ਨ। ਐਪ ਦਾ ਇੰਟਰਫੇਸ ਅੰਗਰੇਜ਼ੀ ਵਿੱਚ ਹੈ।",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "da",
+          "id": "d145cfe2-ed24-4c30-96c8-e74d7d8fbf56",
+          "promotionalText": "Øv fejldiagnose. Læs symptomerne, og vælg en VVS-diagnose. Læringssimulation. Appens brugerflade er på engelsk.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "sv",
+          "id": "3bf39666-4b1e-4ec9-bb3e-78f2091abe19",
+          "promotionalText": "Öva på feldiagnos. Läs symtomen och välj en VVS-diagnos. Utbildningssimulering. Appens gränssnitt är på engelska.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "cs",
+          "id": "be0a9868-5442-4adf-9fc3-2418feeda2e2",
+          "promotionalText": "Procvičte diagnostiku. Přečtěte příznaky a vyberte příčinu závady. Výuková simulace. Rozhraní aplikace je v angličtině.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "sk",
+          "id": "93dbaa88-d311-4dd3-a56f-6566d3163bea",
+          "promotionalText": "Precvičte diagnostiku. Prečítajte príznaky a vyberte príčinu poruchy. Vzdelávacia simulácia. Rozhranie aplikácie je v angličtine.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "mr-IN",
+          "id": "b1ac133f-1445-4b60-9d05-cf7aa9c6c375",
+          "promotionalText": "बिघाड शोधण्याचा सराव. लक्षणे वाचा आणि प्लंबिंगच्या बिघाडाचे कारण निवडा. शैक्षणिक सिम्युलेशन. ॲपचा इंटरफेस इंग्रजीत आहे.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "gu-IN",
+          "id": "76617583-7452-4516-b2fd-5c709d808690",
+          "promotionalText": "ખામીનું નિદાન શીખો. લક્ષણો વાંચો અને પ્લમ્બિંગની ખામીનું નિદાન પસંદ કરો. શૈક્ષણિક સિમ્યુલેશન. ઍપનું ઇન્ટરફેસ અંગ્રેજીમાં છે.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "hr",
+          "id": "23a8c09d-ecf1-407e-9dd4-ae68386c7faa",
+          "promotionalText": "Vježbajte dijagnostiku. Pročitajte simptome i odaberite uzrok kvara. Edukativna simulacija. Sučelje aplikacije je na engleskom.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ml-IN",
+          "id": "f8580974-22d6-4746-ae08-8370a28b0620",
+          "promotionalText": "തകരാർ കണ്ടെത്താൻ പരിശീലിക്കൂ. ലക്ഷണങ്ങൾ വായിച്ച് പ്ലംബിംഗ് തകരാറിന്റെ കാരണം തിരഞ്ഞെടുക്കൂ. വിദ്യാഭ്യാസ സിമുലേഷൻ. ആപ്പിന്റെ ഇന്റർഫേസ് ഇംഗ്ലീഷിലാണ്.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "pl",
+          "id": "50febcd6-928e-497a-8a90-8e84b495b03a",
+          "promotionalText": "Ćwicz diagnozowanie usterek. Przeczytaj objawy i wybierz diagnozę. Symulacja edukacyjna. Interfejs aplikacji jest po angielsku.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ms",
+          "id": "14a30832-07d5-4657-b1ca-73b96cc2fdfb",
+          "promotionalText": "Latih diagnosis kerosakan. Baca gejala dan pilih diagnosis masalah paip. Simulasi pendidikan. Antara muka aplikasi dalam bahasa Inggeris.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "he",
+          "id": "a05286d4-a49a-441d-99d4-2bfce5fa9ea8",
+          "promotionalText": "תרגלו אבחון תקלות. קראו את התסמינים ובחרו אבחון לתקלה. סימולציה לימודית. ממשק האפליקציה באנגלית.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "vi",
+          "id": "5f6b6c51-d586-41d6-8e5a-e3a751e8bcd0",
+          "promotionalText": "Luyện chẩn đoán sự cố. Đọc triệu chứng và chọn nguyên nhân sự cố đường ống. Mô phỏng giáo dục. Giao diện ứng dụng bằng tiếng Anh.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "sl-SI",
+          "id": "60166b28-4f08-42cc-a64f-a1ba7a4765c7",
+          "promotionalText": "Vadite diagnozo napak. Preberite simptome in izberite vzrok napake. Izobraževalna simulacija. Vmesnik aplikacije je v angleščini.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ko",
+          "id": "d73d7e0c-2a35-47b1-bc4e-fa403fadde5b",
+          "promotionalText": "고장 진단 연습. 증상을 읽고 배관 고장 진단을 선택하세요. 교육용 시뮬레이션. 앱 인터페이스는 영어입니다.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "es-ES",
+          "id": "341878c9-45ac-493d-987f-8627566c0879",
+          "promotionalText": "Practica el diagnóstico. Lee los síntomas y elige un diagnóstico de fontanería. Simulación educativa. Interfaz de la aplicación en inglés.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "de-DE",
+          "id": "c3d15a72-dec0-4216-a939-0ea752629bce",
+          "promotionalText": "Fehlerdiagnose üben. Lies die Symptome und wähle eine Fehlerdiagnose. Lernsimulation. Die App-Oberfläche ist auf Englisch.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ca",
+          "id": "761caeed-20bc-4872-b54f-109f016a131e",
+          "promotionalText": "Practica el diagnòstic. Llegeix els símptomes i tria un diagnòstic de fontaneria. Simulació educativa. Interfície de l’app en anglès.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "en-CA",
+          "id": "7cb6cbbc-ec48-4559-a027-ffb4d0fdee9b",
+          "promotionalText": "Practise diagnosing leaks, blocked drains and water pressure faults. Choose a repair and learn from feedback. Educational simulation; app in English.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "pt-BR",
+          "id": "94c03038-313c-49be-bfab-80d17d2eeed9",
+          "promotionalText": "Pratique o diagnóstico. Leia os sintomas e escolha um diagnóstico hidráulico. Simulação educativa. Interface do app em inglês.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ro",
+          "id": "6ab5af43-e605-4dc1-88e6-f66e8aa70e65",
+          "promotionalText": "Exersează diagnosticarea. Citește simptomele și alege diagnosticul defecțiunii. Simulare educativă. Interfața aplicației este în engleză.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "hi",
+          "id": "290d7d6a-334b-42bf-9e53-8631e7d1d932",
+          "promotionalText": "खराबी पहचानने का अभ्यास. लक्षण पढ़ें और प्लंबिंग की खराबी का कारण चुनें। शैक्षिक सिमुलेशन। ऐप का इंटरफ़ेस अंग्रेज़ी में है।",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "kn-IN",
+          "id": "97c14ec4-c6b1-4cef-bea4-92c1c6b5255c",
+          "promotionalText": "ದೋಷ ಪತ್ತೆ ಅಭ್ಯಾಸ. ಲಕ್ಷಣಗಳನ್ನು ಓದಿ ಪ್ಲಂಬಿಂಗ್ ದೋಷದ ಕಾರಣ ಆರಿಸಿ. ಶೈಕ್ಷಣಿಕ ಸಿಮ್ಯುಲೇಶನ್. ಆ್ಯಪ್ ಇಂಟರ್‌ಫೇಸ್ ಇಂಗ್ಲಿಷ್‌ನಲ್ಲಿದೆ.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "en-US",
+          "id": "43012dbb-2669-461d-8be1-59f9ec6c79dd",
+          "promotionalText": "Practise diagnosing leaks, blocked drains and water pressure faults. Choose a repair and learn from feedback. Educational simulation; app in English.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "es-MX",
+          "id": "14de4fce-8faa-4ec7-b472-71b7ac3f63b0",
+          "promotionalText": "Practica el diagnóstico. Lee los síntomas y elige un diagnóstico de plomería. Simulación educativa. Interfaz de la app en inglés.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "tr",
+          "id": "adabcd3c-63d9-465b-9a0d-bae6c9c22718",
+          "promotionalText": "Arıza teşhisini çalışın. Belirtileri okuyun ve bir tesisat teşhisi seçin. Eğitim simülasyonu. Uygulama arayüzü İngilizcedir.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "th",
+          "id": "473ad237-fb1b-4fe6-82d1-2b697ab3841a",
+          "promotionalText": "ฝึกวินิจฉัยปัญหา. อ่านอาการและเลือกสาเหตุของปัญหางานประปา การจำลองเพื่อการศึกษา อินเทอร์เฟซแอปเป็นภาษาอังกฤษ",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "id",
+          "id": "7d389c48-c817-485d-af0d-6957d5bf1f34",
+          "promotionalText": "Latih diagnosis kerusakan. Baca gejala dan pilih diagnosis masalah perpipaan. Simulasi edukasi. Antarmuka aplikasi berbahasa Inggris.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "en-AU",
+          "id": "9cd57128-cfd4-489c-8d08-311149702afc",
+          "promotionalText": "Practise diagnosing leaks, blocked drains and water pressure faults. Choose a repair and learn from feedback. Educational simulation; app in English.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "fr-CA",
+          "id": "c3f9aa17-a1f2-4bde-a7c8-4d635678c614",
+          "promotionalText": "Exercez le diagnostic. Lisez les symptômes et choisissez un diagnostic de plomberie. Simulation éducative. Interface de l’application en anglais.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "nl-NL",
+          "id": "bab302d9-6ba9-4fb2-ac0f-ef4893f81768",
+          "promotionalText": "Oefen storingsdiagnose. Lees de symptomen en kies een diagnose. Educatieve simulatie. De app-interface is in het Engels.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "fi",
+          "id": "a770fc79-8527-4226-a763-4dcf7c81c0bc",
+          "promotionalText": "Harjoittele vianmääritystä. Lue oireet ja valitse putkivian diagnoosi. Opetussimulaatio. Sovelluksen käyttöliittymä on englanniksi.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "bn-BD",
+          "id": "9fe9e2ec-d789-4e11-ae5e-7164d72ecbb8",
+          "promotionalText": "ত্রুটি নির্ণয়ের অনুশীলন. লক্ষণ পড়ে প্লাম্বিং সমস্যার কারণ বেছে নিন। শিক্ষামূলক সিমুলেশন। অ্যাপের ইন্টারফেস ইংরেজিতে।",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "uk",
+          "id": "ffb87a08-bcfd-49d5-848c-b786d76bc87b",
+          "promotionalText": "Практикуйте діагностику. Прочитайте симптоми й оберіть причину несправності. Навчальна симуляція. Інтерфейс застосунку англійською.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "hu",
+          "id": "fd04e02e-95e4-4bf1-aca1-63d5d7698a04",
+          "promotionalText": "Gyakorold a hibafeltárást. Olvasd el a tüneteket, és válassz diagnózist. Oktatási szimuláció. Az alkalmazás felülete angol nyelvű.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "te-IN",
+          "id": "79aae580-6ad9-40fc-b2fe-b6f00d0dd3a2",
+          "promotionalText": "లోప నిర్ధారణ సాధన. లక్షణాలను చదివి ప్లంబింగ్ లోపానికి కారణం ఎంచుకోండి. విద్యా సిమ్యులేషన్. యాప్ ఇంటర్‌ఫేస్ ఆంగ్లంలో ఉంది.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "el",
+          "id": "117c5577-3c41-40c7-a953-673207dae9aa",
+          "promotionalText": "Εξασκήσου στη διάγνωση. Διάβασε τα συμπτώματα και επίλεξε διάγνωση βλάβης. Εκπαιδευτική προσομοίωση. Η εφαρμογή έχει αγγλικό περιβάλλον.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "it",
+          "id": "3571bade-2464-401a-8db3-6e59630dd2db",
+          "promotionalText": "Esercita la diagnosi. Leggi i sintomi e scegli una diagnosi idraulica. Simulazione educativa. Interfaccia dell’app in inglese.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "pt-PT",
+          "id": "3b6f7d26-e522-47e7-a701-c65e67634664",
+          "promotionalText": "Pratique o diagnóstico. Leia os sintomas e escolha um diagnóstico de canalização. Simulação educativa. Interface da aplicação em inglês.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "or-IN",
+          "id": "82d22110-7192-4618-99e4-6a579cafe283",
+          "promotionalText": "ତ୍ରୁଟି ଚିହ୍ନଟ ଅଭ୍ୟାସ. ଲକ୍ଷଣ ପଢ଼ି ପ୍ଲମ୍ବିଂ ତ୍ରୁଟିର କାରଣ ବାଛନ୍ତୁ। ଶିକ୍ଷାମୂଳକ ସିମୁଲେସନ୍। ଆପ୍ ଇଣ୍ଟରଫେସ୍ ଇଂରାଜୀରେ ଅଛି।",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ru",
+          "id": "0127c350-df5f-4014-b138-61c9073ff5bd",
+          "promotionalText": "Практикуйте диагностику. Прочитайте симптомы и выберите причину неисправности. Учебная симуляция. Интерфейс приложения на английском.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ta-IN",
+          "id": "ec720fe2-d114-4b72-b61e-139a063796ff",
+          "promotionalText": "கோளாறு கண்டறியும் பயிற்சி. அறிகுறிகளைப் படித்து பிளம்பிங் கோளாறின் காரணத்தைத் தேர்வுசெய்யவும். கல்விக்கான சிமுலேஷன். செயலியின் இடைமுகம் ஆங்கிலத்தில் உள்ளது.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "fr-FR",
+          "id": "d7648b15-be42-484e-8f56-86ff1e527e3a",
+          "promotionalText": "Exercez le diagnostic. Lisez les symptômes et choisissez un diagnostic de plomberie. Simulation éducative. Interface de l’application en anglais.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ar-SA",
+          "id": "d820f758-16c4-44e7-b670-c171f4df6b7e",
+          "promotionalText": "تدرّب على تشخيص الأعطال. اقرأ الأعراض واختر تشخيص عطل السباكة. محاكاة تعليمية. واجهة التطبيق باللغة الإنجليزية.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "zh-Hans",
+          "id": "f986f3dc-ef2b-4a3d-bf91-eeb5941f9b52",
+          "promotionalText": "练习故障诊断. 阅读症状并选择水暖故障诊断。 教育模拟。应用界面为英语。",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "zh-Hant",
+          "id": "9f86a1dc-5fed-4bdc-b2ef-4999af165eaa",
+          "promotionalText": "練習故障診斷. 閱讀症狀並選擇水電故障診斷。 教育模擬。應用程式介面為英語。",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "no",
+          "id": "85205d78-48aa-4cd7-aba0-7a99a880414a",
+          "promotionalText": "Øv på feildiagnose. Les symptomene og velg en diagnose. Læringssimulering. Appens grensesnitt er på engelsk.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ur-PK",
+          "id": "b6295398-ea48-4373-8693-df4d70d89bda",
+          "promotionalText": "خرابی کی تشخیص کی مشق. علامات پڑھیں اور پلمبنگ کی خرابی کی وجہ منتخب کریں۔ تعلیمی سیمولیشن۔ ایپ کا انٹرفیس انگریزی میں ہے۔",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ja",
+          "id": "76592825-28ae-45d7-98af-b9be6e1601e3",
+          "promotionalText": "故障診断を練習. 症状を読んで配管の故障原因を選ぼう。 学習用シミュレーション。アプリの操作画面は英語です。",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        }
+      ]
+    },
+    {
+      "name": "Plumbing Tools and Heating",
+      "id": "e9bae711-c517-498f-a0ae-3df8d6ed1aec",
+      "versionId": "2ff33b9e-419f-4319-8332-cd039663065b",
+      "url": "https://apps.apple.com/us/app/pipeboss-ai/id6767889535?ppid=e9bae711-c517-498f-a0ae-3df8d6ed1aec",
+      "state": "PREPARE_FOR_SUBMISSION",
+      "localizations": [
+        {
+          "locale": "en-GB",
+          "id": "4dc3c98f-c197-412f-b343-935f784dc367",
+          "promotionalText": "Learn plumbing tool selection for pipe, drain and heating scenarios. Diagnose faults and build your virtual kit. Educational simulation; app in English.",
+          "keywords": [
+            "tools",
+            "pipe",
+            "heating",
+            "boiler"
+          ],
+          "keywordStatus": "assigned",
+          "screenshotCount": 15,
+          "headerCount": 1,
+          "verified": true
+        },
+        {
+          "locale": "pa-IN",
+          "id": "7da114f5-b374-4a27-b8be-4e405dd03c37",
+          "promotionalText": "ਪਲੰਬਿੰਗ ਦੇ ਔਜ਼ਾਰ ਜਾਣੋ. ਪਾਈਪ, ਨਾਲੀ ਅਤੇ ਹੀਟਿੰਗ ਦੇ ਕੰਮ ਲਈ ਔਜ਼ਾਰ ਇਕੱਠੇ ਕਰੋ। ਸਿੱਖਿਆ ਲਈ ਸਿਮੂਲੇਸ਼ਨ। ਐਪ ਦਾ ਇੰਟਰਫੇਸ ਅੰਗਰੇਜ਼ੀ ਵਿੱਚ ਹੈ।",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "da",
+          "id": "93874bf7-0f2c-4316-8342-3d074650662f",
+          "promotionalText": "Lær VVS-værktøjerne. Saml værktøj til rør, afløb og varmeopgaver. Læringssimulation. Appens brugerflade er på engelsk.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "sv",
+          "id": "3677a354-5698-4845-8add-af4d91c6e938",
+          "promotionalText": "Lär känna VVS-verktygen. Samla verktyg för rör, avlopp och värmeuppgifter. Utbildningssimulering. Appens gränssnitt är på engelska.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "cs",
+          "id": "525c15e4-2897-4b08-8ef4-387510775fcd",
+          "promotionalText": "Poznejte instalatérské nářadí. Sestavte výbavu pro potrubí, odpady a topení. Výuková simulace. Rozhraní aplikace je v angličtině.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "sk",
+          "id": "d8650ee5-32d2-4e41-86ee-2897ecefcdc4",
+          "promotionalText": "Spoznajte inštalatérske náradie. Zostavte výbavu pre potrubia, odpady a kúrenie. Vzdelávacia simulácia. Rozhranie aplikácie je v angličtine.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "mr-IN",
+          "id": "530e91dd-f547-4f37-88cb-e7807c921b34",
+          "promotionalText": "प्लंबिंगची साधने ओळखा. पाइप, नाले आणि हीटिंगच्या कामांसाठी साधने गोळा करा. शैक्षणिक सिम्युलेशन. ॲपचा इंटरफेस इंग्रजीत आहे.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "gu-IN",
+          "id": "f595ee5c-0531-4941-aafe-d4e3d4f17f6c",
+          "promotionalText": "પ્લમ્બિંગનાં સાધનો જાણો. પાઇપ, ડ્રેન અને હીટિંગનાં કામ માટે સાધનો ભેગાં કરો. શૈક્ષણિક સિમ્યુલેશન. ઍપનું ઇન્ટરફેસ અંગ્રેજીમાં છે.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "hr",
+          "id": "1910ccbf-a4a5-4d28-b8ed-07db7df39813",
+          "promotionalText": "Upoznajte vodoinstalaterski alat. Pripremite alat za cijevi, odvode i grijanje. Edukativna simulacija. Sučelje aplikacije je na engleskom.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ml-IN",
+          "id": "e180433d-318e-4b1a-89b6-6dcf4e05c828",
+          "promotionalText": "പ്ലംബിംഗ് ഉപകരണങ്ങൾ പഠിക്കൂ. പൈപ്പ്, ഡ്രെയിൻ, ഹീറ്റിംഗ് ജോലികൾക്കുള്ള ഉപകരണങ്ങൾ ശേഖരിക്കൂ. വിദ്യാഭ്യാസ സിമുലേഷൻ. ആപ്പിന്റെ ഇന്റർഫേസ് ഇംഗ്ലീഷിലാണ്.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "pl",
+          "id": "5dbeff4e-7232-4fac-8df2-27226afd51d6",
+          "promotionalText": "Poznaj narzędzia hydrauliczne. Zbierz narzędzia do rur, odpływów i ogrzewania. Symulacja edukacyjna. Interfejs aplikacji jest po angielsku.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ms",
+          "id": "979ce238-3289-4d5b-8588-787bda67f48b",
+          "promotionalText": "Kenali alat kerja paip. Sediakan alat untuk paip, saliran dan pemanasan. Simulasi pendidikan. Antara muka aplikasi dalam bahasa Inggeris.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "he",
+          "id": "fb73d8d7-b198-4e31-87da-6a21c798d4ce",
+          "promotionalText": "הכירו כלי אינסטלציה. הרכיבו ערכת כלים לצינורות, ניקוז וחימום. סימולציה לימודית. ממשק האפליקציה באנגלית.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "vi",
+          "id": "833a7853-147b-45f2-9c96-007187d8cb9f",
+          "promotionalText": "Tìm hiểu dụng cụ. Chuẩn bị bộ dụng cụ cho ống, thoát nước và sưởi. Mô phỏng giáo dục. Giao diện ứng dụng bằng tiếng Anh.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "sl-SI",
+          "id": "5edb999f-789e-46db-a710-9070b2b13b74",
+          "promotionalText": "Spoznajte vodovodna orodja. Pripravite orodje za cevi, odtoke in ogrevanje. Izobraževalna simulacija. Vmesnik aplikacije je v angleščini.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ko",
+          "id": "ebfe5e56-7dd6-4910-8dfa-1cd404415c07",
+          "promotionalText": "배관 공구 배우기. 배관, 배수, 난방 작업에 필요한 공구를 모으세요. 교육용 시뮬레이션. 앱 인터페이스는 영어입니다.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "es-ES",
+          "id": "20da343a-0cb6-469e-a76f-d516c0924829",
+          "promotionalText": "Conoce las herramientas. Prepara tu equipo para tuberías, desagües y calefacción. Simulación educativa. Interfaz de la aplicación en inglés.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "de-DE",
+          "id": "4aa1ac12-d8aa-4418-a1d5-3f1de98a36ea",
+          "promotionalText": "Werkzeuge kennenlernen. Stelle dein Werkzeug für Rohre, Abflüsse und Heizung zusammen. Lernsimulation. Die App-Oberfläche ist auf Englisch.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ca",
+          "id": "de207c66-59c3-44d2-b574-f7ee9b376958",
+          "promotionalText": "Coneix les eines de fontaneria. Prepara les eines per a canonades, desguassos i calefacció. Simulació educativa. Interfície de l’app en anglès.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "en-CA",
+          "id": "87f54977-28a3-4455-9730-b232831c1205",
+          "promotionalText": "Learn plumbing tool selection for pipe, drain and heating scenarios. Diagnose faults and build your virtual kit. Educational simulation; app in English.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "pt-BR",
+          "id": "67acd77e-711b-45b1-a7db-7fee8ea8d11c",
+          "promotionalText": "Conheça as ferramentas. Monte seu kit para tubos, drenagem e aquecimento. Simulação educativa. Interface do app em inglês.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ro",
+          "id": "b976ee12-b44b-4e8a-8870-723ec9660014",
+          "promotionalText": "Cunoaște uneltele. Pregătește trusa pentru țevi, scurgeri și încălzire. Simulare educativă. Interfața aplicației este în engleză.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "hi",
+          "id": "f981aed8-8af1-4bac-9cb2-cb082eb4c58f",
+          "promotionalText": "प्लंबिंग के औज़ार सीखें. पाइप, नाली और हीटिंग के काम के लिए औज़ार जुटाएँ। शैक्षिक सिमुलेशन। ऐप का इंटरफ़ेस अंग्रेज़ी में है।",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "kn-IN",
+          "id": "daef48b2-f10a-4484-8ac0-6e6d7c63e6a1",
+          "promotionalText": "ಪ್ಲಂಬಿಂಗ್ ಉಪಕರಣ ತಿಳಿಯಿರಿ. ಪೈಪ್, ಚರಂಡಿ ಮತ್ತು ತಾಪನ ಕಾರ್ಯಗಳಿಗೆ ಉಪಕರಣ ಸಂಗ್ರಹಿಸಿ. ಶೈಕ್ಷಣಿಕ ಸಿಮ್ಯುಲೇಶನ್. ಆ್ಯಪ್ ಇಂಟರ್‌ಫೇಸ್ ಇಂಗ್ಲಿಷ್‌ನಲ್ಲಿದೆ.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "en-US",
+          "id": "1dae8053-395d-4c2e-8cee-b5df77517785",
+          "promotionalText": "Learn plumbing tool selection for pipe, drain and heating scenarios. Diagnose faults and build your virtual kit. Educational simulation; app in English.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "es-MX",
+          "id": "4fc66283-9f41-47c8-a27c-1caf259c0230",
+          "promotionalText": "Conoce las herramientas. Prepara tu equipo para tuberías, desagües y calefacción. Simulación educativa. Interfaz de la app en inglés.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "tr",
+          "id": "2c678f06-bf70-43b8-a44e-8235c341ef36",
+          "promotionalText": "Tesisat aletlerini tanıyın. Boru, gider ve ısıtma işleri için aletlerinizi toplayın. Eğitim simülasyonu. Uygulama arayüzü İngilizcedir.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "th",
+          "id": "f266a977-15fe-409d-a5e7-333bc2ed0e2f",
+          "promotionalText": "เรียนรู้เครื่องมืองานประปา. รวบรวมเครื่องมือสำหรับท่อ ระบบระบายน้ำ และระบบทำความร้อน การจำลองเพื่อการศึกษา อินเทอร์เฟซแอปเป็นภาษาอังกฤษ",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "id",
+          "id": "42a1884e-a7d7-487b-be5a-e0f29b037efb",
+          "promotionalText": "Kenali alat perpipaan. Siapkan alat untuk pipa, saluran air dan pemanas. Simulasi edukasi. Antarmuka aplikasi berbahasa Inggris.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "en-AU",
+          "id": "9b693a36-ad5c-470a-a1fa-22cabf76eea5",
+          "promotionalText": "Learn plumbing tool selection for pipe, drain and heating scenarios. Diagnose faults and build your virtual kit. Educational simulation; app in English.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "fr-CA",
+          "id": "7cbb33b1-f13f-40a0-a5a2-5c88d2b32433",
+          "promotionalText": "Découvrez les outils. Préparez votre équipement pour tuyaux, drains et chauffage. Simulation éducative. Interface de l’application en anglais.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "nl-NL",
+          "id": "daf6aa84-7676-4204-a2f5-f0cdd979eb3e",
+          "promotionalText": "Leer loodgietersgereedschap. Bouw je uitrusting voor leidingen, afvoer en verwarming. Educatieve simulatie. De app-interface is in het Engels.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "fi",
+          "id": "cf0a8679-f80b-4e67-b1f2-4c22030446ec",
+          "promotionalText": "Tutustu putkityökaluihin. Kokoa työkalut putki-, viemäri- ja lämmitystehtäviin. Opetussimulaatio. Sovelluksen käyttöliittymä on englanniksi.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "bn-BD",
+          "id": "2666bf86-dd5e-4a28-af53-94696a3373e4",
+          "promotionalText": "প্লাম্বিংয়ের সরঞ্জাম শিখুন. পাইপ, ড্রেন ও হিটিংয়ের কাজের জন্য সরঞ্জাম সংগ্রহ করুন। শিক্ষামূলক সিমুলেশন। অ্যাপের ইন্টারফেস ইংরেজিতে।",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "uk",
+          "id": "5c824b06-9e0a-459f-9a11-f90f818d3375",
+          "promotionalText": "Вивчайте інструменти. Зберіть інструменти для труб, зливів і опалення. Навчальна симуляція. Інтерфейс застосунку англійською.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "hu",
+          "id": "5cdfd1a2-86bc-4100-afa2-68546810cb8b",
+          "promotionalText": "Ismerd meg a szerszámokat. Állítsd össze eszközeidet cső-, lefolyó- és fűtési munkákhoz. Oktatási szimuláció. Az alkalmazás felülete angol nyelvű.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "te-IN",
+          "id": "980ce19f-65d3-4410-84c4-f19cb9477473",
+          "promotionalText": "ప్లంబింగ్ పనిముట్లు తెలుసుకోండి. పైపు, డ్రెయిన్, హీటింగ్ పనులకు పనిముట్లు సేకరించండి. విద్యా సిమ్యులేషన్. యాప్ ఇంటర్‌ఫేస్ ఆంగ్లంలో ఉంది.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "el",
+          "id": "87ab607e-bd1d-4dee-bece-e379ea18c61c",
+          "promotionalText": "Γνώρισε τα εργαλεία. Φτιάξε το σετ σου για σωλήνες, αποχετεύσεις και θέρμανση. Εκπαιδευτική προσομοίωση. Η εφαρμογή έχει αγγλικό περιβάλλον.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "it",
+          "id": "a8e4c474-aacf-4138-83e6-91eb842787bc",
+          "promotionalText": "Scopri gli attrezzi idraulici. Prepara il kit per tubi, scarichi e riscaldamento. Simulazione educativa. Interfaccia dell’app in inglese.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "pt-PT",
+          "id": "2809b5a6-bac6-4c65-973c-447d04477cc3",
+          "promotionalText": "Conheça as ferramentas. Prepare o kit para tubos, esgotos e aquecimento. Simulação educativa. Interface da aplicação em inglês.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "or-IN",
+          "id": "ef648581-9c29-4402-aa4e-6f15474883bc",
+          "promotionalText": "ପ୍ଲମ୍ବିଂ ଉପକରଣ ଜାଣନ୍ତୁ. ପାଇପ୍, ଡ୍ରେନ୍ ଓ ହିଟିଂ କାମ ପାଇଁ ଉପକରଣ ସଂଗ୍ରହ କରନ୍ତୁ। ଶିକ୍ଷାମୂଳକ ସିମୁଲେସନ୍। ଆପ୍ ଇଣ୍ଟରଫେସ୍ ଇଂରାଜୀରେ ଅଛି।",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ru",
+          "id": "333d829f-3ef9-45f7-a2ae-1c3174480d13",
+          "promotionalText": "Изучайте инструменты. Соберите инструменты для труб, сливов и отопления. Учебная симуляция. Интерфейс приложения на английском.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ta-IN",
+          "id": "3b4e6c92-b002-40eb-9b68-ef67a197daf9",
+          "promotionalText": "பிளம்பிங் கருவிகளை அறியவும். குழாய், வடிகால், வெப்பமூட்டும் பணிகளுக்குக் கருவிகளைச் சேகரிக்கவும். கல்விக்கான சிமுலேஷன். செயலியின் இடைமுகம் ஆங்கிலத்தில் உள்ளது.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "fr-FR",
+          "id": "4e260d59-d211-4a7a-8ff1-02d3d4f8ea2b",
+          "promotionalText": "Découvrez les outils. Préparez votre équipement pour tuyaux, drains et chauffage. Simulation éducative. Interface de l’application en anglais.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ar-SA",
+          "id": "1d79c2f5-c9f0-4546-8ae5-d0710e8b4507",
+          "promotionalText": "تعرّف على أدوات السباكة. جهّز أدواتك لمهام الأنابيب والصرف والتدفئة. محاكاة تعليمية. واجهة التطبيق باللغة الإنجليزية.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "zh-Hans",
+          "id": "d892e937-facf-4201-b0db-acc321f57c74",
+          "promotionalText": "认识水暖工具. 为管道、排水和供暖任务准备工具。 教育模拟。应用界面为英语。",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "zh-Hant",
+          "id": "896995e8-6210-41ef-bc65-db0bebcf48b9",
+          "promotionalText": "認識水電工具. 為管線、排水和供暖任務準備工具。 教育模擬。應用程式介面為英語。",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "no",
+          "id": "b070e507-165e-4321-ad33-0524f87ae4b2",
+          "promotionalText": "Lær om rørleggerverktøy. Samle verktøy for rør, avløp og varmeoppgaver. Læringssimulering. Appens grensesnitt er på engelsk.",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ur-PK",
+          "id": "bb3dde69-382e-4384-ac5d-bfa8e36d81ec",
+          "promotionalText": "پلمبنگ کے اوزار جانیں. پائپ، نکاسی اور ہیٹنگ کے کام کے لیے اوزار جمع کریں۔ تعلیمی سیمولیشن۔ ایپ کا انٹرفیس انگریزی میں ہے۔",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        },
+        {
+          "locale": "ja",
+          "id": "76ee7f20-c2a8-48a6-81ed-f28990df7b76",
+          "promotionalText": "配管工具を学ぼう. 配管・排水・暖房の課題に使う工具を揃えよう。 学習用シミュレーション。アプリの操作画面は英語です。",
+          "keywords": [],
+          "keywordStatus": "no-matching-keywords-in-approved-localization",
+          "screenshotCount": 15,
+          "headerCount": 0,
+          "verified": true
+        }
+      ]
+    }
+  ],
+  "errors": []
+}
