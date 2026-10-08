@@ -87,7 +87,7 @@ async function sourceAssets(loc){
 for(const spec of specs){
  let page=pages.find(x=>x.attributes.name===spec.name);
  if(!page){
-  const versionRef=crypto.randomUUID(),localeRef=crypto.randomUUID();
+  const versionRef='${version-1}',localeRef='${localization-en-GB}';
   page=(await api('/v1/appCustomProductPages','POST',{data:{type:'appCustomProductPages',attributes:{name:spec.name},relationships:{app:relation('apps',appId),appStoreVersionTemplate:relation('appStoreVersions',templateId),appCustomProductPageVersions:{data:[{type:'appCustomProductPageVersions',id:versionRef}]}}},included:[{type:'appCustomProductPageVersions',id:versionRef,relationships:{appCustomProductPageLocalizations:{data:[{type:'appCustomProductPageLocalizations',id:localeRef}]}}},{type:'appCustomProductPageLocalizations',id:localeRef,attributes:{locale:'en-GB',promotionalText:spec.en}}]})).data;pages.push(page);
  }
  let vv=await list(`/v1/appCustomProductPages/${page.id}/appCustomProductPageVersions?limit=50`);
