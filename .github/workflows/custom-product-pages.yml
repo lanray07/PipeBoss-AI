@@ -1,6 +1,9 @@
 name: Prepare localized custom product pages
 on:
   workflow_dispatch:
+  push:
+    branches: [codex/localized-custom-product-pages]
+    paths: [tools/custom_product_pages.mjs, .github/workflows/custom-product-pages.yml]
 permissions:
   contents: read
 jobs:
