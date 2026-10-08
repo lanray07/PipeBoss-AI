@@ -21,7 +21,6 @@ jobs:
           APP_STORE_CONNECT_API_ISSUER_ID: ${{ secrets.APP_STORE_CONNECT_API_ISSUER_ID }}
           APP_STORE_CONNECT_API_KEY_BASE64: ${{ secrets.APP_STORE_CONNECT_API_KEY_BASE64 }}
           CPP_APPLY: 'true'
-          CPP_LOCALES: en-GB,fr-FR
         run: node tools/custom_product_pages.mjs
       - uses: actions/upload-artifact@v4
         if: always()

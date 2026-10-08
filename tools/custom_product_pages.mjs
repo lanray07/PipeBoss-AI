@@ -120,7 +120,8 @@ for(const spec of specs){
      if(!placement){placement=(await api('/v1/appAssetLibraryPlacements','POST',{data:{type:'appAssetLibraryPlacements',attributes:{placementType:row.attributes.placementType,placementGroup:group},relationships:{image:row.relationships.image,appCustomProductPageLocalization:relation('appCustomProductPageLocalizations',loc.id)}}})).data;current.push(placement);}
      ordered.push({type:'appAssetLibraryPlacements',id:placement.id});
     }
-    if(rows[0].attributes.placementType==='APP_SCREENSHOT')await api('/v1/appAssetLibraryPlacementOrderingRequests','POST',{data:{type:'appAssetLibraryPlacementOrderingRequests',attributes:{placementGroup:group},relationships:{orderedPlacements:{data:ordered},appCustomProductPageLocalization:relation('appCustomProductPageLocalizations',loc.id)}}});
+    const presentOrder=current.filter(x=>x.attributes.placementGroup===group).map(x=>x.id);
+    if(rows[0].attributes.placementType==='APP_SCREENSHOT'&&presentOrder.some((id,i)=>id!==ordered[i]?.id))await api('/v1/appAssetLibraryPlacementOrderingRequests','POST',{data:{type:'appAssetLibraryPlacementOrderingRequests',attributes:{placementGroup:group},relationships:{orderedPlacements:{data:ordered},appCustomProductPageLocalization:relation('appCustomProductPageLocalizations',loc.id)}}});
    }
    const eligible=approvedKeywords.get(locale)??[];
    const keywords=spec.keywords.filter(k=>eligible.some(x=>x.toLowerCase()===k.toLowerCase()));
