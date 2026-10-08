@@ -80,13 +80,16 @@ async function sourceAssets(loc){
  if(!sourceCache.has(loc.id))sourceCache.set(loc.id,(async()=>{
   const r=await api(`/v1/appStoreVersionLocalizations/${loc.id}/placements?include=image&sort=placementGroupPosition&limit=200`);
   const images=new Map((r.included??[]).map(x=>[x.id,x]));
-  return r.data.map(p=>({...p,image:images.get(p.relationships.image?.data?.id)}));
+  return r.data.filter(p=>p.relationships?.image?.data).map(p=>({...p,image:images.get(p.relationships.image.data.id)}));
  })());
  return sourceCache.get(loc.id);
 }
 for(const spec of specs){
  let page=pages.find(x=>x.attributes.name===spec.name);
- if(!page){page=(await api('/v1/appCustomProductPages','POST',{data:{type:'appCustomProductPages',attributes:{name:spec.name},relationships:{app:relation('apps',appId),appStoreVersionTemplate:relation('appStoreVersions',templateId)}}})).data;pages.push(page);}
+ if(!page){
+  const versionRef=crypto.randomUUID(),localeRef=crypto.randomUUID();
+  page=(await api('/v1/appCustomProductPages','POST',{data:{type:'appCustomProductPages',attributes:{name:spec.name},relationships:{app:relation('apps',appId),appStoreVersionTemplate:relation('appStoreVersions',templateId),appCustomProductPageVersions:{data:[{type:'appCustomProductPageVersions',id:versionRef}]}}},included:[{type:'appCustomProductPageVersions',id:versionRef,relationships:{appCustomProductPageLocalizations:{data:[{type:'appCustomProductPageLocalizations',id:localeRef}]}}},{type:'appCustomProductPageLocalizations',id:localeRef,attributes:{locale:'en-GB',promotionalText:spec.en}}]})).data;pages.push(page);
+ }
  let vv=await list(`/v1/appCustomProductPages/${page.id}/appCustomProductPageVersions?limit=50`);
  let v=vv.find(x=>x.attributes.state==='PREPARE_FOR_SUBMISSION');
  if(!v){if(vv.length)throw new Error('Refusing to edit a submitted page');v=(await api('/v1/appCustomProductPageVersions','POST',{data:{type:'appCustomProductPageVersions',relationships:{appCustomProductPage:relation('appCustomProductPages',page.id)}}})).data;}
@@ -107,13 +110,13 @@ for(const spec of specs){
    if(shotGroups.length!==4||shotGroups.some(rows=>rows.length!==(rows[0].attributes.placementGroup==='IPHONE_DUO_PROFILE'?6:3)))throw new Error('Source localized screenshot coverage is incomplete');
    let current=(await api(`/v1/appCustomProductPageLocalizations/${loc.id}/placements?include=image&sort=placementGroupPosition&limit=200`)).data;
    // Delete only extra placements on this explicitly created draft; preserve every library image and default-page placement.
-   for(const old of current){if(!desired.some(row=>row.relationships.image?.data?.id===old.relationships.image?.data?.id&&row.attributes.placementGroup===old.attributes.placementGroup))await api(`/v1/appAssetLibraryPlacements/${old.id}`,'DELETE');}
-   current=current.filter(old=>desired.some(row=>row.relationships.image?.data?.id===old.relationships.image?.data?.id&&row.attributes.placementGroup===old.attributes.placementGroup));
+   for(const old of current){if(!desired.some(row=>row.relationships?.image?.data?.id===old.relationships?.image?.data?.id&&row.attributes.placementGroup===old.attributes.placementGroup))await api(`/v1/appAssetLibraryPlacements/${old.id}`,'DELETE');}
+   current=current.filter(old=>desired.some(row=>row.relationships?.image?.data?.id===old.relationships?.image?.data?.id&&row.attributes.placementGroup===old.attributes.placementGroup));
    for(const [group,rows] of groups){
     rows.sort((a,b)=>spec.order.indexOf(Number(a.image.attributes.fileName.slice(0,2)))-spec.order.indexOf(Number(b.image.attributes.fileName.slice(0,2)))||a.image.attributes.fileName.localeCompare(b.image.attributes.fileName));
     const ordered=[];
     for(const row of rows){
-     let placement=current.find(x=>x.relationships.image?.data?.id===row.relationships.image.data.id&&x.attributes.placementGroup===group);
+     let placement=current.find(x=>x.relationships?.image?.data?.id===row.relationships.image.data.id&&x.attributes.placementGroup===group);
      if(!placement){placement=(await api('/v1/appAssetLibraryPlacements','POST',{data:{type:'appAssetLibraryPlacements',attributes:{placementType:row.attributes.placementType,placementGroup:group},relationships:{image:row.relationships.image,appCustomProductPageLocalization:relation('appCustomProductPageLocalizations',loc.id)}}})).data;current.push(placement);}
      ordered.push({type:'appAssetLibraryPlacements',id:placement.id});
     }
@@ -125,7 +128,7 @@ for(const spec of specs){
    const verified=await api(`/v1/appCustomProductPageLocalizations/${loc.id}/placements?include=image&sort=placementGroupPosition&limit=200`);
    for(const [group,rows] of groups){
     const actual=verified.data.filter(x=>x.attributes.placementGroup===group);
-    if(actual.length!==rows.length||actual.some((x,i)=>x.relationships.image?.data?.id!==rows[i].relationships.image.data.id||x.attributes.stateDetails))throw new Error(`Placement verification failed ${group}`);
+    if(actual.length!==rows.length||actual.some((x,i)=>x.relationships?.image?.data?.id!==rows[i].relationships.image.data.id||x.attributes.stateDetails))throw new Error(`Placement verification failed ${group}`);
    }
    pageReport.localizations.push({locale,id:loc.id,promotionalText:text,keywords,keywordStatus:keywords.length?'assigned':'no-matching-keywords-in-approved-localization',screenshotCount:desired.filter(x=>x.attributes.placementType==='APP_SCREENSHOT').length,headerCount:desired.filter(x=>x.attributes.placementType==='PRODUCT_PAGE_HEADER_ASSET').length,verified:true});
    console.log(`${spec.name}: ${locale} verified`);
